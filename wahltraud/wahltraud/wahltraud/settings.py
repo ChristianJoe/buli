@@ -20,7 +20,7 @@ SITE_URL = 'https://cc8b346a.ngrok.io'
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = ''
+SECRET_KEY = 't=bb0&l%r&wd3!c_6=as*(q1^k=di)e^4_cky$sdq5*y+*tt&@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
