@@ -1,0 +1,8 @@
+.idea
+venv
+wahltraud/bot/output
+wahltraud/static
+
+db.sqlite3
+
+*.pyc

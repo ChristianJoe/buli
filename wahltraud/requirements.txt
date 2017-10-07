@@ -1,0 +1,13 @@
+django
+cherrypy
+requests
+requests-toolbelt
+beautifulsoup4
+lxml
+mutagen
+paste
+schedule
+fuzzywuzzy[speedup]
+redis
+apiai
+pandas
