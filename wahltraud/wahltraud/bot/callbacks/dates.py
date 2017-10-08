@@ -10,5 +10,8 @@ def dates_api(event, parameters, **kwargs):
     sender_id = event['sender']['id']
     club = parameters.get('clubs')
 
-    send_text(sender_id, 'Der nächste Wettkampf bei'+club)
+    if not club:
+        send_text(sender_id, 'Der nächste Wettkampf findet am 14.10. statt.')
+    else:
+        send_text(sender_id, 'Der nächste Wettkampf bei '+club)
 
