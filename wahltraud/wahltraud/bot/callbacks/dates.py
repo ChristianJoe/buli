@@ -15,7 +15,7 @@ def dates_api(event, parameters, **kwargs):
 
 
 
-def next_event(event,payload):
+def next_event(event,payload,**kwargs):
     sender_id = event['sender']['id']
     club = payload['club']
 
@@ -60,7 +60,7 @@ def next_event(event,payload):
     send_text(sender_id, text, quick_replies = options)
 
 
-def competition_info(event, payload):
+def competition_info(event, payload, **kwargs):
     sender_id = event['sender']['id']
     dates_id = payload['comp_id']
 

@@ -64,7 +64,8 @@ def make_event_handler():
         PayloadHandler(about_manifesto, ['about_manifesto']),
 
         ApiAiHandler(dates.dates_api, 'next_event_club'),
-        PayloadHandler(dates.competition_info, 'comp_id'),
+        
+        PayloadHandler(dates.competition_info, ['comp_id']),
 
 
         #ApiAiHandler(presidents, 'bundespräsident'),
