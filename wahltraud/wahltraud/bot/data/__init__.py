@@ -25,7 +25,8 @@ dates = pd.read_csv(DATA_DIR/'parser/buli17dates.csv')
 dates['date']= pd.to_datetime(dates['date'])
 
 def get_dates():
-    return dates
+    dates_sorted = dates.sort_values(by='date')
+    return dates_sorted
 
 
 

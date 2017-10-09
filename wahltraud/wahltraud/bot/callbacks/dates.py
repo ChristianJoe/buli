@@ -20,7 +20,7 @@ def next_event(event,payload):
     club = payload['club']
 
     dates = get_dates()
-
+    options = []
     now = datetime.date.today()
 
     if not club:
@@ -34,14 +34,34 @@ def next_event(event,payload):
         text =  'Der nächste Wettkampftag ist am {date}.'.format(
                             date = look_up_date.strftime("%d.%m.%Y")
                         )
+        # quick replies
+        for i in range(0, next_dates.shape[0]):
+            league =  next_dates['league'].iloc[i]
+            options.append(
+                quick_reply(
+                    league,
+                    {'comp_id': next_dates['id'].iloc[i]}
+                )
+            )
     else:
         dates_club = dates[dates['club'] == club]
-        league = dates_club['league'].iloc[0]
-        strdate = ''
-        for i in range(0, dates_club.shape[0]):
-            if i > 0:
-                strdate += ' und am '
-            strdate += dates_club['date'].iloc[i].strftime("%d.%m.%Y")
-        text = club + 'ist Ausrichter der'+ league + ' am  ' + strdate + '.'
 
-    send_text(sender_id, text)
+        text = club + ' ist Ausrichter folgender Wettkämpfe:'
+
+        for i in range(0, dates_club.shape[0]):
+            league = dates_club['league'].iloc[i]
+            date = dates_club['date'].iloc[i].strftime("%d.%m.%Y")
+            options.append(
+                quick_reply(
+                    date + ' ' + league,
+                    {'comp_id': dates_club['id'].iloc[i]})
+            )
+
+    send_text(sender_id, text, quick_reply = options)
+
+
+def competition_info(event, payload):
+    sender_id = event['sender']['id']
+    dates_id = payload['comp_id']
+
+    send_text(sender_id, 'Hier gibt es Info über '+dates_id)
