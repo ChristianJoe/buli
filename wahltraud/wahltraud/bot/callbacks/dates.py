@@ -3,7 +3,7 @@ import operator
 
 from ..fb import send_buttons, button_postback, send_text, send_attachment, send_list, list_element, quick_reply
 #from ..data import by_uuid
-from datetime
+import datetime
 
 
 def dates_api(event, parameters, **kwargs):
