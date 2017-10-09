@@ -32,7 +32,7 @@ def next_event(event,payload):
 
 
         text =  'Der nächste Wettkampftag ist am {date}.'.format(
-                            date = look_up_date
+                            date = look_up_date.strftime("%d.%m.%Y")
                         )
     else:
         dates_club = dates[dates['club'] == club]
