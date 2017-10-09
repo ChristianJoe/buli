@@ -22,12 +22,10 @@ dates_json = json.load(open(str(DATA_DIR/'parser/buli17dates.json')))
 
 structural_data_district = pd.read_csv(DATA_DIR/'btw17_strukturdaten.csv', delimiter = ';')
 dates = pd.read_csv(DATA_DIR/'parser/buli17dates.csv')
-
+dates['date']= pd.to_datetime(dates['date'])
 
 def get_dates():
     return dates
-
-
 
 
 
