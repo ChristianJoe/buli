@@ -56,13 +56,15 @@ def make_event_handler():
         ApiAiHandler(push, 'push'),
         ApiAiHandler(district.result_nation_17,'Ergebnisse'),
         ApiAiHandler(wiki, 'wiki'),
-        ApiAiHandler(dates.dates_api, 'termine'),
         PayloadHandler(menue_candidates, ['menue_candidates']),
         #PayloadHandler(questions, ['questions']),
         PayloadHandler(menue_data, ['menue_data']),
         PayloadHandler(more_data, ['more_data']),
         PayloadHandler(menue_manifesto, ['menue_manifesto']),
         PayloadHandler(about_manifesto, ['about_manifesto']),
+
+        ApiAiHandler(dates.dates_api, 'termine'),
+
         #ApiAiHandler(presidents, 'bundespräsident'),
         #ApiAiHandler(chancelor, 'bundeskanzler'),
         #ApiAiHandler(candidate.basics, 'kandidat'),

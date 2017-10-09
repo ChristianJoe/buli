@@ -18,7 +18,24 @@ election13_dict = json.load(open(str(DATA_DIR/'wahlkreis_info.json')))['election
 election17_dict = json.load(open(str(DATA_DIR/'results/results_17.json')))['election_17']
 digital_word_list = json.load(open(str(DATA_DIR/'digital_words.json')))['words']
 
+dates_json = json.load(open(str(DATA_DIR/'parser/buli17dates.json')))
+
 structural_data_district = pd.read_csv(DATA_DIR/'btw17_strukturdaten.csv', delimiter = ';')
+dates = pd.read_csv(DATA_DIR/'parser/buli17dates.csv')
+
+
+def get_dates():
+    return dates
+
+
+
+
+
+
+
+
+
+
 
 by_first_name = defaultdict(set)
 by_last_name = defaultdict(set)
