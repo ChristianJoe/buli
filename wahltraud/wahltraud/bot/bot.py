@@ -63,7 +63,7 @@ def make_event_handler():
         PayloadHandler(menue_manifesto, ['menue_manifesto']),
         PayloadHandler(about_manifesto, ['about_manifesto']),
 
-        ApiAiHandler(dates.dates_api, 'termine'),
+        ApiAiHandler(dates.dates_api, 'next_event_club'),
 
         #ApiAiHandler(presidents, 'bundespräsident'),
         #ApiAiHandler(chancelor, 'bundeskanzler'),
