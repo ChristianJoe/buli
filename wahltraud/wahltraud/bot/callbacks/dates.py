@@ -57,7 +57,7 @@ def next_event(event,payload):
                     {'comp_id': dates_club['id'].iloc[i]})
             )
 
-    send_text(sender_id, text, quick_reply = options)
+    send_text(sender_id, text, quick_replies = options)
 
 
 def competition_info(event, payload):
