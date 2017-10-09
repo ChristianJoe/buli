@@ -4,7 +4,6 @@ import operator
 from ..fb import send_buttons, button_postback, send_text, send_attachment, send_list, list_element, quick_reply
 from ..data import by_uuid, get_dates
 import datetime
-import pandas as pd
 
 
 def dates_api(event, parameters, **kwargs):
@@ -33,7 +32,7 @@ def next_event(event,payload):
 
 
         text =  'Der nächste Wettkampftag ist am {date}.'.format(
-                            date = look_up_date''
+                            date = look_up_date
                         )
     else:
         dates_club = dates[dates['club'] == club]
