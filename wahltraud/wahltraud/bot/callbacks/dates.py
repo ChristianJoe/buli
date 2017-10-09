@@ -33,15 +33,16 @@ def next_event(event,payload):
 
 
         text =  'Der nächste Wettkampftag ist am {date}.'.format(
-                            date = look_up_date
+                            date = look_up_date''
                         )
     else:
         dates_club = dates[dates['club'] == club]
+        league = dates_club['league'].iloc[0]
         strdate = ''
         for i in range(0, dates_club.shape[0]):
             if i > 0:
                 strdate += ' und am '
             strdate += dates_club['date'].iloc[i].strftime("%d.%m.%Y")
-        text = club + 'ist Ausrichter am ' + strdate + '.'
+        text = club + 'ist Ausrichter der'+ league + ' am  ' + strdate + '.'
 
     send_text(sender_id, text)
