@@ -6,172 +6,174 @@
 4,Schützenverein Meine e.V. Gemeindezentrum - Wiesenweg 13a  - 38527 Meine,Freischütz Rautheim,,3,2017-12-10,LG2.BuLi Nord3A,Wilfried Große,2.BuLi Nord,A,Freischütz Rautheim,Luftgewehr
 5,"Marienbergstraße 45, 31171 Nordstemmen",KKS Nordstemmen,II,3,2017-12-10,LG2.BuLi Nord3B,Andreas Alps,2.BuLi Nord,B,KKS Nordstemmen II,Luftgewehr
 6,"Stoppelmarkt 25, 49377 Vechta",SV Stoppelmarkt,,4,2018-01-14,LG2.BuLi Nord4A,,2.BuLi Nord,A,SV Stoppelmarkt,Luftgewehr
-7,Mannschaftspunkte,Verein,,4,2018-01-14,LG2.BuLi Nord4B,Freischütz Rautheim,2.BuLi Nord,B,Verein,Luftgewehr
-8,"Walther Arena, Kirschweg 23, 12524 Berlin",PSV Olympia Berlin,,1,2017-10-15,LG2.BuLi Ost1A,Dieter Bremer,2.BuLi Ost,A,PSV Olympia Berlin,Luftgewehr
-9,Mannschaftspunkte,Verein,,1,2017-10-15,LG2.BuLi Ost1B,SV Bötzow,2.BuLi Ost,B,Verein,Luftgewehr
-10,,SV Gölzau,II,2,2017-11-12,LG2.BuLi Ost2A,Rolf-Dieter Praßler,2.BuLi Ost,A,SV Gölzau II,Luftgewehr
-11,Mannschaftspunkte,Verein,,2,2017-11-12,LG2.BuLi Ost2B,SV Bötzow,2.BuLi Ost,B,Verein,Luftgewehr
-12,"Walther Arena, Kirschweg 23, 12524 Berlin",PSV Olympia Berlin,,3,2017-12-10,LG2.BuLi Ost3A,Michael Naumann,2.BuLi Ost,A,PSV Olympia Berlin,Luftgewehr
-13,Mannschaftspunkte,Verein,,3,2017-12-10,LG2.BuLi Ost3B,SV Bötzow,2.BuLi Ost,B,Verein,Luftgewehr
-14,"Eisenhüttenstädter Chaussee 55, 15236 Frankfurt/Od",Schützengilde Frankfurt/Oder 1406,,4,2018-01-14,LG2.BuLi Ost4A,Birgit Rauhut,2.BuLi Ost,A,Schützengilde Frankfurt/Oder 1406,Luftgewehr
-15,Mannschaftspunkte,Verein,,4,2018-01-14,LG2.BuLi Ost4B,SV Bötzow,2.BuLi Ost,B,Verein,Luftgewehr
-16,"Bad Sodener Straße 28, in 65843 Sulzbach",SV Sulzbach-Taunus,,1,2017-10-15,LG2.BuLi West1A,Werner Bauscher,2.BuLi West,A,SV Sulzbach-Taunus,Luftgewehr
-17,"Schießsportzentrum Elsen, Am Mühlenteich 10a, 33106 Paderborn",ST Hubertus Elsen,II,1,2017-10-15,LG2.BuLi West1B,Günter Sportelli,2.BuLi West,B,ST Hubertus Elsen II,Luftgewehr
-18,Auf dem Foerbrich1 in 52080 Aachen-Eilendorf,KarlsSGi Aachen,,2,2017-11-12,LG2.BuLi West2A,Christian Tielens,2.BuLi West,A,KarlsSGi Aachen,Luftgewehr
-19,"Schießsportzentrum Dakelsberg, Dakelsberg 36, 48599 Gronau-Epe",VSS Epe,,2,2017-11-12,LG2.BuLi West2B,Gerd Freitag,2.BuLi West,B,VSS Epe,Luftgewehr
-20,"Meroedgener Straße 37, 52459 Inden/Altdorf",PSSnden/Altdorf,I,3,2017-12-10,LG2.BuLi West3A,Martin Viehöver,2.BuLi West,A,PSS Inden/Altdorf,Luftgewehr
-21,"Schießsportanlage Schützenheide, An der Schützenheide 17,59192 Bergkamen",SV Kamen,,3,2017-12-10,LG2.BuLi West3B,Helmut Stepputtis,2.BuLi West,B,SV Kamen,Luftgewehr
-22,"Max-Riegel-Halle in 34225 Baunatal, Altenritter Straße",SSV Baunatal,,4,2018-01-14,LG2.BuLi West4A,Frank Sczeburek,2.BuLi West,A,SSV Baunatal,Luftgewehr
-23,Sportzentrum Schürenkamp,BSV Buer-Bülse,II,4,2018-01-14,LG2.BuLi West4B,Helmut Stepputtis,2.BuLi West,B,BSV Buer-Bülse II,Luftgewehr
-24,"Schützenhaus, Lembergweg 60, 71563 Affalterbach",SV Affalterbach,,1,2017-10-15,LG2.BuLi Südwest1A,Dr. Walter Horlacher,2.BuLi Südwest,A,SV Affalterbach,Luftgewehr
-25,Turn- und Festhalle Wetzisreute in Schlier,SV Fenken,,1,2017-10-15,LG2.BuLi Südwest1B,Günter Sanwald,2.BuLi Südwest,B,SV Fenken,Luftgewehr
-26,IGS Sporthalle Rheinzabern,SV Jockgrim,,2,2017-11-12,LG2.BuLi Südwest2A,Gerd Schmeil,2.BuLi Südwest,A,SV Jockgrim,Luftgewehr
-27,Schützenhaus Heitersheim,KKSV Heitersheim,,2,2017-11-12,LG2.BuLi Südwest2B,Dieter Schweinlin,2.BuLi Südwest,B,KKSV Heitersheim,Luftgewehr
-28,Mehrzweckhalle Schopp,SV Schopp,,3,2017-12-10,LG2.BuLi Südwest3A,Franz Möndel,2.BuLi Südwest,A,SV Schopp,Luftgewehr
-29,Schützenhaus SSV Leingarten,SSV Leingarten,,3,2017-12-10,LG2.BuLi Südwest3B,Dr. Walter Horlacher,2.BuLi Südwest,B,SSV Leingarten,Luftgewehr
-30,"Sporthalle Heylinschule,  Königsbach-Stein/ OT Stein",KKS Königsbach,II,4,2018-01-14,LG2.BuLi Südwest4A,Walter Johnen,2.BuLi Südwest,A,KKS Königsbach II,Luftgewehr
-31,"Schützenweg 22, SV Gruibingen, 73344 Gruibingen",SV Wiesensteig,,4,2018-01-14,LG2.BuLi Südwest4B,Günter Sanwald,2.BuLi Südwest,B,SV Wiesensteig,Luftgewehr
-32,Schützenhaus SC Tauberfeld; Wiesenstraße 24 a; 85114  Buxheim – Ortsteil Tauberfeld,SV Petersaurach,2,1,2017-10-15,LG2.BuLi Süd1A,Rudolf Diekelmann,2.BuLi Süd,A,SV Petersaurach 2,Luftgewehr
-33,"Mehrzweckhalle Thalmassing, Luckenpainter Straße 18, 93107 Thalmassing",Gmütlichkeit Luckenpaint e.V.,,1,2017-10-15,LG2.BuLi Süd1B,Konrad Jaeggi,2.BuLi Süd,B,Gmütlichkeit Luckenpaint e.V.,Luftgewehr
-34,"Schützenhaus Am Kreuzberg 2, 85135 Titting, Tel.: 0170-1501805",Kgl. Priv. FSG Titting,,2,2017-10-29,LG2.BuLi Süd2A,Werner Marxreiter,2.BuLi Süd,A,Kgl. Priv. FSG Titting,Luftgewehr
-35,"Regnitzarena, Georg-Kügel-Ring 3, 96114 Hirschaid",Andreas Hofer Sassanfahr,,2,2017-10-29,LG2.BuLi Süd2B,Walter Horcher,2.BuLi Süd,B,Andreas Hofer Sassanfahr,Luftgewehr
-36,"Schützenhaus Am Kreuzberg 2, 85135 Titting, Tel.: 0170-1501805",Kgl. Priv. FSG Titting,,3,2017-11-12,LG2.BuLi Süd3A,Rudolf Diekelmann,2.BuLi Süd,A,Kgl. Priv. FSG Titting,Luftgewehr
-37,"Schützenheim in 94447 Plattling, Straubinger Straße 31 a",Post SV Plattling,,3,2017-11-12,LG2.BuLi Süd3B,,2.BuLi Süd,B,Post SV Plattling,Luftgewehr
-38,"Servetstraße 1, 80999 München",Der Bund München,2,4,2017-11-26,LG2.BuLi Süd4A,,2.BuLi Süd,A,FSG Der Bund München 2,Luftgewehr
-39,,Buchenlaub Buch am Buchrain,,4,2017-11-26,LG2.BuLi Süd4B,Gregor Liebe,2.BuLi Süd,B,Buchenlaub Buch am Buchrain,Luftgewehr
-40,Schützenhaus SV 1889 Ickelheim; Schützenstraße 7; 91438  Bad Windsheim – Ortsteil Ickelheim,SV Petersaurach,II,5,2017-12-10,LG2.BuLi Süd5A,Karl-Heinz Gegner,2.BuLi Süd,A,SV Petersaurach II,Luftgewehr
-41,"Schützengaststätte ""La Pergola Unterstall, Am sportplatz 1, 86673 Bergheim",Eichenlaub Unterstall,,5,2017-12-10,LG2.BuLi Süd5B,Rudolf Diekelmann,2.BuLi Süd,B,Eichenlaub Unterstall,Luftgewehr
+7,"Walther Arena, Kirschweg 23, 12524 Berlin",PSV Olympia Berlin,,1,2017-10-15,LG2.BuLi Ost1A,Dieter Bremer,2.BuLi Ost,A,PSV Olympia Berlin,Luftgewehr
+8,,SV Gölzau,II,2,2017-11-12,LG2.BuLi Ost2A,Rolf-Dieter Praßler,2.BuLi Ost,A,SV Gölzau II,Luftgewehr
+9,"Walther Arena, Kirschweg 23, 12524 Berlin",PSV Olympia Berlin,,3,2017-12-10,LG2.BuLi Ost3A,Michael Naumann,2.BuLi Ost,A,PSV Olympia Berlin,Luftgewehr
+10,"Eisenhüttenstädter Chaussee 55, 15236 Frankfurt/Od",Schützengilde Frankfurt/Oder 1406,,4,2018-01-14,LG2.BuLi Ost4A,Birgit Rauhut,2.BuLi Ost,A,Schützengilde Frankfurt/Oder 1406,Luftgewehr
+11,"Bad Sodener Straße 28, in 65843 Sulzbach",SV Sulzbach-Taunus,,1,2017-10-15,LG2.BuLi West1A,Werner Bauscher,2.BuLi West,A,SV Sulzbach-Taunus,Luftgewehr
+12,"Schießsportzentrum Elsen, Am Mühlenteich 10a, 33106 Paderborn",ST Hubertus Elsen,II,1,2017-10-15,LG2.BuLi West1B,Günter Sportelli,2.BuLi West,B,ST Hubertus Elsen II,Luftgewehr
+13,Auf dem Foerbrich1 in 52080 Aachen-Eilendorf,KarlsSGi Aachen,,2,2017-11-12,LG2.BuLi West2A,Christian Tielens,2.BuLi West,A,KarlsSGi Aachen,Luftgewehr
+14,"Schießsportzentrum Dakelsberg, Dakelsberg 36, 48599 Gronau-Epe",VSS Epe,,2,2017-11-12,LG2.BuLi West2B,Gerd Freitag,2.BuLi West,B,VSS Epe,Luftgewehr
+15,"Meroedgener Straße 37, 52459 Inden/Altdorf",PSSnden/Altdorf,I,3,2017-12-10,LG2.BuLi West3A,Martin Viehöver,2.BuLi West,A,PSS Inden/Altdorf,Luftgewehr
+16,"Schießsportanlage Schützenheide, An der Schützenheide 17,59192 Bergkamen",SV Kamen,,3,2017-12-10,LG2.BuLi West3B,Helmut Stepputtis,2.BuLi West,B,SV Kamen,Luftgewehr
+17,"Max-Riegel-Halle in 34225 Baunatal, Altenritter Straße",SSV Baunatal,,4,2018-01-14,LG2.BuLi West4A,Frank Sczeburek,2.BuLi West,A,SSV Baunatal,Luftgewehr
+18,Sportzentrum Schürenkamp,BSV Buer-Bülse,II,4,2018-01-14,LG2.BuLi West4B,Helmut Stepputtis,2.BuLi West,B,BSV Buer-Bülse II,Luftgewehr
+19,"Schützenhaus, Lembergweg 60, 71563 Affalterbach",SV Affalterbach,,1,2017-10-15,LG2.BuLi Südwest1A,Dr. Walter Horlacher,2.BuLi Südwest,A,SV Affalterbach,Luftgewehr
+20,Turn- und Festhalle Wetzisreute in Schlier,SV Fenken,,1,2017-10-15,LG2.BuLi Südwest1B,Günter Sanwald,2.BuLi Südwest,B,SV Fenken,Luftgewehr
+21,IGS Sporthalle Rheinzabern,SV Jockgrim,,2,2017-11-12,LG2.BuLi Südwest2A,Gerd Schmeil,2.BuLi Südwest,A,SV Jockgrim,Luftgewehr
+22,Schützenhaus Heitersheim,KKSV Heitersheim,,2,2017-11-12,LG2.BuLi Südwest2B,Dieter Schweinlin,2.BuLi Südwest,B,KKSV Heitersheim,Luftgewehr
+23,Mehrzweckhalle Schopp,SV Schopp,,3,2017-12-10,LG2.BuLi Südwest3A,Franz Möndel,2.BuLi Südwest,A,SV Schopp,Luftgewehr
+24,Schützenhaus SSV Leingarten,SSV Leingarten,,3,2017-12-10,LG2.BuLi Südwest3B,Dr. Walter Horlacher,2.BuLi Südwest,B,SSV Leingarten,Luftgewehr
+25,"Sporthalle Heylinschule,  Königsbach-Stein/ OT Stein",KKS Königsbach,II,4,2018-01-14,LG2.BuLi Südwest4A,Walter Johnen,2.BuLi Südwest,A,KKS Königsbach II,Luftgewehr
+26,"Schützenweg 22, SV Gruibingen, 73344 Gruibingen",SV Wiesensteig,,4,2018-01-14,LG2.BuLi Südwest4B,Günter Sanwald,2.BuLi Südwest,B,SV Wiesensteig,Luftgewehr
+27,Schützenhaus SC Tauberfeld; Wiesenstraße 24 a; 85114  Buxheim – Ortsteil Tauberfeld,SV Petersaurach,2,1,2017-10-15,LG2.BuLi Süd1A,Rudolf Diekelmann,2.BuLi Süd,A,SV Petersaurach 2,Luftgewehr
+28,"Mehrzweckhalle Thalmassing, Luckenpainter Straße 18, 93107 Thalmassing",Gmütlichkeit Luckenpaint e.V.,,1,2017-10-15,LG2.BuLi Süd1B,Konrad Jaeggi,2.BuLi Süd,B,Gmütlichkeit Luckenpaint e.V.,Luftgewehr
+29,"Schützenheim der Singoldschützen Großaitingen, Schützenstraße 16,  86845 Großaitingen",Singoldschützen Großaitingen,,1,2017-10-15,LG2.BuLi Süd1C,Susanne Müller,2.BuLi Süd,C,Singoldschützen Großaitingen,Luftgewehr
+30,"Schützenhaus Am Kreuzberg 2, 85135 Titting, Tel.: 0170-1501805",Kgl. Priv. FSG Titting,,2,2017-10-29,LG2.BuLi Süd2A,Werner Marxreiter,2.BuLi Süd,A,Kgl. Priv. FSG Titting,Luftgewehr
+31,"Regnitzarena, Georg-Kügel-Ring 3, 96114 Hirschaid",Andreas Hofer Sassanfahr,,2,2017-10-29,LG2.BuLi Süd2B,Walter Horcher,2.BuLi Süd,B,Andreas Hofer Sassanfahr,Luftgewehr
+32,"Sportschuetzen Kastl, Jahnstr. 6, 95506 Kastl",Hubertus Kastl,,2,2017-10-29,LG2.BuLi Süd2C,Ludwig Mayer,2.BuLi Süd,C,Hubertus Kastl,Luftgewehr
+33,"Schützenhaus Am Kreuzberg 2, 85135 Titting, Tel.: 0170-1501805",Kgl. Priv. FSG Titting,,3,2017-11-12,LG2.BuLi Süd3A,Rudolf Diekelmann,2.BuLi Süd,A,Kgl. Priv. FSG Titting,Luftgewehr
+34,"Schützenheim in 94447 Plattling, Straubinger Straße 31 a",Post SV Plattling,,3,2017-11-12,LG2.BuLi Süd3B,,2.BuLi Süd,B,Post SV Plattling,Luftgewehr
+35,,Buchenlaub Buch am Buchrain,,3,2017-11-12,LG2.BuLi Süd3C,Monika Schiller,2.BuLi Süd,C,Buchenlaub Buch am Buchrain,Luftgewehr
+36,"Servetstraße 1, 80999 München",Der Bund München,2,4,2017-11-26,LG2.BuLi Süd4A,,2.BuLi Süd,A,FSG Der Bund München 2,Luftgewehr
+37,,Buchenlaub Buch am Buchrain,,4,2017-11-26,LG2.BuLi Süd4B,Gregor Liebe,2.BuLi Süd,B,Buchenlaub Buch am Buchrain,Luftgewehr
+38,"Schützenheim, Lindauer Straße 173, 87435 Kempten",FSG Kempten,,4,2017-11-26,LG2.BuLi Süd4C,Wilfried Hege,2.BuLi Süd,C,FSG Kempten,Luftgewehr
+39,Schützenhaus SV 1889 Ickelheim; Schützenstraße 7; 91438  Bad Windsheim – Ortsteil Ickelheim,SV Petersaurach,II,5,2017-12-10,LG2.BuLi Süd5A,Karl-Heinz Gegner,2.BuLi Süd,A,SV Petersaurach II,Luftgewehr
+40,"Schützengaststätte ""La Pergola Unterstall, Am sportplatz 1, 86673 Bergheim",Eichenlaub Unterstall,,5,2017-12-10,LG2.BuLi Süd5B,Rudolf Diekelmann,2.BuLi Süd,B,Eichenlaub Unterstall,Luftgewehr
+41,"Sportschuetzen Kastl, Jahnstr. 6, 95506 Kastl",Hubertus Kastl,,5,2017-12-10,LG2.BuLi Süd5C,Ludwig Mayer,2.BuLi Süd,C,Hubertus Kastl,Luftgewehr
 42,"Servetstraße 1, 80999 München",Der Bund München,2,6,2018-01-14,LG2.BuLi Süd6A,Gregor Liebe,2.BuLi Süd,A,FSG Der Bund München 2,Luftgewehr
 43,"Schützenhaus Zaitzkofen, Zaitzkofen 50, 84069 Schierling",SG Zaitzkofen,,6,2018-01-14,LG2.BuLi Süd6B,,2.BuLi Süd,B,SG Zaitzkofen,Luftgewehr
-44,"Kreissporthalle am Schulzentrum, 56203 Höhr-Grenzhausen",TuS Hilgert,,1,2017-10-14,LG1.BuLi Nord1A,Dr. Alexander Degen,1.BuLi Nord,A,TuS Hilgert,Luftgewehr
-45,"Sportpark Schürenkamp, Grenzstraße 1, 45881 Gelsenkirchen",BSV Buer-Bülse,I,1,2017-10-14,LG1.BuLi Nord1B,Klaus Tacke,1.BuLi Nord,B,BSV Buer-Bülse I,Luftgewehr
-46,"Kreissporthalle am Schulzentrum, 56203 Höhr-Grenzhausen",TuS Hilgert,,2,2017-10-15,LG1.BuLi Nord2A,Dr. Alexander Degen,1.BuLi Nord,A,TuS Hilgert,Luftgewehr
-47,"Sportpark Schürenkamp, Grenzstraße 1, 45881 Gelsenkirchen",BSV Buer-Bülse,I,2,2017-10-15,LG1.BuLi Nord2B,Klaus Tacke,1.BuLi Nord,B,BSV Buer-Bülse I,Luftgewehr
-48,"Turnhalle Freizeitpark Wietze, Fuhrberger Str., 29323 Wietze",SV Wieckenberg,,3,2017-10-28,LG1.BuLi Nord3A,Werner Bösche,1.BuLi Nord,A,SV Wieckenberg,Luftgewehr
-49,"Sport- und Kulturzentrum, Hauptstraße 31B, 06369 Weißandt-Gölzau",SV Gölzau,I,3,2017-10-28,LG1.BuLi Nord3B,Rolf-Dieter Praßler,1.BuLi Nord,B,SV Gölzau I,Luftgewehr
-50,"Turnhalle Freizeitpark Wietze, Fuhrberger Str., 29323 Wietze",SV Wieckenberg,,4,2017-10-29,LG1.BuLi Nord4A,Werner Bösche,1.BuLi Nord,A,SV Wieckenberg,Luftgewehr
-51,"Sport- und Kulturzentrum, Hauptstraße 31B, 06369 Weißandt-Gölzau",SV Gölzau,I,4,2017-10-29,LG1.BuLi Nord4B,Rolf-Dieter Praßler,1.BuLi Nord,B,SV Gölzau I,Luftgewehr
-52,"Sporthalle an der Jahnstraße 2, 31171 Nordstemmen",KKS Nordstemmen,I,5,2017-11-11,LG1.BuLi Nord5A,Reinhard Zimmer,1.BuLi Nord,A,KKS Nordstemmen I,Luftgewehr
-53,"Sporthalle der OBS Badenhausen, Am Johannisborn, 37539 Bad Grund (Harz) / Badenhausen",SB Freiheit,I,5,2017-11-11,LG1.BuLi Nord5B,Wilfried Große,1.BuLi Nord,B,SB Freiheit I,Luftgewehr
-54,"Sporthalle an der Jahnstraße 2, 31171 Nordstemmen",KKS Nordstemmen,I,6,2017-11-12,LG1.BuLi Nord6A,Reinhard Zimmer,1.BuLi Nord,A,KKS Nordstemmen I,Luftgewehr
-55,"Sporthalle der OBS Badenhausen, Am Johannisborn, 37539 Bad Grund (Harz) / Badenhausen",SB Freiheit,I,6,2017-11-12,LG1.BuLi Nord6B,Wilfried Große,1.BuLi Nord,B,SB Freiheit I,Luftgewehr
-56,Sporthalle der Gesamtschule Broitzem Krukweg 38122 Braunschweig,Braunschweiger SG 1545,,7,2017-11-25,LG1.BuLi Nord7A,Wilfried Große,1.BuLi Nord,A,Braunschweiger SG 1545,Luftgewehr
-57,"Freiherr-vom-Stein-Gymnasium, Karl-Koßmann-Straße 2, 59071 Hamm",SG Hamm,I,7,2017-11-25,LG1.BuLi Nord7B,Reinhard Zimmer,1.BuLi Nord,B,SG Hamm I,Luftgewehr
-58,"Großsporthalle in 36272 Niederaula, Hattenbacher Str.15",SG 1920 Mengshausen,,8,2017-12-09,LG1.BuLi Nord8A,Lutz Hans Schlegel,1.BuLi Nord,A,SG 1920 Mengshausen,Luftgewehr
-59,"Dreifachturnhalle Nesthauserstr. 8, 33106 Paderborn",ST Hubertus Elsen,,8,2017-12-09,LG1.BuLi Nord8B,Günter Sportelli,1.BuLi Nord,B,ST Hubertus Elsen,Luftgewehr
-60,"Großsporthalle in 36272 Niederaula, Hattenbacher Str.15",SG 1920 Mengshausen,,9,2017-12-10,LG1.BuLi Nord9A,Lutz Hans Schlegel,1.BuLi Nord,A,SG 1920 Mengshausen,Luftgewehr
-61,"Dreifachturnhalle Nesthauserstr. 8, 33106 Paderborn",ST Hubertus Elsen,,9,2017-12-10,LG1.BuLi Nord9B,Günter Sportelli,1.BuLi Nord,B,ST Hubertus Elsen,Luftgewehr
-62,"47623 Kevelaer Zweifachturnhalle Sportzentrum Kevelaer-Hüls , Hoogemittagsweg",SSG Kevelaer,,10,2018-01-13,LG1.BuLi Nord10A,Klaus Tacke,1.BuLi Nord,A,SSG Kevelaer,Luftgewehr
-63,"Großsporthalle der Realschule plus in der Pirzenthalerstraße auf dem ""Altbel""",Wissener SV,,10,2018-01-13,LG1.BuLi Nord10B,Helmut Meyer,1.BuLi Nord,B,Wissener SV,Luftgewehr
-64,"47623 Kevelaer Zweifachturnhalle Sportzentrum Kevelaer-Hüls , Hoogemittagsweg",SSG Kevelaer,,11,2018-01-14,LG1.BuLi Nord11A,Klaus Tacke,1.BuLi Nord,A,SSG Kevelaer,Luftgewehr
-65,"Großsporthalle der Realschule plus in der Pirzenthalerstraße auf dem ""Altbel""",Wissener SV,,11,2018-01-14,LG1.BuLi Nord11B,Helmut Meyer,1.BuLi Nord,B,Wissener SV,Luftgewehr
-66,"Sporthalle Heylinschule,  Königsbach-Stein/ OT Stein, Heynlinstraße",KKS Königsbach,,1,2017-10-14,LG1.BuLi Süd1A,Franz Möndel,1.BuLi Süd,A,KKS Königsbach,Luftgewehr
-67,"Tenniscenter Allach, Paul-Ehrlich-Weg 6, 80999 München",Der Bund München,,1,2017-10-14,LG1.BuLi Süd1B,Patric Fürnhammer,1.BuLi Süd,B,Der Bund München,Luftgewehr
-68,"Sporthalle Heylinschule,  Königsbach-Stein/ OT Stein, Heynlinstraße",KKS Königsbach,,2,2017-10-15,LG1.BuLi Süd2A,Franz Möndel,1.BuLi Süd,A,KKS Königsbach,Luftgewehr
-69,"Tenniscenter Allach, Paul-Ehrlich-Weg 6, 80999 München",Der Bund München,,2,2017-10-15,LG1.BuLi Süd2B,Patric Fürnhammer,1.BuLi Süd,B,Der Bund München,Luftgewehr
-70,"Schulturnhalle Wicklesgreuther Straße, 91580 Petersaurach",SV Petersaurach,,3,2017-10-28,LG1.BuLi Süd3A,Karl-Heinz Gegner,1.BuLi Süd,A,SV Petersaurach,Luftgewehr
-71,"„Sporthalle am Anger“, Schützenstr. 2, 96450 Coburg",SG Coburg,,3,2017-10-28,LG1.BuLi Süd3B,Rudolf Diekelmann,1.BuLi Süd,B,SG Coburg,Luftgewehr
-72,"Schulturnhalle Wicklesgreuther Straße, 91580 Petersaurach",SV Petersaurach,,4,2017-10-29,LG1.BuLi Süd4A,Karl-Heinz Gegner,1.BuLi Süd,A,SV Petersaurach,Luftgewehr
-73,"„Sporthalle am Anger“, Schützenstr. 2, 96450 Coburg",SG Coburg,,4,2017-10-29,LG1.BuLi Süd4B,Rudolf Diekelmann,1.BuLi Süd,B,SG Coburg,Luftgewehr
-74,"Siegelhalle, Sportweg 3, 85283 Wolnzach",SV Niederlauterbach,,5,2017-11-11,LG1.BuLi Süd5A,Werner Marxreiter,1.BuLi Süd,A,SV Niederlauterbach,Luftgewehr
-75,"3fach Turnhalle der Sporthalle Teublitz, Im Schlossgarten 9, 93158 Teublitz",Eichenlaub Saltendorf,,5,2017-11-11,LG1.BuLi Süd5B,Ludwig Mayer,1.BuLi Süd,B,Eichenlaub Saltendorf,Luftgewehr
-76,"Siegelhalle, Sportweg 3, 85283 Wolnzach",SV Niederlauterbach,,6,2017-11-12,LG1.BuLi Süd6A,Werner Marxreiter,1.BuLi Süd,A,SV Niederlauterbach,Luftgewehr
-77,"3fach Turnhalle der Sporthalle Teublitz, Im Schlossgarten 9, 93158 Teublitz",Eichenlaub Saltendorf,,6,2017-11-12,LG1.BuLi Süd6B,Ludwig Mayer,1.BuLi Süd,B,Eichenlaub Saltendorf,Luftgewehr
-78,"Mehrzweckhalle Illerberg, Neue Welt 8, 89269 Vöhringen-Illerberg",SV Pfeil Vöhringen,,7,2017-11-25,LG1.BuLi Süd7A,Susanne Müller,1.BuLi Süd,A,SV Pfeil Vöhringen,Luftgewehr
-79,"Jagsttalhalle,Strutrain 4,73492 Rainau-Schwabsberg",SV Buch,,7,2017-11-25,LG1.BuLi Süd7B,Franz Möndel,1.BuLi Süd,B,SV Buch,Luftgewehr
-80,"Mehrzweckhalle Jahnstraße 10, 76709 Kronau",SSV Kronau,,8,2017-12-09,LG1.BuLi Süd8A,Gerd Schmeil,1.BuLi Süd,A,SSV Kronau,Luftgewehr
-81,"Sporthalle Hebertshausen, Freisinger Straße, 85241 Hebertshausen",SV Germ. Prittlbach,,8,2017-12-09,LG1.BuLi Süd8B,Susanne Müller,1.BuLi Süd,B,SV Germ. Prittlbach,Luftgewehr
-82,"Mehrzweckhalle Jahnstraße 10, 76709 Kronau",SSV Kronau,,9,2017-12-10,LG1.BuLi Süd9A,Gerd Schmeil,1.BuLi Süd,A,SSV Kronau,Luftgewehr
-83,"Sporthalle Hebertshausen, Freisinger Straße, 85241 Hebertshausen",SV Germ. Prittlbach,,9,2017-12-10,LG1.BuLi Süd9B,Susanne Müller,1.BuLi Süd,B,SV Germ. Prittlbach,Luftgewehr
-84,"Sportzentrum Greuther Fürth, Kronacher Str. 140, 90765 Fürth",SSG Dynamit-Fürth,,10,2018-01-13,LG1.BuLi Süd10A,Rudolf Diekelmann,1.BuLi Süd,A,SSG Dynamit-Fürth,Luftgewehr
-85,"Salinen-Sporthalle Bad Dürrheim, 78073 Bad Dürrheim",SSVG Brigachtal,,10,2018-01-13,LG1.BuLi Süd10B,Jürgen Karl,1.BuLi Süd,B,SSVG Brigachtal,Luftgewehr
-86,"Sportzentrum Greuther Fürth, Kronacher Str. 140, 90765 Fürth",SSG Dynamit-Fürth,,11,2018-01-14,LG1.BuLi Süd11A,Rudolf Diekelmann,1.BuLi Süd,A,SSG Dynamit-Fürth,Luftgewehr
-87,"Salinen-Sporthalle Bad Dürrheim, 78073 Bad Dürrheim",SSVG Brigachtal,,11,2018-01-14,LG1.BuLi Süd11B,Jürgen Karl,1.BuLi Süd,B,SSVG Brigachtal,Luftgewehr
-88,"Am Schießstand 14, 24768 Rendsburg",PC Rendsburg,,1,2017-10-08,LP2.BuLi Nord1A,Volker Kuhr,2.BuLi Nord,A,PC Rendsburg,Luftpistole
-89,,,,1,2017-10-08,LP2.BuLi Nord1B,0,2.BuLi Nord,B,,Luftpistole
-90,Bundesleistungszentrum in Hannover,SV Groß und Kleinkaliber,,2,2017-11-05,LP2.BuLi Nord2A,Dieter Grämer,2.BuLi Nord,A,SV Groß und Kleinkaliber,Luftpistole
-91,"Schießstand Kutenholz, Schützenstr. 12, 27449 Kutenholz",SV Kutenholz,,2,2017-11-05,LP2.BuLi Nord2B,,2.BuLi Nord,B,SV Kutenholz,Luftpistole
-92,"Wandsbeker SGi, Marienthaler Str. 178, 22043 Hamburg",Wandsbeker SGi,,3,2017-12-03,LP2.BuLi Nord3A,Peter Hilke,2.BuLi Nord,A,Wandsbeker SGi,Luftpistole
-93,"Stoppelmarkt 25, 49337 Vechta",SV Stoppelmarkt,,3,2017-12-03,LP2.BuLi Nord3B,Uwe Sußmann,2.BuLi Nord,B,SV Stoppelmarkt,Luftpistole
-94,"Treffpunkt Haendorf, Haendorfer Weg 10a, 27330 Asendorf",SV Haendorf,,4,2018-01-07,LP2.BuLi Nord4A,Uwe Sußmann,2.BuLi Nord,A,SV Haendorf,Luftpistole
-95,Mannschaftspunkte,Verein,,4,2018-01-07,LP2.BuLi Nord4B,GTV Bremerhaven-Seestadtteufel,2.BuLi Nord,B,Verein,Luftpistole
+44,,Buchenlaub Buch am Buchrain,,6,2018-01-14,LG2.BuLi Süd6C,Christian Schiller,2.BuLi Süd,C,Buchenlaub Buch am Buchrain,Luftgewehr
+45,"Kreissporthalle am Schulzentrum, 56203 Höhr-Grenzhausen",TuS Hilgert,,1,2017-10-14,LG1.BuLi Nord1A,Dr. Alexander Degen,1.BuLi Nord,A,TuS Hilgert,Luftgewehr
+46,"Sportpark Schürenkamp, Grenzstraße 1, 45881 Gelsenkirchen",BSV Buer-Bülse,I,1,2017-10-14,LG1.BuLi Nord1B,Klaus Tacke,1.BuLi Nord,B,BSV Buer-Bülse I,Luftgewehr
+47,"Kreissporthalle am Schulzentrum, 56203 Höhr-Grenzhausen",TuS Hilgert,,2,2017-10-15,LG1.BuLi Nord2A,Dr. Alexander Degen,1.BuLi Nord,A,TuS Hilgert,Luftgewehr
+48,"Sportpark Schürenkamp, Grenzstraße 1, 45881 Gelsenkirchen",BSV Buer-Bülse,I,2,2017-10-15,LG1.BuLi Nord2B,Klaus Tacke,1.BuLi Nord,B,BSV Buer-Bülse I,Luftgewehr
+49,"Turnhalle Freizeitpark Wietze, Fuhrberger Str., 29323 Wietze",SV Wieckenberg,,3,2017-10-28,LG1.BuLi Nord3A,Werner Bösche,1.BuLi Nord,A,SV Wieckenberg,Luftgewehr
+50,"Sport- und Kulturzentrum, Hauptstraße 31B, 06369 Weißandt-Gölzau",SV Gölzau,I,3,2017-10-28,LG1.BuLi Nord3B,Rolf-Dieter Praßler,1.BuLi Nord,B,SV Gölzau I,Luftgewehr
+51,"Turnhalle Freizeitpark Wietze, Fuhrberger Str., 29323 Wietze",SV Wieckenberg,,4,2017-10-29,LG1.BuLi Nord4A,Werner Bösche,1.BuLi Nord,A,SV Wieckenberg,Luftgewehr
+52,"Sport- und Kulturzentrum, Hauptstraße 31B, 06369 Weißandt-Gölzau",SV Gölzau,I,4,2017-10-29,LG1.BuLi Nord4B,Rolf-Dieter Praßler,1.BuLi Nord,B,SV Gölzau I,Luftgewehr
+53,"Sporthalle an der Jahnstraße 2, 31171 Nordstemmen",KKS Nordstemmen,I,5,2017-11-11,LG1.BuLi Nord5A,Reinhard Zimmer,1.BuLi Nord,A,KKS Nordstemmen I,Luftgewehr
+54,"Sporthalle der OBS Badenhausen, Am Johannisborn, 37539 Bad Grund (Harz) / Badenhausen",SB Freiheit,I,5,2017-11-11,LG1.BuLi Nord5B,Wilfried Große,1.BuLi Nord,B,SB Freiheit I,Luftgewehr
+55,"Sporthalle an der Jahnstraße 2, 31171 Nordstemmen",KKS Nordstemmen,I,6,2017-11-12,LG1.BuLi Nord6A,Reinhard Zimmer,1.BuLi Nord,A,KKS Nordstemmen I,Luftgewehr
+56,"Sporthalle der OBS Badenhausen, Am Johannisborn, 37539 Bad Grund (Harz) / Badenhausen",SB Freiheit,I,6,2017-11-12,LG1.BuLi Nord6B,Wilfried Große,1.BuLi Nord,B,SB Freiheit I,Luftgewehr
+57,Sporthalle der Gesamtschule Broitzem Krukweg 38122 Braunschweig,Braunschweiger SG 1545,,7,2017-11-25,LG1.BuLi Nord7A,Wilfried Große,1.BuLi Nord,A,Braunschweiger SG 1545,Luftgewehr
+58,"Freiherr-vom-Stein-Gymnasium, Karl-Koßmann-Straße 2, 59071 Hamm",SG Hamm,I,7,2017-11-25,LG1.BuLi Nord7B,Reinhard Zimmer,1.BuLi Nord,B,SG Hamm I,Luftgewehr
+59,"Großsporthalle in 36272 Niederaula, Hattenbacher Str.15",SG 1920 Mengshausen,,8,2017-12-09,LG1.BuLi Nord8A,Lutz Hans Schlegel,1.BuLi Nord,A,SG 1920 Mengshausen,Luftgewehr
+60,"Dreifachturnhalle Nesthauserstr. 8, 33106 Paderborn",ST Hubertus Elsen,,8,2017-12-09,LG1.BuLi Nord8B,Günter Sportelli,1.BuLi Nord,B,ST Hubertus Elsen,Luftgewehr
+61,"Großsporthalle in 36272 Niederaula, Hattenbacher Str.15",SG 1920 Mengshausen,,9,2017-12-10,LG1.BuLi Nord9A,Lutz Hans Schlegel,1.BuLi Nord,A,SG 1920 Mengshausen,Luftgewehr
+62,"Dreifachturnhalle Nesthauserstr. 8, 33106 Paderborn",ST Hubertus Elsen,,9,2017-12-10,LG1.BuLi Nord9B,Günter Sportelli,1.BuLi Nord,B,ST Hubertus Elsen,Luftgewehr
+63,"47623 Kevelaer Zweifachturnhalle Sportzentrum Kevelaer-Hüls , Hoogemittagsweg",SSG Kevelaer,,10,2018-01-13,LG1.BuLi Nord10A,Klaus Tacke,1.BuLi Nord,A,SSG Kevelaer,Luftgewehr
+64,"Großsporthalle der Realschule plus in der Pirzenthalerstraße auf dem ""Altbel""",Wissener SV,,10,2018-01-13,LG1.BuLi Nord10B,Helmut Meyer,1.BuLi Nord,B,Wissener SV,Luftgewehr
+65,"47623 Kevelaer Zweifachturnhalle Sportzentrum Kevelaer-Hüls , Hoogemittagsweg",SSG Kevelaer,,11,2018-01-14,LG1.BuLi Nord11A,Klaus Tacke,1.BuLi Nord,A,SSG Kevelaer,Luftgewehr
+66,"Großsporthalle der Realschule plus in der Pirzenthalerstraße auf dem ""Altbel""",Wissener SV,,11,2018-01-14,LG1.BuLi Nord11B,Helmut Meyer,1.BuLi Nord,B,Wissener SV,Luftgewehr
+67,"Sporthalle Heylinschule,  Königsbach-Stein/ OT Stein, Heynlinstraße",KKS Königsbach,,1,2017-10-14,LG1.BuLi Süd1A,Franz Möndel,1.BuLi Süd,A,KKS Königsbach,Luftgewehr
+68,"Tenniscenter Allach, Paul-Ehrlich-Weg 6, 80999 München",Der Bund München,,1,2017-10-14,LG1.BuLi Süd1B,Patric Fürnhammer,1.BuLi Süd,B,Der Bund München,Luftgewehr
+69,"Sporthalle Heylinschule,  Königsbach-Stein/ OT Stein, Heynlinstraße",KKS Königsbach,,2,2017-10-15,LG1.BuLi Süd2A,Franz Möndel,1.BuLi Süd,A,KKS Königsbach,Luftgewehr
+70,"Tenniscenter Allach, Paul-Ehrlich-Weg 6, 80999 München",Der Bund München,,2,2017-10-15,LG1.BuLi Süd2B,Patric Fürnhammer,1.BuLi Süd,B,Der Bund München,Luftgewehr
+71,"Schulturnhalle Wicklesgreuther Straße, 91580 Petersaurach",SV Petersaurach,,3,2017-10-28,LG1.BuLi Süd3A,Karl-Heinz Gegner,1.BuLi Süd,A,SV Petersaurach,Luftgewehr
+72,"„Sporthalle am Anger“, Schützenstr. 2, 96450 Coburg",SG Coburg,,3,2017-10-28,LG1.BuLi Süd3B,Rudolf Diekelmann,1.BuLi Süd,B,SG Coburg,Luftgewehr
+73,"Schulturnhalle Wicklesgreuther Straße, 91580 Petersaurach",SV Petersaurach,,4,2017-10-29,LG1.BuLi Süd4A,Karl-Heinz Gegner,1.BuLi Süd,A,SV Petersaurach,Luftgewehr
+74,"„Sporthalle am Anger“, Schützenstr. 2, 96450 Coburg",SG Coburg,,4,2017-10-29,LG1.BuLi Süd4B,Rudolf Diekelmann,1.BuLi Süd,B,SG Coburg,Luftgewehr
+75,"Siegelhalle, Sportweg 3, 85283 Wolnzach",SV Niederlauterbach,,5,2017-11-11,LG1.BuLi Süd5A,Werner Marxreiter,1.BuLi Süd,A,SV Niederlauterbach,Luftgewehr
+76,"3fach Turnhalle der Sporthalle Teublitz, Im Schlossgarten 9, 93158 Teublitz",Eichenlaub Saltendorf,,5,2017-11-11,LG1.BuLi Süd5B,Ludwig Mayer,1.BuLi Süd,B,Eichenlaub Saltendorf,Luftgewehr
+77,"Siegelhalle, Sportweg 3, 85283 Wolnzach",SV Niederlauterbach,,6,2017-11-12,LG1.BuLi Süd6A,Werner Marxreiter,1.BuLi Süd,A,SV Niederlauterbach,Luftgewehr
+78,"3fach Turnhalle der Sporthalle Teublitz, Im Schlossgarten 9, 93158 Teublitz",Eichenlaub Saltendorf,,6,2017-11-12,LG1.BuLi Süd6B,Ludwig Mayer,1.BuLi Süd,B,Eichenlaub Saltendorf,Luftgewehr
+79,"Mehrzweckhalle Illerberg, Neue Welt 8, 89269 Vöhringen-Illerberg",SV Pfeil Vöhringen,,7,2017-11-25,LG1.BuLi Süd7A,Susanne Müller,1.BuLi Süd,A,SV Pfeil Vöhringen,Luftgewehr
+80,"Jagsttalhalle,Strutrain 4,73492 Rainau-Schwabsberg",SV Buch,,7,2017-11-25,LG1.BuLi Süd7B,Franz Möndel,1.BuLi Süd,B,SV Buch,Luftgewehr
+81,"Mehrzweckhalle Jahnstraße 10, 76709 Kronau",SSV Kronau,,8,2017-12-09,LG1.BuLi Süd8A,Gerd Schmeil,1.BuLi Süd,A,SSV Kronau,Luftgewehr
+82,"Sporthalle Hebertshausen, Freisinger Straße, 85241 Hebertshausen",SV Germ. Prittlbach,,8,2017-12-09,LG1.BuLi Süd8B,Susanne Müller,1.BuLi Süd,B,SV Germ. Prittlbach,Luftgewehr
+83,"Mehrzweckhalle Jahnstraße 10, 76709 Kronau",SSV Kronau,,9,2017-12-10,LG1.BuLi Süd9A,Gerd Schmeil,1.BuLi Süd,A,SSV Kronau,Luftgewehr
+84,"Sporthalle Hebertshausen, Freisinger Straße, 85241 Hebertshausen",SV Germ. Prittlbach,,9,2017-12-10,LG1.BuLi Süd9B,Susanne Müller,1.BuLi Süd,B,SV Germ. Prittlbach,Luftgewehr
+85,"Sportzentrum Greuther Fürth, Kronacher Str. 140, 90765 Fürth",SSG Dynamit-Fürth,,10,2018-01-13,LG1.BuLi Süd10A,Rudolf Diekelmann,1.BuLi Süd,A,SSG Dynamit-Fürth,Luftgewehr
+86,"Salinen-Sporthalle Bad Dürrheim, 78073 Bad Dürrheim",SSVG Brigachtal,,10,2018-01-13,LG1.BuLi Süd10B,Jürgen Karl,1.BuLi Süd,B,SSVG Brigachtal,Luftgewehr
+87,"Sportzentrum Greuther Fürth, Kronacher Str. 140, 90765 Fürth",SSG Dynamit-Fürth,,11,2018-01-14,LG1.BuLi Süd11A,Rudolf Diekelmann,1.BuLi Süd,A,SSG Dynamit-Fürth,Luftgewehr
+88,"Salinen-Sporthalle Bad Dürrheim, 78073 Bad Dürrheim",SSVG Brigachtal,,11,2018-01-14,LG1.BuLi Süd11B,Jürgen Karl,1.BuLi Süd,B,SSVG Brigachtal,Luftgewehr
+89,"Am Schießstand 14, 24768 Rendsburg",PC Rendsburg,,1,2017-10-08,LP2.BuLi Nord1A,Volker Kuhr,2.BuLi Nord,A,PC Rendsburg,Luftpistole
+90,"Schützenverein Neuenlandermoor, Bramstedter Moor 12, 27612 Schwegen",GTV Bremerhaven-Seestadtteufel,,1,2017-10-08,LP2.BuLi Nord1B,Gaby v. Roden,2.BuLi Nord,B,GTV Bremerhaven-Seestadtteufel,Luftpistole
+91,Bundesleistungszentrum in Hannover,SV Groß und Kleinkaliber,,2,2017-11-05,LP2.BuLi Nord2A,Dieter Grämer,2.BuLi Nord,A,SV Groß und Kleinkaliber,Luftpistole
+92,"Schießstand Kutenholz, Schützenstr. 12, 27449 Kutenholz",SV Kutenholz,,2,2017-11-05,LP2.BuLi Nord2B,,2.BuLi Nord,B,SV Kutenholz,Luftpistole
+93,"Wandsbeker SGi, Marienthaler Str. 178, 22043 Hamburg",Wandsbeker SGi,,3,2017-12-03,LP2.BuLi Nord3A,Peter Hilke,2.BuLi Nord,A,Wandsbeker SGi,Luftpistole
+94,"Stoppelmarkt 25, 49337 Vechta",SV Stoppelmarkt,,3,2017-12-03,LP2.BuLi Nord3B,Uwe Sußmann,2.BuLi Nord,B,SV Stoppelmarkt,Luftpistole
+95,"Treffpunkt Haendorf, Haendorfer Weg 10a, 27330 Asendorf",SV Haendorf,,4,2018-01-07,LP2.BuLi Nord4A,Uwe Sußmann,2.BuLi Nord,A,SV Haendorf,Luftpistole
 96,"Walther Arena, Kirschweg 23, 12524 Berlin",PSV Olympia Berlin,II,1,2017-10-08,LP2.BuLi Ost1A,Michael Naumann,2.BuLi Ost,A,PSV Olympia Berlin II,Luftpistole
-97,,,,1,2017-10-08,LP2.BuLi Ost1B,1,2.BuLi Ost,B,,Luftpistole
-98,"Walther Arena, Kirschweg 23, 12524 Berlin",PSV Olympia Berlin,II,2,2017-11-05,LP2.BuLi Ost2A,Frank Schwarz,2.BuLi Ost,A,PSV Olympia Berlin II,Luftpistole
-99,Mannschaftspunkte,Verein,,2,2017-11-05,LP2.BuLi Ost2B,PSV Olympia Berlin II,2.BuLi Ost,B,Verein,Luftpistole
-100,"Eisenhüttenstädter Chaussee 55, 15236 Frankfurt/Oder, Tel.: 0335-542361",Schützengilde Frankfurt/Oder 1406,,3,2017-12-03,LP2.BuLi Ost3A,Maria K.D. Preihs,2.BuLi Ost,A,Schützengilde Frankfurt/Oder 1406,Luftpistole
-101,Mannschaftspunkte,Verein,,3,2017-12-03,LP2.BuLi Ost3B,PSV Olympia Berlin II,2.BuLi Ost,B,Verein,Luftpistole
-102,"Eisenhüttenstädter Chaussee 55, 15236 Frankfurt/Oder, Tel.: 0335-542361",Schützengilde Frankfurt/Oder 1406,,4,2018-01-07,LP2.BuLi Ost4A,Birgit Rauhut,2.BuLi Ost,A,Schützengilde Frankfurt/Oder 1406,Luftpistole
-103,Mannschaftspunkte,Verein,,4,2018-01-07,LP2.BuLi Ost4B,PSV Olympia Berlin II,2.BuLi Ost,B,Verein,Luftpistole
-104,"34246 Obervellmar, Mittelring 18, Großsporthalle",SV Hegelsberg-Vellmar,,1,2017-10-08,LP2.BuLi West1A,Harald Temme,2.BuLi West,A,SV Hegelsberg-Vellmar,Luftpistole
-105,,,,1,2017-10-08,LP2.BuLi West1B,1,2.BuLi West,B,,Luftpistole
-106,"Goldene 10 Ravolzhausen, Zentrale Sportanlage, ,63543 Neuberg",SC Windecken,,2,2017-11-05,LP2.BuLi West2A,Werner Bauscher,2.BuLi West,A,SC Windecken,Luftpistole
-107,"Friesdorfer Straße 244a, 53175 Bonn",SpSch Ännchen Bad Godesberg,,2,2017-11-05,LP2.BuLi West2B,Hartmut Weiß,2.BuLi West,B,SpSch Ännchen Bad Godesberg,Luftpistole
-108,Usingen - OT Eschbach Schulstraße 1  (Bürgerhaus) www.sv1900eschbach.de,SV Usingen,,3,2017-12-03,LP2.BuLi West3A,Bernhard Tems,2.BuLi West,A,SV Usingen,Luftpistole
-109,"Bonnstraße 125, 50321 Brühl (Einfahrt: Zum Schützenplatz)",Brühler Schießclub 70,,3,2017-12-03,LP2.BuLi West3B,Hans Pohl,2.BuLi West,B,Brühler Schießclub 70,Luftpistole
-110,"65187 Wiesbaden, Erich-Ollenhauer-Straße 30, Tel.",SV Biebrich 1864,,4,2018-01-07,LP2.BuLi West4A,Markus Weber,2.BuLi West,A,SV Biebrich 1864,Luftpistole
-111,"Am Schottenteich 1, 59597 Bad Westernkotten",SSV Bad Westernkotten,,4,2018-01-07,LP2.BuLi West4B,Helmut Stepputtis,2.BuLi West,B,SSV Bad Westernkotten,Luftpistole
-112,Schützenhaus des SV Sandhausen,SSV Sandhausen,,1,2017-10-08,LP2.BuLi Südwest1A,Dr. Walter Horlacher,2.BuLi Südwest,A,SSV Sandhausen,Luftpistole
-113,,,,1,2017-10-08,LP2.BuLi Südwest1B,0,2.BuLi Südwest,B,,Luftpistole
-114,"im Schützenhaus, SV Eckartshausen",SV Eckartshausen,,2,2017-11-05,LP2.BuLi Südwest2A,Werner Merkle,2.BuLi Südwest,A,SV Eckartshausen,Luftpistole
-115,,SGi Ebersbach,,2,2017-11-05,LP2.BuLi Südwest2B,Franz Möndel,2.BuLi Südwest,B,SGi Ebersbach,Luftpistole
-116,Schützenhaus Walldorf,SV Walldorf,,3,2017-12-03,LP2.BuLi Südwest3A,Werner Merkle,2.BuLi Südwest,A,SV Walldorf,Luftpistole
-117,Schützenhaus 79232 March,Sportschützen  March,,3,2017-12-03,LP2.BuLi Südwest3B,Jürgen Karl,2.BuLi Südwest,B,Sportschützen  March,Luftpistole
-118,Schützenhaus des SV Laubach,SKam Aalen-Nesslau,,4,2018-01-07,LP2.BuLi Südwest4A,Werner Merkle,2.BuLi Südwest,A,SKam Aalen-Nesslau,Luftpistole
-119,"Sporthalle Stadtmitte, 73230 Kirchheim, Jahnstraße",TSV Ötlingen - SpSchAbtl.,,4,2018-01-07,LP2.BuLi Südwest4B,Walter Johnen,2.BuLi Südwest,B,TSV Ötlingen - SpSchAbtl.,Luftpistole
-120,"Waldschießhaus, Spardorfer Straße 80, 91054 Erlangen",HSG Erlangen,,1,2017-10-08,LP2.BuLi Süd1A,Walter Horcher,2.BuLi Süd,A,HSG Erlangen,Luftpistole
-121,,,,1,2017-10-08,LP2.BuLi Süd1B,1,2.BuLi Süd,B,,Luftpistole
-122,"Adlerschützen Unteriglbach, Erlengrund, 94496 Ortenburg",Adlerschützen Unteriglbach,,2,2017-10-22,LP2.BuLi Süd2A,Horst Degenhart,2.BuLi Süd,A,Adlerschützen Unteriglbach,Luftpistole
-123,"Schützenheim,  86845 Großaitingen, Schützenstraße 16 a",Singoldschützen Großaitingen,,2,2017-10-22,LP2.BuLi Süd2B,Susanne Müller,2.BuLi Süd,B,Singoldschützen Großaitingen,Luftpistole
-124,"SSG Dynamith Fürth, Kronacher Str. 63, 90765 Fürth",SSG Dynamit Fürth,II,3,2017-11-05,LP2.BuLi Süd3A,Gabriele Horbaschek,2.BuLi Süd,A,SSG Dynamit Fürth II,Luftpistole
-125,"Gasthaus Taubeneder, Grund 2, 94099 Ruhstorf",Bogenschützen Grund,,3,2017-11-05,LP2.BuLi Süd3B,Horst Degenhart,2.BuLi Süd,B,Bogenschützen Grund,Luftpistole
-126,"Kgl. priv. FSG Der Bund München, Servetstr. 1, 80999 München",SG Eintracht Garching,,4,2017-11-19,LP2.BuLi Süd4A,Gregor Liebe,2.BuLi Süd,A,SG Eintracht Garching,Luftpistole
-127,"Adlerschützen Unteriglbach, Erlengrund, 94496 Ortenburg",Adlerschützen Unteriglbach,,4,2017-11-19,LP2.BuLi Süd4B,Horst Degenhart,2.BuLi Süd,B,Adlerschützen Unteriglbach,Luftpistole
+97,"Walther Arena, Kirschweg 23, 12524 Berlin",PSV Olympia Berlin,II,2,2017-11-05,LP2.BuLi Ost2A,Frank Schwarz,2.BuLi Ost,A,PSV Olympia Berlin II,Luftpistole
+98,"Eisenhüttenstädter Chaussee 55, 15236 Frankfurt/Oder, Tel.: 0335-542361",Schützengilde Frankfurt/Oder 1406,,3,2017-12-03,LP2.BuLi Ost3A,Maria K.D. Preihs,2.BuLi Ost,A,Schützengilde Frankfurt/Oder 1406,Luftpistole
+99,"Eisenhüttenstädter Chaussee 55, 15236 Frankfurt/Oder, Tel.: 0335-542361",Schützengilde Frankfurt/Oder 1406,,4,2018-01-07,LP2.BuLi Ost4A,Birgit Rauhut,2.BuLi Ost,A,Schützengilde Frankfurt/Oder 1406,Luftpistole
+100,"34246 Obervellmar, Mittelring 18, Großsporthalle",SV Hegelsberg-Vellmar,,1,2017-10-08,LP2.BuLi West1A,Harald Temme,2.BuLi West,A,SV Hegelsberg-Vellmar,Luftpistole
+101,"Aschaffenburger Str. 1, 65479 Raunheim",SPSG Tell Raunheim,,1,2017-10-08,LP2.BuLi West1B,Werner Bauscher,2.BuLi West,B,SPSG Tell Raunheim,Luftpistole
+102,"Goldene 10 Ravolzhausen, Zentrale Sportanlage, ,63543 Neuberg",SC Windecken,,2,2017-11-05,LP2.BuLi West2A,Werner Bauscher,2.BuLi West,A,SC Windecken,Luftpistole
+103,"Friesdorfer Straße 244a, 53175 Bonn",SpSch Ännchen Bad Godesberg,,2,2017-11-05,LP2.BuLi West2B,Hartmut Weiß,2.BuLi West,B,SpSch Ännchen Bad Godesberg,Luftpistole
+104,Usingen - OT Eschbach Schulstraße 1  (Bürgerhaus) www.sv1900eschbach.de,SV Usingen,,3,2017-12-03,LP2.BuLi West3A,Bernhard Tems,2.BuLi West,A,SV Usingen,Luftpistole
+105,"Bonnstraße 125, 50321 Brühl (Einfahrt: Zum Schützenplatz)",Brühler Schießclub 70,,3,2017-12-03,LP2.BuLi West3B,Hans Pohl,2.BuLi West,B,Brühler Schießclub 70,Luftpistole
+106,"65187 Wiesbaden, Erich-Ollenhauer-Straße 30, Tel.",SV Biebrich 1864,,4,2018-01-07,LP2.BuLi West4A,Markus Weber,2.BuLi West,A,SV Biebrich 1864,Luftpistole
+107,"Am Schottenteich 1, 59597 Bad Westernkotten",SSV Bad Westernkotten,,4,2018-01-07,LP2.BuLi West4B,Helmut Stepputtis,2.BuLi West,B,SSV Bad Westernkotten,Luftpistole
+108,Schützenhaus des SV Sandhausen,SSV Sandhausen,,1,2017-10-08,LP2.BuLi Südwest1A,Dr. Walter Horlacher,2.BuLi Südwest,A,SSV Sandhausen,Luftpistole
+109,"Bogenhalle, 88499 Altheim-Waldhausen, Gurgelbergweg",SV Altheim Waldhausen,II,1,2017-10-08,LP2.BuLi Südwest1B,Walter Johnen,2.BuLi Südwest,B,SV Altheim Waldhausen II,Luftpistole
+110,"im Schützenhaus, SV Eckartshausen",SV Eckartshausen,,2,2017-11-05,LP2.BuLi Südwest2A,Werner Merkle,2.BuLi Südwest,A,SV Eckartshausen,Luftpistole
+111,,SGi Ebersbach,,2,2017-11-05,LP2.BuLi Südwest2B,Franz Möndel,2.BuLi Südwest,B,SGi Ebersbach,Luftpistole
+112,Schützenhaus Walldorf,SV Walldorf,,3,2017-12-03,LP2.BuLi Südwest3A,Werner Merkle,2.BuLi Südwest,A,SV Walldorf,Luftpistole
+113,Schützenhaus 79232 March,Sportschützen  March,,3,2017-12-03,LP2.BuLi Südwest3B,Jürgen Karl,2.BuLi Südwest,B,Sportschützen  March,Luftpistole
+114,Schützenhaus des SV Laubach,SKam Aalen-Nesslau,,4,2018-01-07,LP2.BuLi Südwest4A,Werner Merkle,2.BuLi Südwest,A,SKam Aalen-Nesslau,Luftpistole
+115,"Sporthalle Stadtmitte, 73230 Kirchheim, Jahnstraße",TSV Ötlingen - SpSchAbtl.,,4,2018-01-07,LP2.BuLi Südwest4B,Walter Johnen,2.BuLi Südwest,B,TSV Ötlingen - SpSchAbtl.,Luftpistole
+116,"Waldschießhaus, Spardorfer Straße 80, 91054 Erlangen",HSG Erlangen,,1,2017-10-08,LP2.BuLi Süd1A,Walter Horcher,2.BuLi Süd,A,HSG Erlangen,Luftpistole
+117,"HSG München, Zielstattstr. 6, 81379 München",HSG München,,1,2017-10-08,LP2.BuLi Süd1B,Christian Michael,2.BuLi Süd,B,HSG München,Luftpistole
+118,"Raiffeisenstr. 20, 83547 Babansham",SV Hubertus Rettenbach,,1,2017-10-08,LP2.BuLi Süd1C,Johannes Enders,2.BuLi Süd,C,SV Hubertus Rettenbach,Luftpistole
+119,"Adlerschützen Unteriglbach, Erlengrund, 94496 Ortenburg",Adlerschützen Unteriglbach,,2,2017-10-22,LP2.BuLi Süd2A,Horst Degenhart,2.BuLi Süd,A,Adlerschützen Unteriglbach,Luftpistole
+120,"Schützenheim,  86845 Großaitingen, Schützenstraße 16 a",Singoldschützen Großaitingen,,2,2017-10-22,LP2.BuLi Süd2B,Susanne Müller,2.BuLi Süd,B,Singoldschützen Großaitingen,Luftpistole
+121,Schützenhaus der SG 1898 Thumsenreuth Hammerweg 8,SG 1898 Thumsenreuth,,2,2017-10-22,LP2.BuLi Süd2C,Ludwig Mayer,2.BuLi Süd,C,SG 1898 Thumsenreuth,Luftpistole
+122,"SSG Dynamith Fürth, Kronacher Str. 63, 90765 Fürth",SSG Dynamit Fürth,II,3,2017-11-05,LP2.BuLi Süd3A,Gabriele Horbaschek,2.BuLi Süd,A,SSG Dynamit Fürth II,Luftpistole
+123,"Gasthaus Taubeneder, Grund 2, 94099 Ruhstorf",Bogenschützen Grund,,3,2017-11-05,LP2.BuLi Süd3B,Horst Degenhart,2.BuLi Süd,B,Bogenschützen Grund,Luftpistole
+124,"Leistungszentrum des OSB, Schützenstraße 99, 92536 Pfreimd",Auerhahn Steinberg,,3,2017-11-05,LP2.BuLi Süd3C,Ludwig Mayer,2.BuLi Süd,C,Auerhahn Steinberg,Luftpistole
+125,"Kgl. priv. FSG Der Bund München, Servetstr. 1, 80999 München",SG Eintracht Garching,,4,2017-11-19,LP2.BuLi Süd4A,Gregor Liebe,2.BuLi Süd,A,SG Eintracht Garching,Luftpistole
+126,"Adlerschützen Unteriglbach, Erlengrund, 94496 Ortenburg",Adlerschützen Unteriglbach,,4,2017-11-19,LP2.BuLi Süd4B,Horst Degenhart,2.BuLi Süd,B,Adlerschützen Unteriglbach,Luftpistole
+127,"Schützenheim,  86845 Großaitingen, Schützenstraße 16 a",Singoldschützen Großaitingen,,4,2017-11-19,LP2.BuLi Süd4C,,2.BuLi Süd,C,Singoldschützen Großaitingen,Luftpistole
 128,"SSG Dynamith Fürth, Kronacher Str. 63, 90765 Fürth",SSG Dynamit Fürth,II,5,2017-12-03,LP2.BuLi Süd5A,Gabriele Horbaschek,2.BuLi Süd,A,SSG Dynamit Fürth II,Luftpistole
 129,"Am Kreuzwirtskeller 5, 91161 Hilpoltstein",FSG Hilpoltstein,,5,2017-12-03,LP2.BuLi Süd5B,Rudolf Diekelmann,2.BuLi Süd,B,FSG Hilpoltstein,Luftpistole
-130,"Waldschießhaus, Spardorfer Straße 80, 91054 Erlangen",HSG Erlangen,,6,2018-01-07,LP2.BuLi Süd6A,Walter Horcher,2.BuLi Süd,A,HSG Erlangen,Luftpistole
-131,"Gasthaus Taubeneder, Grund 2, 94099 Ruhstorf",Bogenschützen Grund,,6,2018-01-07,LP2.BuLi Süd6B,Horst Degenhart,2.BuLi Süd,B,Bogenschützen Grund,Luftpistole
-132,"Kreissporthalle ""Am Eisteich"", Eisteich, 24837 Schleswig",Sp.Sch. Fahrdorf,,1,2017-10-07,LP1.BuLi Nord1A,Ralph Kammholz,1.BuLi Nord,A,Sp.Sch. Fahrdorf,Luftpistole
-133,,,,1,2017-10-07,LP1.BuLi Nord1B,1,1.BuLi Nord,B,,Luftpistole
-134,"Kreissporthalle ""Am Eisteich"", Eisteich, 24837 Schleswig",Sp.Sch. Fahrdorf,,2,2017-10-08,LP1.BuLi Nord2A,Ralph Kammholz,1.BuLi Nord,A,Sp.Sch. Fahrdorf,Luftpistole
-135,,,,2,2017-10-08,LP1.BuLi Nord2B,1,1.BuLi Nord,B,,Luftpistole
-136,"Dreifelder Halle Limesschule Selbacher Str.58, 65510 Idstein",SV Falke Dasbach,,3,2017-10-21,LP1.BuLi Nord3A,Lutz Hans Schlegel,1.BuLi Nord,A,SV Falke Dasbach,Luftpistole
-137,"Schützenplatz 4, 27211 Bassum",SV Bassum von 1848,,3,2017-10-21,LP1.BuLi Nord3B,Uwe Sußmann,1.BuLi Nord,B,SV Bassum von 1848,Luftpistole
-138,"Dreifelder Halle Limesschule Selbacher Str.58, 65510 Idstein",SV Falke Dasbach,,4,2017-10-22,LP1.BuLi Nord4A,Lutz Hans Schlegel,1.BuLi Nord,A,SV Falke Dasbach,Luftpistole
-139,"Schützenplatz 4, 27211 Bassum",SV Bassum von 1848,,4,2017-10-22,LP1.BuLi Nord4B,Uwe Sußmann,1.BuLi Nord,B,SV Bassum von 1848,Luftpistole
-140,"Braunschweiger SG 1545, Hamburger Straße 53, 38114 Braunschweig",Braunschweiger SG,,5,2017-11-04,LP1.BuLi Nord5A,Wilfried Große,1.BuLi Nord,A,Braunschweiger SG,Luftpistole
-141,"Sporthalle IGS Schulzentrum West Extumer Weg (OT Haxtum, über Oldersumerstr.), 26603 Aurich",SV Schirumer Leegmoor,,5,2017-11-04,LP1.BuLi Nord5B,Reinhard Zimmer,1.BuLi Nord,B,SV Schirumer Leegmoor,Luftpistole
-142,"Braunschweiger SG 1545, Hamburger Straße 53, 38114 Braunschweig",Braunschweiger SG,,6,2017-11-05,LP1.BuLi Nord6A,Wilfried Große,1.BuLi Nord,A,Braunschweiger SG,Luftpistole
-143,"Sporthalle IGS Schulzentrum West Extumer Weg (OT Haxtum, über Oldersumerstr.), 26603 Aurich",SV Schirumer Leegmoor,,6,2017-11-05,LP1.BuLi Nord6B,Reinhard Zimmer,1.BuLi Nord,B,SV Schirumer Leegmoor,Luftpistole
-144,"Großsporthalle am Schulzentrum"", Marktstraße 6, 31311 Uetze",SV Uetze,,7,2017-11-18,LP1.BuLi Nord7A,Volker Kächele,1.BuLi Nord,A,SV Uetze,Luftpistole
-145,"Grüntalstr. 17, 52379 Langerwehe-Pier",Sp.Sch.St.Seb.Pier2000,,7,2017-11-18,LP1.BuLi Nord7B,Martin Viehöver,1.BuLi Nord,B,Sp.Sch.St.Seb.Pier2000,Luftpistole
-146,"Walther Arena, Kirschweg 23, 12524 Berlin (Altglie",PSV Olympia Berlin,,8,2017-12-02,LP1.BuLi Nord8A,Michael Naumann,1.BuLi Nord,A,PSV Olympia Berlin,Luftpistole
-147,"Sporthalle ""Zum Michael"" Straße, 46348 Raesfeld",Spsch Raesfeld,,8,2017-12-02,LP1.BuLi Nord8B,Ewald Elpers,1.BuLi Nord,B,Spsch Raesfeld,Luftpistole
-148,"Walther Arena, Kirschweg 23, 12524 Berlin (Altglie",PSV Olympia Berlin,,9,2017-12-03,LP1.BuLi Nord9A,Michael Naumann,1.BuLi Nord,A,PSV Olympia Berlin,Luftpistole
-149,"Sporthalle ""Zum Michael"" Straße, 46348 Raesfeld",Spsch Raesfeld,,9,2017-12-03,LP1.BuLi Nord9B,Ewald Elpers,1.BuLi Nord,B,Spsch Raesfeld,Luftpistole
-150,Große Schwarzbachhalle in der Bleichstr. 7-9 65830 Kriftel,SV 1935 Kriftel,,10,2018-01-06,LP1.BuLi Nord10A,Frank Sczeburek,1.BuLi Nord,A,SV 1935 Kriftel,Luftpistole
-151,"Sporthalle  Kantallee, 29339 Wathlingen",Freischütz Wathlingen,,10,2018-01-06,LP1.BuLi Nord10B,Werner Bösche,1.BuLi Nord,B,Freischütz Wathlingen,Luftpistole
-152,Große Schwarzbachhalle in der Bleichstr. 7-9 65830 Kriftel,SV 1935 Kriftel,,11,2018-01-07,LP1.BuLi Nord11A,Frank Sczeburek,1.BuLi Nord,A,SV 1935 Kriftel,Luftpistole
-153,"Sporthalle  Kantallee, 29339 Wathlingen",Freischütz Wathlingen,,11,2018-01-07,LP1.BuLi Nord11B,Werner Bösche,1.BuLi Nord,B,Freischütz Wathlingen,Luftpistole
-154,"Dreifach Turnhalle, Rennweg 66, 93309 Kelheim",SV Kelheim-Gmünd,,1,2017-10-07,LP1.BuLi Süd1A,Rudolf Diekelmann,1.BuLi Süd,A,SV Kelheim-Gmünd,Luftpistole
-155,,,,1,2017-10-07,LP1.BuLi Süd1B,1,1.BuLi Süd,B,,Luftpistole
-156,"Dreifach Turnhalle, Rennweg 66, 93309 Kelheim",SV Kelheim-Gmünd,,2,2017-10-08,LP1.BuLi Süd2A,Rudolf Diekelmann,1.BuLi Süd,A,SV Kelheim-Gmünd,Luftpistole
-157,,,,2,2017-10-08,LP1.BuLi Süd2B,1,1.BuLi Süd,B,,Luftpistole
-158,"Sportzentrum Greuther Fürth, Kronacher Str. 140, 90765 Fürth",SSG Dynamit Fürth,,3,2017-10-21,LP1.BuLi Süd3A,Rudolf Diekelmann,1.BuLi Süd,A,SSG Dynamit Fürth,Luftpistole
-159,"Merzweckhalle Weil am Rhein-Ötlingen, Zur Inmatt  (Strasse)",ESV Weil am Rhein,,3,2017-10-21,LP1.BuLi Süd3B,Richard Fellner,1.BuLi Süd,B,ESV Weil am Rhein,Luftpistole
-160,"Sportzentrum Greuther Fürth, Kronacher Str. 140, 90765 Fürth",SSG Dynamit Fürth,,4,2017-10-22,LP1.BuLi Süd4A,Rudolf Diekelmann,1.BuLi Süd,A,SSG Dynamit Fürth,Luftpistole
-161,"Merzweckhalle Weil am Rhein-Ötlingen, Zur Inmatt  (Strasse)",ESV Weil am Rhein,,4,2017-10-22,LP1.BuLi Süd4B,Richard Fellner,1.BuLi Süd,B,ESV Weil am Rhein,Luftpistole
-162,"Bolberghalle in 72820 Sonnenbühl-Willmandingen, Egelsbergstr.11",SV Willmandingen,,5,2017-11-04,LP1.BuLi Süd5A,Walter Johnen,1.BuLi Süd,A,SV Willmandingen,Luftpistole
-163,"Bogenhalle, 88499 Altheim-Waldhausen, Gurgelbergweg",SV Altheim Waldhausen,,5,2017-11-04,LP1.BuLi Süd5B,Dr. Walter Horlacher,1.BuLi Süd,B,SV Altheim Waldhausen,Luftpistole
-164,"Bolberghalle in 72820 Sonnenbühl-Willmandingen, Egelsbergstr.11",SV Willmandingen,,6,2017-11-05,LP1.BuLi Süd6A,Walter Johnen,1.BuLi Süd,A,SV Willmandingen,Luftpistole
-165,"Bogenhalle, 88499 Altheim-Waldhausen, Gurgelbergweg",SV Altheim Waldhausen,,6,2017-11-05,LP1.BuLi Süd6B,Dr. Walter Horlacher,1.BuLi Süd,B,SV Altheim Waldhausen,Luftpistole
-166,"Buchenweg 9, 86937 Scheuring",SG Edelweiß Scheuring,,7,2017-11-18,LP1.BuLi Süd7A,Susanne Müller,1.BuLi Süd,A,SG Edelweiß Scheuring,Luftpistole
-167,"Schlossberghalle, Münchener Str. 13, 86971 Peiting",SV Peiting,,7,2017-11-18,LP1.BuLi Süd7B,Thomas Wollny,1.BuLi Süd,B,SV Peiting,Luftpistole
-168,"Turnhalle der Grundschule in 89331 Burgau, Remsharter Str. 2",SV Waldkirch,,8,2017-12-02,LP1.BuLi Süd8A,Gerhard Furnier,1.BuLi Süd,A,SV Waldkirch,Luftpistole
-169,"Mehrzweckhalle, Hauptstr. 109, 74638 Waldenburg",Sgi Waldenburg,,8,2017-12-02,LP1.BuLi Süd8B,Franz Möndel,1.BuLi Süd,B,Sgi Waldenburg,Luftpistole
-170,"Turnhalle der Grundschule in 89331 Burgau, Remsharter Str. 2",SV Waldkirch,,9,2017-12-03,LP1.BuLi Süd9A,Gerhard Furnier,1.BuLi Süd,A,SV Waldkirch,Luftpistole
-171,"Mehrzweckhalle, Hauptstr. 109, 74638 Waldenburg",Sgi Waldenburg,,9,2017-12-03,LP1.BuLi Süd9B,Franz Möndel,1.BuLi Süd,B,Sgi Waldenburg,Luftpistole
-172,"Lußhardthallae, Pfarrer-Graf-Straße, 76707 Hambrücken",KKS Hambrücken,,10,2018-01-06,LP1.BuLi Süd10A,Franz Möndel,1.BuLi Süd,A,KKS Hambrücken,Luftpistole
-173,"KSV-Sporthalle, Am Kugelberg, 71642 Ludwigsburg",SGi Ludwigsburg,,10,2018-01-06,LP1.BuLi Süd10B,Dr. Walter Horlacher,1.BuLi Süd,B,SGi Ludwigsburg,Luftpistole
-174,"Lußhardthallae, Pfarrer-Graf-Straße, 76707 Hambrücken",KKS Hambrücken,,11,2018-01-07,LP1.BuLi Süd11A,Franz Möndel,1.BuLi Süd,A,KKS Hambrücken,Luftpistole
-175,"KSV-Sporthalle, Am Kugelberg, 71642 Ludwigsburg",SGi Ludwigsburg,,11,2018-01-07,LP1.BuLi Süd11B,Dr. Walter Horlacher,1.BuLi Süd,B,SGi Ludwigsburg,Luftpistole
+130,"Schießleistungszentrum Donaugau, Höhenhof 15, 93083 Obertraubling",SV Kelheim-Gmünd,II,5,2017-12-03,LP2.BuLi Süd5C,Werner Marxreiter,2.BuLi Süd,C,SV Kelheim-Gmünd II,Luftpistole
+131,"Waldschießhaus, Spardorfer Straße 80, 91054 Erlangen",HSG Erlangen,,6,2018-01-07,LP2.BuLi Süd6A,Walter Horcher,2.BuLi Süd,A,HSG Erlangen,Luftpistole
+132,"Gasthaus Taubeneder, Grund 2, 94099 Ruhstorf",Bogenschützen Grund,,6,2018-01-07,LP2.BuLi Süd6B,Horst Degenhart,2.BuLi Süd,B,Bogenschützen Grund,Luftpistole
+133,Schützenhaus der SG 1898 Thumsenreuth Hammerweg 8,SG 1898 Thumsenreuth,,6,2018-01-07,LP2.BuLi Süd6C,Ludwig Mayer,2.BuLi Süd,C,SG 1898 Thumsenreuth,Luftpistole
+134,"Kreissporthalle ""Am Eisteich"", Eisteich, 24837 Schleswig",Sp.Sch. Fahrdorf,,1,2017-10-07,LP1.BuLi Nord1A,Ralph Kammholz,1.BuLi Nord,A,Sp.Sch. Fahrdorf,Luftpistole
+135,"Zur Fuchskuhle 18, 49214 Bad Rothenfelde",SSG Teutoburger Wald,,1,2017-10-07,LP1.BuLi Nord1B,Günther Ahring,1.BuLi Nord,B,SSG Teutoburger Wald,Luftpistole
+136,"Kreissporthalle ""Am Eisteich"", Eisteich, 24837 Schleswig",Sp.Sch. Fahrdorf,,2,2017-10-08,LP1.BuLi Nord2A,Ralph Kammholz,1.BuLi Nord,A,Sp.Sch. Fahrdorf,Luftpistole
+137,"Zur Fuchskuhle 18, 49214 Bad Rothenfelde",SSG Teutoburger Wald,,2,2017-10-08,LP1.BuLi Nord2B,Günther Ahring,1.BuLi Nord,B,SSG Teutoburger Wald,Luftpistole
+138,"Dreifelder Halle Limesschule Selbacher Str.58, 65510 Idstein",SV Falke Dasbach,,3,2017-10-21,LP1.BuLi Nord3A,Lutz Hans Schlegel,1.BuLi Nord,A,SV Falke Dasbach,Luftpistole
+139,"Schützenplatz 4, 27211 Bassum",SV Bassum von 1848,,3,2017-10-21,LP1.BuLi Nord3B,Uwe Sußmann,1.BuLi Nord,B,SV Bassum von 1848,Luftpistole
+140,"Dreifelder Halle Limesschule Selbacher Str.58, 65510 Idstein",SV Falke Dasbach,,4,2017-10-22,LP1.BuLi Nord4A,Lutz Hans Schlegel,1.BuLi Nord,A,SV Falke Dasbach,Luftpistole
+141,"Schützenplatz 4, 27211 Bassum",SV Bassum von 1848,,4,2017-10-22,LP1.BuLi Nord4B,Uwe Sußmann,1.BuLi Nord,B,SV Bassum von 1848,Luftpistole
+142,"Braunschweiger SG 1545, Hamburger Straße 53, 38114 Braunschweig",Braunschweiger SG,,5,2017-11-04,LP1.BuLi Nord5A,Wilfried Große,1.BuLi Nord,A,Braunschweiger SG,Luftpistole
+143,"Sporthalle IGS Schulzentrum West Extumer Weg (OT Haxtum, über Oldersumerstr.), 26603 Aurich",SV Schirumer Leegmoor,,5,2017-11-04,LP1.BuLi Nord5B,Reinhard Zimmer,1.BuLi Nord,B,SV Schirumer Leegmoor,Luftpistole
+144,"Braunschweiger SG 1545, Hamburger Straße 53, 38114 Braunschweig",Braunschweiger SG,,6,2017-11-05,LP1.BuLi Nord6A,Wilfried Große,1.BuLi Nord,A,Braunschweiger SG,Luftpistole
+145,"Sporthalle IGS Schulzentrum West Extumer Weg (OT Haxtum, über Oldersumerstr.), 26603 Aurich",SV Schirumer Leegmoor,,6,2017-11-05,LP1.BuLi Nord6B,Reinhard Zimmer,1.BuLi Nord,B,SV Schirumer Leegmoor,Luftpistole
+146,"Großsporthalle am Schulzentrum"", Marktstraße 6, 31311 Uetze",SV Uetze,,7,2017-11-18,LP1.BuLi Nord7A,Volker Kächele,1.BuLi Nord,A,SV Uetze,Luftpistole
+147,"Grüntalstr. 17, 52379 Langerwehe-Pier",Sp.Sch.St.Seb.Pier2000,,7,2017-11-18,LP1.BuLi Nord7B,Martin Viehöver,1.BuLi Nord,B,Sp.Sch.St.Seb.Pier2000,Luftpistole
+148,"Walther Arena, Kirschweg 23, 12524 Berlin (Altglie",PSV Olympia Berlin,,8,2017-12-02,LP1.BuLi Nord8A,Michael Naumann,1.BuLi Nord,A,PSV Olympia Berlin,Luftpistole
+149,"Sporthalle ""Zum Michael"" Straße, 46348 Raesfeld",Spsch Raesfeld,,8,2017-12-02,LP1.BuLi Nord8B,Ewald Elpers,1.BuLi Nord,B,Spsch Raesfeld,Luftpistole
+150,"Walther Arena, Kirschweg 23, 12524 Berlin (Altglie",PSV Olympia Berlin,,9,2017-12-03,LP1.BuLi Nord9A,Michael Naumann,1.BuLi Nord,A,PSV Olympia Berlin,Luftpistole
+151,"Sporthalle ""Zum Michael"" Straße, 46348 Raesfeld",Spsch Raesfeld,,9,2017-12-03,LP1.BuLi Nord9B,Ewald Elpers,1.BuLi Nord,B,Spsch Raesfeld,Luftpistole
+152,Große Schwarzbachhalle in der Bleichstr. 7-9 65830 Kriftel,SV 1935 Kriftel,,10,2018-01-06,LP1.BuLi Nord10A,Frank Sczeburek,1.BuLi Nord,A,SV 1935 Kriftel,Luftpistole
+153,"Sporthalle  Kantallee, 29339 Wathlingen",Freischütz Wathlingen,,10,2018-01-06,LP1.BuLi Nord10B,Werner Bösche,1.BuLi Nord,B,Freischütz Wathlingen,Luftpistole
+154,Große Schwarzbachhalle in der Bleichstr. 7-9 65830 Kriftel,SV 1935 Kriftel,,11,2018-01-07,LP1.BuLi Nord11A,Frank Sczeburek,1.BuLi Nord,A,SV 1935 Kriftel,Luftpistole
+155,"Sporthalle  Kantallee, 29339 Wathlingen",Freischütz Wathlingen,,11,2018-01-07,LP1.BuLi Nord11B,Werner Bösche,1.BuLi Nord,B,Freischütz Wathlingen,Luftpistole
+156,"Dreifach Turnhalle, Rennweg 66, 93309 Kelheim",SV Kelheim-Gmünd,,1,2017-10-07,LP1.BuLi Süd1A,Rudolf Diekelmann,1.BuLi Süd,A,SV Kelheim-Gmünd,Luftpistole
+157,"Stadthalle Murrhardt, Nägelestraße 25, 71540 Murrhardt-Karnsberg",SV Murrhardt-Karnsberg,,1,2017-10-07,LP1.BuLi Süd1B,Franz Möndel,1.BuLi Süd,B,SV Murrhardt-Karnsberg,Luftpistole
+158,"Dreifach Turnhalle, Rennweg 66, 93309 Kelheim",SV Kelheim-Gmünd,,2,2017-10-08,LP1.BuLi Süd2A,Rudolf Diekelmann,1.BuLi Süd,A,SV Kelheim-Gmünd,Luftpistole
+159,"Stadthalle Murrhardt, Nägelestraße 25, 71540 Murrhardt-Karnsberg",SV Murrhardt-Karnsberg,,2,2017-10-08,LP1.BuLi Süd2B,Franz Möndel,1.BuLi Süd,B,SV Murrhardt-Karnsberg,Luftpistole
+160,"Sportzentrum Greuther Fürth, Kronacher Str. 140, 90765 Fürth",SSG Dynamit Fürth,,3,2017-10-21,LP1.BuLi Süd3A,Rudolf Diekelmann,1.BuLi Süd,A,SSG Dynamit Fürth,Luftpistole
+161,"Merzweckhalle Weil am Rhein-Ötlingen, Zur Inmatt  (Strasse)",ESV Weil am Rhein,,3,2017-10-21,LP1.BuLi Süd3B,Richard Fellner,1.BuLi Süd,B,ESV Weil am Rhein,Luftpistole
+162,"Sportzentrum Greuther Fürth, Kronacher Str. 140, 90765 Fürth",SSG Dynamit Fürth,,4,2017-10-22,LP1.BuLi Süd4A,Rudolf Diekelmann,1.BuLi Süd,A,SSG Dynamit Fürth,Luftpistole
+163,"Merzweckhalle Weil am Rhein-Ötlingen, Zur Inmatt  (Strasse)",ESV Weil am Rhein,,4,2017-10-22,LP1.BuLi Süd4B,Richard Fellner,1.BuLi Süd,B,ESV Weil am Rhein,Luftpistole
+164,"Bolberghalle in 72820 Sonnenbühl-Willmandingen, Egelsbergstr.11",SV Willmandingen,,5,2017-11-04,LP1.BuLi Süd5A,Walter Johnen,1.BuLi Süd,A,SV Willmandingen,Luftpistole
+165,"Bogenhalle, 88499 Altheim-Waldhausen, Gurgelbergweg",SV Altheim Waldhausen,,5,2017-11-04,LP1.BuLi Süd5B,Dr. Walter Horlacher,1.BuLi Süd,B,SV Altheim Waldhausen,Luftpistole
+166,"Bolberghalle in 72820 Sonnenbühl-Willmandingen, Egelsbergstr.11",SV Willmandingen,,6,2017-11-05,LP1.BuLi Süd6A,Walter Johnen,1.BuLi Süd,A,SV Willmandingen,Luftpistole
+167,"Bogenhalle, 88499 Altheim-Waldhausen, Gurgelbergweg",SV Altheim Waldhausen,,6,2017-11-05,LP1.BuLi Süd6B,Dr. Walter Horlacher,1.BuLi Süd,B,SV Altheim Waldhausen,Luftpistole
+168,"Buchenweg 9, 86937 Scheuring",SG Edelweiß Scheuring,,7,2017-11-18,LP1.BuLi Süd7A,Susanne Müller,1.BuLi Süd,A,SG Edelweiß Scheuring,Luftpistole
+169,"Schlossberghalle, Münchener Str. 13, 86971 Peiting",SV Peiting,,7,2017-11-18,LP1.BuLi Süd7B,Thomas Wollny,1.BuLi Süd,B,SV Peiting,Luftpistole
+170,"Turnhalle der Grundschule in 89331 Burgau, Remsharter Str. 2",SV Waldkirch,,8,2017-12-02,LP1.BuLi Süd8A,Gerhard Furnier,1.BuLi Süd,A,SV Waldkirch,Luftpistole
+171,"Mehrzweckhalle, Hauptstr. 109, 74638 Waldenburg",Sgi Waldenburg,,8,2017-12-02,LP1.BuLi Süd8B,Franz Möndel,1.BuLi Süd,B,Sgi Waldenburg,Luftpistole
+172,"Turnhalle der Grundschule in 89331 Burgau, Remsharter Str. 2",SV Waldkirch,,9,2017-12-03,LP1.BuLi Süd9A,Gerhard Furnier,1.BuLi Süd,A,SV Waldkirch,Luftpistole
+173,"Mehrzweckhalle, Hauptstr. 109, 74638 Waldenburg",Sgi Waldenburg,,9,2017-12-03,LP1.BuLi Süd9B,Franz Möndel,1.BuLi Süd,B,Sgi Waldenburg,Luftpistole
+174,"Lußhardthallae, Pfarrer-Graf-Straße, 76707 Hambrücken",KKS Hambrücken,,10,2018-01-06,LP1.BuLi Süd10A,Franz Möndel,1.BuLi Süd,A,KKS Hambrücken,Luftpistole
+175,"KSV-Sporthalle, Am Kugelberg, 71642 Ludwigsburg",SGi Ludwigsburg,,10,2018-01-06,LP1.BuLi Süd10B,Dr. Walter Horlacher,1.BuLi Süd,B,SGi Ludwigsburg,Luftpistole
+176,"Lußhardthallae, Pfarrer-Graf-Straße, 76707 Hambrücken",KKS Hambrücken,,11,2018-01-07,LP1.BuLi Süd11A,Franz Möndel,1.BuLi Süd,A,KKS Hambrücken,Luftpistole
+177,"KSV-Sporthalle, Am Kugelberg, 71642 Ludwigsburg",SGi Ludwigsburg,,11,2018-01-07,LP1.BuLi Süd11B,Dr. Walter Horlacher,1.BuLi Süd,B,SGi Ludwigsburg,Luftpistole

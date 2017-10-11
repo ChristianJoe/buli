@@ -18,7 +18,7 @@ from .callbacks.simple import (get_started, push, subscribe, unsubscribe, wiki, 
                                questions,share_bot, push_step, menue_candidates, menue_data,
                                more_data, sunday_poll, greetings, presidents, chancelor, who_votes)
 from .callbacks.shared import (get_pushes, get_breaking, send_push, schema)
-from .callbacks import candidate, district, browse_lists, manifesto, party, dates
+from .callbacks import candidate, district, browse_lists, manifesto, party, dates, parser
 from .data import by_district_id
 
 # TODO: The idea is simple. When you send "subscribe" to the bot, the bot server would add a record according to the sender_id to their
@@ -64,7 +64,7 @@ def make_event_handler():
         PayloadHandler(about_manifesto, ['about_manifesto']),
 
         ApiAiHandler(dates.dates_api, 'next_event_club'),
-        
+
         PayloadHandler(dates.competition_info, ['comp_id']),
 
 
@@ -251,15 +251,23 @@ def push_breaking():
     data.save(update_fields=['delivered'])
 
 
+def dsb_update():
+    parser.get_results_pd()
+
 schedule.every(30).seconds.do(push_breaking)
 schedule.every().day.at("18:00").do(push_notification)
-#schedule.every().day.at("08:00").do(push_notification)
+schedule.every().day.at("13.50").do(dsb_update)
 
 
 def schedule_loop():
     while True:
         schedule.run_pending()
         sleep(1)
+
+
+
+
+
 
 schedule_loop_thread = Thread(target=schedule_loop, daemon=True)
 schedule_loop_thread.start()
