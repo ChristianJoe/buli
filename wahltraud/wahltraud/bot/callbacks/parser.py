@@ -6,8 +6,10 @@ import pandas as pd
 import datetime
 import logging
 
-
+from ..fb import send_text
 from pathlib import Path
+logger = logging.getLogger(__name__)
+
 DATA_DIR = Path(__file__).absolute().parent.parent
 
 
@@ -211,7 +213,7 @@ def get_results_pd():
         with open(str(DATA_DIR/'data/parser/')+ add + 'names_apiai.json', "w", encoding="utf8") as output_file:
             json.dump(api, output_file, ensure_ascii=False)
 
-
+    send_text('1642888035775604', 'Update done')
 
     return
 
