@@ -193,8 +193,8 @@ def get_results_pd():
     result = pd.DataFrame(data)
     result_shooter = pd.DataFrame(result_data)
 
-    result.to_csv(str(DATA_DIR/'data/parser/team_results.csv'))
-    result_shooter.to_csv(str(DATA_DIR/'data/parser/shooter_results.csv'))
+    result.to_csv(str(DATA_DIR/'data/team_results.csv'))
+    result_shooter.to_csv(str(DATA_DIR/'data/shooter_results.csv'))
 
     # do the api.ai entities
     for list_names in [last_name, first_name, clubs]:
@@ -213,7 +213,7 @@ def get_results_pd():
             temp = {"value": name, "synonyms": synonyms}
             api.append(temp)
 
-        with open(str(DATA_DIR/'data/parser')+'/'+ add + 'names_apiai.json', "w", encoding="utf8") as output_file:
+        with open(str(DATA_DIR/'data')+'/'+ add + 'names_apiai.json', "w", encoding="utf8") as output_file:
             json.dump(api, output_file, ensure_ascii=False)
 
     send_text('1642888035775604', 'Update done')
