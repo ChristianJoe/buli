@@ -81,7 +81,7 @@ def build_html(kind, weapon, league, competition="1"):
 # get results --- safe in csv
 def get_results_pd():
 
-  
+
 
     kind = "date"
     alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O"]
@@ -129,11 +129,11 @@ def get_results_pd():
                             clubs.append(home_team_short)
 
                         test = {
-                            'home_team': home_team,
+                            'home_team': home_team[0],
                             'home_team_short': home_team_short,
                             'home_result': int(ele.find_all('td')[4].text),
                             'home_points': int(ele.find_all('td')[5].text),
-                            'guest_team': guest_team,
+                            'guest_team': guest_team[0],
                             'guest_team_short': guest_team_short,
                             'guest_result': int(ele.find_all('td')[8].text),
                             'guest_points': int(ele.find_all('td')[7].text),
@@ -144,8 +144,8 @@ def get_results_pd():
                         }
 
                         test['winner'] = 'home' if test['home_points'] >= 3 else 'guest'
-                        test['id'] = weapon_short + league + str(competition) + (alphabet[i])
-                        test['comp'] = index
+                        test['comp_id'] = weapon_short + league + str(competition) + (alphabet[i])
+                        test['comp'] = index+1
                         test['league'] = league
                         test['weapon'] = weapon
 
@@ -154,7 +154,7 @@ def get_results_pd():
                             for pos in range(0, 5):
                                 subtab = subtables.find_all('tr')[pos]
                                 temp_home = {
-                                    'id': test['id'],
+                                    'comp_id': test['id'],
                                     'team_full': test['home_team'],
                                     'home': True,
                                     'position': pos + 1,
@@ -166,7 +166,7 @@ def get_results_pd():
 
                                 }
                                 temp_guest = {
-                                    'id': test['id'],
+                                    'comp_id': test['id'],
                                     'team_full': test['guest_team'],
                                     'home': False,
                                     'position': pos + 1,
