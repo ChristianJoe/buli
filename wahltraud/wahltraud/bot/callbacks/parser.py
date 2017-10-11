@@ -81,9 +81,7 @@ def build_html(kind, weapon, league, competition="1"):
 # get results --- safe in csv
 def get_results_pd():
 
-    #logger.info(str(DATA_DIR/'data/parser/team_results.csv'))
-    #send_text('1642888035775604', str(DATA_DIR/'data/parser/team_results.csv'))
-
+  
 
     kind = "date"
     alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O"]
@@ -215,7 +213,7 @@ def get_results_pd():
             temp = {"value": name, "synonyms": synonyms}
             api.append(temp)
 
-        with open(str(DATA_DIR/'data/parser/')+ add + 'names_apiai.json', "w", encoding="utf8") as output_file:
+        with open(str(DATA_DIR/'data/parser')+'/'+ add + 'names_apiai.json', "w", encoding="utf8") as output_file:
             json.dump(api, output_file, ensure_ascii=False)
 
     send_text('1642888035775604', 'Update done')
