@@ -154,7 +154,7 @@ def get_results_pd():
                             for pos in range(0, 5):
                                 subtab = subtables.find_all('tr')[pos]
                                 temp_home = {
-                                    'comp_id': test['id'],
+                                    'comp_id': test['comp_id'],
                                     'team_full': test['home_team'],
                                     'home': True,
                                     'position': pos + 1,
