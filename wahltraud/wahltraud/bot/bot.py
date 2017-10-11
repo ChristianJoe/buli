@@ -16,7 +16,7 @@ from .handlers.apiaihandler import ApiAiHandler
 from .callbacks.simple import (get_started, push, subscribe, unsubscribe, wiki, story,
                                apiai_fulfillment, about_manifesto, menue_manifesto, about,
                                questions,share_bot, push_step, menue_candidates, menue_data,
-                               more_data, sunday_poll, greetings, presidents, chancelor, who_votes)
+                               more_data, sunday_poll, greetings, presidents, chancelor, who_votes, update_api)
 from .callbacks.shared import (get_pushes, get_breaking, send_push, schema)
 from .callbacks import candidate, district, browse_lists, manifesto, party, dates, parser
 from .data import by_district_id
@@ -64,8 +64,11 @@ def make_event_handler():
         PayloadHandler(about_manifesto, ['about_manifesto']),
 
         ApiAiHandler(dates.dates_api, 'next_event_club'),
+        ApiAiHandler(update_api, 'update'),
 
+        PayloadHandler(parser.get_results_pd, ['update_result']),
         PayloadHandler(dates.competition_info, ['comp_id']),
+
 
 
         #ApiAiHandler(presidents, 'bundespräsident'),

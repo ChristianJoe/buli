@@ -17,6 +17,25 @@ from ..data import by_district_id
 logger = logging.getLogger(__name__)
 
 
+def update_api(event,**kwargs):
+    sender_id = event['sender']['id']
+
+    if sender_id == '1642888035775604':
+        send_buttons(sender_id, 'Welches Update',
+                     buttons=[
+                            button_postback("Ergebnisse",
+                                          ['update_results']
+                                        )
+                            #button_postback('Anmelden', ['subscribe']),
+                         # button_postback('Erklär mal...', ['about'])
+                     ])
+    else:
+        send_text(sender_id, 'jo jo jo, kommt')
+
+
+
+
+
 def greetings(event, **kwargs):
     sender_id = event['sender']['id']
     infos = Info.objects.all().order_by('-id')[:1]
