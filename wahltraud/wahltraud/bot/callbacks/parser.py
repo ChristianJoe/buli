@@ -166,7 +166,7 @@ def get_results_pd():
 
                                 }
                                 temp_guest = {
-                                    'comp_id': test['id'],
+                                    'comp_id': test['comp_id'],
                                     'team_full': test['guest_team'],
                                     'home': False,
                                     'position': pos + 1,
