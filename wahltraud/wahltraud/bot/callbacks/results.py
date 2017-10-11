@@ -22,3 +22,5 @@ def results_api(event, parameters, **kwargs):
 def results_club(event, payload, **kwargs):
     sender_id = event['sender']['id']
     club = payload['club']
+
+    send_text(sender_id, 'hier das Ergebnise von '+club)
