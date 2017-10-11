@@ -18,7 +18,7 @@ from .callbacks.simple import (get_started, push, subscribe, unsubscribe, wiki, 
                                questions,share_bot, push_step, menue_candidates, menue_data,
                                more_data, sunday_poll, greetings, presidents, chancelor, who_votes, update_api)
 from .callbacks.shared import (get_pushes, get_breaking, send_push, schema)
-from .callbacks import candidate, district, browse_lists, manifesto, party, dates, parser
+from .callbacks import candidate, district, browse_lists, manifesto, party, dates, parser, results
 from .data import by_district_id
 
 # TODO: The idea is simple. When you send "subscribe" to the bot, the bot server would add a record according to the sender_id to their
@@ -54,7 +54,6 @@ def make_event_handler():
         PayloadHandler(push_step, ['push', 'next_state']),
         PayloadHandler(push, ['push']),
         ApiAiHandler(push, 'push'),
-        ApiAiHandler(district.result_nation_17,'Ergebnisse'),
         ApiAiHandler(wiki, 'wiki'),
         PayloadHandler(menue_candidates, ['menue_candidates']),
         #PayloadHandler(questions, ['questions']),
@@ -65,6 +64,11 @@ def make_event_handler():
 
         ApiAiHandler(dates.dates_api, 'next_event_club'),
         ApiAiHandler(update_api, 'update'),
+
+        ApiAiHandler(results.results_api, 'results'),
+        PayloadHandler(results.results_club,'results_club'),
+
+
 
         PayloadHandler(parser.get_results_pd, ['update_result']),
         PayloadHandler(dates.competition_info, ['comp_id']),
