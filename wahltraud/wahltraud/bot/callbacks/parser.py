@@ -80,6 +80,8 @@ def build_html(kind, weapon, league, competition="1"):
 
 # get results --- safe in csv
 def get_results_pd():
+
+    logger.info(str(DATA_DIR/'data/parser/team_results.csv'))
     send_text('1642888035775604', str(DATA_DIR/'data/parser/team_results.csv'))
 
     '''
