@@ -264,7 +264,7 @@ def dsb_update():
 
 schedule.every(60).seconds.do(push_breaking)
 schedule.every().day.at("18:00").do(push_notification)
-schedule.every().day.at("13.50").do(dsb_update)
+schedule.every().day.at("14:02").do(dsb_update)
 
 
 def schedule_loop():
