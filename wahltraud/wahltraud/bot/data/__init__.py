@@ -27,10 +27,7 @@ dates = pd.read_csv(DATA_DIR/'parser/buli17dates.csv')
 dates['date']= pd.to_datetime(dates['date'])
 
 results_team = pd.read_csv(DATA_DIR/'team_results.csv')
-results_team['date'] = pd.to_date(results_team['date'])
-
-
-results_team['date']= pd.to_datetime(results_team['date'])
+results_team['date'] = pd.to_datetime(results_team['date'])
 
 
 results_shooter = pd.read_csv(DATA_DIR/'shooter_results.csv')
