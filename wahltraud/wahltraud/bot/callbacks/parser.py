@@ -151,6 +151,7 @@ def get_results_pd():
                     if tables2:
                         subtables = tables2[index]
                         for pos in range(0, 5):
+                            posstr_id = test['comp_id']+str(pos+1)
                             subtab = subtables.find_all('tr')[pos]
                             temp_home = {
                                 'comp_id': test['comp_id'],
@@ -162,20 +163,20 @@ def get_results_pd():
                                 'result': int(subtab.find_all('td')[4].text),
                                 'point': int(subtab.find_all('td')[5].text),
                                 'shoot_off': subtab.find_all('td')[3].text,
-                                'pos_id': test['comp_id']+pos+1
+                                'pos_id': posstr_id
 
                             }
                             temp_guest = {
                                 'comp_id': test['comp_id'],
                                 'team_full': test['guest_team'],
                                 'home': False,
-                                'position': pos + 1,
+                                'position': pos+1,
                                 'first_name': subtab.find_all('td')[10].text.split(',')[1].strip(),
                                 'last_name': subtab.find_all('td')[10].text.split(',')[0].strip(),
                                 'result': int(subtab.find_all('td')[8].text),
                                 'point': int(subtab.find_all('td')[7].text),
                                 'shoot_off': subtab.find_all('td')[9].text,
-                                'pos_id': test['comp_id'] + pos + 1
+                                'pos_id':posstr_id
 
                             }
                             result_data.append(temp_home)
