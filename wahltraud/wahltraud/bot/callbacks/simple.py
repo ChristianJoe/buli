@@ -40,22 +40,31 @@ def greetings(event, **kwargs):
     sender_id = event['sender']['id']
     infos = Info.objects.all().order_by('-id')[:1]
 
-    if infos:
-        info = infos[0]
-        reply = ("Hi, hier die neueste Funktion. \n\n"
-                 + info.content)
+    reply = event['message']['nlp']['result']['fulfillment']['speech']
 
-        if info.attachment_id:
-            send_attachment_by_id(
-                sender_id,
-                info.attachment_id,
-                guess_attachment_type(str(info.media))
-            )
+    if infos:
+        send_text(sender_id, reply, quick_reply('Neueste Funktion',{'infos_backend': infos}))
 
     else:
-        reply = event['message']['nlp']['result']['fulfillment']['speech']
+        send_text(sender_id, reply)
+
+
+def infos_backend(event,payload,**kwargs):
+    sender_id = event['sender']['id']
+    infos = payload['infos']
+
+    info = infos[0]
+    reply = (info.content)
+
+    if info.attachment_id:
+        send_attachment_by_id(
+            sender_id,
+            info.attachment_id,
+            guess_attachment_type(str(info.media))
+        )
 
     send_text(sender_id, reply)
+
 
 
 def get_started(event, **kwargs):

@@ -233,7 +233,6 @@ def update_table():
     tables_all = []
     clubs = []
     for weapon in inverted_weapon:
-        date_all[weapon] = {}
 
         # for i in range(0,total_competitions):
         if weapon == "Luftgewehr":
@@ -241,11 +240,7 @@ def update_table():
         else:
             weapon_short = "LP"
         for league in inverted_league:
-            date_all[weapon][league] = {}
-            total_competitions = competitons[league]
-            dates = {}
-
-            site = build_html(kind, weapon, league, str(competition))
+            site = build_html(kind, weapon, league, str(1))
             response = requests.get(site)
             soup = bs4.BeautifulSoup(response.text, "lxml")
             table = soup.find_all('table', class_='ergebnisse')[0]

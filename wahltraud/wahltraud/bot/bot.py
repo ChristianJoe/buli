@@ -16,7 +16,7 @@ from .handlers.apiaihandler import ApiAiHandler
 from .callbacks.simple import (get_started, push, subscribe, unsubscribe, wiki, story,
                                apiai_fulfillment, about_manifesto, menue_manifesto, about,
                                questions,share_bot, push_step, menue_candidates, menue_data,
-                               more_data, sunday_poll, greetings, presidents, chancelor, who_votes, update_api)
+                               more_data, sunday_poll, greetings, presidents, chancelor, who_votes, update_api, infos_backend)
 from .callbacks.shared import (get_pushes, get_breaking, send_push, schema)
 from .callbacks import candidate, district, browse_lists, manifesto, party, dates, parser, results
 from .data import by_district_id
@@ -42,6 +42,7 @@ def make_event_handler():
     handlers = [
         ApiAiHandler(greetings, 'hi'),
         PayloadHandler(greetings, ['gruss']),
+        PayloadHandler(infos_backend,['infos_backend']),
         PayloadHandler(get_started, ['start']),
         PayloadHandler(about, ['about']),
         PayloadHandler(story, ['push_id', 'next_state']),
@@ -262,7 +263,7 @@ def push_breaking():
 
 def dsb_update():
     # update results just on weekend till monday every 15min
-    parser.get_results_pd()
+    #parser.get_results_pd()
     # update set list just on saturday, sunday, monday
     parser.update_table()
     # update otherwise once a day
@@ -273,7 +274,7 @@ def dsb_update():
 
 schedule.every(60).seconds.do(push_breaking)
 schedule.every().day.at("18:00").do(push_notification)
-schedule.every().day.at("22:31").do(dsb_update)
+schedule.every().day.at("22:42").do(dsb_update)
 
 
 def schedule_loop():
