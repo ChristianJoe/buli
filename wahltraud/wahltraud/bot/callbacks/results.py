@@ -33,7 +33,7 @@ def shooter_results_api(event, parameters, **kwargs):
     club = parameters.get('club')
 
     payload = {'first_name': first_name,
-               'last_name': last_name
+               'last_name': last_name,
                'club' : club
                }
 
