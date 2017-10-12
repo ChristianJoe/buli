@@ -40,7 +40,7 @@ def next_event(event,payload,**kwargs):
             options.append(
                 quick_reply(
                     league,
-                    {'comp_id': next_dates['id'].iloc[i]}
+                    {'comp_id': next_dates['comp_id'].iloc[i]}
                 )
             )
     else:
@@ -54,7 +54,7 @@ def next_event(event,payload,**kwargs):
             options.append(
                 quick_reply(
                     date + ' ' + league,
-                    {'comp_id': dates_club['id'].iloc[i]})
+                    {'comp_id': dates_club['comp_id'].iloc[i]})
             )
 
     send_text(sender_id, text, quick_replies = options)
