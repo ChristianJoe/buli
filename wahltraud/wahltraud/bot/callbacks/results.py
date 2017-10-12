@@ -99,7 +99,7 @@ def shooter_results(event,payload,**kwargs):
     last_name = payload['last_name']
     club = payload['club_name']
 
-    results = get_results()
+    results = get_results_shooter()
 
     if not club:
         if not first_name:
