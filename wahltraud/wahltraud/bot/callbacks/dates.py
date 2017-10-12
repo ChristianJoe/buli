@@ -72,6 +72,6 @@ def competition_info(event, payload, **kwargs):
         send_text(sender_id, '{time}: {home} : {guest} '.format(
             time = data_comp_id['time'].iloc[0],
             home = data_comp_id['home_team'].iloc[0],
-            guest = data_comp_id('guest_team').iloc[0]
+            guest = data_comp_id['guest_team'].iloc[0]
         )
                   )
