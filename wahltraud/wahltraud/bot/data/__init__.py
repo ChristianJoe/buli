@@ -34,9 +34,8 @@ results_shooter = pd.read_csv(DATA_DIR/'shooter_results.csv')
 
 
 def get_results_shooter():
-
-
     return results_shooter
+
 
 def get_results_team():
     return results_team

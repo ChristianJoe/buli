@@ -107,88 +107,89 @@ def get_results_pd():
                 total_stadiums = (len(tables3))
                 comp_per_stadium = total_competitions / total_stadiums
 
-                for i in range(0, total_competitions):
-                    if weapon == "Luftgewehr":
-                        weapon_short = "LG"
-                    else:
-                        weapon_short = "LP"
+                if weapon == "Luftgewehr":
+                    weapon_short = "LG"
+                else:
+                    weapon_short = "LP"
 
-                    # ele for element
-                    for index, ele in enumerate(tables):
-                        tables3_index = int((index) / comp_per_stadium)
-                        date = tables3[tables3_index].find_all('td')[0].text.replace('Begegnung am ', '')
-                        host = tables3[tables3_index].find_all('td')[1].text.replace('Ausrichter: ', '').strip()
-                        home_team = ele.find_all('td')[2].text.strip(),
-                        guest_team = ele.find_all('td')[10].text.strip(),
+                # ele for element
+                for index, ele in enumerate(tables):
+                    tables3_index = int((index) / comp_per_stadium)
+                    date = tables3[tables3_index].find_all('td')[0].text.replace('Begegnung am ', '')
+                    host = tables3[tables3_index].find_all('td')[1].text.replace('Ausrichter: ', '').strip()
+                    home_team = ele.find_all('td')[2].text.strip(),
+                    guest_team = ele.find_all('td')[10].text.strip(),
 
-                        for ending in ['II', 'I', '2', 'FSG']:
-                            host = host.replace(ending, '').strip()
-                            home_team_short = home_team[0].replace(ending, '').strip()
-                            guest_team_short = guest_team[0].replace(ending, '').strip()
-                        if home_team_short not in clubs:
-                            clubs.append(home_team_short)
+                    for ending in ['II', 'I', '2', 'FSG']:
+                        host = host.replace(ending, '').strip()
+                        home_team_short = home_team[0].replace(ending, '').strip()
+                        guest_team_short = guest_team[0].replace(ending, '').strip()
+                    if home_team_short not in clubs:
+                        clubs.append(home_team_short)
 
-                        test = {
-                            'home_team': home_team[0],
-                            'home_team_short': home_team_short,
-                            'home_result': int(ele.find_all('td')[4].text),
-                            'home_points': int(ele.find_all('td')[5].text),
-                            'guest_team': guest_team[0],
-                            'guest_team_short': guest_team_short,
-                            'guest_result': int(ele.find_all('td')[8].text),
-                            'guest_points': int(ele.find_all('td')[7].text),
-                            'time': ele.find_all('td')[1].text,
-                            'date': date,
-                            'host': host,
-                            'site': site
-                        }
+                    test = {
+                        'home_team': home_team[0],
+                        'home_team_short': home_team_short,
+                        'home_result': int(ele.find_all('td')[4].text),
+                        'home_points': int(ele.find_all('td')[5].text),
+                        'guest_team': guest_team[0],
+                        'guest_team_short': guest_team_short,
+                        'guest_result': int(ele.find_all('td')[8].text),
+                        'guest_points': int(ele.find_all('td')[7].text),
+                        'time': ele.find_all('td')[1].text,
+                        'date': date,
+                        'host': host,
+                        'site': site
+                    }
 
-                        test['winner'] = 'home' if test['home_points'] >= 3 else 'guest'
-                        test['comp_id'] = weapon_short + league + str(competition) + (alphabet[i])
-                        test['comp'] = index+1
-                        test['league'] = league
-                        test['weapon'] = weapon
+                    test['winner'] = 'home' if test['home_points'] >= 3 else 'guest'
+                    test['comp_id'] = weapon_short + league + str(competition) + (alphabet[index])
+                    test['comp'] = index+1
+                    test['league'] = league
+                    test['weapon'] = weapon
 
-                        if tables2:
-                            subtables = tables2[index]
-                            for pos in range(0, 5):
-                                subtab = subtables.find_all('tr')[pos]
-                                temp_home = {
-                                    'comp_id': test['comp_id'],
-                                    'team_full': test['home_team'],
-                                    'home': True,
-                                    'position': pos + 1,
-                                    'first_name': subtab.find_all('td')[2].text.split(',')[1].strip(),
-                                    'last_name': subtab.find_all('td')[2].text.split(',')[0].strip(),
-                                    'result': int(subtab.find_all('td')[4].text),
-                                    'point': int(subtab.find_all('td')[5].text),
-                                    'shoot_off': subtab.find_all('td')[3].text
+                    if tables2:
+                        subtables = tables2[index]
+                        for pos in range(0, 5):
+                            subtab = subtables.find_all('tr')[pos]
+                            temp_home = {
+                                'comp_id': test['comp_id'],
+                                'team_full': test['home_team'],
+                                'home': True,
+                                'position': pos + 1,
+                                'first_name': subtab.find_all('td')[2].text.split(',')[1].strip(),
+                                'last_name': subtab.find_all('td')[2].text.split(',')[0].strip(),
+                                'result': int(subtab.find_all('td')[4].text),
+                                'point': int(subtab.find_all('td')[5].text),
+                                'shoot_off': subtab.find_all('td')[3].text,
+                                'pos_id': test['comp_id']+pos+1
 
-                                }
-                                temp_guest = {
-                                    'comp_id': test['comp_id'],
-                                    'team_full': test['guest_team'],
-                                    'home': False,
-                                    'position': pos + 1,
-                                    'first_name': subtab.find_all('td')[10].text.split(',')[1].strip(),
-                                    'last_name': subtab.find_all('td')[10].text.split(',')[0].strip(),
-                                    'result': int(subtab.find_all('td')[8].text),
-                                    'point': int(subtab.find_all('td')[7].text),
-                                    'shoot_off': subtab.find_all('td')[9].text
+                            }
+                            temp_guest = {
+                                'comp_id': test['comp_id'],
+                                'team_full': test['guest_team'],
+                                'home': False,
+                                'position': pos + 1,
+                                'first_name': subtab.find_all('td')[10].text.split(',')[1].strip(),
+                                'last_name': subtab.find_all('td')[10].text.split(',')[0].strip(),
+                                'result': int(subtab.find_all('td')[8].text),
+                                'point': int(subtab.find_all('td')[7].text),
+                                'shoot_off': subtab.find_all('td')[9].text,
+                                'pos_id': test['comp_id'] + pos + 1
 
-                                }
-                                result_data.append(temp_home)
-                                result_data.append(temp_guest)
-                                if temp_home['first_name'] not in first_name:
-                                    first_name.append(temp_home['first_name'])
-                                if temp_guest['first_name'] not in first_name:
-                                    first_name.append(temp_guest['first_name'])
-                                if temp_home['last_name'] not in last_name:
-                                    last_name.append(temp_home['last_name'])
-                                if temp_guest['last_name'] not in last_name:
-                                    last_name.append(temp_guest['last_name'])
+                            }
+                            result_data.append(temp_home)
+                            result_data.append(temp_guest)
+                            if temp_home['first_name'] not in first_name:
+                                first_name.append(temp_home['first_name'])
+                            if temp_guest['first_name'] not in first_name:
+                                first_name.append(temp_guest['first_name'])
+                            if temp_home['last_name'] not in last_name:
+                                last_name.append(temp_home['last_name'])
+                            if temp_guest['last_name'] not in last_name:
+                                last_name.append(temp_guest['last_name'])
 
-                        data.append(test)
+                    data.append(test)
 
     result = pd.DataFrame(data)
     result_shooter = pd.DataFrame(result_data)
@@ -215,6 +216,15 @@ def get_results_pd():
 
         with open(str(DATA_DIR/'data')+'/'+ add + 'names_apiai.json', "w", encoding="utf8") as output_file:
             json.dump(api, output_file, ensure_ascii=False)
+
+
+    #tabelle
+
+
+
+
+
+
 
     send_text('1642888035775604', 'Update done')
 
