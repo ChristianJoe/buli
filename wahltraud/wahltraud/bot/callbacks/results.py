@@ -3,7 +3,7 @@ import operator
 import pandas as pd
 
 from ..fb import send_buttons, button_postback, send_text, send_attachment, send_list, list_element, quick_reply
-from ..data import by_uuid, get_dates, get_results
+from ..data import by_uuid, get_dates, get_results_team, get_results_shooter
 import datetime
 
 
