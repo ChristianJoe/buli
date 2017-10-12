@@ -18,11 +18,23 @@ election13_dict = json.load(open(str(DATA_DIR/'wahlkreis_info.json')))['election
 election17_dict = json.load(open(str(DATA_DIR/'results/results_17.json')))['election_17']
 digital_word_list = json.load(open(str(DATA_DIR/'digital_words.json')))['words']
 
-dates_json = json.load(open(str(DATA_DIR/'parser/buli17dates.json')))
 
 structural_data_district = pd.read_csv(DATA_DIR/'btw17_strukturdaten.csv', delimiter = ';')
+
+
+# load data BuLi
 dates = pd.read_csv(DATA_DIR/'parser/buli17dates.csv')
 dates['date']= pd.to_datetime(dates['date'])
+
+results_team = pd.read_csv(DATA_DIR/'team_results.csv')
+results_team['date']= pd.to_datetime(results_team['date'])
+
+
+results_shooter = pd.read_csv(DATA_DIR/'shooter_results.csv')
+
+
+def get_results():
+    return results_shooter
 
 def get_dates():
     dates_sorted = dates.sort_values(by='date')
