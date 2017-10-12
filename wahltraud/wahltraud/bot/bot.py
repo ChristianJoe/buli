@@ -76,7 +76,7 @@ def make_event_handler():
         PayloadHandler(dates.competition_info, ['comp_id']),
 
         ApiAiHandler(results.table_api,'table'),
-        PayloadHandler(results.table_second_league, 'table_second_league'),
+        PayloadHandler(results.table_second_league, ['table_second_league']),
         PayloadHandler(results.table_league, ['table_league']),
 
         #ApiAiHandler(presidents, 'bundespräsident'),
