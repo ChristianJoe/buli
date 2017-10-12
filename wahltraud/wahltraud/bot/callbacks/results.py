@@ -15,17 +15,46 @@ def table_api(event, parameters, **kwargs):
     if league:
         table_league(event,{'table_league': league})
     else:
-        send_text(sender_id, 'Welche League?' )
-
+        competitons = { "1.BuLi Nord": 'BuLi Nord',
+                        "1.BuLi Süd": 'BuLi Süd'
+                        }
+        options = []
+        for element, key in competitons.items():
+            options.append(
+                quick_reply(key, {'table_league': element})
+            )
+            options.append(
+                quick_reply('2.Buli', ['table_second_league'])
+            )
+        send_text(sender_id, 'Welche Liga?' , quick_replies = options)
 
 
 def table_league(event,payload,**kwargs):
     sender_id = event['sender']['id']
-    league = payload['league']
+    league = payload['table_league']
     send_text(sender_id, 'table ' + league)
 
 
+def table_second_league(event,payload,**kwargs):
+    #choosing second league
+    sender_id = event['sender']['id']
 
+    competitons = {
+                   "2.BuLi Süd": 'Süd' ,
+                   "2.BuLi Nord": 'Nord',
+                   "2.BuLi West": 'West',
+                   "2.BuLi Ost": 'Ost',
+                   "2.BuLi Südwest": 'Südwest'
+                   }
+
+    options = []
+    for  element, key in competitons.items():
+        options.append(
+            quick_reply(key,{'table_league': element})
+        )
+
+
+    send_text(sender_id,'Such dir eine Liga aus.', quick_replies = options)
 
 
 def results_api(event, parameters, **kwargs):
