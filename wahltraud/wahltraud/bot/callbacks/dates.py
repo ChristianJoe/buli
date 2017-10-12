@@ -2,7 +2,7 @@ import logging
 import operator
 
 from ..fb import send_buttons, button_postback, send_text, send_attachment, send_list, list_element, quick_reply
-from ..data import by_uuid, get_dates
+from ..data import by_uuid, get_dates, get_results_team, get_results_shooter
 import datetime
 
 
@@ -19,7 +19,7 @@ def next_event(event,payload,**kwargs):
     sender_id = event['sender']['id']
     club = payload['club']
 
-    dates = get_dates()
+    dates = get_results_team()
     options = []
     now = datetime.date.today()
 
@@ -44,7 +44,7 @@ def next_event(event,payload,**kwargs):
                 )
             )
     else:
-        dates_club = dates[dates['club'] == club]
+        dates_club = dates[dates['host'] == club]
 
         text = club + ' ist Ausrichter folgender Wettkämpfe:'
 
@@ -62,6 +62,16 @@ def next_event(event,payload,**kwargs):
 
 def competition_info(event, payload, **kwargs):
     sender_id = event['sender']['id']
-    dates_id = payload['comp_id']
+    comp_id = payload['comp_id']
 
-    send_text(sender_id, 'Hier gibt es Info über '+dates_id)
+    data = get_results_team()
+    data_comp_id = data[data['comp_id']== comp_id]
+
+    for row in data_comp_id.iterrows():
+
+        send_text(sender_id, '{time}: {home} : {guest} '.format(
+            time = data_comp_id['time'].iloc[0],
+            home = data_comp_id['home_team'].iloc[0],
+            guest = data_comp_id('guest_team').iloc[0]
+        )
+                  )

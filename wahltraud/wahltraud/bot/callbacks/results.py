@@ -54,8 +54,9 @@ def shooter_results(event,payload,**kwargs):
         elif not last_name:
             send_text(sender_id, 'Hier Ergebnisse zu ' + first_name+'.')
         else:
-            data = results[results['last_name'] == last_name and results['first_name']== 'first_name']
+            data = results[(results['last_name'] == last_name) & (results['first_name'] == first_name)]
             points = data['result'].iloc[0]
+
 
             send_text(sender_id, 'Hier Ergebnisse zu ' + first_name + ' ' + last_name+':'+points)
 
