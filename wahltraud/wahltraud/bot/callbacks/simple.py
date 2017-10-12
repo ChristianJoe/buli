@@ -43,7 +43,7 @@ def greetings(event, **kwargs):
     reply = event['message']['nlp']['result']['fulfillment']['speech']
 
     if infos:
-        send_text(sender_id, reply, quick_reply('Neueste Funktion',{'infos_backend': infos}))
+        send_text(sender_id, reply, [quick_reply('Neueste Funktion',{'infos_backend': infos})])
 
     else:
         send_text(sender_id, reply)
@@ -54,6 +54,7 @@ def infos_backend(event,payload,**kwargs):
     infos = payload['infos']
 
     info = infos[0]
+
     reply = (info.content)
 
     if info.attachment_id:

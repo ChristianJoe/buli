@@ -14,7 +14,7 @@ DATA_DIR = Path(__file__).absolute().parent.parent
 
 
 
-# translation definition of
+# translation
 weapon = {"1" : "Luftgewehr",
           "2" : "Luftpistole",
          }
@@ -28,20 +28,20 @@ league = {"1" :  "2.BuLi Nord",
         }
 page_id = {"205" : "setlist",
            "231" : "date_result",
-           "42" : "table 1.Nord Luftgewehr",
-           "51" : "table 1.Süd Luftgewehr",
-           "55" : "table 2.Nord Luftgewehr",
-           "65" : "table 2.Süd Luftgewehr",
-           "63" : "table 2.Südwest Luftgewehr",
-           "61" : "table 2.West Luftgewehr",
-           "57" : "table 2.Ost Luftgewehr",
-           "42" : "table 1.Nord Luftpistole",
-           "51" : "table 1.Süd Luftpistole",
-           "55" : "table 2.Nord Luftpistole",
-           "65" : "table 2.Süd Luftpistole",
-           "63" : "table 2.Südwest Luftpistole",
-           "61" : "table 2.West Luftpistole",
-           "57" : "table 2.Ost Luftpistole",
+           "42" : "table 1.BuLi Nord Luftgewehr",
+           "51" : "table 1.BuLi Süd Luftgewehr",
+           "55" : "table 2.BuLi Nord Luftgewehr",
+           "65" : "table 2.BuLi Süd Luftgewehr",
+           "63" : "table 2.BuLi Südwest Luftgewehr",
+           "61" : "table 2.BuLi West Luftgewehr",
+           "57" : "table 2.BuLi Ost Luftgewehr",
+           "46" : "table 1.BuLi Nord Luftpistole",
+           "123" : "table 1.BuLi Süd Luftpistole",
+           "128" : "table 2.BuLi Nord Luftpistole",
+           "142" : "table 2.BuLi Süd Luftpistole",
+           "140" : "table 2.BuLi Südwest Luftpistole",
+           "136" : "table 2.BuLi West Luftpistole",
+           "134" : "table 2.BuLi Ost Luftpistole",
           }
 competitons = {"1.BuLi Nord": 11,
                "1.BuLi Süd": 11,
