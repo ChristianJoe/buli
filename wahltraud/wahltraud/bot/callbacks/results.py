@@ -41,7 +41,7 @@ def table_league(event,payload,**kwargs):
     send_text(sender_id, 'table ' + league)
 
 
-def table_second_league(event,payload,**kwargs):
+def table_second_league(event,**kwargs):
     #choosing second league
     sender_id = event['sender']['id']
 
