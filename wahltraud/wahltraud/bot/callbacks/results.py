@@ -97,7 +97,7 @@ def shooter_results(event,payload,**kwargs):
     sender_id = event['sender']['id']
     first_name = payload['first_name']
     last_name = payload['last_name']
-    club = payload['club_name']
+    club = payload['club']
 
     results = get_results_shooter()
 
