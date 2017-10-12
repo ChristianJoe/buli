@@ -10,9 +10,15 @@ import datetime
 
 def table_api(event, parameters, **kwargs):
     sender_id = event['sender']['id']
-    league = parameters.get('league')
+    buli = parameters.get('league') # first or second BuLi
+    region =  parameters.get('region')
+    weapon = parameters.get('weapon')
 
-    if league:
+
+
+
+    if buli and region and weapon:
+        league = weapon+buli+' '+region
         table_league(event,{'table_league': league})
     else:
         competitons = { "1.BuLi Nord": 'BuLi Nord',
@@ -23,7 +29,7 @@ def table_api(event, parameters, **kwargs):
             options.append(
                 quick_reply(key, {'table_league': element})
             )
-            options.append(
+        options.append(
                 quick_reply('2.Buli', ['table_second_league'])
             )
         send_text(sender_id, 'Welche Liga?' , quick_replies = options)
