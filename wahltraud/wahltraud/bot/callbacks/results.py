@@ -37,7 +37,7 @@ def shooter_results_api(event, parameters, **kwargs):
                'club' : club
                }
 
-    shooter_results_api(event,payload,**kwargs)
+    shooter_results(event,payload,**kwargs)
 
 
 def shooter_results(event,payload,**kwargs):
