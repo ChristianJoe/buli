@@ -65,7 +65,7 @@ def build_html(kind, weapon, league, competition="1"):
     '''
     # http://bundesliga.dsb.de/?page_id=55 table 1.Nord rifle
     if kind == "table":
-        adding = "?page_id=" + inverted_page_id(kind + ' ' + league + ' ' + weapon)
+        adding = "?page_id=" + inverted_page_id[kind + ' ' + league + ' ' + weapon]
     elif kind == "date" or kind == 'result':
         adding = "?page_id=231&waffe=" + inverted_weapon[weapon] + "&liga=" + inverted_league[
             league] + "&wettkampf=" + competition

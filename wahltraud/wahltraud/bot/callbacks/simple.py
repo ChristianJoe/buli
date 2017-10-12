@@ -43,7 +43,7 @@ def greetings(event, **kwargs):
     reply = event['message']['nlp']['result']['fulfillment']['speech']
 
     if infos:
-        send_text(sender_id, reply, [quick_reply('Neueste Funktion',{'infos_backend': infos})])
+        send_text(sender_id, reply, [quick_reply('Neueste Funktion',['infos_backend'])])
 
     else:
         send_text(sender_id, reply)
@@ -51,11 +51,9 @@ def greetings(event, **kwargs):
 
 def infos_backend(event,payload,**kwargs):
     sender_id = event['sender']['id']
-    infos = payload['infos']
+    infos = Info.objects.all().order_by('-id')[:1]
 
     info = infos[0]
-
-    reply = (info.content)
 
     if info.attachment_id:
         send_attachment_by_id(
@@ -64,7 +62,7 @@ def infos_backend(event,payload,**kwargs):
             guess_attachment_type(str(info.media))
         )
 
-    send_text(sender_id, reply)
+    send_text(sender_id, info.content)
 
 
 
