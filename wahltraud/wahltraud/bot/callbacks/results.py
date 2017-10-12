@@ -94,7 +94,7 @@ def shooter_results_api(event, parameters, **kwargs):
 
 
 def shooter_results(event,payload,**kwargs):
-    sender_id = ['sender']['id']
+    sender_id = event['sender']['id']
     first_name = payload['first_name']
     last_name = payload['last_name']
     club = payload['club_name']
@@ -108,6 +108,7 @@ def shooter_results(event,payload,**kwargs):
             send_text(sender_id, 'Hier Ergebnisse zu ' + first_name+'.')
         else:
             data = results[(results['last_name'] == last_name) & (results['first_name'] == first_name)]
+
             points = data['result'].iloc[0]
 
 
