@@ -67,11 +67,11 @@ def competition_info(event, payload, **kwargs):
     data = get_results_team()
     data_comp_id = data[data['comp_id']== comp_id]
 
-    for  row in data_comp_id.iterrows():
+    for  index,row in enumerate(data_comp_id.iterrows()):
 
         send_text(sender_id, '{time}: {home} : {guest} '.format(
-            time = row['time'],
-            home = row['home_team'],
-            guest = row['guest_team']
+            time = row.time,
+            home = row.home_team,
+            guest = row.guest_team
         )
                   )
