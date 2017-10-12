@@ -222,20 +222,56 @@ def get_results_pd():
     #tabelle
 
 
-
-
-
-
-
-    send_text('1642888035775604', 'Update done')
+    send_text('1642888035775604', 'Update_results done')
 
     return
 
 
+def update_table():
 
+    kind = "table"
+    tables_all = []
+    clubs = []
+    for weapon in inverted_weapon:
+        date_all[weapon] = {}
 
+        # for i in range(0,total_competitions):
+        if weapon == "Luftgewehr":
+            weapon_short = "LG"
+        else:
+            weapon_short = "LP"
+        for league in inverted_league:
+            date_all[weapon][league] = {}
+            total_competitions = competitons[league]
+            dates = {}
 
+            site = build_html(kind, weapon, league, str(competition))
+            response = requests.get(site)
+            soup = bs4.BeautifulSoup(response.text, "lxml")
+            table = soup.find_all('table', class_='ergebnisse')[0]
+            rows = table.find_all('tr')
+            for index, row in enumerate(rows):
+                values = row.find_all('td')
+                for a in row.find_all('a', href=True):
+                    if a.get_text(strip=True):
+                        link_text = a['href']
+                if index != 0:
+                    temp = {'rank': values[0].text,
+                            'club': values[1].text,
+                            'single_won': values[2].text.split(':')[0],
+                            'single_lost': values[2].text.split(':')[1],
+                            'team_won': values[3].text.split(':')[1],
+                            'team_lost': values[3].text.split(':')[1],
+                            'club_page': link_text,
+                            'id': weapon_short + league
+                            }
 
+                    tables_all.append(temp)
+
+    tables = pd.DataFrame(tables_all)
+    tables.to_csv(str(DATA_DIR/'data/buli17_tables.csv'))
+
+    send_text('1642888035775604', 'Update_table done')
 
 
 

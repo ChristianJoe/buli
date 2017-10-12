@@ -8,6 +8,24 @@ import datetime
 
 
 
+def table_api(event, parameters, **kwargs):
+    sender_id = event['sender']['id']
+    league = parameters.get('league')
+
+    if league:
+        table_league(event,{'table_league': league})
+    else:
+        send_text(sender_id, 'Welche League?' )
+
+
+
+def table_league(event,payload,**kwargs):
+    sender_id = event['sender']['id']
+    league = payload['league']
+    send_text(sender_id, 'table ' + league)
+
+
+
 
 
 def results_api(event, parameters, **kwargs):

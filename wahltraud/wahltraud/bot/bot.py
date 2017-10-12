@@ -74,7 +74,8 @@ def make_event_handler():
         PayloadHandler(parser.get_results_pd, ['update_result']),
         PayloadHandler(dates.competition_info, ['comp_id']),
 
-
+        ApiAiHandler(results.table_api,'table'),
+        PayloadHandler(results.table_league, ['club']),
 
         #ApiAiHandler(presidents, 'bundespräsident'),
         #ApiAiHandler(chancelor, 'bundeskanzler'),
@@ -263,7 +264,7 @@ def dsb_update():
     # update results just on weekend till monday every 15min
     parser.get_results_pd()
     # update set list just on saturday, sunday, monday
-
+    parser.update_table()
     # update otherwise once a day
 
 
@@ -272,7 +273,7 @@ def dsb_update():
 
 schedule.every(60).seconds.do(push_breaking)
 schedule.every().day.at("18:00").do(push_notification)
-schedule.every().day.at("20:57").do(dsb_update)
+schedule.every().day.at("22:24").do(dsb_update)
 
 
 def schedule_loop():

@@ -1,641 +1,641 @@
-,comp_id,first_name,home,last_name,point,position,result,shoot_off,team_full
-0,LP2.BuLi Nord1A,Ian Talmark,True,Kannerup,0,1,370, ,PC Rendsburg
-1,LP2.BuLi Nord1A,Frederik,False,Larsen,1,1,383, ,SV Groß und Kleinkaliber
-2,LP2.BuLi Nord1A,Uwe,True,Hofmann,0,2,361, ,PC Rendsburg
-3,LP2.BuLi Nord1A,Miroslaw,False,Roj,1,2,372, ,SV Groß und Kleinkaliber
-4,LP2.BuLi Nord1A,Helge,True,Hagen,1,3,373, ,PC Rendsburg
-5,LP2.BuLi Nord1A,Tobias,False,Siemssen,0,3,371, ,SV Groß und Kleinkaliber
-6,LP2.BuLi Nord1A,Uwe,True,Knapp,0,4,357, ,PC Rendsburg
-7,LP2.BuLi Nord1A,Falk,False,Priebe,1,4,366, ,SV Groß und Kleinkaliber
-8,LP2.BuLi Nord1A,Joris,True,Feindt,0,5,364, ,PC Rendsburg
-9,LP2.BuLi Nord1A,Dieter,False,Miller,1,5,367, ,SV Groß und Kleinkaliber
-10,LP2.BuLi Nord1B,Thilo,True,Wehr,0,1,360, ,SV Kutenholz
-11,LP2.BuLi Nord1B,Waldemar,False,Markow,1,1,368, ,Wandsbeker SGi
-12,LP2.BuLi Nord1B,Sönke,True,Borchers,1,2,365, ,SV Kutenholz
-13,LP2.BuLi Nord1B,Jochen,False,Siemers,0,2,355, ,Wandsbeker SGi
-14,LP2.BuLi Nord1B,Sven,True,Delventhal,1,3,370, ,SV Kutenholz
-15,LP2.BuLi Nord1B,Rainer,False,Opitz,0,3,358, ,Wandsbeker SGi
-16,LP2.BuLi Nord1B,Jana,True,Peper,1,4,367, ,SV Kutenholz
-17,LP2.BuLi Nord1B,Valerij,False,Krichevskyi,0,4,362, ,Wandsbeker SGi
-18,LP2.BuLi Nord1B,Steffen,True,Hauschild,0,5,362, ,SV Kutenholz
-19,LP2.BuLi Nord1B,Björn-Axel,False,Dr. Dose,1,5,367, ,Wandsbeker SGi
-20,LP2.BuLi Nord1C,Frederik,True,Larsen,1,1,375, ,SV Groß und Kleinkaliber
-21,LP2.BuLi Nord1C,Waldemar,False,Markow,0,1,362, ,Wandsbeker SGi
-22,LP2.BuLi Nord1C,Miroslaw,True,Roj,1,2,380, ,SV Groß und Kleinkaliber
-23,LP2.BuLi Nord1C,Jochen,False,Siemers,0,2,372, ,Wandsbeker SGi
-24,LP2.BuLi Nord1C,Tobias,True,Siemssen,1,3,371, ,SV Groß und Kleinkaliber
-25,LP2.BuLi Nord1C,Rainer,False,Opitz,0,3,366, ,Wandsbeker SGi
-26,LP2.BuLi Nord1C,Dieter,True,Miller,1,4,373, ,SV Groß und Kleinkaliber
-27,LP2.BuLi Nord1C,Valerij,False,Krichevskyi,0,4,365, ,Wandsbeker SGi
-28,LP2.BuLi Nord1C,Kai,True,Winnemuth,0,5,356, ,SV Groß und Kleinkaliber
-29,LP2.BuLi Nord1C,Björn-Axel,False,Dr. Dose,1,5,380, ,Wandsbeker SGi
-30,LP2.BuLi Nord1D,Ian Talmark,True,Kannerup,1,1,377, ,PC Rendsburg
-31,LP2.BuLi Nord1D,Thilo,False,Wehr,0,1,367, ,SV Kutenholz
-32,LP2.BuLi Nord1D,Uwe,True,Hofmann,1,2,369, ,PC Rendsburg
-33,LP2.BuLi Nord1D,Sönke,False,Borchers,0,2,365, ,SV Kutenholz
-34,LP2.BuLi Nord1D,Helge,True,Hagen,0,3,365, ,PC Rendsburg
-35,LP2.BuLi Nord1D,Sven,False,Delventhal,1,3,369, ,SV Kutenholz
-36,LP2.BuLi Nord1D,Uwe,True,Knapp,0,4,357, ,PC Rendsburg
-37,LP2.BuLi Nord1D,Jana,False,Peper,1,4,369, ,SV Kutenholz
-38,LP2.BuLi Nord1D,Joris,True,Feindt,0,5,366, ,PC Rendsburg
-39,LP2.BuLi Nord1D,Steffen,False,Hauschild,1,5,368, ,SV Kutenholz
-40,LP2.BuLi Nord1E,Frans,True,Soerensen,1,1,379, ,GTV Bremerhaven-Seestadtteufel
-41,LP2.BuLi Nord1E,Meik,False,Kutzeck,0,1,366, ,SP Brackstedt
-42,LP2.BuLi Nord1E,Antje,True,Noeske,1,2,378, ,GTV Bremerhaven-Seestadtteufel
-43,LP2.BuLi Nord1E,Isabel,False,Kausch,0,2,361, ,SP Brackstedt
-44,LP2.BuLi Nord1E,Theo,True,Hadrath,1,3,378, ,GTV Bremerhaven-Seestadtteufel
-45,LP2.BuLi Nord1E,Patrick,False,Samse,0,3,366, ,SP Brackstedt
-46,LP2.BuLi Nord1E,Thomas,True,Lüken,1,4,379, ,GTV Bremerhaven-Seestadtteufel
-47,LP2.BuLi Nord1E,Katja,False,Broich,0,4,359, ,SP Brackstedt
-48,LP2.BuLi Nord1E,Frank,True,Heitmeyer,1,5,361, ,GTV Bremerhaven-Seestadtteufel
-49,LP2.BuLi Nord1E,Katja,False,Kutzeck,0,5,358, ,SP Brackstedt
-50,LP2.BuLi Nord1F,Mandy,True,Horn,0,1,365, ,SV Stoppelmarkt
-51,LP2.BuLi Nord1F,Christoph,False,Varnhorn,1,1,375, ,SV Haendorf
-52,LP2.BuLi Nord1F,Rita,True,Müller,0,2,354, ,SV Stoppelmarkt
-53,LP2.BuLi Nord1F,Jens,False,Frieling,1,2,371, ,SV Haendorf
-54,LP2.BuLi Nord1F,Alexandra,True,Rolfes,0,3,361, ,SV Stoppelmarkt
-55,LP2.BuLi Nord1F,Stefan,False,Pabstmann,1,3,365, ,SV Haendorf
-56,LP2.BuLi Nord1F,Reinhard,True,Tönjes,0,4,345, ,SV Stoppelmarkt
-57,LP2.BuLi Nord1F,Timon,False,Cordes,1,4,373, ,SV Haendorf
-58,LP2.BuLi Nord1F,Tobias,True,Schierholt,1,5,378, ,SV Stoppelmarkt
-59,LP2.BuLi Nord1F,Marc,False,Bonne,0,5,373, ,SV Haendorf
-60,LP2.BuLi Nord1G,Meik,True,Kutzeck,0,1,340, ,SP Brackstedt
-61,LP2.BuLi Nord1G,Christoph,False,Varnhorn,1,1,371, ,SV Haendorf
-62,LP2.BuLi Nord1G,Isabel,True,Kausch,1,2,366, ,SP Brackstedt
-63,LP2.BuLi Nord1G,Jens,False,Frieling,0,2,363, ,SV Haendorf
-64,LP2.BuLi Nord1G,Patrick,True,Samse,0,3,352, ,SP Brackstedt
-65,LP2.BuLi Nord1G,Stefan,False,Pabstmann,1,3,364, ,SV Haendorf
-66,LP2.BuLi Nord1G,Katja,True,Broich,0,4,358, ,SP Brackstedt
-67,LP2.BuLi Nord1G,Timon,False,Cordes,1,4,363, ,SV Haendorf
-68,LP2.BuLi Nord1G,Katja,True,Kutzeck,0,5,355, ,SP Brackstedt
-69,LP2.BuLi Nord1G,Marc,False,Bonne,1,5,365, ,SV Haendorf
-70,LP2.BuLi Nord1H,Frans,True,Soerensen,1,1,379, ,GTV Bremerhaven-Seestadtteufel
-71,LP2.BuLi Nord1H,Mandy,False,Horn,0,1,377, ,SV Stoppelmarkt
-72,LP2.BuLi Nord1H,Antje,True,Noeske,1,2,375, ,GTV Bremerhaven-Seestadtteufel
-73,LP2.BuLi Nord1H,Rita,False,Müller,0,2,359, ,SV Stoppelmarkt
-74,LP2.BuLi Nord1H,Theo,True,Hadrath,1,3,379, ,GTV Bremerhaven-Seestadtteufel
-75,LP2.BuLi Nord1H,Alexandra,False,Rolfes,0,3,364, ,SV Stoppelmarkt
-76,LP2.BuLi Nord1H,Jan Luca,True,Karstedt,1,4,375, ,GTV Bremerhaven-Seestadtteufel
-77,LP2.BuLi Nord1H,Thomas,False,Seeger,0,4,355, ,SV Stoppelmarkt
-78,LP2.BuLi Nord1H,Matthias,True,Dapprich-Crawford,0,5,369, ,GTV Bremerhaven-Seestadtteufel
-79,LP2.BuLi Nord1H,Tobias,False,Schierholt,1,5,374, ,SV Stoppelmarkt
-80,LP2.BuLi Ost1A,Wolfgang,True,Geppert,1,1,369, ,SGi. zu Potsdam e.V.
-81,LP2.BuLi Ost1A,Katja,False,Regel,0,1,0, ,Nord-Berliner Schützen-Gem.
-82,LP2.BuLi Ost1A,Johannes,True,Rüder,1,2,367, ,SGi. zu Potsdam e.V.
-83,LP2.BuLi Ost1A,Marcus,False,Nitschke,0,2,0, ,Nord-Berliner Schützen-Gem.
-84,LP2.BuLi Ost1A,Robert,True,Böhm,1,3,373, ,SGi. zu Potsdam e.V.
-85,LP2.BuLi Ost1A,Jens,False,Ranneberg,0,3,0, ,Nord-Berliner Schützen-Gem.
-86,LP2.BuLi Ost1A,Michael,True,Stillfried,1,4,358, ,SGi. zu Potsdam e.V.
-87,LP2.BuLi Ost1A,Helge,False,Zimniak,0,4,0, ,Nord-Berliner Schützen-Gem.
-88,LP2.BuLi Ost1A,Jördis,True,Schmidt,1,5,356, ,SGi. zu Potsdam e.V.
-89,LP2.BuLi Ost1A,Michael,False,Dunkel,0,5,0, ,Nord-Berliner Schützen-Gem.
-90,LP2.BuLi Ost1B,Hauke,True,Kenzler,1,1,368, ,PSV Olympia Berlin II
-91,LP2.BuLi Ost1B,Christian,False,Jauert,0,1,363, ,Prenzlauer Schützenverein e.V.
-92,LP2.BuLi Ost1B,Lea Katharina,True,Kunz,1,2,370, ,PSV Olympia Berlin II
-93,LP2.BuLi Ost1B,Henry,False,Boldt,0,2,363, ,Prenzlauer Schützenverein e.V.
-94,LP2.BuLi Ost1B,Gernot,True,Eder,1,3,370, ,PSV Olympia Berlin II
-95,LP2.BuLi Ost1B,Andreas,False,Schmidt,0,3,366, ,Prenzlauer Schützenverein e.V.
-96,LP2.BuLi Ost1B,Robert,True,Schulze,1,4,366, ,PSV Olympia Berlin II
-97,LP2.BuLi Ost1B,Falko,False,Gersdorf,0,4,353, ,Prenzlauer Schützenverein e.V.
-98,LP2.BuLi Ost1B,Dominik,True,Grimm,1,5,362, ,PSV Olympia Berlin II
-99,LP2.BuLi Ost1B,Heyne,False,Jost,0,5,355, ,Prenzlauer Schützenverein e.V.
-100,LP2.BuLi Ost1C,Bruno,True,Petrich,0,1,350, ,PSSG zu Dresden
-101,LP2.BuLi Ost1C,Stefanie,False,Thurmann,1,1,370, ,Schützengilde Frankfurt/Oder 1406
-102,LP2.BuLi Ost1C,Henrik,True,Schneider,1,2,372, ,PSSG zu Dresden
-103,LP2.BuLi Ost1C,Andreas,False,Rußmann,0,2,371, ,Schützengilde Frankfurt/Oder 1406
-104,LP2.BuLi Ost1C,Fernando,True,Jiménez Gonzales,0,3,364, ,PSSG zu Dresden
-105,LP2.BuLi Ost1C,Oliver,False,Fahs,1,3,371, ,Schützengilde Frankfurt/Oder 1406
-106,LP2.BuLi Ost1C,Johannes,True,Höhne,0,4,349, ,PSSG zu Dresden
-107,LP2.BuLi Ost1C,Daniel,False,Giebler,1,4,367, ,Schützengilde Frankfurt/Oder 1406
-108,LP2.BuLi Ost1C,Uwe,True,Roßberg,0,5,337, ,PSSG zu Dresden
-109,LP2.BuLi Ost1C,Robert,False,Dienst,1,5,369, ,Schützengilde Frankfurt/Oder 1406
-110,LP2.BuLi Ost1D,Sven,True,Konopka,0,1,366,9,Gröninger SV
-111,LP2.BuLi Ost1D,Agnes,False,Völker,1,1,366,10,1.BSGI zu Oelsnitz
-112,LP2.BuLi Ost1D,Christian,True,Kenklies,1,2,369, ,Gröninger SV
-113,LP2.BuLi Ost1D,Jürgen,False,Dr. Barth,0,2,353, ,1.BSGI zu Oelsnitz
-114,LP2.BuLi Ost1D,Torsten,True,Bohndorf,1,3,364, ,Gröninger SV
-115,LP2.BuLi Ost1D,Ronny,False,Schnabel,0,3,351, ,1.BSGI zu Oelsnitz
-116,LP2.BuLi Ost1D,Martin,True,Baumbach,0,4,349, ,Gröninger SV
-117,LP2.BuLi Ost1D,Daniel,False,Clauß,1,4,359, ,1.BSGI zu Oelsnitz
-118,LP2.BuLi Ost1D,Mirco,True,Pahlke,1,5,365, ,Gröninger SV
-119,LP2.BuLi Ost1D,Dirk,False,Löffler,0,5,358, ,1.BSGI zu Oelsnitz
-120,LP2.BuLi West1A,Thomas,True,Hucke,1,1,380, ,SV Hegelsberg-Vellmar
-121,LP2.BuLi West1A,Nadine,False,Reichelt,0,1,373, ,Brühler Schießclub 70
-122,LP2.BuLi West1A,Lev,True,Berner,1,2,359, ,SV Hegelsberg-Vellmar
-123,LP2.BuLi West1A,Jürgen,False,Korn,0,2,355, ,Brühler Schießclub 70
-124,LP2.BuLi West1A,Svenja,True,Berge,0,3,361, ,SV Hegelsberg-Vellmar
-125,LP2.BuLi West1A,Philipp,False,Sersch,1,3,372, ,Brühler Schießclub 70
-126,LP2.BuLi West1A,Kim,True,Richter,0,4,356, ,SV Hegelsberg-Vellmar
-127,LP2.BuLi West1A,Christian,False,Brabender,1,4,363, ,Brühler Schießclub 70
-128,LP2.BuLi West1A,Stefan,True,Ziehn,1,5,364, ,SV Hegelsberg-Vellmar
-129,LP2.BuLi West1A,Manfred,False,Ley,0,5,363, ,Brühler Schießclub 70
-130,LP2.BuLi West1B,Peter,True,Brzezinski,0,1,365, ,SV Usingen
-131,LP2.BuLi West1B,Markus,False,Kremser,1,1,378, ,SpSch Ännchen Bad Godesberg
-132,LP2.BuLi West1B,Christoph,True,Plümacher,1,2,366, ,SV Usingen
-133,LP2.BuLi West1B,Michael,False,Weber,0,2,363, ,SpSch Ännchen Bad Godesberg
-134,LP2.BuLi West1B,Patrick,True,Veidt,0,3,361, ,SV Usingen
-135,LP2.BuLi West1B,Dirk,False,Beuth,1,3,365, ,SpSch Ännchen Bad Godesberg
-136,LP2.BuLi West1B,Hermann,True,Müller,1,4,367, ,SV Usingen
-137,LP2.BuLi West1B,Albert,False,Melzer,0,4,357, ,SpSch Ännchen Bad Godesberg
-138,LP2.BuLi West1B,Markus,True,Bill,0,5,354, ,SV Usingen
-139,LP2.BuLi West1B,Vanessa,False,Hollfoth,1,5,364, ,SpSch Ännchen Bad Godesberg
-140,LP2.BuLi West1C,Nadine,True,Reichelt,0,1,373, ,Brühler Schießclub 70
-141,LP2.BuLi West1C,Markus,False,Kremser,1,1,376, ,SpSch Ännchen Bad Godesberg
-142,LP2.BuLi West1C,Jürgen,True,Korn,1,2,376, ,Brühler Schießclub 70
-143,LP2.BuLi West1C,Michael,False,Weber,0,2,372, ,SpSch Ännchen Bad Godesberg
-144,LP2.BuLi West1C,Lieselotte,True,Janssen,1,3,373, ,Brühler Schießclub 70
-145,LP2.BuLi West1C,Dirk,False,Beuth,0,3,364, ,SpSch Ännchen Bad Godesberg
-146,LP2.BuLi West1C,Philipp,True,Sersch,1,4,375, ,Brühler Schießclub 70
-147,LP2.BuLi West1C,Johann,False,Seuren,0,4,355, ,SpSch Ännchen Bad Godesberg
-148,LP2.BuLi West1C,Manfred,True,Ley,1,5,368, ,Brühler Schießclub 70
-149,LP2.BuLi West1C,Vanessa,False,Hollfoth,0,5,353, ,SpSch Ännchen Bad Godesberg
-150,LP2.BuLi West1D,Thomas,True,Hucke,1,1,380, ,SV Hegelsberg-Vellmar
-151,LP2.BuLi West1D,Peter,False,Brzezinski,0,1,368, ,SV Usingen
-152,LP2.BuLi West1D,Nils,True,Pilger,0,2,358, ,SV Hegelsberg-Vellmar
-153,LP2.BuLi West1D,Christoph,False,Plümacher,1,2,372, ,SV Usingen
-154,LP2.BuLi West1D,Svenja,True,Berge,1,3,364, ,SV Hegelsberg-Vellmar
-155,LP2.BuLi West1D,Patrick,False,Veidt,0,3,356, ,SV Usingen
-156,LP2.BuLi West1D,Kim,True,Richter,0,4,364, ,SV Hegelsberg-Vellmar
-157,LP2.BuLi West1D,Hermann,False,Müller,1,4,369, ,SV Usingen
-158,LP2.BuLi West1D,Stefan,True,Ziehn,1,5,370, ,SV Hegelsberg-Vellmar
-159,LP2.BuLi West1D,Markus,False,Bill,0,5,361, ,SV Usingen
-160,LP2.BuLi West1E,Maik,True,Schamber,0,1,360, ,SPSG Tell Raunheim
-161,LP2.BuLi West1E,Andrey,False,Rudi,1,1,362, ,SSV Bad Westernkotten
-162,LP2.BuLi West1E,Thomas,True,van der Burg,0,2,371, ,SPSG Tell Raunheim
-163,LP2.BuLi West1E,Peter,False,Müller,1,2,375, ,SSV Bad Westernkotten
-164,LP2.BuLi West1E,Holger,True,Simon,1,3,367, ,SPSG Tell Raunheim
-165,LP2.BuLi West1E,Ralf,False,Risse,0,3,362, ,SSV Bad Westernkotten
-166,LP2.BuLi West1E,Christoph,True,Schneider,0,4,364, ,SPSG Tell Raunheim
-167,LP2.BuLi West1E,Wilfried,False,Dörschlen,1,4,369, ,SSV Bad Westernkotten
-168,LP2.BuLi West1E,Volker,True,Lautenschläger,1,5,366, ,SPSG Tell Raunheim
-169,LP2.BuLi West1E,Sascha,False,Düsing,0,5,365, ,SSV Bad Westernkotten
-170,LP2.BuLi West1F,René,True,Opper,0,1,365, ,SV Biebrich 1864
-171,LP2.BuLi West1F,Marko,False,Kuckuck,1,1,368, ,SC Windecken
-172,LP2.BuLi West1F,Kirstin,True,Steinert,0,2,359, ,SV Biebrich 1864
-173,LP2.BuLi West1F,Kathrin,False,Türpitsch,1,2,365, ,SC Windecken
-174,LP2.BuLi West1F,Carsten,True,Dudde,1,3,361, ,SV Biebrich 1864
-175,LP2.BuLi West1F,Kai,False,Schlegel,0,3,352, ,SC Windecken
-176,LP2.BuLi West1F,Christian,True,Schäberle,1,4,369, ,SV Biebrich 1864
-177,LP2.BuLi West1F,Kai-Michael,False,Arends,0,4,352, ,SC Windecken
-178,LP2.BuLi West1F,Daniel,True,Tkocz,1,5,367, ,SV Biebrich 1864
-179,LP2.BuLi West1F,Mark,False,Schleiss,0,5,349, ,SC Windecken
-180,LP2.BuLi West1G,Andrey,True,Rudi,0,1,360, ,SSV Bad Westernkotten
-181,LP2.BuLi West1G,Marko,False,Kuckuck,1,1,364, ,SC Windecken
-182,LP2.BuLi West1G,Peter,True,Müller,1,2,370, ,SSV Bad Westernkotten
-183,LP2.BuLi West1G,Kathrin,False,Türpitsch,0,2,365, ,SC Windecken
-184,LP2.BuLi West1G,Ralf,True,Risse,1,3,373, ,SSV Bad Westernkotten
-185,LP2.BuLi West1G,Kai,False,Schlegel,0,3,356, ,SC Windecken
-186,LP2.BuLi West1G,Sascha,True,Düsing,1,4,367, ,SSV Bad Westernkotten
-187,LP2.BuLi West1G,Kai-Michael,False,Arends,0,4,357, ,SC Windecken
-188,LP2.BuLi West1G,Klaus,True,Neise,1,5,355, ,SSV Bad Westernkotten
-189,LP2.BuLi West1G,Mark,False,Schleiss,0,5,352, ,SC Windecken
-190,LP2.BuLi West1H,Maik,True,Schamber,0,1,368, ,SPSG Tell Raunheim
-191,LP2.BuLi West1H,René,False,Opper,1,1,369, ,SV Biebrich 1864
-192,LP2.BuLi West1H,Thomas,True,van der Burg,1,2,373, ,SPSG Tell Raunheim
-193,LP2.BuLi West1H,Kirstin,False,Steinert,0,2,368, ,SV Biebrich 1864
-194,LP2.BuLi West1H,Holger,True,Simon,1,3,360,10,SPSG Tell Raunheim
-195,LP2.BuLi West1H,Carsten,False,Dudde,0,3,360,9,SV Biebrich 1864
-196,LP2.BuLi West1H,Christoph,True,Schneider,1,4,362, ,SPSG Tell Raunheim
-197,LP2.BuLi West1H,Christian,False,Schäberle,0,4,360, ,SV Biebrich 1864
-198,LP2.BuLi West1H,Volker,True,Lautenschläger,1,5,371, ,SPSG Tell Raunheim
-199,LP2.BuLi West1H,Sylvie,False,Schmit,0,5,357, ,SV Biebrich 1864
-200,LP2.BuLi Südwest1A,Dominik,True,Roller,0,1,371, ,SSV Sandhausen
-201,LP2.BuLi Südwest1A,Rebecca,False,Lesti,1,1,372, ,TSV Ötlingen - SpSchAbtl.
-202,LP2.BuLi Südwest1A,Martin,True,Just,0,2,368, ,SSV Sandhausen
-203,LP2.BuLi Südwest1A,Jörg,False,Kobarg,1,2,377, ,TSV Ötlingen - SpSchAbtl.
-204,LP2.BuLi Südwest1A,Jochen,True,Rübling,0,3,361, ,SSV Sandhausen
-205,LP2.BuLi Südwest1A,Stefan,False,Scharpf,1,3,375, ,TSV Ötlingen - SpSchAbtl.
-206,LP2.BuLi Südwest1A,Gerd,True,Korn,1,4,360, ,SSV Sandhausen
-207,LP2.BuLi Südwest1A,Markus,False,Geipel,0,4,358, ,TSV Ötlingen - SpSchAbtl.
-208,LP2.BuLi Südwest1A,Andreas,True,Nied,1,5,374, ,SSV Sandhausen
-209,LP2.BuLi Südwest1A,Torben,False,Engel,0,5,367, ,TSV Ötlingen - SpSchAbtl.
-210,LP2.BuLi Südwest1B,Thomas,True,Singvogel,0,1,369, ,SKam Aalen-Nesslau
-211,LP2.BuLi Südwest1B,Nils,False,Strubel,1,1,379, ,SV Walldorf
-212,LP2.BuLi Südwest1B,Michael,True,Weckert,1,2,369, ,SKam Aalen-Nesslau
-213,LP2.BuLi Südwest1B,Stefanie,False,Friedrich,0,2,367, ,SV Walldorf
-214,LP2.BuLi Südwest1B,Erwin,True,Singvogel,0,3,351, ,SKam Aalen-Nesslau
-215,LP2.BuLi Südwest1B,Konstantin,False,Günther,1,3,372, ,SV Walldorf
-216,LP2.BuLi Südwest1B,Frank,True,Krauß,0,4,349, ,SKam Aalen-Nesslau
-217,LP2.BuLi Südwest1B,Andre,False,Lützner,1,4,367, ,SV Walldorf
-218,LP2.BuLi Südwest1B,Günter,True,Sanwald,0,5,344, ,SKam Aalen-Nesslau
-219,LP2.BuLi Südwest1B,Karsten,False,Quintel,1,5,365, ,SV Walldorf
-220,LP2.BuLi Südwest1C,Rebecca,True,Lesti,1,1,381, ,TSV Ötlingen - SpSchAbtl.
-221,LP2.BuLi Südwest1C,Nils,False,Strubel,0,1,378, ,SV Walldorf
-222,LP2.BuLi Südwest1C,Jörg,True,Kobarg,1,2,380, ,TSV Ötlingen - SpSchAbtl.
-223,LP2.BuLi Südwest1C,Stefanie,False,Friedrich,0,2,364, ,SV Walldorf
-224,LP2.BuLi Südwest1C,Stefan,True,Scharpf,0,3,369, ,TSV Ötlingen - SpSchAbtl.
-225,LP2.BuLi Südwest1C,Konstantin,False,Günther,1,3,377, ,SV Walldorf
-226,LP2.BuLi Südwest1C,Fabian,True,Dröge,1,4,371, ,TSV Ötlingen - SpSchAbtl.
-227,LP2.BuLi Südwest1C,Andre,False,Lützner,0,4,358, ,SV Walldorf
-228,LP2.BuLi Südwest1C,Torben,True,Engel,0,5,366, ,TSV Ötlingen - SpSchAbtl.
-229,LP2.BuLi Südwest1C,Karsten,False,Quintel,1,5,367, ,SV Walldorf
-230,LP2.BuLi Südwest1D,Dominik,True,Roller,1,1,370,9,SSV Sandhausen
-231,LP2.BuLi Südwest1D,Thomas,False,Singvogel,0,1,370,8,SKam Aalen-Nesslau
-232,LP2.BuLi Südwest1D,Martin,True,Just,0,2,354, ,SSV Sandhausen
-233,LP2.BuLi Südwest1D,Michael,False,Weckert,1,2,364, ,SKam Aalen-Nesslau
-234,LP2.BuLi Südwest1D,Robert,True,Pfütze,1,3,377, ,SSV Sandhausen
-235,LP2.BuLi Südwest1D,Erwin,False,Singvogel,0,3,367, ,SKam Aalen-Nesslau
-236,LP2.BuLi Südwest1D,Stephan,True,Dr. Stathel,1,4,360, ,SSV Sandhausen
-237,LP2.BuLi Südwest1D,Frank,False,Krauß,0,4,351, ,SKam Aalen-Nesslau
-238,LP2.BuLi Südwest1D,Andreas,True,Nied,1,5,373, ,SSV Sandhausen
-239,LP2.BuLi Südwest1D,Günter,False,Sanwald,0,5,339, ,SKam Aalen-Nesslau
-240,LP2.BuLi Südwest1E,Günther,True,Schwarz,1,1,371, ,SV Altheim Waldhausen II
-241,LP2.BuLi Südwest1E,Saskia,False,Fuchs,0,1,357, ,Sportschützen  March
-242,LP2.BuLi Südwest1E,Eromin,True,Sergej,0,2,354, ,SV Altheim Waldhausen II
-243,LP2.BuLi Südwest1E,Thomas,False,Pitz,1,2,366, ,Sportschützen  March
-244,LP2.BuLi Südwest1E,Klaus,True,Vogel,0,3,353, ,SV Altheim Waldhausen II
-245,LP2.BuLi Südwest1E,Sebastian,False,Müller,1,3,362, ,Sportschützen  March
-246,LP2.BuLi Südwest1E,Petra,True,Hälg,0,4,348, ,SV Altheim Waldhausen II
-247,LP2.BuLi Südwest1E,Stephan,False,Heß,1,4,363, ,Sportschützen  March
-248,LP2.BuLi Südwest1E,Markus,True,Schwarz,1,5,370, ,SV Altheim Waldhausen II
-249,LP2.BuLi Südwest1E,Amelie,False,Ziegler,0,5,350, ,Sportschützen  March
-250,LP2.BuLi Südwest1F,Robin,True,Walter,1,1,380, ,SGi Ebersbach
-251,LP2.BuLi Südwest1F,Gerhard,False,Stark,0,1,366, ,SV Eckartshausen
-252,LP2.BuLi Südwest1F,Manfred,True,Walter,0,2,362, ,SGi Ebersbach
-253,LP2.BuLi Südwest1F,Dirk,False,Dinkel,1,2,371, ,SV Eckartshausen
-254,LP2.BuLi Südwest1F,Sebastian,True,Windhab,0,3,357, ,SGi Ebersbach
-255,LP2.BuLi Südwest1F,Friedrich,False,Burkert,1,3,363, ,SV Eckartshausen
-256,LP2.BuLi Südwest1F,Philipp,True,Holzner,0,4,350, ,SGi Ebersbach
-257,LP2.BuLi Südwest1F,Andre,False,Miklis,1,4,356, ,SV Eckartshausen
-258,LP2.BuLi Südwest1F,Manuel,True,Windhab,0,5,354, ,SGi Ebersbach
-259,LP2.BuLi Südwest1F,Max,False,Brenner,1,5,357, ,SV Eckartshausen
-260,LP2.BuLi Südwest1G,Saskia,True,Fuchs,0,1,359, ,Sportschützen  March
-261,LP2.BuLi Südwest1G,Gerhard,False,Stark,1,1,361, ,SV Eckartshausen
-262,LP2.BuLi Südwest1G,Thomas,True,Pitz,0,2,371,8,Sportschützen  March
-263,LP2.BuLi Südwest1G,Dirk,False,Dinkel,1,2,371,9,SV Eckartshausen
-264,LP2.BuLi Südwest1G,Sebastian,True,Müller,0,3,365, ,Sportschützen  March
-265,LP2.BuLi Südwest1G,Joachim,False,Dach,1,3,366, ,SV Eckartshausen
-266,LP2.BuLi Südwest1G,Stephan,True,Heß,1,4,368, ,Sportschützen  March
-267,LP2.BuLi Südwest1G,Andre,False,Miklis,0,4,353, ,SV Eckartshausen
-268,LP2.BuLi Südwest1G,Amelie,True,Ziegler,0,5,342, ,Sportschützen  March
-269,LP2.BuLi Südwest1G,Max,False,Brenner,1,5,369, ,SV Eckartshausen
-270,LP2.BuLi Südwest1H,Günther,True,Schwarz,0,1,369, ,SV Altheim Waldhausen II
-271,LP2.BuLi Südwest1H,Robin,False,Walter,1,1,374, ,SGi Ebersbach
-272,LP2.BuLi Südwest1H,Eromin,True,Sergej,0,2,353, ,SV Altheim Waldhausen II
-273,LP2.BuLi Südwest1H,Manfred,False,Walter,1,2,368, ,SGi Ebersbach
-274,LP2.BuLi Südwest1H,Klaus,True,Vogel,1,3,361, ,SV Altheim Waldhausen II
-275,LP2.BuLi Südwest1H,Sebastian,False,Windhab,0,3,358, ,SGi Ebersbach
-276,LP2.BuLi Südwest1H,Petra,True,Hälg,1,4,352, ,SV Altheim Waldhausen II
-277,LP2.BuLi Südwest1H,Philipp,False,Holzner,0,4,351, ,SGi Ebersbach
-278,LP2.BuLi Südwest1H,Alexandra,True,Fedko,1,5,345, ,SV Altheim Waldhausen II
-279,LP2.BuLi Südwest1H,Manuel,False,Windhab,0,5,343, ,SGi Ebersbach
-280,LP2.BuLi Süd1A,Matthias,True,Nolte,1,1,375, ,HSG Erlangen
-281,LP2.BuLi Süd1A,Lisa,False,Schnaidt,0,1,356, ,SSG Dynamit Fürth II
-282,LP2.BuLi Süd1A,Hans-Rainer,True,Wagner,0,2,363, ,HSG Erlangen
-283,LP2.BuLi Süd1A,Kirsten,False,Knopf,1,2,371, ,SSG Dynamit Fürth II
-284,LP2.BuLi Süd1A,Claudia,True,Schardt,0,3,351, ,HSG Erlangen
-285,LP2.BuLi Süd1A,Andreas,False,Pfeiffer,1,3,378, ,SSG Dynamit Fürth II
-286,LP2.BuLi Süd1A,Michael,True,Lehmeier,0,4,351, ,HSG Erlangen
-287,LP2.BuLi Süd1A,Volker,False,Roth,1,4,370, ,SSG Dynamit Fürth II
-288,LP2.BuLi Süd1A,Niels,True,Röhner,0,5,358, ,HSG Erlangen
-289,LP2.BuLi Süd1A,Tobias,False,Meyer,1,5,363, ,SSG Dynamit Fürth II
-290,LP2.BuLi Süd1B,Sonja,True,Weiß,0,1,366, ,SG 1898 Thumsenreuth
-291,LP2.BuLi Süd1B,Alexander,False,Leuchtle,1,1,368, ,Singoldschützen Großaitingen
-292,LP2.BuLi Süd1B,Lukas,True,Spachtholz,1,2,372, ,SG 1898 Thumsenreuth
-293,LP2.BuLi Süd1B,Reiner,False,Sauter,0,2,363, ,Singoldschützen Großaitingen
-294,LP2.BuLi Süd1B,Karl,True,Greger,1,3,362, ,SG 1898 Thumsenreuth
-295,LP2.BuLi Süd1B,Artur,False,Pfitzner,0,3,361, ,Singoldschützen Großaitingen
-296,LP2.BuLi Süd1B,Bernhard,True,Stock,0,4,351, ,SG 1898 Thumsenreuth
-297,LP2.BuLi Süd1B,Ralf,False,Wieler,1,4,364, ,Singoldschützen Großaitingen
-298,LP2.BuLi Süd1B,Thomas,True,Glaser,0,5,358, ,SG 1898 Thumsenreuth
-299,LP2.BuLi Süd1B,Florian,False,Gollinger,1,5,369, ,Singoldschützen Großaitingen
-300,LP2.BuLi Süd1C,Alexander,True,Leuchtle,1,1,374, ,Singoldschützen Großaitingen
-301,LP2.BuLi Süd1C,Lisa,False,Schnaidt,0,1,367, ,SSG Dynamit Fürth II
-302,LP2.BuLi Süd1C,Reiner,True,Sauter,1,2,369, ,Singoldschützen Großaitingen
-303,LP2.BuLi Süd1C,Kirsten,False,Knopf,0,2,361, ,SSG Dynamit Fürth II
-304,LP2.BuLi Süd1C,Artur,True,Pfitzner,0,3,362, ,Singoldschützen Großaitingen
-305,LP2.BuLi Süd1C,Andreas,False,Pfeiffer,1,3,377, ,SSG Dynamit Fürth II
-306,LP2.BuLi Süd1C,Ralf,True,Wieler,0,4,364, ,Singoldschützen Großaitingen
-307,LP2.BuLi Süd1C,Volker,False,Roth,1,4,367, ,SSG Dynamit Fürth II
-308,LP2.BuLi Süd1C,Florian,True,Gollinger,0,5,369,8,Singoldschützen Großaitingen
-309,LP2.BuLi Süd1C,Tobias,False,Meyer,1,5,369,9,SSG Dynamit Fürth II
-310,LP2.BuLi Süd1D,Matthias,True,Nolte,1,1,379, ,HSG Erlangen
-311,LP2.BuLi Süd1D,Sonja,False,Weiß,0,1,376, ,SG 1898 Thumsenreuth
-312,LP2.BuLi Süd1D,Hans-Rainer,True,Wagner,0,2,373,8,HSG Erlangen
-313,LP2.BuLi Süd1D,Lukas,False,Spachtholz,1,2,373,10,SG 1898 Thumsenreuth
-314,LP2.BuLi Süd1D,Michael,True,Lehmeier,0,3,344, ,HSG Erlangen
-315,LP2.BuLi Süd1D,Karl,False,Greger,1,3,364, ,SG 1898 Thumsenreuth
-316,LP2.BuLi Süd1D,Christian,True,Werner,0,4,353,7,HSG Erlangen
-317,LP2.BuLi Süd1D,Bernhard,False,Stock,1,4,353,10,SG 1898 Thumsenreuth
-318,LP2.BuLi Süd1D,Niels,True,Röhner,0,5,347, ,HSG Erlangen
-319,LP2.BuLi Süd1D,Thomas,False,Glaser,1,5,359, ,SG 1898 Thumsenreuth
-320,LP2.BuLi Süd1E,Aleksandar,True,Todorov,1,1,374, ,HSG München
-321,LP2.BuLi Süd1E,Thomas,False,Karsch,0,1,371, ,SV Kelheim-Gmünd II
-322,LP2.BuLi Süd1E,Michael,True,Heise,1,2,380, ,HSG München
-323,LP2.BuLi Süd1E,Matthias,False,Groher,0,2,366, ,SV Kelheim-Gmünd II
-324,LP2.BuLi Süd1E,Arben,True,Kucana,1,3,377, ,HSG München
-325,LP2.BuLi Süd1E,Axel,False,Genewsky,0,3,351, ,SV Kelheim-Gmünd II
-326,LP2.BuLi Süd1E,Andreas,True,Martin,1,4,368, ,HSG München
-327,LP2.BuLi Süd1E,Christian,False,Lichtenegger,0,4,364, ,SV Kelheim-Gmünd II
-328,LP2.BuLi Süd1E,Carsten,True,Schütt,1,5,371, ,HSG München
-329,LP2.BuLi Süd1E,Steven,False,Seeliger,0,5,369, ,SV Kelheim-Gmünd II
-330,LP2.BuLi Süd1F,Maxim,True,Konradi,1,1,367,10,FSG Hilpoltstein
-331,LP2.BuLi Süd1F,Lea,False,Kleesattel,0,1,367,9,SG Eintracht Garching
-332,LP2.BuLi Süd1F,Karl,True,Schmidt,1,2,370, ,FSG Hilpoltstein
-333,LP2.BuLi Süd1F,Carolin,False,Schiller,0,2,369, ,SG Eintracht Garching
-334,LP2.BuLi Süd1F,Stefan,True,Schwab,1,3,370, ,FSG Hilpoltstein
-335,LP2.BuLi Süd1F,Michael,False,Bolek,0,3,352, ,SG Eintracht Garching
-336,LP2.BuLi Süd1F,Sebastian,True,Burger,1,4,370, ,FSG Hilpoltstein
-337,LP2.BuLi Süd1F,Sabine,False,Gruchmann,0,4,364, ,SG Eintracht Garching
-338,LP2.BuLi Süd1F,Horst,True,Roedel,1,5,365, ,FSG Hilpoltstein
-339,LP2.BuLi Süd1F,Theresa,False,Olbinger,0,5,361, ,SG Eintracht Garching
-340,LP2.BuLi Süd1G,Thomas,True,Karsch,1,1,380, ,SV Kelheim-Gmünd II
-341,LP2.BuLi Süd1G,Maxim,False,Konradi,0,1,369, ,FSG Hilpoltstein
-342,LP2.BuLi Süd1G,Matthias,True,Groher,1,2,370, ,SV Kelheim-Gmünd II
-343,LP2.BuLi Süd1G,Karl,False,Schmidt,0,2,366, ,FSG Hilpoltstein
-344,LP2.BuLi Süd1G,Axel,True,Genewsky,0,3,369, ,SV Kelheim-Gmünd II
-345,LP2.BuLi Süd1G,Stefan,False,Schwab,1,3,372, ,FSG Hilpoltstein
-346,LP2.BuLi Süd1G,Christian,True,Lichtenegger,1,4,370, ,SV Kelheim-Gmünd II
-347,LP2.BuLi Süd1G,Sebastian,False,Burger,0,4,364, ,FSG Hilpoltstein
-348,LP2.BuLi Süd1G,Steven,True,Seeliger,1,5,372, ,SV Kelheim-Gmünd II
-349,LP2.BuLi Süd1G,Horst,False,Roedel,0,5,354, ,FSG Hilpoltstein
-350,LP2.BuLi Süd1H,Aleksandar,True,Todorov,1,1,378, ,HSG München
-351,LP2.BuLi Süd1H,Lea,False,Kleesattel,0,1,377, ,SG Eintracht Garching
-352,LP2.BuLi Süd1H,Michael,True,Heise,1,2,386, ,HSG München
-353,LP2.BuLi Süd1H,Carolin,False,Schiller,0,2,373, ,SG Eintracht Garching
-354,LP2.BuLi Süd1H,Arben,True,Kucana,1,3,384, ,HSG München
-355,LP2.BuLi Süd1H,Michael,False,Bolek,0,3,356, ,SG Eintracht Garching
-356,LP2.BuLi Süd1H,Andreas,True,Martin,1,4,377, ,HSG München
-357,LP2.BuLi Süd1H,Verena,False,Gimpl,0,4,356, ,SG Eintracht Garching
-358,LP2.BuLi Süd1H,Carsten,True,Schütt,0,5,366, ,HSG München
-359,LP2.BuLi Süd1H,Sabine,False,Gruchmann,1,5,370, ,SG Eintracht Garching
-360,LP2.BuLi Süd1I,Tobias,True,Spötzl,0,1,357, ,SV Hubertus Rettenbach
-361,LP2.BuLi Süd1I,Stefan,False,Kupillas,1,1,366, ,Auerhahn Steinberg
-362,LP2.BuLi Süd1I,Johannes,True,Fischer,0,2,362, ,SV Hubertus Rettenbach
-363,LP2.BuLi Süd1I,Konrad,False,Schneider,1,2,370, ,Auerhahn Steinberg
-364,LP2.BuLi Süd1I,Maria,True,Schausbreitner,0,3,360, ,SV Hubertus Rettenbach
-365,LP2.BuLi Süd1I,Nick,False,Ruß,1,3,378, ,Auerhahn Steinberg
-366,LP2.BuLi Süd1I,Albert,True,Spötzl,1,4,352, ,SV Hubertus Rettenbach
-367,LP2.BuLi Süd1I,Roman,False,Schneider,0,4,345, ,Auerhahn Steinberg
-368,LP2.BuLi Süd1I,Bettina,True,Hanfstingl,0,5,336, ,SV Hubertus Rettenbach
-369,LP2.BuLi Süd1I,Herbert,False,Hartl,1,5,367, ,Auerhahn Steinberg
-370,LP2.BuLi Süd1J,Stefan,True,Lipp,1,1,367, ,Bogenschützen Grund
-371,LP2.BuLi Süd1J,Michael,False,Steinbauer,0,1,363, ,Adlerschützen Unteriglbach
-372,LP2.BuLi Süd1J,Kai,True,Höfl,1,2,363, ,Bogenschützen Grund
-373,LP2.BuLi Süd1J,Johannes,False,Schauer,0,2,362, ,Adlerschützen Unteriglbach
-374,LP2.BuLi Süd1J,Hermann,True,Mayerhofer,1,3,361, ,Bogenschützen Grund
-375,LP2.BuLi Süd1J,Stefan,False,Degenhardt,0,3,360, ,Adlerschützen Unteriglbach
-376,LP2.BuLi Süd1J,Andreas,True,Weber,0,4,348, ,Bogenschützen Grund
-377,LP2.BuLi Süd1J,Pavel,False,Skopovy,1,4,370, ,Adlerschützen Unteriglbach
-378,LP2.BuLi Süd1J,Hans,True,Schwarzbauer,1,5,368, ,Bogenschützen Grund
-379,LP2.BuLi Süd1J,Roland,False,Meyer,0,5,366, ,Adlerschützen Unteriglbach
-380,LP2.BuLi Süd1K,Stefan,True,Kupillas,0,1,357, ,Auerhahn Steinberg
-381,LP2.BuLi Süd1K,Stefan,False,Lipp,1,1,365, ,Bogenschützen Grund
-382,LP2.BuLi Süd1K,Konrad,True,Schneider,1,2,368, ,Auerhahn Steinberg
-383,LP2.BuLi Süd1K,Kai,False,Höfl,0,2,367, ,Bogenschützen Grund
-384,LP2.BuLi Süd1K,Nick,True,Ruß,0,3,366, ,Auerhahn Steinberg
-385,LP2.BuLi Süd1K,Hermann,False,Mayerhofer,1,3,367, ,Bogenschützen Grund
-386,LP2.BuLi Süd1K,Roman,True,Schneider,1,4,367, ,Auerhahn Steinberg
-387,LP2.BuLi Süd1K,Andreas,False,Weber,0,4,352, ,Bogenschützen Grund
-388,LP2.BuLi Süd1K,Herbert,True,Hartl,1,5,364, ,Auerhahn Steinberg
-389,LP2.BuLi Süd1K,Hans,False,Schwarzbauer,0,5,355, ,Bogenschützen Grund
-390,LP2.BuLi Süd1L,Tobias,True,Spötzl,0,1,364, ,SV Hubertus Rettenbach
-391,LP2.BuLi Süd1L,Michael,False,Steinbauer,1,1,369, ,Adlerschützen Unteriglbach
-392,LP2.BuLi Süd1L,Johannes,True,Fischer,1,2,351, ,SV Hubertus Rettenbach
-393,LP2.BuLi Süd1L,Johannes,False,Schauer,0,2,350, ,Adlerschützen Unteriglbach
-394,LP2.BuLi Süd1L,Maria,True,Schausbreitner,1,3,367, ,SV Hubertus Rettenbach
-395,LP2.BuLi Süd1L,Stefan,False,Degenhardt,0,3,358, ,Adlerschützen Unteriglbach
-396,LP2.BuLi Süd1L,Albert,True,Spötzl,0,4,370, ,SV Hubertus Rettenbach
-397,LP2.BuLi Süd1L,Pavel,False,Skopovy,1,4,378, ,Adlerschützen Unteriglbach
-398,LP2.BuLi Süd1L,Bettina,True,Hanfstingl,0,5,359, ,SV Hubertus Rettenbach
-399,LP2.BuLi Süd1L,Roland,False,Meyer,1,5,366, ,Adlerschützen Unteriglbach
-400,LP1.BuLi Nord1A,Christian,True,Oehns,1,1,372, ,Freischütz Wathlingen
-401,LP1.BuLi Nord1A,Eike,False,Frerichs,0,1,369, ,SV Schirumer Leegmoor
-402,LP1.BuLi Nord1A,Philip,True,Aranowski,1,2,379, ,Freischütz Wathlingen
-403,LP1.BuLi Nord1A,Michael,False,Broers,0,2,368, ,SV Schirumer Leegmoor
-404,LP1.BuLi Nord1A,Coral,True,Kennerly,1,3,375, ,Freischütz Wathlingen
-405,LP1.BuLi Nord1A,Dennis,False,Grünhoff,0,3,372, ,SV Schirumer Leegmoor
-406,LP1.BuLi Nord1A,Jörn,True,Nachtigall,0,4,364, ,Freischütz Wathlingen
-407,LP1.BuLi Nord1A,Maik,False,Ritter,1,4,373, ,SV Schirumer Leegmoor
-408,LP1.BuLi Nord1A,Torben,True,Wolf,1,5,365, ,Freischütz Wathlingen
-409,LP1.BuLi Nord1A,Carsten,False,Grünhoff,0,5,358, ,SV Schirumer Leegmoor
-410,LP1.BuLi Nord1B,Jonas,True,Hansen,0,1,376, ,Sp.Sch. Fahrdorf
-411,LP1.BuLi Nord1B,Jan,False,Brückner,1,1,377, ,Spsch Raesfeld
-412,LP1.BuLi Nord1B,Gagik,True,Sahakian,1,2,379, ,Sp.Sch. Fahrdorf
-413,LP1.BuLi Nord1B,Sebastian,False,Vosskühler,0,2,366, ,Spsch Raesfeld
-414,LP1.BuLi Nord1B,Steffen,True,Schröder,1,3,374, ,Sp.Sch. Fahrdorf
-415,LP1.BuLi Nord1B,Matthias,False,Halke,0,3,367, ,Spsch Raesfeld
-416,LP1.BuLi Nord1B,Michael,True,Bäcker,0,4,364, ,Sp.Sch. Fahrdorf
-417,LP1.BuLi Nord1B,Dennis,False,Walendi,1,4,370, ,Spsch Raesfeld
-418,LP1.BuLi Nord1B,Stefan,True,Vollertsen,0,5,358, ,Sp.Sch. Fahrdorf
-419,LP1.BuLi Nord1B,Andre,False,Pöhler,1,5,362, ,Spsch Raesfeld
-420,LP1.BuLi Nord1C,Bart,True,Liebens,0,1,381, ,Sp.Sch.St.Seb.Pier2000
-421,LP1.BuLi Nord1C,Marcus Errebo,False,Jensen,1,1,382, ,SV Bassum von 1848
-422,LP1.BuLi Nord1C,Tobias,True,Kaulen,1,2,380, ,Sp.Sch.St.Seb.Pier2000
-423,LP1.BuLi Nord1C,Artur,False,Gevorgjan,0,2,377, ,SV Bassum von 1848
-424,LP1.BuLi Nord1C,Astrid,True,Au,0,3,359, ,Sp.Sch.St.Seb.Pier2000
-425,LP1.BuLi Nord1C,Valerij,False,Samojlenko,1,3,379, ,SV Bassum von 1848
-426,LP1.BuLi Nord1C,Anne-Marlen,True,Ohler,0,4,362, ,Sp.Sch.St.Seb.Pier2000
-427,LP1.BuLi Nord1C,Sascha,False,Sandmann,1,4,366, ,SV Bassum von 1848
-428,LP1.BuLi Nord1C,Isha,True,Meinerz,0,5,331, ,Sp.Sch.St.Seb.Pier2000
-429,LP1.BuLi Nord1C,Denis,False,Rother,1,5,378, ,SV Bassum von 1848
-430,LP1.BuLi Nord1D,Christian,True,Metten,0,1,370, ,SV Falke Dasbach
-431,LP1.BuLi Nord1D,Oleg,False,Omelchuk,1,1,387, ,Braunschweiger SG
-432,LP1.BuLi Nord1D,Matthias,True,Schwender,0,2,379, ,SV Falke Dasbach
-433,LP1.BuLi Nord1D,Patrick,False,Meyer,1,2,380, ,Braunschweiger SG
-434,LP1.BuLi Nord1D,Heiko,True,Litterscheid,0,3,367, ,SV Falke Dasbach
-435,LP1.BuLi Nord1D,Andreas,False,Heise,1,3,373, ,Braunschweiger SG
-436,LP1.BuLi Nord1D,Jens,True,Block,0,4,368, ,SV Falke Dasbach
-437,LP1.BuLi Nord1D,Marco,False,Angermann-Günzel,1,4,378, ,Braunschweiger SG
-438,LP1.BuLi Nord1D,Christoph,True,Klug,0,5,367, ,SV Falke Dasbach
-439,LP1.BuLi Nord1D,Michael,False,Bittner,1,5,383, ,Braunschweiger SG
-440,LP1.BuLi Nord1E,Sander,True,Nooij,1,1,380, ,SV Uetze
-441,LP1.BuLi Nord1E,Marta,False,Barszczak,0,1,371, ,SSG Teutoburger Wald
-442,LP1.BuLi Nord1E,Sarah,True,Kiesewetter,1,2,370, ,SV Uetze
-443,LP1.BuLi Nord1E,Jakub,False,Wasilewski,0,2,369, ,SSG Teutoburger Wald
-444,LP1.BuLi Nord1E,Marten,True,Heuer,0,3,364, ,SV Uetze
-445,LP1.BuLi Nord1E,Stefan,False,Krause,1,3,371, ,SSG Teutoburger Wald
-446,LP1.BuLi Nord1E,Hans-Christian,True,Jentsch,1,4,373, ,SV Uetze
-447,LP1.BuLi Nord1E,Lars-Eric,False,Etzold,0,4,347, ,SSG Teutoburger Wald
-448,LP1.BuLi Nord1E,Marit,True,Albrecht,1,5,372, ,SV Uetze
-449,LP1.BuLi Nord1E,Michael,False,Quittschau,0,5,358, ,SSG Teutoburger Wald
-450,LP1.BuLi Nord1F,Christian,True,Reitz,1,1,386, ,SV 1935 Kriftel
-451,LP1.BuLi Nord1F,Wojciech,False,Knapik,0,1,384, ,PSV Olympia Berlin
-452,LP1.BuLi Nord1F,Aaron,True,Sauter,1,2,378, ,SV 1935 Kriftel
-453,LP1.BuLi Nord1F,Maren,False,Johann,0,2,374, ,PSV Olympia Berlin
-454,LP1.BuLi Nord1F,Dominik,True,Sänger,1,3,379, ,SV 1935 Kriftel
-455,LP1.BuLi Nord1F,Josefin,False,Eder,0,3,377, ,PSV Olympia Berlin
-456,LP1.BuLi Nord1F,Mathias,True,Putzmann,1,4,385, ,SV 1935 Kriftel
-457,LP1.BuLi Nord1F,Robert,False,Janikulla,0,4,367, ,PSV Olympia Berlin
-458,LP1.BuLi Nord1F,Andreas,True,Fix,1,5,378, ,SV 1935 Kriftel
-459,LP1.BuLi Nord1F,Holger,False,Buchmann,0,5,369, ,PSV Olympia Berlin
-460,LP1.BuLi Nord2A,Oscar,True,Nilsson,1,1,378, ,SV Bassum von 1848
-461,LP1.BuLi Nord2A,Eike,False,Frerichs,0,1,369, ,SV Schirumer Leegmoor
-462,LP1.BuLi Nord2A,Artur,True,Gevorgjan,1,2,379, ,SV Bassum von 1848
-463,LP1.BuLi Nord2A,Michael,False,Broers,0,2,371, ,SV Schirumer Leegmoor
-464,LP1.BuLi Nord2A,Valerij,True,Samojlenko,1,3,376, ,SV Bassum von 1848
-465,LP1.BuLi Nord2A,Carsten,False,Grünhoff,0,3,371, ,SV Schirumer Leegmoor
-466,LP1.BuLi Nord2A,Denis,True,Rother,0,4,374, ,SV Bassum von 1848
-467,LP1.BuLi Nord2A,Maik,False,Ritter,1,4,377, ,SV Schirumer Leegmoor
-468,LP1.BuLi Nord2A,Martin,True,Mohnke,0,5,364,6,SV Bassum von 1848
-469,LP1.BuLi Nord2A,Marcel,False,Stürken,1,5,364,9,SV Schirumer Leegmoor
-470,LP1.BuLi Nord2B,Jonas,True,Hansen,1,1,377, ,Sp.Sch. Fahrdorf
-471,LP1.BuLi Nord2B,Bart,False,Liebens,0,1,374, ,Sp.Sch.St.Seb.Pier2000
-472,LP1.BuLi Nord2B,Gagik,True,Sahakian,0,2,367, ,Sp.Sch. Fahrdorf
-473,LP1.BuLi Nord2B,Tobias,False,Kaulen,1,2,382, ,Sp.Sch.St.Seb.Pier2000
-474,LP1.BuLi Nord2B,Steffen,True,Schröder,1,3,379, ,Sp.Sch. Fahrdorf
-475,LP1.BuLi Nord2B,Astrid,False,Au,0,3,357, ,Sp.Sch.St.Seb.Pier2000
-476,LP1.BuLi Nord2B,Michael,True,Bäcker,1,4,362, ,Sp.Sch. Fahrdorf
-477,LP1.BuLi Nord2B,Anne-Marlen,False,Ohler,0,4,361, ,Sp.Sch.St.Seb.Pier2000
-478,LP1.BuLi Nord2B,Matthias,True,Hofmann,1,5,365, ,Sp.Sch. Fahrdorf
-479,LP1.BuLi Nord2B,Johannes,False,Jaeger,0,5,351, ,Sp.Sch.St.Seb.Pier2000
-480,LP1.BuLi Nord2C,Jan,True,Brückner,1,1,381, ,Spsch Raesfeld
-481,LP1.BuLi Nord2C,Christian,False,Oehns,0,1,379, ,Freischütz Wathlingen
-482,LP1.BuLi Nord2C,Sebastian,True,Vosskühler,0,2,358, ,Spsch Raesfeld
-483,LP1.BuLi Nord2C,Kristian,False,Callaghan,1,2,380, ,Freischütz Wathlingen
-484,LP1.BuLi Nord2C,Matthias,True,Halke,0,3,365, ,Spsch Raesfeld
-485,LP1.BuLi Nord2C,Philip,False,Aranowski,1,3,372, ,Freischütz Wathlingen
-486,LP1.BuLi Nord2C,Jan,True,Brink,1,4,373, ,Spsch Raesfeld
-487,LP1.BuLi Nord2C,Torben,False,Wolf,0,4,368, ,Freischütz Wathlingen
-488,LP1.BuLi Nord2C,Dennis,True,Walendi,1,5,362, ,Spsch Raesfeld
-489,LP1.BuLi Nord2C,Benjamin,False,Forke,0,5,346, ,Freischütz Wathlingen
-490,LP1.BuLi Nord2D,Sander,True,Nooij,0,1,381, ,SV Uetze
-491,LP1.BuLi Nord2D,Oleg,False,Omelchuk,1,1,388, ,Braunschweiger SG
-492,LP1.BuLi Nord2D,Sarah,True,Kiesewetter,0,2,371, ,SV Uetze
-493,LP1.BuLi Nord2D,Patrick,False,Meyer,1,2,374, ,Braunschweiger SG
-494,LP1.BuLi Nord2D,Marten,True,Heuer,0,3,373, ,SV Uetze
-495,LP1.BuLi Nord2D,Andreas,False,Heise,1,3,376, ,Braunschweiger SG
-496,LP1.BuLi Nord2D,Hans-Christian,True,Jentsch,0,4,364, ,SV Uetze
-497,LP1.BuLi Nord2D,Pierre,False,Michel,1,4,377, ,Braunschweiger SG
-498,LP1.BuLi Nord2D,Marit,True,Albrecht,0,5,369, ,SV Uetze
-499,LP1.BuLi Nord2D,Michael,False,Bittner,1,5,382, ,Braunschweiger SG
-500,LP1.BuLi Nord2E,Wojciech,True,Knapik,1,1,384, ,PSV Olympia Berlin
-501,LP1.BuLi Nord2E,Marta,False,Barszczak,0,1,373, ,SSG Teutoburger Wald
-502,LP1.BuLi Nord2E,Maren,True,Johann,1,2,377, ,PSV Olympia Berlin
-503,LP1.BuLi Nord2E,Jakub,False,Wasilewski,0,2,358, ,SSG Teutoburger Wald
-504,LP1.BuLi Nord2E,Josefin,True,Eder,1,3,374, ,PSV Olympia Berlin
-505,LP1.BuLi Nord2E,Stefan,False,Krause,0,3,370, ,SSG Teutoburger Wald
-506,LP1.BuLi Nord2E,Robert,True,Janikulla,1,4,370, ,PSV Olympia Berlin
-507,LP1.BuLi Nord2E,Michael,False,Quittschau,0,4,357, ,SSG Teutoburger Wald
-508,LP1.BuLi Nord2E,Holger,True,Buchmann,1,5,369, ,PSV Olympia Berlin
-509,LP1.BuLi Nord2E,Marco,False,Hummler,0,5,348, ,SSG Teutoburger Wald
-510,LP1.BuLi Nord2F,Christian,True,Metten,0,1,362, ,SV Falke Dasbach
-511,LP1.BuLi Nord2F,Christian,False,Reitz,1,1,389, ,SV 1935 Kriftel
-512,LP1.BuLi Nord2F,Matthias,True,Schwender,0,2,365, ,SV Falke Dasbach
-513,LP1.BuLi Nord2F,Aaron,False,Sauter,1,2,373, ,SV 1935 Kriftel
-514,LP1.BuLi Nord2F,Heiko,True,Litterscheid,0,3,375, ,SV Falke Dasbach
-515,LP1.BuLi Nord2F,Dominik,False,Sänger,1,3,379, ,SV 1935 Kriftel
-516,LP1.BuLi Nord2F,Lucas,True,Jourdan,0,4,357, ,SV Falke Dasbach
-517,LP1.BuLi Nord2F,Mathias,False,Putzmann,1,4,378, ,SV 1935 Kriftel
-518,LP1.BuLi Nord2F,Nils,True,Riegelmeier,0,5,366, ,SV Falke Dasbach
-519,LP1.BuLi Nord2F,Andreas,False,Fix,1,5,377, ,SV 1935 Kriftel
-520,LP1.BuLi Süd1A,Asgeir,True,Sigurgeirsson,1,1,385, ,SGi Ludwigsburg
-521,LP1.BuLi Süd1A,Andreas,False,Riedener,0,1,378, ,SV Altheim Waldhausen
-522,LP1.BuLi Süd1A,Florian,True,Brunner,1,2,382, ,SGi Ludwigsburg
-523,LP1.BuLi Süd1A,Holger,False,Haile,0,2,374, ,SV Altheim Waldhausen
-524,LP1.BuLi Süd1A,Kevin,True,Venta,1,3,384, ,SGi Ludwigsburg
-525,LP1.BuLi Süd1A,Philipp,False,Wetzel,0,3,380, ,SV Altheim Waldhausen
-526,LP1.BuLi Süd1A,Rene,True,Potteck,1,4,373, ,SGi Ludwigsburg
-527,LP1.BuLi Süd1A,Martina,False,Sagasser,0,4,369, ,SV Altheim Waldhausen
-528,LP1.BuLi Süd1A,Julia,True,Hochmuth,1,5,370, ,SGi Ludwigsburg
-529,LP1.BuLi Süd1A,Christian,False,Morar,0,5,368, ,SV Altheim Waldhausen
-530,LP1.BuLi Süd1B,Damir,True,Mikec,1,1,383, ,SV Kelheim-Gmünd
-531,LP1.BuLi Süd1B,Dimitrije,False,Grgic,0,1,380, ,SV Waldkirch
-532,LP1.BuLi Süd1B,Philipp,True,Grimm,0,2,372, ,SV Kelheim-Gmünd
-533,LP1.BuLi Süd1B,Matthias,False,Holderried,1,2,375, ,SV Waldkirch
-534,LP1.BuLi Süd1B,Monika,True,Karsch,0,3,376, ,SV Kelheim-Gmünd
-535,LP1.BuLi Süd1B,Alexander,False,Kindig,1,3,382, ,SV Waldkirch
-536,LP1.BuLi Süd1B,Simon,True,Weiß,1,4,374, ,SV Kelheim-Gmünd
-537,LP1.BuLi Süd1B,Michael,False,Spindler,0,4,363, ,SV Waldkirch
-538,LP1.BuLi Süd1B,Carina,True,Wimmer,1,5,369, ,SV Kelheim-Gmünd
-539,LP1.BuLi Süd1B,Sebastian,False,Kugelmann,0,5,364, ,SV Waldkirch
-540,LP1.BuLi Süd1C,Thomas,True,Ranzinger,0,1,367, ,SG Edelweiß Scheuring
-541,LP1.BuLi Süd1C,Sandra,False,Reiz,1,1,373, ,SSG Dynamit Fürth
-542,LP1.BuLi Süd1C,Oliver,True,Balg,1,2,375, ,SG Edelweiß Scheuring
-543,LP1.BuLi Süd1C,Heidi,False,Diethelm Gerber,0,2,371, ,SSG Dynamit Fürth
-544,LP1.BuLi Süd1C,Philipp,True,Ranzinger,0,3,361, ,SG Edelweiß Scheuring
-545,LP1.BuLi Süd1C,Claudia,False,Verdicchio-Krause,1,3,375, ,SSG Dynamit Fürth
-546,LP1.BuLi Süd1C,Sebastian,True,Heinisch,0,4,369, ,SG Edelweiß Scheuring
-547,LP1.BuLi Süd1C,Kathrin,False,Pfundstein,1,4,376, ,SSG Dynamit Fürth
-548,LP1.BuLi Süd1C,Klaus,True,Hopfensitz,0,5,363, ,SG Edelweiß Scheuring
-549,LP1.BuLi Süd1C,Johann,False,Walser,1,5,365, ,SSG Dynamit Fürth
-550,LP1.BuLi Süd1D,Sladjan,True,Zoran,0,1,376, ,SV Peiting
-551,LP1.BuLi Süd1D,Pavel,False,Svetlik,1,1,381, ,ESV Weil am Rhein
-552,LP1.BuLi Süd1D,Steffi,True,Böhm,1,2,378, ,SV Peiting
-553,LP1.BuLi Süd1D,Michael,False,Schwald,0,2,377, ,ESV Weil am Rhein
-554,LP1.BuLi Süd1D,Georg,True,Müller,1,3,380, ,SV Peiting
-555,LP1.BuLi Süd1D,Luca,False,Schröder,0,3,378, ,ESV Weil am Rhein
-556,LP1.BuLi Süd1D,Michaela,True,Brosselt-Guggemos,0,4,367, ,SV Peiting
-557,LP1.BuLi Süd1D,Christian,False,Schebesta,1,4,378, ,ESV Weil am Rhein
-558,LP1.BuLi Süd1D,Fritz,True,Aigner,1,5,365,10,SV Peiting
-559,LP1.BuLi Süd1D,Thomas,False,Lakner,0,5,365,6,ESV Weil am Rhein
-560,LP1.BuLi Süd1E,Patrik,True,Lengerer,0,1,373, ,SV Murrhardt-Karnsberg
-561,LP1.BuLi Süd1E,Petrov,False,Dusko,1,1,383, ,SV Willmandingen
-562,LP1.BuLi Süd1E,Leo,True,Braun,1,2,371, ,SV Murrhardt-Karnsberg
-563,LP1.BuLi Süd1E,Gabriele,False,Haas,0,2,365, ,SV Willmandingen
-564,LP1.BuLi Süd1E,Tobias,True,Heider,1,3,379, ,SV Murrhardt-Karnsberg
-565,LP1.BuLi Süd1E,Marco,False,Deh,0,3,367, ,SV Willmandingen
-566,LP1.BuLi Süd1E,Wolfgang,True,Renner,1,4,373, ,SV Murrhardt-Karnsberg
-567,LP1.BuLi Süd1E,Jürgen,False,Flad,0,4,368, ,SV Willmandingen
-568,LP1.BuLi Süd1E,Markus,True,Schiller,1,5,367, ,SV Murrhardt-Karnsberg
-569,LP1.BuLi Süd1E,Peter,False,Kirstahler,0,5,366, ,SV Willmandingen
-570,LP1.BuLi Süd1F,Axel,True,Köhler,0,1,365, ,KKS Hambrücken
-571,LP1.BuLi Süd1F,Abdullah,False,Ustaoglu,1,1,376, ,Sgi Waldenburg
-572,LP1.BuLi Süd1F,Patrick,True,Göpfrich,1,2,379, ,KKS Hambrücken
-573,LP1.BuLi Süd1F,Philipp,False,Käfer,0,2,374, ,Sgi Waldenburg
-574,LP1.BuLi Süd1F,Teresa,True,Groß,0,3,368, ,KKS Hambrücken
-575,LP1.BuLi Süd1F,Tobias,False,Backes,1,3,373, ,Sgi Waldenburg
-576,LP1.BuLi Süd1F,Glenn Niklas,True,Simmank,0,4,362, ,KKS Hambrücken
-577,LP1.BuLi Süd1F,Tobias,False,Bumb,1,4,368, ,Sgi Waldenburg
-578,LP1.BuLi Süd1F,Marco,True,Wußler,1,5,375, ,KKS Hambrücken
-579,LP1.BuLi Süd1F,Jens,False,Klossek,0,5,374, ,Sgi Waldenburg
-580,LP1.BuLi Süd2A,Sandra,True,Reiz,1,1,376, ,SSG Dynamit Fürth
-581,LP1.BuLi Süd2A,Andreas,False,Riedener,0,1,370, ,SV Altheim Waldhausen
-582,LP1.BuLi Süd2A,Heidi,True,Diethelm Gerber,1,2,381, ,SSG Dynamit Fürth
-583,LP1.BuLi Süd2A,Holger,False,Haile,0,2,376, ,SV Altheim Waldhausen
-584,LP1.BuLi Süd2A,Claudia,True,Verdicchio-Krause,1,3,378, ,SSG Dynamit Fürth
-585,LP1.BuLi Süd2A,Philipp,False,Wetzel,0,3,373, ,SV Altheim Waldhausen
-586,LP1.BuLi Süd2A,Kathrin,True,Pfundstein,0,4,374, ,SSG Dynamit Fürth
-587,LP1.BuLi Süd2A,Martina,False,Sagasser,1,4,376, ,SV Altheim Waldhausen
-588,LP1.BuLi Süd2A,Johann,True,Walser,0,5,371, ,SSG Dynamit Fürth
-589,LP1.BuLi Süd2A,Christian,False,Morar,1,5,373, ,SV Altheim Waldhausen
-590,LP1.BuLi Süd2B,Damir,True,Mikec,1,1,390, ,SV Kelheim-Gmünd
-591,LP1.BuLi Süd2B,Thomas,False,Ranzinger,0,1,364, ,SG Edelweiß Scheuring
-592,LP1.BuLi Süd2B,Philipp,True,Grimm,1,2,383, ,SV Kelheim-Gmünd
-593,LP1.BuLi Süd2B,Oliver,False,Balg,0,2,365, ,SG Edelweiß Scheuring
-594,LP1.BuLi Süd2B,Simon,True,Weiß,1,3,374, ,SV Kelheim-Gmünd
-595,LP1.BuLi Süd2B,Philipp,False,Ranzinger,0,3,370, ,SG Edelweiß Scheuring
-596,LP1.BuLi Süd2B,Carina,True,Wimmer,1,4,372, ,SV Kelheim-Gmünd
-597,LP1.BuLi Süd2B,Sebastian,False,Heinisch,0,4,363, ,SG Edelweiß Scheuring
-598,LP1.BuLi Süd2B,Tobias,True,Piechaczek,0,5,364, ,SV Kelheim-Gmünd
-599,LP1.BuLi Süd2B,Klaus,False,Hopfensitz,1,5,371, ,SG Edelweiß Scheuring
-600,LP1.BuLi Süd2C,Dimitrije,True,Grgic,1,1,386, ,SV Waldkirch
-601,LP1.BuLi Süd2C,Asgeir,False,Sigurgeirsson,0,1,384, ,SGi Ludwigsburg
-602,LP1.BuLi Süd2C,Matthias,True,Holderried,0,2,378,7,SV Waldkirch
-603,LP1.BuLi Süd2C,Florian,False,Brunner,1,2,378,9,SGi Ludwigsburg
-604,LP1.BuLi Süd2C,Alexander,True,Kindig,0,3,375, ,SV Waldkirch
-605,LP1.BuLi Süd2C,Kevin,False,Venta,1,3,390, ,SGi Ludwigsburg
-606,LP1.BuLi Süd2C,Michael,True,Spindler,1,4,375, ,SV Waldkirch
-607,LP1.BuLi Süd2C,Rene,False,Potteck,0,4,371, ,SGi Ludwigsburg
-608,LP1.BuLi Süd2C,Sebastian,True,Kugelmann,0,5,361, ,SV Waldkirch
-609,LP1.BuLi Süd2C,Julia,False,Hochmuth,1,5,366, ,SGi Ludwigsburg
-610,LP1.BuLi Süd2D,Abdullah,True,Ustaoglu,0,1,376, ,Sgi Waldenburg
-611,LP1.BuLi Süd2D,Pavel,False,Svetlik,1,1,383, ,ESV Weil am Rhein
-612,LP1.BuLi Süd2D,Philipp,True,Käfer,0,2,379, ,Sgi Waldenburg
-613,LP1.BuLi Süd2D,Michael,False,Schwald,1,2,383, ,ESV Weil am Rhein
-614,LP1.BuLi Süd2D,Tobias,True,Backes,0,3,376,8,Sgi Waldenburg
-615,LP1.BuLi Süd2D,Luca,False,Schröder,1,3,376,9,ESV Weil am Rhein
-616,LP1.BuLi Süd2D,Tobias,True,Bumb,1,4,380, ,Sgi Waldenburg
-617,LP1.BuLi Süd2D,Christian,False,Schebesta,0,4,372, ,ESV Weil am Rhein
-618,LP1.BuLi Süd2D,Jens,True,Klossek,1,5,379, ,Sgi Waldenburg
-619,LP1.BuLi Süd2D,Nathalie,False,Schelken,0,5,371, ,ESV Weil am Rhein
-620,LP1.BuLi Süd2E,Patrik,True,Lengerer,1,1,378, ,SV Murrhardt-Karnsberg
-621,LP1.BuLi Süd2E,Axel,False,Köhler,0,1,367, ,KKS Hambrücken
-622,LP1.BuLi Süd2E,Leo,True,Braun,0,2,375, ,SV Murrhardt-Karnsberg
-623,LP1.BuLi Süd2E,Patrick,False,Göpfrich,1,2,382, ,KKS Hambrücken
-624,LP1.BuLi Süd2E,Tobias,True,Heider,1,3,379, ,SV Murrhardt-Karnsberg
-625,LP1.BuLi Süd2E,Teresa,False,Groß,0,3,371, ,KKS Hambrücken
-626,LP1.BuLi Süd2E,Wolfgang,True,Renner,1,4,375, ,SV Murrhardt-Karnsberg
-627,LP1.BuLi Süd2E,Glenn Niklas,False,Simmank,0,4,367, ,KKS Hambrücken
-628,LP1.BuLi Süd2E,Markus,True,Schiller,0,5,360, ,SV Murrhardt-Karnsberg
-629,LP1.BuLi Süd2E,Marco,False,Wußler,1,5,362, ,KKS Hambrücken
-630,LP1.BuLi Süd2F,Sladjan,True,Zoran,0,1,371, ,SV Peiting
-631,LP1.BuLi Süd2F,Petrov,False,Dusko,1,1,387, ,SV Willmandingen
-632,LP1.BuLi Süd2F,Steffi,True,Böhm,0,2,370, ,SV Peiting
-633,LP1.BuLi Süd2F,Gabriele,False,Haas,1,2,373, ,SV Willmandingen
-634,LP1.BuLi Süd2F,Georg,True,Müller,1,3,382, ,SV Peiting
-635,LP1.BuLi Süd2F,Jürgen,False,Flad,0,3,365, ,SV Willmandingen
-636,LP1.BuLi Süd2F,Michaela,True,Brosselt-Guggemos,1,4,367, ,SV Peiting
-637,LP1.BuLi Süd2F,Denise,False,Keck,0,4,360, ,SV Willmandingen
-638,LP1.BuLi Süd2F,Thomas,True,Landes,0,5,356, ,SV Peiting
-639,LP1.BuLi Süd2F,Peter,False,Kirstahler,1,5,367, ,SV Willmandingen
+,comp_id,first_name,home,last_name,point,pos_id,position,result,shoot_off,team_full
+0,LP2.BuLi Nord1A,Ian Talmark,True,Kannerup,0,LP2.BuLi Nord1A1,1,370, ,PC Rendsburg
+1,LP2.BuLi Nord1A,Frederik,False,Larsen,1,LP2.BuLi Nord1A1,1,383, ,SV Groß und Kleinkaliber
+2,LP2.BuLi Nord1A,Uwe,True,Hofmann,0,LP2.BuLi Nord1A2,2,361, ,PC Rendsburg
+3,LP2.BuLi Nord1A,Miroslaw,False,Roj,1,LP2.BuLi Nord1A2,2,372, ,SV Groß und Kleinkaliber
+4,LP2.BuLi Nord1A,Helge,True,Hagen,1,LP2.BuLi Nord1A3,3,373, ,PC Rendsburg
+5,LP2.BuLi Nord1A,Tobias,False,Siemssen,0,LP2.BuLi Nord1A3,3,371, ,SV Groß und Kleinkaliber
+6,LP2.BuLi Nord1A,Uwe,True,Knapp,0,LP2.BuLi Nord1A4,4,357, ,PC Rendsburg
+7,LP2.BuLi Nord1A,Falk,False,Priebe,1,LP2.BuLi Nord1A4,4,366, ,SV Groß und Kleinkaliber
+8,LP2.BuLi Nord1A,Joris,True,Feindt,0,LP2.BuLi Nord1A5,5,364, ,PC Rendsburg
+9,LP2.BuLi Nord1A,Dieter,False,Miller,1,LP2.BuLi Nord1A5,5,367, ,SV Groß und Kleinkaliber
+10,LP2.BuLi Nord1B,Thilo,True,Wehr,0,LP2.BuLi Nord1B1,1,360, ,SV Kutenholz
+11,LP2.BuLi Nord1B,Waldemar,False,Markow,1,LP2.BuLi Nord1B1,1,368, ,Wandsbeker SGi
+12,LP2.BuLi Nord1B,Sönke,True,Borchers,1,LP2.BuLi Nord1B2,2,365, ,SV Kutenholz
+13,LP2.BuLi Nord1B,Jochen,False,Siemers,0,LP2.BuLi Nord1B2,2,355, ,Wandsbeker SGi
+14,LP2.BuLi Nord1B,Sven,True,Delventhal,1,LP2.BuLi Nord1B3,3,370, ,SV Kutenholz
+15,LP2.BuLi Nord1B,Rainer,False,Opitz,0,LP2.BuLi Nord1B3,3,358, ,Wandsbeker SGi
+16,LP2.BuLi Nord1B,Jana,True,Peper,1,LP2.BuLi Nord1B4,4,367, ,SV Kutenholz
+17,LP2.BuLi Nord1B,Valerij,False,Krichevskyi,0,LP2.BuLi Nord1B4,4,362, ,Wandsbeker SGi
+18,LP2.BuLi Nord1B,Steffen,True,Hauschild,0,LP2.BuLi Nord1B5,5,362, ,SV Kutenholz
+19,LP2.BuLi Nord1B,Björn-Axel,False,Dr. Dose,1,LP2.BuLi Nord1B5,5,367, ,Wandsbeker SGi
+20,LP2.BuLi Nord1C,Frederik,True,Larsen,1,LP2.BuLi Nord1C1,1,375, ,SV Groß und Kleinkaliber
+21,LP2.BuLi Nord1C,Waldemar,False,Markow,0,LP2.BuLi Nord1C1,1,362, ,Wandsbeker SGi
+22,LP2.BuLi Nord1C,Miroslaw,True,Roj,1,LP2.BuLi Nord1C2,2,380, ,SV Groß und Kleinkaliber
+23,LP2.BuLi Nord1C,Jochen,False,Siemers,0,LP2.BuLi Nord1C2,2,372, ,Wandsbeker SGi
+24,LP2.BuLi Nord1C,Tobias,True,Siemssen,1,LP2.BuLi Nord1C3,3,371, ,SV Groß und Kleinkaliber
+25,LP2.BuLi Nord1C,Rainer,False,Opitz,0,LP2.BuLi Nord1C3,3,366, ,Wandsbeker SGi
+26,LP2.BuLi Nord1C,Dieter,True,Miller,1,LP2.BuLi Nord1C4,4,373, ,SV Groß und Kleinkaliber
+27,LP2.BuLi Nord1C,Valerij,False,Krichevskyi,0,LP2.BuLi Nord1C4,4,365, ,Wandsbeker SGi
+28,LP2.BuLi Nord1C,Kai,True,Winnemuth,0,LP2.BuLi Nord1C5,5,356, ,SV Groß und Kleinkaliber
+29,LP2.BuLi Nord1C,Björn-Axel,False,Dr. Dose,1,LP2.BuLi Nord1C5,5,380, ,Wandsbeker SGi
+30,LP2.BuLi Nord1D,Ian Talmark,True,Kannerup,1,LP2.BuLi Nord1D1,1,377, ,PC Rendsburg
+31,LP2.BuLi Nord1D,Thilo,False,Wehr,0,LP2.BuLi Nord1D1,1,367, ,SV Kutenholz
+32,LP2.BuLi Nord1D,Uwe,True,Hofmann,1,LP2.BuLi Nord1D2,2,369, ,PC Rendsburg
+33,LP2.BuLi Nord1D,Sönke,False,Borchers,0,LP2.BuLi Nord1D2,2,365, ,SV Kutenholz
+34,LP2.BuLi Nord1D,Helge,True,Hagen,0,LP2.BuLi Nord1D3,3,365, ,PC Rendsburg
+35,LP2.BuLi Nord1D,Sven,False,Delventhal,1,LP2.BuLi Nord1D3,3,369, ,SV Kutenholz
+36,LP2.BuLi Nord1D,Uwe,True,Knapp,0,LP2.BuLi Nord1D4,4,357, ,PC Rendsburg
+37,LP2.BuLi Nord1D,Jana,False,Peper,1,LP2.BuLi Nord1D4,4,369, ,SV Kutenholz
+38,LP2.BuLi Nord1D,Joris,True,Feindt,0,LP2.BuLi Nord1D5,5,366, ,PC Rendsburg
+39,LP2.BuLi Nord1D,Steffen,False,Hauschild,1,LP2.BuLi Nord1D5,5,368, ,SV Kutenholz
+40,LP2.BuLi Nord1E,Frans,True,Soerensen,1,LP2.BuLi Nord1E1,1,379, ,GTV Bremerhaven-Seestadtteufel
+41,LP2.BuLi Nord1E,Meik,False,Kutzeck,0,LP2.BuLi Nord1E1,1,366, ,SP Brackstedt
+42,LP2.BuLi Nord1E,Antje,True,Noeske,1,LP2.BuLi Nord1E2,2,378, ,GTV Bremerhaven-Seestadtteufel
+43,LP2.BuLi Nord1E,Isabel,False,Kausch,0,LP2.BuLi Nord1E2,2,361, ,SP Brackstedt
+44,LP2.BuLi Nord1E,Theo,True,Hadrath,1,LP2.BuLi Nord1E3,3,378, ,GTV Bremerhaven-Seestadtteufel
+45,LP2.BuLi Nord1E,Patrick,False,Samse,0,LP2.BuLi Nord1E3,3,366, ,SP Brackstedt
+46,LP2.BuLi Nord1E,Thomas,True,Lüken,1,LP2.BuLi Nord1E4,4,379, ,GTV Bremerhaven-Seestadtteufel
+47,LP2.BuLi Nord1E,Katja,False,Broich,0,LP2.BuLi Nord1E4,4,359, ,SP Brackstedt
+48,LP2.BuLi Nord1E,Frank,True,Heitmeyer,1,LP2.BuLi Nord1E5,5,361, ,GTV Bremerhaven-Seestadtteufel
+49,LP2.BuLi Nord1E,Katja,False,Kutzeck,0,LP2.BuLi Nord1E5,5,358, ,SP Brackstedt
+50,LP2.BuLi Nord1F,Mandy,True,Horn,0,LP2.BuLi Nord1F1,1,365, ,SV Stoppelmarkt
+51,LP2.BuLi Nord1F,Christoph,False,Varnhorn,1,LP2.BuLi Nord1F1,1,375, ,SV Haendorf
+52,LP2.BuLi Nord1F,Rita,True,Müller,0,LP2.BuLi Nord1F2,2,354, ,SV Stoppelmarkt
+53,LP2.BuLi Nord1F,Jens,False,Frieling,1,LP2.BuLi Nord1F2,2,371, ,SV Haendorf
+54,LP2.BuLi Nord1F,Alexandra,True,Rolfes,0,LP2.BuLi Nord1F3,3,361, ,SV Stoppelmarkt
+55,LP2.BuLi Nord1F,Stefan,False,Pabstmann,1,LP2.BuLi Nord1F3,3,365, ,SV Haendorf
+56,LP2.BuLi Nord1F,Reinhard,True,Tönjes,0,LP2.BuLi Nord1F4,4,345, ,SV Stoppelmarkt
+57,LP2.BuLi Nord1F,Timon,False,Cordes,1,LP2.BuLi Nord1F4,4,373, ,SV Haendorf
+58,LP2.BuLi Nord1F,Tobias,True,Schierholt,1,LP2.BuLi Nord1F5,5,378, ,SV Stoppelmarkt
+59,LP2.BuLi Nord1F,Marc,False,Bonne,0,LP2.BuLi Nord1F5,5,373, ,SV Haendorf
+60,LP2.BuLi Nord1G,Meik,True,Kutzeck,0,LP2.BuLi Nord1G1,1,340, ,SP Brackstedt
+61,LP2.BuLi Nord1G,Christoph,False,Varnhorn,1,LP2.BuLi Nord1G1,1,371, ,SV Haendorf
+62,LP2.BuLi Nord1G,Isabel,True,Kausch,1,LP2.BuLi Nord1G2,2,366, ,SP Brackstedt
+63,LP2.BuLi Nord1G,Jens,False,Frieling,0,LP2.BuLi Nord1G2,2,363, ,SV Haendorf
+64,LP2.BuLi Nord1G,Patrick,True,Samse,0,LP2.BuLi Nord1G3,3,352, ,SP Brackstedt
+65,LP2.BuLi Nord1G,Stefan,False,Pabstmann,1,LP2.BuLi Nord1G3,3,364, ,SV Haendorf
+66,LP2.BuLi Nord1G,Katja,True,Broich,0,LP2.BuLi Nord1G4,4,358, ,SP Brackstedt
+67,LP2.BuLi Nord1G,Timon,False,Cordes,1,LP2.BuLi Nord1G4,4,363, ,SV Haendorf
+68,LP2.BuLi Nord1G,Katja,True,Kutzeck,0,LP2.BuLi Nord1G5,5,355, ,SP Brackstedt
+69,LP2.BuLi Nord1G,Marc,False,Bonne,1,LP2.BuLi Nord1G5,5,365, ,SV Haendorf
+70,LP2.BuLi Nord1H,Frans,True,Soerensen,1,LP2.BuLi Nord1H1,1,379, ,GTV Bremerhaven-Seestadtteufel
+71,LP2.BuLi Nord1H,Mandy,False,Horn,0,LP2.BuLi Nord1H1,1,377, ,SV Stoppelmarkt
+72,LP2.BuLi Nord1H,Antje,True,Noeske,1,LP2.BuLi Nord1H2,2,375, ,GTV Bremerhaven-Seestadtteufel
+73,LP2.BuLi Nord1H,Rita,False,Müller,0,LP2.BuLi Nord1H2,2,359, ,SV Stoppelmarkt
+74,LP2.BuLi Nord1H,Theo,True,Hadrath,1,LP2.BuLi Nord1H3,3,379, ,GTV Bremerhaven-Seestadtteufel
+75,LP2.BuLi Nord1H,Alexandra,False,Rolfes,0,LP2.BuLi Nord1H3,3,364, ,SV Stoppelmarkt
+76,LP2.BuLi Nord1H,Jan Luca,True,Karstedt,1,LP2.BuLi Nord1H4,4,375, ,GTV Bremerhaven-Seestadtteufel
+77,LP2.BuLi Nord1H,Thomas,False,Seeger,0,LP2.BuLi Nord1H4,4,355, ,SV Stoppelmarkt
+78,LP2.BuLi Nord1H,Matthias,True,Dapprich-Crawford,0,LP2.BuLi Nord1H5,5,369, ,GTV Bremerhaven-Seestadtteufel
+79,LP2.BuLi Nord1H,Tobias,False,Schierholt,1,LP2.BuLi Nord1H5,5,374, ,SV Stoppelmarkt
+80,LP2.BuLi Ost1A,Wolfgang,True,Geppert,1,LP2.BuLi Ost1A1,1,369, ,SGi. zu Potsdam e.V.
+81,LP2.BuLi Ost1A,Katja,False,Regel,0,LP2.BuLi Ost1A1,1,0, ,Nord-Berliner Schützen-Gem.
+82,LP2.BuLi Ost1A,Johannes,True,Rüder,1,LP2.BuLi Ost1A2,2,367, ,SGi. zu Potsdam e.V.
+83,LP2.BuLi Ost1A,Marcus,False,Nitschke,0,LP2.BuLi Ost1A2,2,0, ,Nord-Berliner Schützen-Gem.
+84,LP2.BuLi Ost1A,Robert,True,Böhm,1,LP2.BuLi Ost1A3,3,373, ,SGi. zu Potsdam e.V.
+85,LP2.BuLi Ost1A,Jens,False,Ranneberg,0,LP2.BuLi Ost1A3,3,0, ,Nord-Berliner Schützen-Gem.
+86,LP2.BuLi Ost1A,Michael,True,Stillfried,1,LP2.BuLi Ost1A4,4,358, ,SGi. zu Potsdam e.V.
+87,LP2.BuLi Ost1A,Helge,False,Zimniak,0,LP2.BuLi Ost1A4,4,0, ,Nord-Berliner Schützen-Gem.
+88,LP2.BuLi Ost1A,Jördis,True,Schmidt,1,LP2.BuLi Ost1A5,5,356, ,SGi. zu Potsdam e.V.
+89,LP2.BuLi Ost1A,Michael,False,Dunkel,0,LP2.BuLi Ost1A5,5,0, ,Nord-Berliner Schützen-Gem.
+90,LP2.BuLi Ost1B,Hauke,True,Kenzler,1,LP2.BuLi Ost1B1,1,368, ,PSV Olympia Berlin II
+91,LP2.BuLi Ost1B,Christian,False,Jauert,0,LP2.BuLi Ost1B1,1,363, ,Prenzlauer Schützenverein e.V.
+92,LP2.BuLi Ost1B,Lea Katharina,True,Kunz,1,LP2.BuLi Ost1B2,2,370, ,PSV Olympia Berlin II
+93,LP2.BuLi Ost1B,Henry,False,Boldt,0,LP2.BuLi Ost1B2,2,363, ,Prenzlauer Schützenverein e.V.
+94,LP2.BuLi Ost1B,Gernot,True,Eder,1,LP2.BuLi Ost1B3,3,370, ,PSV Olympia Berlin II
+95,LP2.BuLi Ost1B,Andreas,False,Schmidt,0,LP2.BuLi Ost1B3,3,366, ,Prenzlauer Schützenverein e.V.
+96,LP2.BuLi Ost1B,Robert,True,Schulze,1,LP2.BuLi Ost1B4,4,366, ,PSV Olympia Berlin II
+97,LP2.BuLi Ost1B,Falko,False,Gersdorf,0,LP2.BuLi Ost1B4,4,353, ,Prenzlauer Schützenverein e.V.
+98,LP2.BuLi Ost1B,Dominik,True,Grimm,1,LP2.BuLi Ost1B5,5,362, ,PSV Olympia Berlin II
+99,LP2.BuLi Ost1B,Heyne,False,Jost,0,LP2.BuLi Ost1B5,5,355, ,Prenzlauer Schützenverein e.V.
+100,LP2.BuLi Ost1C,Bruno,True,Petrich,0,LP2.BuLi Ost1C1,1,350, ,PSSG zu Dresden
+101,LP2.BuLi Ost1C,Stefanie,False,Thurmann,1,LP2.BuLi Ost1C1,1,370, ,Schützengilde Frankfurt/Oder 1406
+102,LP2.BuLi Ost1C,Henrik,True,Schneider,1,LP2.BuLi Ost1C2,2,372, ,PSSG zu Dresden
+103,LP2.BuLi Ost1C,Andreas,False,Rußmann,0,LP2.BuLi Ost1C2,2,371, ,Schützengilde Frankfurt/Oder 1406
+104,LP2.BuLi Ost1C,Fernando,True,Jiménez Gonzales,0,LP2.BuLi Ost1C3,3,364, ,PSSG zu Dresden
+105,LP2.BuLi Ost1C,Oliver,False,Fahs,1,LP2.BuLi Ost1C3,3,371, ,Schützengilde Frankfurt/Oder 1406
+106,LP2.BuLi Ost1C,Johannes,True,Höhne,0,LP2.BuLi Ost1C4,4,349, ,PSSG zu Dresden
+107,LP2.BuLi Ost1C,Daniel,False,Giebler,1,LP2.BuLi Ost1C4,4,367, ,Schützengilde Frankfurt/Oder 1406
+108,LP2.BuLi Ost1C,Uwe,True,Roßberg,0,LP2.BuLi Ost1C5,5,337, ,PSSG zu Dresden
+109,LP2.BuLi Ost1C,Robert,False,Dienst,1,LP2.BuLi Ost1C5,5,369, ,Schützengilde Frankfurt/Oder 1406
+110,LP2.BuLi Ost1D,Sven,True,Konopka,0,LP2.BuLi Ost1D1,1,366,9,Gröninger SV
+111,LP2.BuLi Ost1D,Agnes,False,Völker,1,LP2.BuLi Ost1D1,1,366,10,1.BSGI zu Oelsnitz
+112,LP2.BuLi Ost1D,Christian,True,Kenklies,1,LP2.BuLi Ost1D2,2,369, ,Gröninger SV
+113,LP2.BuLi Ost1D,Jürgen,False,Dr. Barth,0,LP2.BuLi Ost1D2,2,353, ,1.BSGI zu Oelsnitz
+114,LP2.BuLi Ost1D,Torsten,True,Bohndorf,1,LP2.BuLi Ost1D3,3,364, ,Gröninger SV
+115,LP2.BuLi Ost1D,Ronny,False,Schnabel,0,LP2.BuLi Ost1D3,3,351, ,1.BSGI zu Oelsnitz
+116,LP2.BuLi Ost1D,Martin,True,Baumbach,0,LP2.BuLi Ost1D4,4,349, ,Gröninger SV
+117,LP2.BuLi Ost1D,Daniel,False,Clauß,1,LP2.BuLi Ost1D4,4,359, ,1.BSGI zu Oelsnitz
+118,LP2.BuLi Ost1D,Mirco,True,Pahlke,1,LP2.BuLi Ost1D5,5,365, ,Gröninger SV
+119,LP2.BuLi Ost1D,Dirk,False,Löffler,0,LP2.BuLi Ost1D5,5,358, ,1.BSGI zu Oelsnitz
+120,LP2.BuLi West1A,Thomas,True,Hucke,1,LP2.BuLi West1A1,1,380, ,SV Hegelsberg-Vellmar
+121,LP2.BuLi West1A,Nadine,False,Reichelt,0,LP2.BuLi West1A1,1,373, ,Brühler Schießclub 70
+122,LP2.BuLi West1A,Lev,True,Berner,1,LP2.BuLi West1A2,2,359, ,SV Hegelsberg-Vellmar
+123,LP2.BuLi West1A,Jürgen,False,Korn,0,LP2.BuLi West1A2,2,355, ,Brühler Schießclub 70
+124,LP2.BuLi West1A,Svenja,True,Berge,0,LP2.BuLi West1A3,3,361, ,SV Hegelsberg-Vellmar
+125,LP2.BuLi West1A,Philipp,False,Sersch,1,LP2.BuLi West1A3,3,372, ,Brühler Schießclub 70
+126,LP2.BuLi West1A,Kim,True,Richter,0,LP2.BuLi West1A4,4,356, ,SV Hegelsberg-Vellmar
+127,LP2.BuLi West1A,Christian,False,Brabender,1,LP2.BuLi West1A4,4,363, ,Brühler Schießclub 70
+128,LP2.BuLi West1A,Stefan,True,Ziehn,1,LP2.BuLi West1A5,5,364, ,SV Hegelsberg-Vellmar
+129,LP2.BuLi West1A,Manfred,False,Ley,0,LP2.BuLi West1A5,5,363, ,Brühler Schießclub 70
+130,LP2.BuLi West1B,Peter,True,Brzezinski,0,LP2.BuLi West1B1,1,365, ,SV Usingen
+131,LP2.BuLi West1B,Markus,False,Kremser,1,LP2.BuLi West1B1,1,378, ,SpSch Ännchen Bad Godesberg
+132,LP2.BuLi West1B,Christoph,True,Plümacher,1,LP2.BuLi West1B2,2,366, ,SV Usingen
+133,LP2.BuLi West1B,Michael,False,Weber,0,LP2.BuLi West1B2,2,363, ,SpSch Ännchen Bad Godesberg
+134,LP2.BuLi West1B,Patrick,True,Veidt,0,LP2.BuLi West1B3,3,361, ,SV Usingen
+135,LP2.BuLi West1B,Dirk,False,Beuth,1,LP2.BuLi West1B3,3,365, ,SpSch Ännchen Bad Godesberg
+136,LP2.BuLi West1B,Hermann,True,Müller,1,LP2.BuLi West1B4,4,367, ,SV Usingen
+137,LP2.BuLi West1B,Albert,False,Melzer,0,LP2.BuLi West1B4,4,357, ,SpSch Ännchen Bad Godesberg
+138,LP2.BuLi West1B,Markus,True,Bill,0,LP2.BuLi West1B5,5,354, ,SV Usingen
+139,LP2.BuLi West1B,Vanessa,False,Hollfoth,1,LP2.BuLi West1B5,5,364, ,SpSch Ännchen Bad Godesberg
+140,LP2.BuLi West1C,Nadine,True,Reichelt,0,LP2.BuLi West1C1,1,373, ,Brühler Schießclub 70
+141,LP2.BuLi West1C,Markus,False,Kremser,1,LP2.BuLi West1C1,1,376, ,SpSch Ännchen Bad Godesberg
+142,LP2.BuLi West1C,Jürgen,True,Korn,1,LP2.BuLi West1C2,2,376, ,Brühler Schießclub 70
+143,LP2.BuLi West1C,Michael,False,Weber,0,LP2.BuLi West1C2,2,372, ,SpSch Ännchen Bad Godesberg
+144,LP2.BuLi West1C,Lieselotte,True,Janssen,1,LP2.BuLi West1C3,3,373, ,Brühler Schießclub 70
+145,LP2.BuLi West1C,Dirk,False,Beuth,0,LP2.BuLi West1C3,3,364, ,SpSch Ännchen Bad Godesberg
+146,LP2.BuLi West1C,Philipp,True,Sersch,1,LP2.BuLi West1C4,4,375, ,Brühler Schießclub 70
+147,LP2.BuLi West1C,Johann,False,Seuren,0,LP2.BuLi West1C4,4,355, ,SpSch Ännchen Bad Godesberg
+148,LP2.BuLi West1C,Manfred,True,Ley,1,LP2.BuLi West1C5,5,368, ,Brühler Schießclub 70
+149,LP2.BuLi West1C,Vanessa,False,Hollfoth,0,LP2.BuLi West1C5,5,353, ,SpSch Ännchen Bad Godesberg
+150,LP2.BuLi West1D,Thomas,True,Hucke,1,LP2.BuLi West1D1,1,380, ,SV Hegelsberg-Vellmar
+151,LP2.BuLi West1D,Peter,False,Brzezinski,0,LP2.BuLi West1D1,1,368, ,SV Usingen
+152,LP2.BuLi West1D,Nils,True,Pilger,0,LP2.BuLi West1D2,2,358, ,SV Hegelsberg-Vellmar
+153,LP2.BuLi West1D,Christoph,False,Plümacher,1,LP2.BuLi West1D2,2,372, ,SV Usingen
+154,LP2.BuLi West1D,Svenja,True,Berge,1,LP2.BuLi West1D3,3,364, ,SV Hegelsberg-Vellmar
+155,LP2.BuLi West1D,Patrick,False,Veidt,0,LP2.BuLi West1D3,3,356, ,SV Usingen
+156,LP2.BuLi West1D,Kim,True,Richter,0,LP2.BuLi West1D4,4,364, ,SV Hegelsberg-Vellmar
+157,LP2.BuLi West1D,Hermann,False,Müller,1,LP2.BuLi West1D4,4,369, ,SV Usingen
+158,LP2.BuLi West1D,Stefan,True,Ziehn,1,LP2.BuLi West1D5,5,370, ,SV Hegelsberg-Vellmar
+159,LP2.BuLi West1D,Markus,False,Bill,0,LP2.BuLi West1D5,5,361, ,SV Usingen
+160,LP2.BuLi West1E,Maik,True,Schamber,0,LP2.BuLi West1E1,1,360, ,SPSG Tell Raunheim
+161,LP2.BuLi West1E,Andrey,False,Rudi,1,LP2.BuLi West1E1,1,362, ,SSV Bad Westernkotten
+162,LP2.BuLi West1E,Thomas,True,van der Burg,0,LP2.BuLi West1E2,2,371, ,SPSG Tell Raunheim
+163,LP2.BuLi West1E,Peter,False,Müller,1,LP2.BuLi West1E2,2,375, ,SSV Bad Westernkotten
+164,LP2.BuLi West1E,Holger,True,Simon,1,LP2.BuLi West1E3,3,367, ,SPSG Tell Raunheim
+165,LP2.BuLi West1E,Ralf,False,Risse,0,LP2.BuLi West1E3,3,362, ,SSV Bad Westernkotten
+166,LP2.BuLi West1E,Christoph,True,Schneider,0,LP2.BuLi West1E4,4,364, ,SPSG Tell Raunheim
+167,LP2.BuLi West1E,Wilfried,False,Dörschlen,1,LP2.BuLi West1E4,4,369, ,SSV Bad Westernkotten
+168,LP2.BuLi West1E,Volker,True,Lautenschläger,1,LP2.BuLi West1E5,5,366, ,SPSG Tell Raunheim
+169,LP2.BuLi West1E,Sascha,False,Düsing,0,LP2.BuLi West1E5,5,365, ,SSV Bad Westernkotten
+170,LP2.BuLi West1F,René,True,Opper,0,LP2.BuLi West1F1,1,365, ,SV Biebrich 1864
+171,LP2.BuLi West1F,Marko,False,Kuckuck,1,LP2.BuLi West1F1,1,368, ,SC Windecken
+172,LP2.BuLi West1F,Kirstin,True,Steinert,0,LP2.BuLi West1F2,2,359, ,SV Biebrich 1864
+173,LP2.BuLi West1F,Kathrin,False,Türpitsch,1,LP2.BuLi West1F2,2,365, ,SC Windecken
+174,LP2.BuLi West1F,Carsten,True,Dudde,1,LP2.BuLi West1F3,3,361, ,SV Biebrich 1864
+175,LP2.BuLi West1F,Kai,False,Schlegel,0,LP2.BuLi West1F3,3,352, ,SC Windecken
+176,LP2.BuLi West1F,Christian,True,Schäberle,1,LP2.BuLi West1F4,4,369, ,SV Biebrich 1864
+177,LP2.BuLi West1F,Kai-Michael,False,Arends,0,LP2.BuLi West1F4,4,352, ,SC Windecken
+178,LP2.BuLi West1F,Daniel,True,Tkocz,1,LP2.BuLi West1F5,5,367, ,SV Biebrich 1864
+179,LP2.BuLi West1F,Mark,False,Schleiss,0,LP2.BuLi West1F5,5,349, ,SC Windecken
+180,LP2.BuLi West1G,Andrey,True,Rudi,0,LP2.BuLi West1G1,1,360, ,SSV Bad Westernkotten
+181,LP2.BuLi West1G,Marko,False,Kuckuck,1,LP2.BuLi West1G1,1,364, ,SC Windecken
+182,LP2.BuLi West1G,Peter,True,Müller,1,LP2.BuLi West1G2,2,370, ,SSV Bad Westernkotten
+183,LP2.BuLi West1G,Kathrin,False,Türpitsch,0,LP2.BuLi West1G2,2,365, ,SC Windecken
+184,LP2.BuLi West1G,Ralf,True,Risse,1,LP2.BuLi West1G3,3,373, ,SSV Bad Westernkotten
+185,LP2.BuLi West1G,Kai,False,Schlegel,0,LP2.BuLi West1G3,3,356, ,SC Windecken
+186,LP2.BuLi West1G,Sascha,True,Düsing,1,LP2.BuLi West1G4,4,367, ,SSV Bad Westernkotten
+187,LP2.BuLi West1G,Kai-Michael,False,Arends,0,LP2.BuLi West1G4,4,357, ,SC Windecken
+188,LP2.BuLi West1G,Klaus,True,Neise,1,LP2.BuLi West1G5,5,355, ,SSV Bad Westernkotten
+189,LP2.BuLi West1G,Mark,False,Schleiss,0,LP2.BuLi West1G5,5,352, ,SC Windecken
+190,LP2.BuLi West1H,Maik,True,Schamber,0,LP2.BuLi West1H1,1,368, ,SPSG Tell Raunheim
+191,LP2.BuLi West1H,René,False,Opper,1,LP2.BuLi West1H1,1,369, ,SV Biebrich 1864
+192,LP2.BuLi West1H,Thomas,True,van der Burg,1,LP2.BuLi West1H2,2,373, ,SPSG Tell Raunheim
+193,LP2.BuLi West1H,Kirstin,False,Steinert,0,LP2.BuLi West1H2,2,368, ,SV Biebrich 1864
+194,LP2.BuLi West1H,Holger,True,Simon,1,LP2.BuLi West1H3,3,360,10,SPSG Tell Raunheim
+195,LP2.BuLi West1H,Carsten,False,Dudde,0,LP2.BuLi West1H3,3,360,9,SV Biebrich 1864
+196,LP2.BuLi West1H,Christoph,True,Schneider,1,LP2.BuLi West1H4,4,362, ,SPSG Tell Raunheim
+197,LP2.BuLi West1H,Christian,False,Schäberle,0,LP2.BuLi West1H4,4,360, ,SV Biebrich 1864
+198,LP2.BuLi West1H,Volker,True,Lautenschläger,1,LP2.BuLi West1H5,5,371, ,SPSG Tell Raunheim
+199,LP2.BuLi West1H,Sylvie,False,Schmit,0,LP2.BuLi West1H5,5,357, ,SV Biebrich 1864
+200,LP2.BuLi Südwest1A,Dominik,True,Roller,0,LP2.BuLi Südwest1A1,1,371, ,SSV Sandhausen
+201,LP2.BuLi Südwest1A,Rebecca,False,Lesti,1,LP2.BuLi Südwest1A1,1,372, ,TSV Ötlingen - SpSchAbtl.
+202,LP2.BuLi Südwest1A,Martin,True,Just,0,LP2.BuLi Südwest1A2,2,368, ,SSV Sandhausen
+203,LP2.BuLi Südwest1A,Jörg,False,Kobarg,1,LP2.BuLi Südwest1A2,2,377, ,TSV Ötlingen - SpSchAbtl.
+204,LP2.BuLi Südwest1A,Jochen,True,Rübling,0,LP2.BuLi Südwest1A3,3,361, ,SSV Sandhausen
+205,LP2.BuLi Südwest1A,Stefan,False,Scharpf,1,LP2.BuLi Südwest1A3,3,375, ,TSV Ötlingen - SpSchAbtl.
+206,LP2.BuLi Südwest1A,Gerd,True,Korn,1,LP2.BuLi Südwest1A4,4,360, ,SSV Sandhausen
+207,LP2.BuLi Südwest1A,Markus,False,Geipel,0,LP2.BuLi Südwest1A4,4,358, ,TSV Ötlingen - SpSchAbtl.
+208,LP2.BuLi Südwest1A,Andreas,True,Nied,1,LP2.BuLi Südwest1A5,5,374, ,SSV Sandhausen
+209,LP2.BuLi Südwest1A,Torben,False,Engel,0,LP2.BuLi Südwest1A5,5,367, ,TSV Ötlingen - SpSchAbtl.
+210,LP2.BuLi Südwest1B,Thomas,True,Singvogel,0,LP2.BuLi Südwest1B1,1,369, ,SKam Aalen-Nesslau
+211,LP2.BuLi Südwest1B,Nils,False,Strubel,1,LP2.BuLi Südwest1B1,1,379, ,SV Walldorf
+212,LP2.BuLi Südwest1B,Michael,True,Weckert,1,LP2.BuLi Südwest1B2,2,369, ,SKam Aalen-Nesslau
+213,LP2.BuLi Südwest1B,Stefanie,False,Friedrich,0,LP2.BuLi Südwest1B2,2,367, ,SV Walldorf
+214,LP2.BuLi Südwest1B,Erwin,True,Singvogel,0,LP2.BuLi Südwest1B3,3,351, ,SKam Aalen-Nesslau
+215,LP2.BuLi Südwest1B,Konstantin,False,Günther,1,LP2.BuLi Südwest1B3,3,372, ,SV Walldorf
+216,LP2.BuLi Südwest1B,Frank,True,Krauß,0,LP2.BuLi Südwest1B4,4,349, ,SKam Aalen-Nesslau
+217,LP2.BuLi Südwest1B,Andre,False,Lützner,1,LP2.BuLi Südwest1B4,4,367, ,SV Walldorf
+218,LP2.BuLi Südwest1B,Günter,True,Sanwald,0,LP2.BuLi Südwest1B5,5,344, ,SKam Aalen-Nesslau
+219,LP2.BuLi Südwest1B,Karsten,False,Quintel,1,LP2.BuLi Südwest1B5,5,365, ,SV Walldorf
+220,LP2.BuLi Südwest1C,Rebecca,True,Lesti,1,LP2.BuLi Südwest1C1,1,381, ,TSV Ötlingen - SpSchAbtl.
+221,LP2.BuLi Südwest1C,Nils,False,Strubel,0,LP2.BuLi Südwest1C1,1,378, ,SV Walldorf
+222,LP2.BuLi Südwest1C,Jörg,True,Kobarg,1,LP2.BuLi Südwest1C2,2,380, ,TSV Ötlingen - SpSchAbtl.
+223,LP2.BuLi Südwest1C,Stefanie,False,Friedrich,0,LP2.BuLi Südwest1C2,2,364, ,SV Walldorf
+224,LP2.BuLi Südwest1C,Stefan,True,Scharpf,0,LP2.BuLi Südwest1C3,3,369, ,TSV Ötlingen - SpSchAbtl.
+225,LP2.BuLi Südwest1C,Konstantin,False,Günther,1,LP2.BuLi Südwest1C3,3,377, ,SV Walldorf
+226,LP2.BuLi Südwest1C,Fabian,True,Dröge,1,LP2.BuLi Südwest1C4,4,371, ,TSV Ötlingen - SpSchAbtl.
+227,LP2.BuLi Südwest1C,Andre,False,Lützner,0,LP2.BuLi Südwest1C4,4,358, ,SV Walldorf
+228,LP2.BuLi Südwest1C,Torben,True,Engel,0,LP2.BuLi Südwest1C5,5,366, ,TSV Ötlingen - SpSchAbtl.
+229,LP2.BuLi Südwest1C,Karsten,False,Quintel,1,LP2.BuLi Südwest1C5,5,367, ,SV Walldorf
+230,LP2.BuLi Südwest1D,Dominik,True,Roller,1,LP2.BuLi Südwest1D1,1,370,9,SSV Sandhausen
+231,LP2.BuLi Südwest1D,Thomas,False,Singvogel,0,LP2.BuLi Südwest1D1,1,370,8,SKam Aalen-Nesslau
+232,LP2.BuLi Südwest1D,Martin,True,Just,0,LP2.BuLi Südwest1D2,2,354, ,SSV Sandhausen
+233,LP2.BuLi Südwest1D,Michael,False,Weckert,1,LP2.BuLi Südwest1D2,2,364, ,SKam Aalen-Nesslau
+234,LP2.BuLi Südwest1D,Robert,True,Pfütze,1,LP2.BuLi Südwest1D3,3,377, ,SSV Sandhausen
+235,LP2.BuLi Südwest1D,Erwin,False,Singvogel,0,LP2.BuLi Südwest1D3,3,367, ,SKam Aalen-Nesslau
+236,LP2.BuLi Südwest1D,Stephan,True,Dr. Stathel,1,LP2.BuLi Südwest1D4,4,360, ,SSV Sandhausen
+237,LP2.BuLi Südwest1D,Frank,False,Krauß,0,LP2.BuLi Südwest1D4,4,351, ,SKam Aalen-Nesslau
+238,LP2.BuLi Südwest1D,Andreas,True,Nied,1,LP2.BuLi Südwest1D5,5,373, ,SSV Sandhausen
+239,LP2.BuLi Südwest1D,Günter,False,Sanwald,0,LP2.BuLi Südwest1D5,5,339, ,SKam Aalen-Nesslau
+240,LP2.BuLi Südwest1E,Günther,True,Schwarz,1,LP2.BuLi Südwest1E1,1,371, ,SV Altheim Waldhausen II
+241,LP2.BuLi Südwest1E,Saskia,False,Fuchs,0,LP2.BuLi Südwest1E1,1,357, ,Sportschützen  March
+242,LP2.BuLi Südwest1E,Eromin,True,Sergej,0,LP2.BuLi Südwest1E2,2,354, ,SV Altheim Waldhausen II
+243,LP2.BuLi Südwest1E,Thomas,False,Pitz,1,LP2.BuLi Südwest1E2,2,366, ,Sportschützen  March
+244,LP2.BuLi Südwest1E,Klaus,True,Vogel,0,LP2.BuLi Südwest1E3,3,353, ,SV Altheim Waldhausen II
+245,LP2.BuLi Südwest1E,Sebastian,False,Müller,1,LP2.BuLi Südwest1E3,3,362, ,Sportschützen  March
+246,LP2.BuLi Südwest1E,Petra,True,Hälg,0,LP2.BuLi Südwest1E4,4,348, ,SV Altheim Waldhausen II
+247,LP2.BuLi Südwest1E,Stephan,False,Heß,1,LP2.BuLi Südwest1E4,4,363, ,Sportschützen  March
+248,LP2.BuLi Südwest1E,Markus,True,Schwarz,1,LP2.BuLi Südwest1E5,5,370, ,SV Altheim Waldhausen II
+249,LP2.BuLi Südwest1E,Amelie,False,Ziegler,0,LP2.BuLi Südwest1E5,5,350, ,Sportschützen  March
+250,LP2.BuLi Südwest1F,Robin,True,Walter,1,LP2.BuLi Südwest1F1,1,380, ,SGi Ebersbach
+251,LP2.BuLi Südwest1F,Gerhard,False,Stark,0,LP2.BuLi Südwest1F1,1,366, ,SV Eckartshausen
+252,LP2.BuLi Südwest1F,Manfred,True,Walter,0,LP2.BuLi Südwest1F2,2,362, ,SGi Ebersbach
+253,LP2.BuLi Südwest1F,Dirk,False,Dinkel,1,LP2.BuLi Südwest1F2,2,371, ,SV Eckartshausen
+254,LP2.BuLi Südwest1F,Sebastian,True,Windhab,0,LP2.BuLi Südwest1F3,3,357, ,SGi Ebersbach
+255,LP2.BuLi Südwest1F,Friedrich,False,Burkert,1,LP2.BuLi Südwest1F3,3,363, ,SV Eckartshausen
+256,LP2.BuLi Südwest1F,Philipp,True,Holzner,0,LP2.BuLi Südwest1F4,4,350, ,SGi Ebersbach
+257,LP2.BuLi Südwest1F,Andre,False,Miklis,1,LP2.BuLi Südwest1F4,4,356, ,SV Eckartshausen
+258,LP2.BuLi Südwest1F,Manuel,True,Windhab,0,LP2.BuLi Südwest1F5,5,354, ,SGi Ebersbach
+259,LP2.BuLi Südwest1F,Max,False,Brenner,1,LP2.BuLi Südwest1F5,5,357, ,SV Eckartshausen
+260,LP2.BuLi Südwest1G,Saskia,True,Fuchs,0,LP2.BuLi Südwest1G1,1,359, ,Sportschützen  March
+261,LP2.BuLi Südwest1G,Gerhard,False,Stark,1,LP2.BuLi Südwest1G1,1,361, ,SV Eckartshausen
+262,LP2.BuLi Südwest1G,Thomas,True,Pitz,0,LP2.BuLi Südwest1G2,2,371,8,Sportschützen  March
+263,LP2.BuLi Südwest1G,Dirk,False,Dinkel,1,LP2.BuLi Südwest1G2,2,371,9,SV Eckartshausen
+264,LP2.BuLi Südwest1G,Sebastian,True,Müller,0,LP2.BuLi Südwest1G3,3,365, ,Sportschützen  March
+265,LP2.BuLi Südwest1G,Joachim,False,Dach,1,LP2.BuLi Südwest1G3,3,366, ,SV Eckartshausen
+266,LP2.BuLi Südwest1G,Stephan,True,Heß,1,LP2.BuLi Südwest1G4,4,368, ,Sportschützen  March
+267,LP2.BuLi Südwest1G,Andre,False,Miklis,0,LP2.BuLi Südwest1G4,4,353, ,SV Eckartshausen
+268,LP2.BuLi Südwest1G,Amelie,True,Ziegler,0,LP2.BuLi Südwest1G5,5,342, ,Sportschützen  March
+269,LP2.BuLi Südwest1G,Max,False,Brenner,1,LP2.BuLi Südwest1G5,5,369, ,SV Eckartshausen
+270,LP2.BuLi Südwest1H,Günther,True,Schwarz,0,LP2.BuLi Südwest1H1,1,369, ,SV Altheim Waldhausen II
+271,LP2.BuLi Südwest1H,Robin,False,Walter,1,LP2.BuLi Südwest1H1,1,374, ,SGi Ebersbach
+272,LP2.BuLi Südwest1H,Eromin,True,Sergej,0,LP2.BuLi Südwest1H2,2,353, ,SV Altheim Waldhausen II
+273,LP2.BuLi Südwest1H,Manfred,False,Walter,1,LP2.BuLi Südwest1H2,2,368, ,SGi Ebersbach
+274,LP2.BuLi Südwest1H,Klaus,True,Vogel,1,LP2.BuLi Südwest1H3,3,361, ,SV Altheim Waldhausen II
+275,LP2.BuLi Südwest1H,Sebastian,False,Windhab,0,LP2.BuLi Südwest1H3,3,358, ,SGi Ebersbach
+276,LP2.BuLi Südwest1H,Petra,True,Hälg,1,LP2.BuLi Südwest1H4,4,352, ,SV Altheim Waldhausen II
+277,LP2.BuLi Südwest1H,Philipp,False,Holzner,0,LP2.BuLi Südwest1H4,4,351, ,SGi Ebersbach
+278,LP2.BuLi Südwest1H,Alexandra,True,Fedko,1,LP2.BuLi Südwest1H5,5,345, ,SV Altheim Waldhausen II
+279,LP2.BuLi Südwest1H,Manuel,False,Windhab,0,LP2.BuLi Südwest1H5,5,343, ,SGi Ebersbach
+280,LP2.BuLi Süd1A,Matthias,True,Nolte,1,LP2.BuLi Süd1A1,1,375, ,HSG Erlangen
+281,LP2.BuLi Süd1A,Lisa,False,Schnaidt,0,LP2.BuLi Süd1A1,1,356, ,SSG Dynamit Fürth II
+282,LP2.BuLi Süd1A,Hans-Rainer,True,Wagner,0,LP2.BuLi Süd1A2,2,363, ,HSG Erlangen
+283,LP2.BuLi Süd1A,Kirsten,False,Knopf,1,LP2.BuLi Süd1A2,2,371, ,SSG Dynamit Fürth II
+284,LP2.BuLi Süd1A,Claudia,True,Schardt,0,LP2.BuLi Süd1A3,3,351, ,HSG Erlangen
+285,LP2.BuLi Süd1A,Andreas,False,Pfeiffer,1,LP2.BuLi Süd1A3,3,378, ,SSG Dynamit Fürth II
+286,LP2.BuLi Süd1A,Michael,True,Lehmeier,0,LP2.BuLi Süd1A4,4,351, ,HSG Erlangen
+287,LP2.BuLi Süd1A,Volker,False,Roth,1,LP2.BuLi Süd1A4,4,370, ,SSG Dynamit Fürth II
+288,LP2.BuLi Süd1A,Niels,True,Röhner,0,LP2.BuLi Süd1A5,5,358, ,HSG Erlangen
+289,LP2.BuLi Süd1A,Tobias,False,Meyer,1,LP2.BuLi Süd1A5,5,363, ,SSG Dynamit Fürth II
+290,LP2.BuLi Süd1B,Sonja,True,Weiß,0,LP2.BuLi Süd1B1,1,366, ,SG 1898 Thumsenreuth
+291,LP2.BuLi Süd1B,Alexander,False,Leuchtle,1,LP2.BuLi Süd1B1,1,368, ,Singoldschützen Großaitingen
+292,LP2.BuLi Süd1B,Lukas,True,Spachtholz,1,LP2.BuLi Süd1B2,2,372, ,SG 1898 Thumsenreuth
+293,LP2.BuLi Süd1B,Reiner,False,Sauter,0,LP2.BuLi Süd1B2,2,363, ,Singoldschützen Großaitingen
+294,LP2.BuLi Süd1B,Karl,True,Greger,1,LP2.BuLi Süd1B3,3,362, ,SG 1898 Thumsenreuth
+295,LP2.BuLi Süd1B,Artur,False,Pfitzner,0,LP2.BuLi Süd1B3,3,361, ,Singoldschützen Großaitingen
+296,LP2.BuLi Süd1B,Bernhard,True,Stock,0,LP2.BuLi Süd1B4,4,351, ,SG 1898 Thumsenreuth
+297,LP2.BuLi Süd1B,Ralf,False,Wieler,1,LP2.BuLi Süd1B4,4,364, ,Singoldschützen Großaitingen
+298,LP2.BuLi Süd1B,Thomas,True,Glaser,0,LP2.BuLi Süd1B5,5,358, ,SG 1898 Thumsenreuth
+299,LP2.BuLi Süd1B,Florian,False,Gollinger,1,LP2.BuLi Süd1B5,5,369, ,Singoldschützen Großaitingen
+300,LP2.BuLi Süd1C,Alexander,True,Leuchtle,1,LP2.BuLi Süd1C1,1,374, ,Singoldschützen Großaitingen
+301,LP2.BuLi Süd1C,Lisa,False,Schnaidt,0,LP2.BuLi Süd1C1,1,367, ,SSG Dynamit Fürth II
+302,LP2.BuLi Süd1C,Reiner,True,Sauter,1,LP2.BuLi Süd1C2,2,369, ,Singoldschützen Großaitingen
+303,LP2.BuLi Süd1C,Kirsten,False,Knopf,0,LP2.BuLi Süd1C2,2,361, ,SSG Dynamit Fürth II
+304,LP2.BuLi Süd1C,Artur,True,Pfitzner,0,LP2.BuLi Süd1C3,3,362, ,Singoldschützen Großaitingen
+305,LP2.BuLi Süd1C,Andreas,False,Pfeiffer,1,LP2.BuLi Süd1C3,3,377, ,SSG Dynamit Fürth II
+306,LP2.BuLi Süd1C,Ralf,True,Wieler,0,LP2.BuLi Süd1C4,4,364, ,Singoldschützen Großaitingen
+307,LP2.BuLi Süd1C,Volker,False,Roth,1,LP2.BuLi Süd1C4,4,367, ,SSG Dynamit Fürth II
+308,LP2.BuLi Süd1C,Florian,True,Gollinger,0,LP2.BuLi Süd1C5,5,369,8,Singoldschützen Großaitingen
+309,LP2.BuLi Süd1C,Tobias,False,Meyer,1,LP2.BuLi Süd1C5,5,369,9,SSG Dynamit Fürth II
+310,LP2.BuLi Süd1D,Matthias,True,Nolte,1,LP2.BuLi Süd1D1,1,379, ,HSG Erlangen
+311,LP2.BuLi Süd1D,Sonja,False,Weiß,0,LP2.BuLi Süd1D1,1,376, ,SG 1898 Thumsenreuth
+312,LP2.BuLi Süd1D,Hans-Rainer,True,Wagner,0,LP2.BuLi Süd1D2,2,373,8,HSG Erlangen
+313,LP2.BuLi Süd1D,Lukas,False,Spachtholz,1,LP2.BuLi Süd1D2,2,373,10,SG 1898 Thumsenreuth
+314,LP2.BuLi Süd1D,Michael,True,Lehmeier,0,LP2.BuLi Süd1D3,3,344, ,HSG Erlangen
+315,LP2.BuLi Süd1D,Karl,False,Greger,1,LP2.BuLi Süd1D3,3,364, ,SG 1898 Thumsenreuth
+316,LP2.BuLi Süd1D,Christian,True,Werner,0,LP2.BuLi Süd1D4,4,353,7,HSG Erlangen
+317,LP2.BuLi Süd1D,Bernhard,False,Stock,1,LP2.BuLi Süd1D4,4,353,10,SG 1898 Thumsenreuth
+318,LP2.BuLi Süd1D,Niels,True,Röhner,0,LP2.BuLi Süd1D5,5,347, ,HSG Erlangen
+319,LP2.BuLi Süd1D,Thomas,False,Glaser,1,LP2.BuLi Süd1D5,5,359, ,SG 1898 Thumsenreuth
+320,LP2.BuLi Süd1E,Aleksandar,True,Todorov,1,LP2.BuLi Süd1E1,1,374, ,HSG München
+321,LP2.BuLi Süd1E,Thomas,False,Karsch,0,LP2.BuLi Süd1E1,1,371, ,SV Kelheim-Gmünd II
+322,LP2.BuLi Süd1E,Michael,True,Heise,1,LP2.BuLi Süd1E2,2,380, ,HSG München
+323,LP2.BuLi Süd1E,Matthias,False,Groher,0,LP2.BuLi Süd1E2,2,366, ,SV Kelheim-Gmünd II
+324,LP2.BuLi Süd1E,Arben,True,Kucana,1,LP2.BuLi Süd1E3,3,377, ,HSG München
+325,LP2.BuLi Süd1E,Axel,False,Genewsky,0,LP2.BuLi Süd1E3,3,351, ,SV Kelheim-Gmünd II
+326,LP2.BuLi Süd1E,Andreas,True,Martin,1,LP2.BuLi Süd1E4,4,368, ,HSG München
+327,LP2.BuLi Süd1E,Christian,False,Lichtenegger,0,LP2.BuLi Süd1E4,4,364, ,SV Kelheim-Gmünd II
+328,LP2.BuLi Süd1E,Carsten,True,Schütt,1,LP2.BuLi Süd1E5,5,371, ,HSG München
+329,LP2.BuLi Süd1E,Steven,False,Seeliger,0,LP2.BuLi Süd1E5,5,369, ,SV Kelheim-Gmünd II
+330,LP2.BuLi Süd1F,Maxim,True,Konradi,1,LP2.BuLi Süd1F1,1,367,10,FSG Hilpoltstein
+331,LP2.BuLi Süd1F,Lea,False,Kleesattel,0,LP2.BuLi Süd1F1,1,367,9,SG Eintracht Garching
+332,LP2.BuLi Süd1F,Karl,True,Schmidt,1,LP2.BuLi Süd1F2,2,370, ,FSG Hilpoltstein
+333,LP2.BuLi Süd1F,Carolin,False,Schiller,0,LP2.BuLi Süd1F2,2,369, ,SG Eintracht Garching
+334,LP2.BuLi Süd1F,Stefan,True,Schwab,1,LP2.BuLi Süd1F3,3,370, ,FSG Hilpoltstein
+335,LP2.BuLi Süd1F,Michael,False,Bolek,0,LP2.BuLi Süd1F3,3,352, ,SG Eintracht Garching
+336,LP2.BuLi Süd1F,Sebastian,True,Burger,1,LP2.BuLi Süd1F4,4,370, ,FSG Hilpoltstein
+337,LP2.BuLi Süd1F,Sabine,False,Gruchmann,0,LP2.BuLi Süd1F4,4,364, ,SG Eintracht Garching
+338,LP2.BuLi Süd1F,Horst,True,Roedel,1,LP2.BuLi Süd1F5,5,365, ,FSG Hilpoltstein
+339,LP2.BuLi Süd1F,Theresa,False,Olbinger,0,LP2.BuLi Süd1F5,5,361, ,SG Eintracht Garching
+340,LP2.BuLi Süd1G,Thomas,True,Karsch,1,LP2.BuLi Süd1G1,1,380, ,SV Kelheim-Gmünd II
+341,LP2.BuLi Süd1G,Maxim,False,Konradi,0,LP2.BuLi Süd1G1,1,369, ,FSG Hilpoltstein
+342,LP2.BuLi Süd1G,Matthias,True,Groher,1,LP2.BuLi Süd1G2,2,370, ,SV Kelheim-Gmünd II
+343,LP2.BuLi Süd1G,Karl,False,Schmidt,0,LP2.BuLi Süd1G2,2,366, ,FSG Hilpoltstein
+344,LP2.BuLi Süd1G,Axel,True,Genewsky,0,LP2.BuLi Süd1G3,3,369, ,SV Kelheim-Gmünd II
+345,LP2.BuLi Süd1G,Stefan,False,Schwab,1,LP2.BuLi Süd1G3,3,372, ,FSG Hilpoltstein
+346,LP2.BuLi Süd1G,Christian,True,Lichtenegger,1,LP2.BuLi Süd1G4,4,370, ,SV Kelheim-Gmünd II
+347,LP2.BuLi Süd1G,Sebastian,False,Burger,0,LP2.BuLi Süd1G4,4,364, ,FSG Hilpoltstein
+348,LP2.BuLi Süd1G,Steven,True,Seeliger,1,LP2.BuLi Süd1G5,5,372, ,SV Kelheim-Gmünd II
+349,LP2.BuLi Süd1G,Horst,False,Roedel,0,LP2.BuLi Süd1G5,5,354, ,FSG Hilpoltstein
+350,LP2.BuLi Süd1H,Aleksandar,True,Todorov,1,LP2.BuLi Süd1H1,1,378, ,HSG München
+351,LP2.BuLi Süd1H,Lea,False,Kleesattel,0,LP2.BuLi Süd1H1,1,377, ,SG Eintracht Garching
+352,LP2.BuLi Süd1H,Michael,True,Heise,1,LP2.BuLi Süd1H2,2,386, ,HSG München
+353,LP2.BuLi Süd1H,Carolin,False,Schiller,0,LP2.BuLi Süd1H2,2,373, ,SG Eintracht Garching
+354,LP2.BuLi Süd1H,Arben,True,Kucana,1,LP2.BuLi Süd1H3,3,384, ,HSG München
+355,LP2.BuLi Süd1H,Michael,False,Bolek,0,LP2.BuLi Süd1H3,3,356, ,SG Eintracht Garching
+356,LP2.BuLi Süd1H,Andreas,True,Martin,1,LP2.BuLi Süd1H4,4,377, ,HSG München
+357,LP2.BuLi Süd1H,Verena,False,Gimpl,0,LP2.BuLi Süd1H4,4,356, ,SG Eintracht Garching
+358,LP2.BuLi Süd1H,Carsten,True,Schütt,0,LP2.BuLi Süd1H5,5,366, ,HSG München
+359,LP2.BuLi Süd1H,Sabine,False,Gruchmann,1,LP2.BuLi Süd1H5,5,370, ,SG Eintracht Garching
+360,LP2.BuLi Süd1I,Tobias,True,Spötzl,0,LP2.BuLi Süd1I1,1,357, ,SV Hubertus Rettenbach
+361,LP2.BuLi Süd1I,Stefan,False,Kupillas,1,LP2.BuLi Süd1I1,1,366, ,Auerhahn Steinberg
+362,LP2.BuLi Süd1I,Johannes,True,Fischer,0,LP2.BuLi Süd1I2,2,362, ,SV Hubertus Rettenbach
+363,LP2.BuLi Süd1I,Konrad,False,Schneider,1,LP2.BuLi Süd1I2,2,370, ,Auerhahn Steinberg
+364,LP2.BuLi Süd1I,Maria,True,Schausbreitner,0,LP2.BuLi Süd1I3,3,360, ,SV Hubertus Rettenbach
+365,LP2.BuLi Süd1I,Nick,False,Ruß,1,LP2.BuLi Süd1I3,3,378, ,Auerhahn Steinberg
+366,LP2.BuLi Süd1I,Albert,True,Spötzl,1,LP2.BuLi Süd1I4,4,352, ,SV Hubertus Rettenbach
+367,LP2.BuLi Süd1I,Roman,False,Schneider,0,LP2.BuLi Süd1I4,4,345, ,Auerhahn Steinberg
+368,LP2.BuLi Süd1I,Bettina,True,Hanfstingl,0,LP2.BuLi Süd1I5,5,336, ,SV Hubertus Rettenbach
+369,LP2.BuLi Süd1I,Herbert,False,Hartl,1,LP2.BuLi Süd1I5,5,367, ,Auerhahn Steinberg
+370,LP2.BuLi Süd1J,Stefan,True,Lipp,1,LP2.BuLi Süd1J1,1,367, ,Bogenschützen Grund
+371,LP2.BuLi Süd1J,Michael,False,Steinbauer,0,LP2.BuLi Süd1J1,1,363, ,Adlerschützen Unteriglbach
+372,LP2.BuLi Süd1J,Kai,True,Höfl,1,LP2.BuLi Süd1J2,2,363, ,Bogenschützen Grund
+373,LP2.BuLi Süd1J,Johannes,False,Schauer,0,LP2.BuLi Süd1J2,2,362, ,Adlerschützen Unteriglbach
+374,LP2.BuLi Süd1J,Hermann,True,Mayerhofer,1,LP2.BuLi Süd1J3,3,361, ,Bogenschützen Grund
+375,LP2.BuLi Süd1J,Stefan,False,Degenhardt,0,LP2.BuLi Süd1J3,3,360, ,Adlerschützen Unteriglbach
+376,LP2.BuLi Süd1J,Andreas,True,Weber,0,LP2.BuLi Süd1J4,4,348, ,Bogenschützen Grund
+377,LP2.BuLi Süd1J,Pavel,False,Skopovy,1,LP2.BuLi Süd1J4,4,370, ,Adlerschützen Unteriglbach
+378,LP2.BuLi Süd1J,Hans,True,Schwarzbauer,1,LP2.BuLi Süd1J5,5,368, ,Bogenschützen Grund
+379,LP2.BuLi Süd1J,Roland,False,Meyer,0,LP2.BuLi Süd1J5,5,366, ,Adlerschützen Unteriglbach
+380,LP2.BuLi Süd1K,Stefan,True,Kupillas,0,LP2.BuLi Süd1K1,1,357, ,Auerhahn Steinberg
+381,LP2.BuLi Süd1K,Stefan,False,Lipp,1,LP2.BuLi Süd1K1,1,365, ,Bogenschützen Grund
+382,LP2.BuLi Süd1K,Konrad,True,Schneider,1,LP2.BuLi Süd1K2,2,368, ,Auerhahn Steinberg
+383,LP2.BuLi Süd1K,Kai,False,Höfl,0,LP2.BuLi Süd1K2,2,367, ,Bogenschützen Grund
+384,LP2.BuLi Süd1K,Nick,True,Ruß,0,LP2.BuLi Süd1K3,3,366, ,Auerhahn Steinberg
+385,LP2.BuLi Süd1K,Hermann,False,Mayerhofer,1,LP2.BuLi Süd1K3,3,367, ,Bogenschützen Grund
+386,LP2.BuLi Süd1K,Roman,True,Schneider,1,LP2.BuLi Süd1K4,4,367, ,Auerhahn Steinberg
+387,LP2.BuLi Süd1K,Andreas,False,Weber,0,LP2.BuLi Süd1K4,4,352, ,Bogenschützen Grund
+388,LP2.BuLi Süd1K,Herbert,True,Hartl,1,LP2.BuLi Süd1K5,5,364, ,Auerhahn Steinberg
+389,LP2.BuLi Süd1K,Hans,False,Schwarzbauer,0,LP2.BuLi Süd1K5,5,355, ,Bogenschützen Grund
+390,LP2.BuLi Süd1L,Tobias,True,Spötzl,0,LP2.BuLi Süd1L1,1,364, ,SV Hubertus Rettenbach
+391,LP2.BuLi Süd1L,Michael,False,Steinbauer,1,LP2.BuLi Süd1L1,1,369, ,Adlerschützen Unteriglbach
+392,LP2.BuLi Süd1L,Johannes,True,Fischer,1,LP2.BuLi Süd1L2,2,351, ,SV Hubertus Rettenbach
+393,LP2.BuLi Süd1L,Johannes,False,Schauer,0,LP2.BuLi Süd1L2,2,350, ,Adlerschützen Unteriglbach
+394,LP2.BuLi Süd1L,Maria,True,Schausbreitner,1,LP2.BuLi Süd1L3,3,367, ,SV Hubertus Rettenbach
+395,LP2.BuLi Süd1L,Stefan,False,Degenhardt,0,LP2.BuLi Süd1L3,3,358, ,Adlerschützen Unteriglbach
+396,LP2.BuLi Süd1L,Albert,True,Spötzl,0,LP2.BuLi Süd1L4,4,370, ,SV Hubertus Rettenbach
+397,LP2.BuLi Süd1L,Pavel,False,Skopovy,1,LP2.BuLi Süd1L4,4,378, ,Adlerschützen Unteriglbach
+398,LP2.BuLi Süd1L,Bettina,True,Hanfstingl,0,LP2.BuLi Süd1L5,5,359, ,SV Hubertus Rettenbach
+399,LP2.BuLi Süd1L,Roland,False,Meyer,1,LP2.BuLi Süd1L5,5,366, ,Adlerschützen Unteriglbach
+400,LP1.BuLi Nord1A,Christian,True,Oehns,1,LP1.BuLi Nord1A1,1,372, ,Freischütz Wathlingen
+401,LP1.BuLi Nord1A,Eike,False,Frerichs,0,LP1.BuLi Nord1A1,1,369, ,SV Schirumer Leegmoor
+402,LP1.BuLi Nord1A,Philip,True,Aranowski,1,LP1.BuLi Nord1A2,2,379, ,Freischütz Wathlingen
+403,LP1.BuLi Nord1A,Michael,False,Broers,0,LP1.BuLi Nord1A2,2,368, ,SV Schirumer Leegmoor
+404,LP1.BuLi Nord1A,Coral,True,Kennerly,1,LP1.BuLi Nord1A3,3,375, ,Freischütz Wathlingen
+405,LP1.BuLi Nord1A,Dennis,False,Grünhoff,0,LP1.BuLi Nord1A3,3,372, ,SV Schirumer Leegmoor
+406,LP1.BuLi Nord1A,Jörn,True,Nachtigall,0,LP1.BuLi Nord1A4,4,364, ,Freischütz Wathlingen
+407,LP1.BuLi Nord1A,Maik,False,Ritter,1,LP1.BuLi Nord1A4,4,373, ,SV Schirumer Leegmoor
+408,LP1.BuLi Nord1A,Torben,True,Wolf,1,LP1.BuLi Nord1A5,5,365, ,Freischütz Wathlingen
+409,LP1.BuLi Nord1A,Carsten,False,Grünhoff,0,LP1.BuLi Nord1A5,5,358, ,SV Schirumer Leegmoor
+410,LP1.BuLi Nord1B,Jonas,True,Hansen,0,LP1.BuLi Nord1B1,1,376, ,Sp.Sch. Fahrdorf
+411,LP1.BuLi Nord1B,Jan,False,Brückner,1,LP1.BuLi Nord1B1,1,377, ,Spsch Raesfeld
+412,LP1.BuLi Nord1B,Gagik,True,Sahakian,1,LP1.BuLi Nord1B2,2,379, ,Sp.Sch. Fahrdorf
+413,LP1.BuLi Nord1B,Sebastian,False,Vosskühler,0,LP1.BuLi Nord1B2,2,366, ,Spsch Raesfeld
+414,LP1.BuLi Nord1B,Steffen,True,Schröder,1,LP1.BuLi Nord1B3,3,374, ,Sp.Sch. Fahrdorf
+415,LP1.BuLi Nord1B,Matthias,False,Halke,0,LP1.BuLi Nord1B3,3,367, ,Spsch Raesfeld
+416,LP1.BuLi Nord1B,Michael,True,Bäcker,0,LP1.BuLi Nord1B4,4,364, ,Sp.Sch. Fahrdorf
+417,LP1.BuLi Nord1B,Dennis,False,Walendi,1,LP1.BuLi Nord1B4,4,370, ,Spsch Raesfeld
+418,LP1.BuLi Nord1B,Stefan,True,Vollertsen,0,LP1.BuLi Nord1B5,5,358, ,Sp.Sch. Fahrdorf
+419,LP1.BuLi Nord1B,Andre,False,Pöhler,1,LP1.BuLi Nord1B5,5,362, ,Spsch Raesfeld
+420,LP1.BuLi Nord1C,Bart,True,Liebens,0,LP1.BuLi Nord1C1,1,381, ,Sp.Sch.St.Seb.Pier2000
+421,LP1.BuLi Nord1C,Marcus Errebo,False,Jensen,1,LP1.BuLi Nord1C1,1,382, ,SV Bassum von 1848
+422,LP1.BuLi Nord1C,Tobias,True,Kaulen,1,LP1.BuLi Nord1C2,2,380, ,Sp.Sch.St.Seb.Pier2000
+423,LP1.BuLi Nord1C,Artur,False,Gevorgjan,0,LP1.BuLi Nord1C2,2,377, ,SV Bassum von 1848
+424,LP1.BuLi Nord1C,Astrid,True,Au,0,LP1.BuLi Nord1C3,3,359, ,Sp.Sch.St.Seb.Pier2000
+425,LP1.BuLi Nord1C,Valerij,False,Samojlenko,1,LP1.BuLi Nord1C3,3,379, ,SV Bassum von 1848
+426,LP1.BuLi Nord1C,Anne-Marlen,True,Ohler,0,LP1.BuLi Nord1C4,4,362, ,Sp.Sch.St.Seb.Pier2000
+427,LP1.BuLi Nord1C,Sascha,False,Sandmann,1,LP1.BuLi Nord1C4,4,366, ,SV Bassum von 1848
+428,LP1.BuLi Nord1C,Isha,True,Meinerz,0,LP1.BuLi Nord1C5,5,331, ,Sp.Sch.St.Seb.Pier2000
+429,LP1.BuLi Nord1C,Denis,False,Rother,1,LP1.BuLi Nord1C5,5,378, ,SV Bassum von 1848
+430,LP1.BuLi Nord1D,Christian,True,Metten,0,LP1.BuLi Nord1D1,1,370, ,SV Falke Dasbach
+431,LP1.BuLi Nord1D,Oleg,False,Omelchuk,1,LP1.BuLi Nord1D1,1,387, ,Braunschweiger SG
+432,LP1.BuLi Nord1D,Matthias,True,Schwender,0,LP1.BuLi Nord1D2,2,379, ,SV Falke Dasbach
+433,LP1.BuLi Nord1D,Patrick,False,Meyer,1,LP1.BuLi Nord1D2,2,380, ,Braunschweiger SG
+434,LP1.BuLi Nord1D,Heiko,True,Litterscheid,0,LP1.BuLi Nord1D3,3,367, ,SV Falke Dasbach
+435,LP1.BuLi Nord1D,Andreas,False,Heise,1,LP1.BuLi Nord1D3,3,373, ,Braunschweiger SG
+436,LP1.BuLi Nord1D,Jens,True,Block,0,LP1.BuLi Nord1D4,4,368, ,SV Falke Dasbach
+437,LP1.BuLi Nord1D,Marco,False,Angermann-Günzel,1,LP1.BuLi Nord1D4,4,378, ,Braunschweiger SG
+438,LP1.BuLi Nord1D,Christoph,True,Klug,0,LP1.BuLi Nord1D5,5,367, ,SV Falke Dasbach
+439,LP1.BuLi Nord1D,Michael,False,Bittner,1,LP1.BuLi Nord1D5,5,383, ,Braunschweiger SG
+440,LP1.BuLi Nord1E,Sander,True,Nooij,1,LP1.BuLi Nord1E1,1,380, ,SV Uetze
+441,LP1.BuLi Nord1E,Marta,False,Barszczak,0,LP1.BuLi Nord1E1,1,371, ,SSG Teutoburger Wald
+442,LP1.BuLi Nord1E,Sarah,True,Kiesewetter,1,LP1.BuLi Nord1E2,2,370, ,SV Uetze
+443,LP1.BuLi Nord1E,Jakub,False,Wasilewski,0,LP1.BuLi Nord1E2,2,369, ,SSG Teutoburger Wald
+444,LP1.BuLi Nord1E,Marten,True,Heuer,0,LP1.BuLi Nord1E3,3,364, ,SV Uetze
+445,LP1.BuLi Nord1E,Stefan,False,Krause,1,LP1.BuLi Nord1E3,3,371, ,SSG Teutoburger Wald
+446,LP1.BuLi Nord1E,Hans-Christian,True,Jentsch,1,LP1.BuLi Nord1E4,4,373, ,SV Uetze
+447,LP1.BuLi Nord1E,Lars-Eric,False,Etzold,0,LP1.BuLi Nord1E4,4,347, ,SSG Teutoburger Wald
+448,LP1.BuLi Nord1E,Marit,True,Albrecht,1,LP1.BuLi Nord1E5,5,372, ,SV Uetze
+449,LP1.BuLi Nord1E,Michael,False,Quittschau,0,LP1.BuLi Nord1E5,5,358, ,SSG Teutoburger Wald
+450,LP1.BuLi Nord1F,Christian,True,Reitz,1,LP1.BuLi Nord1F1,1,386, ,SV 1935 Kriftel
+451,LP1.BuLi Nord1F,Wojciech,False,Knapik,0,LP1.BuLi Nord1F1,1,384, ,PSV Olympia Berlin
+452,LP1.BuLi Nord1F,Aaron,True,Sauter,1,LP1.BuLi Nord1F2,2,378, ,SV 1935 Kriftel
+453,LP1.BuLi Nord1F,Maren,False,Johann,0,LP1.BuLi Nord1F2,2,374, ,PSV Olympia Berlin
+454,LP1.BuLi Nord1F,Dominik,True,Sänger,1,LP1.BuLi Nord1F3,3,379, ,SV 1935 Kriftel
+455,LP1.BuLi Nord1F,Josefin,False,Eder,0,LP1.BuLi Nord1F3,3,377, ,PSV Olympia Berlin
+456,LP1.BuLi Nord1F,Mathias,True,Putzmann,1,LP1.BuLi Nord1F4,4,385, ,SV 1935 Kriftel
+457,LP1.BuLi Nord1F,Robert,False,Janikulla,0,LP1.BuLi Nord1F4,4,367, ,PSV Olympia Berlin
+458,LP1.BuLi Nord1F,Andreas,True,Fix,1,LP1.BuLi Nord1F5,5,378, ,SV 1935 Kriftel
+459,LP1.BuLi Nord1F,Holger,False,Buchmann,0,LP1.BuLi Nord1F5,5,369, ,PSV Olympia Berlin
+460,LP1.BuLi Nord2A,Oscar,True,Nilsson,1,LP1.BuLi Nord2A1,1,378, ,SV Bassum von 1848
+461,LP1.BuLi Nord2A,Eike,False,Frerichs,0,LP1.BuLi Nord2A1,1,369, ,SV Schirumer Leegmoor
+462,LP1.BuLi Nord2A,Artur,True,Gevorgjan,1,LP1.BuLi Nord2A2,2,379, ,SV Bassum von 1848
+463,LP1.BuLi Nord2A,Michael,False,Broers,0,LP1.BuLi Nord2A2,2,371, ,SV Schirumer Leegmoor
+464,LP1.BuLi Nord2A,Valerij,True,Samojlenko,1,LP1.BuLi Nord2A3,3,376, ,SV Bassum von 1848
+465,LP1.BuLi Nord2A,Carsten,False,Grünhoff,0,LP1.BuLi Nord2A3,3,371, ,SV Schirumer Leegmoor
+466,LP1.BuLi Nord2A,Denis,True,Rother,0,LP1.BuLi Nord2A4,4,374, ,SV Bassum von 1848
+467,LP1.BuLi Nord2A,Maik,False,Ritter,1,LP1.BuLi Nord2A4,4,377, ,SV Schirumer Leegmoor
+468,LP1.BuLi Nord2A,Martin,True,Mohnke,0,LP1.BuLi Nord2A5,5,364,6,SV Bassum von 1848
+469,LP1.BuLi Nord2A,Marcel,False,Stürken,1,LP1.BuLi Nord2A5,5,364,9,SV Schirumer Leegmoor
+470,LP1.BuLi Nord2B,Jonas,True,Hansen,1,LP1.BuLi Nord2B1,1,377, ,Sp.Sch. Fahrdorf
+471,LP1.BuLi Nord2B,Bart,False,Liebens,0,LP1.BuLi Nord2B1,1,374, ,Sp.Sch.St.Seb.Pier2000
+472,LP1.BuLi Nord2B,Gagik,True,Sahakian,0,LP1.BuLi Nord2B2,2,367, ,Sp.Sch. Fahrdorf
+473,LP1.BuLi Nord2B,Tobias,False,Kaulen,1,LP1.BuLi Nord2B2,2,382, ,Sp.Sch.St.Seb.Pier2000
+474,LP1.BuLi Nord2B,Steffen,True,Schröder,1,LP1.BuLi Nord2B3,3,379, ,Sp.Sch. Fahrdorf
+475,LP1.BuLi Nord2B,Astrid,False,Au,0,LP1.BuLi Nord2B3,3,357, ,Sp.Sch.St.Seb.Pier2000
+476,LP1.BuLi Nord2B,Michael,True,Bäcker,1,LP1.BuLi Nord2B4,4,362, ,Sp.Sch. Fahrdorf
+477,LP1.BuLi Nord2B,Anne-Marlen,False,Ohler,0,LP1.BuLi Nord2B4,4,361, ,Sp.Sch.St.Seb.Pier2000
+478,LP1.BuLi Nord2B,Matthias,True,Hofmann,1,LP1.BuLi Nord2B5,5,365, ,Sp.Sch. Fahrdorf
+479,LP1.BuLi Nord2B,Johannes,False,Jaeger,0,LP1.BuLi Nord2B5,5,351, ,Sp.Sch.St.Seb.Pier2000
+480,LP1.BuLi Nord2C,Jan,True,Brückner,1,LP1.BuLi Nord2C1,1,381, ,Spsch Raesfeld
+481,LP1.BuLi Nord2C,Christian,False,Oehns,0,LP1.BuLi Nord2C1,1,379, ,Freischütz Wathlingen
+482,LP1.BuLi Nord2C,Sebastian,True,Vosskühler,0,LP1.BuLi Nord2C2,2,358, ,Spsch Raesfeld
+483,LP1.BuLi Nord2C,Kristian,False,Callaghan,1,LP1.BuLi Nord2C2,2,380, ,Freischütz Wathlingen
+484,LP1.BuLi Nord2C,Matthias,True,Halke,0,LP1.BuLi Nord2C3,3,365, ,Spsch Raesfeld
+485,LP1.BuLi Nord2C,Philip,False,Aranowski,1,LP1.BuLi Nord2C3,3,372, ,Freischütz Wathlingen
+486,LP1.BuLi Nord2C,Jan,True,Brink,1,LP1.BuLi Nord2C4,4,373, ,Spsch Raesfeld
+487,LP1.BuLi Nord2C,Torben,False,Wolf,0,LP1.BuLi Nord2C4,4,368, ,Freischütz Wathlingen
+488,LP1.BuLi Nord2C,Dennis,True,Walendi,1,LP1.BuLi Nord2C5,5,362, ,Spsch Raesfeld
+489,LP1.BuLi Nord2C,Benjamin,False,Forke,0,LP1.BuLi Nord2C5,5,346, ,Freischütz Wathlingen
+490,LP1.BuLi Nord2D,Sander,True,Nooij,0,LP1.BuLi Nord2D1,1,381, ,SV Uetze
+491,LP1.BuLi Nord2D,Oleg,False,Omelchuk,1,LP1.BuLi Nord2D1,1,388, ,Braunschweiger SG
+492,LP1.BuLi Nord2D,Sarah,True,Kiesewetter,0,LP1.BuLi Nord2D2,2,371, ,SV Uetze
+493,LP1.BuLi Nord2D,Patrick,False,Meyer,1,LP1.BuLi Nord2D2,2,374, ,Braunschweiger SG
+494,LP1.BuLi Nord2D,Marten,True,Heuer,0,LP1.BuLi Nord2D3,3,373, ,SV Uetze
+495,LP1.BuLi Nord2D,Andreas,False,Heise,1,LP1.BuLi Nord2D3,3,376, ,Braunschweiger SG
+496,LP1.BuLi Nord2D,Hans-Christian,True,Jentsch,0,LP1.BuLi Nord2D4,4,364, ,SV Uetze
+497,LP1.BuLi Nord2D,Pierre,False,Michel,1,LP1.BuLi Nord2D4,4,377, ,Braunschweiger SG
+498,LP1.BuLi Nord2D,Marit,True,Albrecht,0,LP1.BuLi Nord2D5,5,369, ,SV Uetze
+499,LP1.BuLi Nord2D,Michael,False,Bittner,1,LP1.BuLi Nord2D5,5,382, ,Braunschweiger SG
+500,LP1.BuLi Nord2E,Wojciech,True,Knapik,1,LP1.BuLi Nord2E1,1,384, ,PSV Olympia Berlin
+501,LP1.BuLi Nord2E,Marta,False,Barszczak,0,LP1.BuLi Nord2E1,1,373, ,SSG Teutoburger Wald
+502,LP1.BuLi Nord2E,Maren,True,Johann,1,LP1.BuLi Nord2E2,2,377, ,PSV Olympia Berlin
+503,LP1.BuLi Nord2E,Jakub,False,Wasilewski,0,LP1.BuLi Nord2E2,2,358, ,SSG Teutoburger Wald
+504,LP1.BuLi Nord2E,Josefin,True,Eder,1,LP1.BuLi Nord2E3,3,374, ,PSV Olympia Berlin
+505,LP1.BuLi Nord2E,Stefan,False,Krause,0,LP1.BuLi Nord2E3,3,370, ,SSG Teutoburger Wald
+506,LP1.BuLi Nord2E,Robert,True,Janikulla,1,LP1.BuLi Nord2E4,4,370, ,PSV Olympia Berlin
+507,LP1.BuLi Nord2E,Michael,False,Quittschau,0,LP1.BuLi Nord2E4,4,357, ,SSG Teutoburger Wald
+508,LP1.BuLi Nord2E,Holger,True,Buchmann,1,LP1.BuLi Nord2E5,5,369, ,PSV Olympia Berlin
+509,LP1.BuLi Nord2E,Marco,False,Hummler,0,LP1.BuLi Nord2E5,5,348, ,SSG Teutoburger Wald
+510,LP1.BuLi Nord2F,Christian,True,Metten,0,LP1.BuLi Nord2F1,1,362, ,SV Falke Dasbach
+511,LP1.BuLi Nord2F,Christian,False,Reitz,1,LP1.BuLi Nord2F1,1,389, ,SV 1935 Kriftel
+512,LP1.BuLi Nord2F,Matthias,True,Schwender,0,LP1.BuLi Nord2F2,2,365, ,SV Falke Dasbach
+513,LP1.BuLi Nord2F,Aaron,False,Sauter,1,LP1.BuLi Nord2F2,2,373, ,SV 1935 Kriftel
+514,LP1.BuLi Nord2F,Heiko,True,Litterscheid,0,LP1.BuLi Nord2F3,3,375, ,SV Falke Dasbach
+515,LP1.BuLi Nord2F,Dominik,False,Sänger,1,LP1.BuLi Nord2F3,3,379, ,SV 1935 Kriftel
+516,LP1.BuLi Nord2F,Lucas,True,Jourdan,0,LP1.BuLi Nord2F4,4,357, ,SV Falke Dasbach
+517,LP1.BuLi Nord2F,Mathias,False,Putzmann,1,LP1.BuLi Nord2F4,4,378, ,SV 1935 Kriftel
+518,LP1.BuLi Nord2F,Nils,True,Riegelmeier,0,LP1.BuLi Nord2F5,5,366, ,SV Falke Dasbach
+519,LP1.BuLi Nord2F,Andreas,False,Fix,1,LP1.BuLi Nord2F5,5,377, ,SV 1935 Kriftel
+520,LP1.BuLi Süd1A,Asgeir,True,Sigurgeirsson,1,LP1.BuLi Süd1A1,1,385, ,SGi Ludwigsburg
+521,LP1.BuLi Süd1A,Andreas,False,Riedener,0,LP1.BuLi Süd1A1,1,378, ,SV Altheim Waldhausen
+522,LP1.BuLi Süd1A,Florian,True,Brunner,1,LP1.BuLi Süd1A2,2,382, ,SGi Ludwigsburg
+523,LP1.BuLi Süd1A,Holger,False,Haile,0,LP1.BuLi Süd1A2,2,374, ,SV Altheim Waldhausen
+524,LP1.BuLi Süd1A,Kevin,True,Venta,1,LP1.BuLi Süd1A3,3,384, ,SGi Ludwigsburg
+525,LP1.BuLi Süd1A,Philipp,False,Wetzel,0,LP1.BuLi Süd1A3,3,380, ,SV Altheim Waldhausen
+526,LP1.BuLi Süd1A,Rene,True,Potteck,1,LP1.BuLi Süd1A4,4,373, ,SGi Ludwigsburg
+527,LP1.BuLi Süd1A,Martina,False,Sagasser,0,LP1.BuLi Süd1A4,4,369, ,SV Altheim Waldhausen
+528,LP1.BuLi Süd1A,Julia,True,Hochmuth,1,LP1.BuLi Süd1A5,5,370, ,SGi Ludwigsburg
+529,LP1.BuLi Süd1A,Christian,False,Morar,0,LP1.BuLi Süd1A5,5,368, ,SV Altheim Waldhausen
+530,LP1.BuLi Süd1B,Damir,True,Mikec,1,LP1.BuLi Süd1B1,1,383, ,SV Kelheim-Gmünd
+531,LP1.BuLi Süd1B,Dimitrije,False,Grgic,0,LP1.BuLi Süd1B1,1,380, ,SV Waldkirch
+532,LP1.BuLi Süd1B,Philipp,True,Grimm,0,LP1.BuLi Süd1B2,2,372, ,SV Kelheim-Gmünd
+533,LP1.BuLi Süd1B,Matthias,False,Holderried,1,LP1.BuLi Süd1B2,2,375, ,SV Waldkirch
+534,LP1.BuLi Süd1B,Monika,True,Karsch,0,LP1.BuLi Süd1B3,3,376, ,SV Kelheim-Gmünd
+535,LP1.BuLi Süd1B,Alexander,False,Kindig,1,LP1.BuLi Süd1B3,3,382, ,SV Waldkirch
+536,LP1.BuLi Süd1B,Simon,True,Weiß,1,LP1.BuLi Süd1B4,4,374, ,SV Kelheim-Gmünd
+537,LP1.BuLi Süd1B,Michael,False,Spindler,0,LP1.BuLi Süd1B4,4,363, ,SV Waldkirch
+538,LP1.BuLi Süd1B,Carina,True,Wimmer,1,LP1.BuLi Süd1B5,5,369, ,SV Kelheim-Gmünd
+539,LP1.BuLi Süd1B,Sebastian,False,Kugelmann,0,LP1.BuLi Süd1B5,5,364, ,SV Waldkirch
+540,LP1.BuLi Süd1C,Thomas,True,Ranzinger,0,LP1.BuLi Süd1C1,1,367, ,SG Edelweiß Scheuring
+541,LP1.BuLi Süd1C,Sandra,False,Reiz,1,LP1.BuLi Süd1C1,1,373, ,SSG Dynamit Fürth
+542,LP1.BuLi Süd1C,Oliver,True,Balg,1,LP1.BuLi Süd1C2,2,375, ,SG Edelweiß Scheuring
+543,LP1.BuLi Süd1C,Heidi,False,Diethelm Gerber,0,LP1.BuLi Süd1C2,2,371, ,SSG Dynamit Fürth
+544,LP1.BuLi Süd1C,Philipp,True,Ranzinger,0,LP1.BuLi Süd1C3,3,361, ,SG Edelweiß Scheuring
+545,LP1.BuLi Süd1C,Claudia,False,Verdicchio-Krause,1,LP1.BuLi Süd1C3,3,375, ,SSG Dynamit Fürth
+546,LP1.BuLi Süd1C,Sebastian,True,Heinisch,0,LP1.BuLi Süd1C4,4,369, ,SG Edelweiß Scheuring
+547,LP1.BuLi Süd1C,Kathrin,False,Pfundstein,1,LP1.BuLi Süd1C4,4,376, ,SSG Dynamit Fürth
+548,LP1.BuLi Süd1C,Klaus,True,Hopfensitz,0,LP1.BuLi Süd1C5,5,363, ,SG Edelweiß Scheuring
+549,LP1.BuLi Süd1C,Johann,False,Walser,1,LP1.BuLi Süd1C5,5,365, ,SSG Dynamit Fürth
+550,LP1.BuLi Süd1D,Sladjan,True,Zoran,0,LP1.BuLi Süd1D1,1,376, ,SV Peiting
+551,LP1.BuLi Süd1D,Pavel,False,Svetlik,1,LP1.BuLi Süd1D1,1,381, ,ESV Weil am Rhein
+552,LP1.BuLi Süd1D,Steffi,True,Böhm,1,LP1.BuLi Süd1D2,2,378, ,SV Peiting
+553,LP1.BuLi Süd1D,Michael,False,Schwald,0,LP1.BuLi Süd1D2,2,377, ,ESV Weil am Rhein
+554,LP1.BuLi Süd1D,Georg,True,Müller,1,LP1.BuLi Süd1D3,3,380, ,SV Peiting
+555,LP1.BuLi Süd1D,Luca,False,Schröder,0,LP1.BuLi Süd1D3,3,378, ,ESV Weil am Rhein
+556,LP1.BuLi Süd1D,Michaela,True,Brosselt-Guggemos,0,LP1.BuLi Süd1D4,4,367, ,SV Peiting
+557,LP1.BuLi Süd1D,Christian,False,Schebesta,1,LP1.BuLi Süd1D4,4,378, ,ESV Weil am Rhein
+558,LP1.BuLi Süd1D,Fritz,True,Aigner,1,LP1.BuLi Süd1D5,5,365,10,SV Peiting
+559,LP1.BuLi Süd1D,Thomas,False,Lakner,0,LP1.BuLi Süd1D5,5,365,6,ESV Weil am Rhein
+560,LP1.BuLi Süd1E,Patrik,True,Lengerer,0,LP1.BuLi Süd1E1,1,373, ,SV Murrhardt-Karnsberg
+561,LP1.BuLi Süd1E,Petrov,False,Dusko,1,LP1.BuLi Süd1E1,1,383, ,SV Willmandingen
+562,LP1.BuLi Süd1E,Leo,True,Braun,1,LP1.BuLi Süd1E2,2,371, ,SV Murrhardt-Karnsberg
+563,LP1.BuLi Süd1E,Gabriele,False,Haas,0,LP1.BuLi Süd1E2,2,365, ,SV Willmandingen
+564,LP1.BuLi Süd1E,Tobias,True,Heider,1,LP1.BuLi Süd1E3,3,379, ,SV Murrhardt-Karnsberg
+565,LP1.BuLi Süd1E,Marco,False,Deh,0,LP1.BuLi Süd1E3,3,367, ,SV Willmandingen
+566,LP1.BuLi Süd1E,Wolfgang,True,Renner,1,LP1.BuLi Süd1E4,4,373, ,SV Murrhardt-Karnsberg
+567,LP1.BuLi Süd1E,Jürgen,False,Flad,0,LP1.BuLi Süd1E4,4,368, ,SV Willmandingen
+568,LP1.BuLi Süd1E,Markus,True,Schiller,1,LP1.BuLi Süd1E5,5,367, ,SV Murrhardt-Karnsberg
+569,LP1.BuLi Süd1E,Peter,False,Kirstahler,0,LP1.BuLi Süd1E5,5,366, ,SV Willmandingen
+570,LP1.BuLi Süd1F,Axel,True,Köhler,0,LP1.BuLi Süd1F1,1,365, ,KKS Hambrücken
+571,LP1.BuLi Süd1F,Abdullah,False,Ustaoglu,1,LP1.BuLi Süd1F1,1,376, ,Sgi Waldenburg
+572,LP1.BuLi Süd1F,Patrick,True,Göpfrich,1,LP1.BuLi Süd1F2,2,379, ,KKS Hambrücken
+573,LP1.BuLi Süd1F,Philipp,False,Käfer,0,LP1.BuLi Süd1F2,2,374, ,Sgi Waldenburg
+574,LP1.BuLi Süd1F,Teresa,True,Groß,0,LP1.BuLi Süd1F3,3,368, ,KKS Hambrücken
+575,LP1.BuLi Süd1F,Tobias,False,Backes,1,LP1.BuLi Süd1F3,3,373, ,Sgi Waldenburg
+576,LP1.BuLi Süd1F,Glenn Niklas,True,Simmank,0,LP1.BuLi Süd1F4,4,362, ,KKS Hambrücken
+577,LP1.BuLi Süd1F,Tobias,False,Bumb,1,LP1.BuLi Süd1F4,4,368, ,Sgi Waldenburg
+578,LP1.BuLi Süd1F,Marco,True,Wußler,1,LP1.BuLi Süd1F5,5,375, ,KKS Hambrücken
+579,LP1.BuLi Süd1F,Jens,False,Klossek,0,LP1.BuLi Süd1F5,5,374, ,Sgi Waldenburg
+580,LP1.BuLi Süd2A,Sandra,True,Reiz,1,LP1.BuLi Süd2A1,1,376, ,SSG Dynamit Fürth
+581,LP1.BuLi Süd2A,Andreas,False,Riedener,0,LP1.BuLi Süd2A1,1,370, ,SV Altheim Waldhausen
+582,LP1.BuLi Süd2A,Heidi,True,Diethelm Gerber,1,LP1.BuLi Süd2A2,2,381, ,SSG Dynamit Fürth
+583,LP1.BuLi Süd2A,Holger,False,Haile,0,LP1.BuLi Süd2A2,2,376, ,SV Altheim Waldhausen
+584,LP1.BuLi Süd2A,Claudia,True,Verdicchio-Krause,1,LP1.BuLi Süd2A3,3,378, ,SSG Dynamit Fürth
+585,LP1.BuLi Süd2A,Philipp,False,Wetzel,0,LP1.BuLi Süd2A3,3,373, ,SV Altheim Waldhausen
+586,LP1.BuLi Süd2A,Kathrin,True,Pfundstein,0,LP1.BuLi Süd2A4,4,374, ,SSG Dynamit Fürth
+587,LP1.BuLi Süd2A,Martina,False,Sagasser,1,LP1.BuLi Süd2A4,4,376, ,SV Altheim Waldhausen
+588,LP1.BuLi Süd2A,Johann,True,Walser,0,LP1.BuLi Süd2A5,5,371, ,SSG Dynamit Fürth
+589,LP1.BuLi Süd2A,Christian,False,Morar,1,LP1.BuLi Süd2A5,5,373, ,SV Altheim Waldhausen
+590,LP1.BuLi Süd2B,Damir,True,Mikec,1,LP1.BuLi Süd2B1,1,390, ,SV Kelheim-Gmünd
+591,LP1.BuLi Süd2B,Thomas,False,Ranzinger,0,LP1.BuLi Süd2B1,1,364, ,SG Edelweiß Scheuring
+592,LP1.BuLi Süd2B,Philipp,True,Grimm,1,LP1.BuLi Süd2B2,2,383, ,SV Kelheim-Gmünd
+593,LP1.BuLi Süd2B,Oliver,False,Balg,0,LP1.BuLi Süd2B2,2,365, ,SG Edelweiß Scheuring
+594,LP1.BuLi Süd2B,Simon,True,Weiß,1,LP1.BuLi Süd2B3,3,374, ,SV Kelheim-Gmünd
+595,LP1.BuLi Süd2B,Philipp,False,Ranzinger,0,LP1.BuLi Süd2B3,3,370, ,SG Edelweiß Scheuring
+596,LP1.BuLi Süd2B,Carina,True,Wimmer,1,LP1.BuLi Süd2B4,4,372, ,SV Kelheim-Gmünd
+597,LP1.BuLi Süd2B,Sebastian,False,Heinisch,0,LP1.BuLi Süd2B4,4,363, ,SG Edelweiß Scheuring
+598,LP1.BuLi Süd2B,Tobias,True,Piechaczek,0,LP1.BuLi Süd2B5,5,364, ,SV Kelheim-Gmünd
+599,LP1.BuLi Süd2B,Klaus,False,Hopfensitz,1,LP1.BuLi Süd2B5,5,371, ,SG Edelweiß Scheuring
+600,LP1.BuLi Süd2C,Dimitrije,True,Grgic,1,LP1.BuLi Süd2C1,1,386, ,SV Waldkirch
+601,LP1.BuLi Süd2C,Asgeir,False,Sigurgeirsson,0,LP1.BuLi Süd2C1,1,384, ,SGi Ludwigsburg
+602,LP1.BuLi Süd2C,Matthias,True,Holderried,0,LP1.BuLi Süd2C2,2,378,7,SV Waldkirch
+603,LP1.BuLi Süd2C,Florian,False,Brunner,1,LP1.BuLi Süd2C2,2,378,9,SGi Ludwigsburg
+604,LP1.BuLi Süd2C,Alexander,True,Kindig,0,LP1.BuLi Süd2C3,3,375, ,SV Waldkirch
+605,LP1.BuLi Süd2C,Kevin,False,Venta,1,LP1.BuLi Süd2C3,3,390, ,SGi Ludwigsburg
+606,LP1.BuLi Süd2C,Michael,True,Spindler,1,LP1.BuLi Süd2C4,4,375, ,SV Waldkirch
+607,LP1.BuLi Süd2C,Rene,False,Potteck,0,LP1.BuLi Süd2C4,4,371, ,SGi Ludwigsburg
+608,LP1.BuLi Süd2C,Sebastian,True,Kugelmann,0,LP1.BuLi Süd2C5,5,361, ,SV Waldkirch
+609,LP1.BuLi Süd2C,Julia,False,Hochmuth,1,LP1.BuLi Süd2C5,5,366, ,SGi Ludwigsburg
+610,LP1.BuLi Süd2D,Abdullah,True,Ustaoglu,0,LP1.BuLi Süd2D1,1,376, ,Sgi Waldenburg
+611,LP1.BuLi Süd2D,Pavel,False,Svetlik,1,LP1.BuLi Süd2D1,1,383, ,ESV Weil am Rhein
+612,LP1.BuLi Süd2D,Philipp,True,Käfer,0,LP1.BuLi Süd2D2,2,379, ,Sgi Waldenburg
+613,LP1.BuLi Süd2D,Michael,False,Schwald,1,LP1.BuLi Süd2D2,2,383, ,ESV Weil am Rhein
+614,LP1.BuLi Süd2D,Tobias,True,Backes,0,LP1.BuLi Süd2D3,3,376,8,Sgi Waldenburg
+615,LP1.BuLi Süd2D,Luca,False,Schröder,1,LP1.BuLi Süd2D3,3,376,9,ESV Weil am Rhein
+616,LP1.BuLi Süd2D,Tobias,True,Bumb,1,LP1.BuLi Süd2D4,4,380, ,Sgi Waldenburg
+617,LP1.BuLi Süd2D,Christian,False,Schebesta,0,LP1.BuLi Süd2D4,4,372, ,ESV Weil am Rhein
+618,LP1.BuLi Süd2D,Jens,True,Klossek,1,LP1.BuLi Süd2D5,5,379, ,Sgi Waldenburg
+619,LP1.BuLi Süd2D,Nathalie,False,Schelken,0,LP1.BuLi Süd2D5,5,371, ,ESV Weil am Rhein
+620,LP1.BuLi Süd2E,Patrik,True,Lengerer,1,LP1.BuLi Süd2E1,1,378, ,SV Murrhardt-Karnsberg
+621,LP1.BuLi Süd2E,Axel,False,Köhler,0,LP1.BuLi Süd2E1,1,367, ,KKS Hambrücken
+622,LP1.BuLi Süd2E,Leo,True,Braun,0,LP1.BuLi Süd2E2,2,375, ,SV Murrhardt-Karnsberg
+623,LP1.BuLi Süd2E,Patrick,False,Göpfrich,1,LP1.BuLi Süd2E2,2,382, ,KKS Hambrücken
+624,LP1.BuLi Süd2E,Tobias,True,Heider,1,LP1.BuLi Süd2E3,3,379, ,SV Murrhardt-Karnsberg
+625,LP1.BuLi Süd2E,Teresa,False,Groß,0,LP1.BuLi Süd2E3,3,371, ,KKS Hambrücken
+626,LP1.BuLi Süd2E,Wolfgang,True,Renner,1,LP1.BuLi Süd2E4,4,375, ,SV Murrhardt-Karnsberg
+627,LP1.BuLi Süd2E,Glenn Niklas,False,Simmank,0,LP1.BuLi Süd2E4,4,367, ,KKS Hambrücken
+628,LP1.BuLi Süd2E,Markus,True,Schiller,0,LP1.BuLi Süd2E5,5,360, ,SV Murrhardt-Karnsberg
+629,LP1.BuLi Süd2E,Marco,False,Wußler,1,LP1.BuLi Süd2E5,5,362, ,KKS Hambrücken
+630,LP1.BuLi Süd2F,Sladjan,True,Zoran,0,LP1.BuLi Süd2F1,1,371, ,SV Peiting
+631,LP1.BuLi Süd2F,Petrov,False,Dusko,1,LP1.BuLi Süd2F1,1,387, ,SV Willmandingen
+632,LP1.BuLi Süd2F,Steffi,True,Böhm,0,LP1.BuLi Süd2F2,2,370, ,SV Peiting
+633,LP1.BuLi Süd2F,Gabriele,False,Haas,1,LP1.BuLi Süd2F2,2,373, ,SV Willmandingen
+634,LP1.BuLi Süd2F,Georg,True,Müller,1,LP1.BuLi Süd2F3,3,382, ,SV Peiting
+635,LP1.BuLi Süd2F,Jürgen,False,Flad,0,LP1.BuLi Süd2F3,3,365, ,SV Willmandingen
+636,LP1.BuLi Süd2F,Michaela,True,Brosselt-Guggemos,1,LP1.BuLi Süd2F4,4,367, ,SV Peiting
+637,LP1.BuLi Süd2F,Denise,False,Keck,0,LP1.BuLi Süd2F4,4,360, ,SV Willmandingen
+638,LP1.BuLi Süd2F,Thomas,True,Landes,0,LP1.BuLi Süd2F5,5,356, ,SV Peiting
+639,LP1.BuLi Süd2F,Peter,False,Kirstahler,1,LP1.BuLi Süd2F5,5,367, ,SV Willmandingen
