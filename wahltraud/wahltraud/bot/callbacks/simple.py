@@ -165,7 +165,7 @@ def share_bot(event, **kwargs):
     reply = "Teile BotBuLi mit deinen Freunden!"
 
     title = "BotBuLi informiert die über die Bundesliga im Sportschießen."
-    subtitle = "Befrage den Info Bot zu den Vereinen der 1. und 2. BuLi im Sportschießen, und den Schützen."
+    subtitle = "Befrage den Info Bot zu den Vereinen der 1. und 2. BuLi im Sportschießen, den Schützen und vieles mehr."
     image_url = "https://cc8b346a.ngrok.io/static/bot/final_backround_transparent.png"
     shared_content = [generic_element(title, subtitle, image_url, buttons = [button_web_url("Schreibe BotBuLi", "https://www.m.me/BotBuLi?ref=shared")])]
     message = generic_element("Teile BotBuLi mit deinen Freunden!", buttons = [button_share(shared_content)])
