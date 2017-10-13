@@ -197,11 +197,11 @@ def subscribe(event, **kwargs):
         FacebookUser.objects.create(uid=user_id)
         logger.debug('subscribed user with ID ' + str(FacebookUser.objects.latest('add_date')))
         reply = """
-Danke für deine Anmeldung! Du erhältst nun täglich um 18 Uhr dein Update.
-Möchtest du jetzt das aktuellste Update aufrufen, klicke auf \'Aktuelle Nachricht\'. Wenn du irgendwann genug Informationen hast, kannst du dich über das Menü natürlich jederzeit wieder abmeden."""
+Danke für deine Anmeldung! Du erhältst nun nach jedem Wettkampftag eine kurze Zusammenfassung der Ergebnisse.
+"""
         send_buttons(user_id, reply,
                      buttons=[
-                        button_postback('Aktuelle Nachricht',
+                        button_postback('Letzter Wettkampftag',
                                         {'push': last_push.id, 'next_state': 'intro'}),
                      ])
 
@@ -213,12 +213,11 @@ def unsubscribe(event, **kwargs):
         logger.debug('deleted user with ID: ' + str(FacebookUser.objects.get(uid=user_id)))
         FacebookUser.objects.get(uid=user_id).delete()
         send_text(user_id,
-                "Schade, dass du uns verlassen möchtest. Du wurdest aus der Empfängerliste für Push Benachrichtigungen gestrichen. "
-                "Wenn du doch nochmal Interesse hast, kannst du mich auch einfach fragen: \n"
-                "z.B. \"Wie war der Push von gestern/ vorgestern/ letztem Sonntag?\""
+                "Schade, dass dir mein Service nicht gefallen hat. Du wurdest aus der Empfängerliste für Zusammenfassungen gestrichen. "
+                "Hätte ich was besser machen können, dann schreib es mir gerne. Ich freue mich über Feedback."
         )
     else:
-        reply = "Du bist noch kein Nutzer der Push-Nachrichten. Wenn du dich anmelden möchtest wähle \"Anmelden\" über das Menü."
+        reply = "Du bist noch kein Nutzer der BuLi-News. Wenn du dich anmelden möchtest wähle \"Anmelden\" über das Menü."
         send_text(user_id, reply)
 
 def menue_candidates(event, **kwargs):
