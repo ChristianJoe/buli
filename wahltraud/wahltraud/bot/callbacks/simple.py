@@ -179,7 +179,13 @@ def subscribe(event, **kwargs):
     user_id = event['sender']['id']
 
     if FacebookUser.objects.filter(uid=user_id).exists():
+        now = timezone.localtime(timezone.now())
+        date = now.date()
+        time = now.time()
         reply = "Du bist bereits für Push-Nachrichten angemeldet."
+        last_push = Push.objects.filter(
+            published=True).exclude(pub_date__date__gt=date).latest('pub_date')
+
         send_buttons(user_id, reply,
                      buttons=[
                          button_postback('Letzter Wettkampftag',
