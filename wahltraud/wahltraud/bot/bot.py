@@ -267,19 +267,20 @@ def push_breaking():
 
 def dsb_update():
     # update results just on weekend till monday every 15min
-    #parser.get_results_pd()
+    parser.get_results_pd()
     # update set list just on saturday, sunday, monday
     parser.update_table()
     # update otherwise once a day
-
-
+    #parser_setlist
+    #parser.update_setlist()
 
 
 
 schedule.every(60).seconds.do(push_breaking)
 schedule.every().day.at("18:00").do(push_notification)
 schedule.every().day.at("22:50").do(dsb_update)
-
+schedule.every().hour.do(schedule.saturday.do(dsb_update))
+schedule.every().hour.do(schedule.sunday.do(dsb_update))
 
 def schedule_loop():
     while True:
