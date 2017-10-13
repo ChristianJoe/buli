@@ -15,7 +15,7 @@ from .handlers.texthandler import TextHandler
 from .handlers.apiaihandler import ApiAiHandler
 from .callbacks.simple import (get_started, push, subscribe, unsubscribe, wiki, story,
                                apiai_fulfillment, about_manifesto, menue_manifesto, about,
-                               questions,share_bot, push_step, menue_candidates, menue_data,
+                               questions,share_bot, push_step,  menue_data,
                                more_data, sunday_poll, greetings, presidents, chancelor, who_votes,
                                update_api, infos_backend, table_start, competition_start)
 from .callbacks.shared import (get_pushes, get_breaking, send_push, schema)
