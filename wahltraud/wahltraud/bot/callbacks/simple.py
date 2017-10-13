@@ -168,7 +168,7 @@ def share_bot(event, **kwargs):
     subtitle = "Befrage den Info Bot zu den Vereinen der 1. und 2. BuLi im Sportschießen, und den Schützen."
     image_url = "https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-9/17990695_1413687971987169_7350711930902341159_n.jpg?oh=f23c5b76702f9b0819c5d589dcba7e4e&oe=5A300416"
     shared_content = [generic_element(title, subtitle, image_url, buttons = [button_web_url("Schreibe BotBuLi", "https://www.m.me/BotBuLi?ref=shared")])]
-    message = generic_element("Teile Wahltraud mit deinen Freunden!", buttons = [button_share(shared_content)])
+    message = generic_element("Teile BotBuLi mit deinen Freunden!", buttons = [button_share(shared_content)])
 
     send_generic(sender_id,
                 elements = [message])
