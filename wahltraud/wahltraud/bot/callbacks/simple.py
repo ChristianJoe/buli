@@ -164,12 +164,12 @@ def push(event, parameters, **kwargs):
 
 def share_bot(event, **kwargs):
     sender_id = event['sender']['id']
-    reply = "Teile Wahltraud mit deinen Freunden!"
+    reply = "Teile BotBuLi mit deinen Freunden!"
 
-    title = "Wahltraud informiert die über alle Themen rund um die Bundestagswahl 2017."
-    subtitle = "Befrage den Messenger Bot zu Kandidaten, Parteien oder Themen rund um die Wahl."
+    title = "BotBuLi informiert die über die Bundesliga im Sportschießen."
+    subtitle = "Befrage den Info Bot zu den Vereinen der 1. und 2. BuLi im Sportschießen, und den Schützen."
     image_url = "https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-9/17990695_1413687971987169_7350711930902341159_n.jpg?oh=f23c5b76702f9b0819c5d589dcba7e4e&oe=5A300416"
-    shared_content = [generic_element(title, subtitle, image_url, buttons = [button_web_url("Schreibe Wahltraud", "https://www.m.me/wahltraud?ref=shared")])]
+    shared_content = [generic_element(title, subtitle, image_url, buttons = [button_web_url("Schreibe BotBuLi", "https://www.m.me/BotBuLi?ref=shared")])]
     message = generic_element("Teile Wahltraud mit deinen Freunden!", buttons = [button_share(shared_content)])
 
     send_generic(sender_id,
@@ -180,7 +180,11 @@ def subscribe(event, **kwargs):
 
     if FacebookUser.objects.filter(uid=user_id).exists():
         reply = "Du bist bereits für Push-Nachrichten angemeldet."
-        send_text(user_id, reply)
+        send_buttons(user_id, reply,
+                     buttons=[
+                         button_postback('Letzter Wettkampftag',
+                                         {'push': last_push.id, 'next_state': 'intro'}),
+                     ])
 
     else:
         now = timezone.localtime(timezone.now())
@@ -282,21 +286,15 @@ def menue_data(event, **kwargs):
     send_text(sender_id, """
 Um dich mit so vielen Informationen beliefern zu können, musste ich mich natürlich selbst erstmal schlau machen.
 Folgende Quellen habe ich dazu verwendet:
-- WDR-Kandidatencheck http://kandidatencheck.wdr.de/kandidatencheck/
-- abgeordnetenwatch.de https://www.abgeordnetenwatch.de/
-- Wahlkompass Digitales http://wahlkompass-digitales.de/
-- Bundeswahlleiter https://www.bundeswahlleiter.de/
-- infratest dimap https://www.infratest-dimap.de/
-- Homepages der Parteien""",
-    [quick_reply('Noch was?', ['more_data'])])
+- http://bundesliga.dsb.de/
+- Homepages der Vereine""",
+    [quick_reply('Und meine Daten', ['more_data'])])
 
 def more_data(event, **kwargs):
     sender_id = event['sender']['id']
     send_text(sender_id, """
-Ich arbeite in Kooperation mit Novi, dem Nachrichten-Bot von Funk \nhttps://www.funk.net/
-Zudem habe ich mich der Technologie vom WDR Projekt \"Wörter der Wahl\" bedient\nhttps://github.com/wdr-data/woerter-der-wahl
-Damit ich verstehen kann was du von mir willst, schicke ich die von dir verschickte Textnachricht an api.ai einen Google Assistant.
-Die Daten auf die ich zurückgreife kannst du dir auch im GitHub Account \"wdr-data\" anschauen\nhttps://github.com/wdr-data
+Damit ich verstehen kann was du von mir willst, schicke ich die von dir verschickte Textnachricht an dialogflow.com einen Google Assistant.
+Die Daten auf die ich zurückgreife kannst du dir auch auf GitHub anschauen\nhttps://github.com/ChristianJoe/buli
 Ich halte mich an die Datenschutzbestimmungen des \"Westdeutschen Rundfunks\"\nhttp://www1.wdr.de/hilfe/datenschutz102.html"""
     )
 
