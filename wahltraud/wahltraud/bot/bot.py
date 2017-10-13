@@ -57,7 +57,6 @@ def make_event_handler():
         PayloadHandler(push, ['push']),
         ApiAiHandler(push, 'push'),
         ApiAiHandler(wiki, 'wiki'),
-        PayloadHandler(menue_candidates, ['menue_candidates']),
         #PayloadHandler(questions, ['questions']),
         PayloadHandler(menue_data, ['menue_data']),
         PayloadHandler(more_data, ['more_data']),
