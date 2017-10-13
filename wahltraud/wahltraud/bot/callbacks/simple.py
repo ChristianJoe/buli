@@ -105,11 +105,9 @@ Wenn Du genauer wissen möchtest, was ich kann, klicke auf \"Erklär mal\". Oder
                 published=True).exclude(pub_date__date__gt=date).latest('pub_date')
 
         reply = """
-Hallo, ich bin Wahltraud 🐳
-Wenn Du Dich mit mir unterhältst, kann ich Dir viele Infos zur Bundestagswahl schicken:
-Kandidaten, Parteien, Wahlprogramme - gemeinsam mit 1LIVE habe ich trainiert, um Dir viele Fragen dazu beantworten zu können.
-Wenn Du jeden Abend eine Info zur Wahl erhalten möchtest, klicke auf \"Anmelden\".
-Wenn Du genauer wissen möchtest, was ich kann, klicke auf \"Erklär mal\". Oder leg direkt los und sende mir eine Nachricht."""
+Hallo, ich bin BotBuLi.
+Wenn Du Dich mit mir unterhältst, kann ich Dir viele Infos zur Bundesliga Sportschießen nennen:
+"""
         send_buttons(sender_id, reply,
                      buttons=[
                         button_postback('Anmelden', ['subscribe']),
@@ -122,7 +120,7 @@ Wenn Du genauer wissen möchtest, was ich kann, klicke auf \"Erklär mal\". Oder
 def about(event, **kwargs):
     sender_id = event['sender']['id']
     reply = '''
-Ich bin ein freundlicher Bot mit dem Ziel dich objektiv über Kandidaten, Parteien und die Wahlprogramme zu informieren.
+Ich bin ein freundlicher Bot mit dem Ziel dich objektiv über die Bundesliga Sportschießen zu informieren.
 Alle Informationen die ich dir liefer findest du an vielen Stellen (siehe Daten-Quellen) im Netz. Ich trage die Infos zusammen und du kannst mich gezielt ausfragen.
 Du kannst ganz normal mit mir schreiben und ich antworte so gut ich kann.
 Durch deine Fragen können die Menschen die mich programmieren sehen, was dich interessiert. Dadurch 'lerne' ich und kann deine Frage vielleicht bald beantworten.
@@ -131,8 +129,8 @@ Starte einfach indem du mich mit \"Hallo\" begrüßt!.
             '''
     send_buttons(sender_id, reply,
                 buttons = [
-                    button_postback("Kandidatencheck", ['menue_candidates']),
-                    button_postback("Wahlprogramme", ['menue_manifesto']),
+                    button_postback("Tabellen", ['menue_candidates']),
+                    button_postback("Wettkämpfe", ['menue_manifesto']),
                     button_postback("Daten-Quellen", ['menue_data'])
                 ])
 
@@ -156,7 +154,7 @@ def push(event, parameters, **kwargs):
             data = get_pushes_by_date(find_date)
 
         if len(data) == 0:
-            reply = 'Für dieses Datum liegen mir keine Nachrichten vor. Wähle ein Datum, welches zwischen dem 04.09.2017 und heute liegt.'
+            reply = 'Für dieses Datum liegen mir keine Zusammenfassung vor. Wähle ein Datum, wähle ein anderes Wochenende.'
             send_text(sender_id, reply)
         else:
             schema(data, sender_id)
@@ -230,17 +228,25 @@ def unsubscribe(event, **kwargs):
         reply = "Du bist noch kein Nutzer der BuLi-News. Wenn du dich anmelden möchtest wähle \"Anmelden\" über das Menü."
         send_text(user_id, reply)
 
-def menue_candidates(event, **kwargs):
+def competition_start(event, **kwargs):
     sender_id = event['sender']['id']
     send_text(sender_id,
-            "Mit dem WDR-Kandidatencheck möchten wir möglichst alle Kandidatinnen und Kandidaten in NRW in einem kurzen Video vorstellen."
-            " Es wurden alle Parteien angefragt, aber es haben nicht alle mitgemacht."
-            " Damit die Aussagen vergleichbar sind, haben wir allen Teilnehmer dieselben Fragen gestellt. "
-            "Hier gibt’s Informationen zum kompletten Projekt:\n"
-            "https://blog.wdr.de/ihrewahl/faq-wdr-kandidatencheck-bundestagswahl-2017\n"
-            "Wenn du mir eine Postleitzahl aus NRW schreibst, kann ich dir alle verfügbaren Kandidatenchecks aus dem dazugehörigen Wahlkreis zeigen.",
-              [quick_reply('Zeige Kandidaten', ['candidate_check_start']),
-               quick_reply('Fragen', ['questions'])]
+            "Im wesentlichen kannst du mich nach einem Wochenende fragen und ich sage dir, welche Wettkämpfe da stattfinden.",
+              [quick_reply('Nächste Wettkämpfe', ['next_event']),
+               quick_reply('Ausrichter', ['next_event'])]
+              )
+
+
+
+
+
+def table_start(event, **kwargs):
+    sender_id = event['sender']['id']
+    send_text(sender_id,
+            "Ich kenne alle aktuellen Tabellenstände der 1. und 2. BuLi. Glaubste nicht?",
+              [quick_reply('1. BuLi Nord', {'table_league': "1.BuLi Nord"}),
+               quick_reply('1. BuLi Süd', {'table_league': "2.BuLi Nord"}),
+               quick_reply('2. BuLi', ['table_second_league'])]
               )
 
 def questions(event,**kwargs):
