@@ -176,13 +176,12 @@ def buli_live_competition(event,payload,**kwargs):
         for index in range(0,5):
 
             send_text(sender_id,
-                      '#{position}:'
-                      '{home}  {points_home}:{points_guest}  {guest}'.format(
+                      '#{position}: {home}  {points_home}:{points_guest}  {guest}'.format(
                           position = str(index),
-                          home = live['name'].iloc[2*index],
-                          points_home = live['result'].iloc[2*index],
-                          guest=live['name'].iloc[2 * index+1],
-                          points_guest=live['result'].iloc[2 * index+1]
+                          home = live['name'].iloc[(2*index)],
+                          points_home = live['result'].iloc[(2*index)],
+                          guest=live['name'].iloc[(2 * index+1)],
+                          points_guest=live['result'].iloc[(2 * index+1)]
                       )
                       )
 
