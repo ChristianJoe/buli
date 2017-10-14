@@ -207,7 +207,7 @@ def buli_live_competition(event,payload,**kwargs):
 
 def shooter_live(event,payload,**kwargs):
     sender_id = event['sender']['id']
-    live = payload['schooter_live']
+    live = payload['shooter_live']
     href = payload['href']
 
     reply = ""
