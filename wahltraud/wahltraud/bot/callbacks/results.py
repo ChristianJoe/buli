@@ -164,7 +164,8 @@ def buli_live_competition(event,payload,**kwargs):
     live = get_meyton_results(href)
 
     try:
-        if live['fight']:
+        if not live.empty:
+            print('test')
 
             send_text(sender_id,
                       "{fight}\n{home} : {guest}".format(
@@ -188,4 +189,4 @@ def buli_live_competition(event,payload,**kwargs):
                               )
             '''
     except:
-        send_text(sender_id,'Zur Zeit kein Wettkampf')
+        send_text(sender_id,'Zur Zeit kein Wettkampf',quick_reply('Aktualisieren',{'buli_live_competition': href}))
