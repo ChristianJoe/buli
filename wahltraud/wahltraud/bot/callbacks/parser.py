@@ -351,6 +351,10 @@ def get_meyton_results(site):
                     temp['shot_nr'] = result[1].text.strip()
                     temp['shot_value'] = result[2].text.strip()
                     temp['result'] = result[4].text
+                    if index in [3, 6, 9, 12, 15]:
+                        temp['points'] = result[5].text
+                    else:
+                        temp['points'] = None
                     series = []
                     for element in result[3].text.replace('\xa0', ' ').split(' '):
                         if element:

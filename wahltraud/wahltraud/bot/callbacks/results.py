@@ -165,28 +165,30 @@ def buli_live_competition(event,payload,**kwargs):
 
     try:
         if not live.empty:
-            print('test')
+            #calculate points
+            
 
             send_text(sender_id,
-                      "{fight}\n{home} : {guest}".format(
+                      "{fight}\n{home} : {guest}\n{points}".format(
                         fight = live['fight'].iloc[0],
                           home = live['home_team'].iloc[0],
-                          guest = live['guest_team'].iloc[0]
+                          guest = live['guest_team'].iloc[0],
+                          points = "3:2"
                     )
                       )
 
 
+            reply = ""
             for index in range(0,5):
-
-                send_text(sender_id,
-                          '#{position}: {home}  {points_home}:{points_guest}  {guest}'.format(
-                              position = str(index),
+                reply += '#{position}: {home}  {points_home}:{points_guest}  {guest}\n'.format(
+                              position = str(index+1),
                               home = live['name'].iloc[(2*index)],
                               points_home = live['result'].iloc[(2*index)],
                               guest=live['name'].iloc[(2 * index+1)],
                               points_guest=live['result'].iloc[(2 * index+1)]
                           )#,
-                #quick_reply('Aktualisieren', {'buli_live_competition': href})
+
+                send_text(sender_id,reply, quick_reply('Aktualisieren', {'buli_live_competition': href})
                           )
 
     except:
