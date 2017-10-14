@@ -230,6 +230,6 @@ def shooter_live(event,payload,**kwargs):
 
 
     send_text(sender_id,
-             payload_reply['reply_shooter'],
+             payload_reply['reply_shooters'],
               quick_replies=[quick_reply('Aktualisieren',['buli_live'])]
               )
