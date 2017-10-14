@@ -274,13 +274,13 @@ def dsb_update():
     #parser_setlist
     #parser.update_setlist()
 
-
+def every_saturday():
+    schedule.every().saturday.do(dsb_update)
 
 schedule.every(60).seconds.do(push_breaking)
 schedule.every().day.at("18:00").do(push_notification)
 schedule.every().day.at("22:50").do(dsb_update)
-schedule.every().hour.do(schedule.every.saturday.do(dsb_update))
-schedule.every().hour.do(schedule.every.sunday.do(dsb_update))
+schedule.every().hour.do(every_saturday)
 
 def schedule_loop():
     while True:
