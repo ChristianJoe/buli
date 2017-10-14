@@ -161,16 +161,6 @@ def buli_live(event,**kwargs):
                     home_points += int(list(row)[1].split(':')[0].strip())
                     guest_points += int(list(row)[1].split(':')[1].strip())
 
-                send_text(sender_id,
-                          "{fight}\n{home} : {guest}\n{home_points}:{guest_points}".format(
-                            fight = live['fight'].iloc[0],
-                              home = live['home_team'].iloc[0],
-                              guest = live['guest_team'].iloc[0],
-                              home_points = home_points,
-                              guest_points = guest_points
-                        )
-                          )
-
                 reply_positions = ""
                 for index in range(0, 5):
                     reply_positions += '#{position}:   {points_home}  :  {points_guest}  \n'.format(
@@ -178,6 +168,21 @@ def buli_live(event,**kwargs):
                         points_home=live['result'].iloc[(2 * index)],
                         points_guest=live['result'].iloc[(2 * index + 1)]
                     )  # ,
+
+                reply_overview = "{fight}\n{home} : {guest}\n{home_points}:{guest_points}".format(
+                            fight = live['fight'].iloc[0],
+                              home = live['home_team'].iloc[0],
+                              guest = live['guest_team'].iloc[0],
+                              home_points = home_points,
+                              guest_points = guest_points
+                        )
+
+
+
+                send_text(sender_id, reply_overview+'\n'+ reply_positions
+                       )
+
+
                 reply_shooters = ""
                 for index in range(0, 5):
                     reply_shooters += '#{position}: {home} : {guest}\n'.format(
@@ -213,9 +218,8 @@ def buli_live_competition(event,payload,**kwargs):
 
 
     send_text(sender_id,
-                  payload_reply['reply_positions'],
-                  quick_replies = [quick_reply('Aktualisieren', ['buli_live']),
-                                   quick_reply('Schützen', {'shooter_live' : payload_reply })
+                  payload_reply['reply_shooters'],
+                  quick_replies = [quick_reply('Aktualisieren', ['buli_live'])
                ]
                   )
 
