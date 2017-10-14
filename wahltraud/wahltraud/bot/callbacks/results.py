@@ -38,16 +38,13 @@ def table_api(event, parameters, **kwargs):
 def table_league(event,payload,**kwargs):
     sender_id = event['sender']['id']
     league = payload['table_league']
-    send_text(sender_id, 'table ' + league)
 
     tables = get_tables()
     table_league = tables[tables['id']== league]
     send_text(sender_id,'Hier Die Tabelle '+league)
 
 
-    send_text(sender_id, '#1: {club}'.format(
-        club = table_league['club'].iloc[0])
-    )
+    send_text(sender_id, '#1: TuS Hilgert')
 
 
 
