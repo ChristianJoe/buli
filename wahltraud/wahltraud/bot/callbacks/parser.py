@@ -330,7 +330,7 @@ def get_meyton_results(site):
             guest_team = teams[1].strip()
 
         file = (home_team + guest_team + '.csv').replace(' ', '')
-        path = pathlib.Path(str(DATA_DIR)+'/data'+file)
+        path = pathlib.Path(str(DATA_DIR)+'/data/'+file)
 
         res = soup.find(id='results').find_all('tr')
         temp2 = []
@@ -364,7 +364,7 @@ def get_meyton_results(site):
             open_file = pd.read_csv(path)
 
             added_final = open_file.append(final, ignore_index=True)
-            added_final.to_csv(file, index=False)
+            added_final.to_csv(path, index=False)
 
         else:
             final.to_csv(path, index=False)
