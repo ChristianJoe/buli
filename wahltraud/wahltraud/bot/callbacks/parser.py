@@ -297,8 +297,8 @@ def get_meyton():
         else:
             links[b.text] = basis + link_text
 
-        for key, value in links.items():
-            site = value
+    for key, value in links.items():
+        site = value
 
         get_meyton_results(site)
 
