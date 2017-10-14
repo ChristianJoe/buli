@@ -171,8 +171,9 @@ def buli_live(event,**kwargs):
                         )
                           )
                 quickreplyname = live['home_team'].iloc[0] + ':' + live['guest_team'].iloc[0]
+
                 options.append(
-                        quick_reply(quickreplyname, {'buli_live_competition': live})
+                        quick_reply(quickreplyname, {'buli_live_competition': 'test'})
                     )
 
         except:
