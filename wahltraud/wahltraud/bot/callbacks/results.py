@@ -144,7 +144,7 @@ def buli_live_api(event, parameters, **kwargs):
 def buli_live(event,**kwargs):
     sender_id = event['sender']['id']
 
-    links = get_meyton()
+    links = get_meyton(hrefs = True)
     options = []
 
     for key, href in links.items():
@@ -189,8 +189,8 @@ def buli_live(event,**kwargs):
                     )
 
                 payload_reply = {'reply_shooters': reply_shooters,
-                           'reply_positions': reply_positions,
-                           'href': href}
+                                'reply_positions': reply_positions,
+                                'href': href}
 
                 quickreplyname = live['home_team'].iloc[0] + ':' + live['guest_team'].iloc[0]
 
@@ -210,9 +210,6 @@ def buli_live(event,**kwargs):
 def buli_live_competition(event,payload,**kwargs):
     sender_id = event['sender']['id']
     payload_reply = payload['buli_live_competition']
-
-
-
 
 
     send_text(sender_id,

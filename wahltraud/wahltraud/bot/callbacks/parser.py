@@ -276,7 +276,7 @@ def update_table():
 
 
 
-def get_meyton():
+def get_meyton(hrefs = False):
 
 
 
@@ -296,9 +296,9 @@ def get_meyton():
             basis = link_text
         else:
             links[b.text] = basis + link_text
-
     for key, value in links.items():
         site = value
+        if not hrefs:
 
         get_meyton_results(site)
 
