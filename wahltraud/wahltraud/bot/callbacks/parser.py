@@ -369,9 +369,9 @@ def get_meyton_results(site):
         else:
             final.to_csv(path, index=False)
     else:
-        temp2 = 'Zur Zeit kein Wettkampf'
+        final = 'Zur Zeit kein Wettkampf'
 
 
-    return temp2
+    return final
 
 

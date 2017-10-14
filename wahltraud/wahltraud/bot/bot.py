@@ -82,6 +82,10 @@ def make_event_handler():
         PayloadHandler(table_start,['table_start']),
         PayloadHandler(competition_start,['competition_start']),
 
+        ApiAiHandler(results.buli_live_api,'buli_live'),
+        PayloadHandler(results.buli_live,['buli_live']),
+        PayloadHandler(results.buli_live_competition,['buli_live_competition']),
+
         #ApiAiHandler(presidents, 'bundespräsident'),
         #ApiAiHandler(chancelor, 'bundeskanzler'),
         #ApiAiHandler(candidate.basics, 'kandidat'),

@@ -4,6 +4,7 @@ import pandas as pd
 
 from ..fb import send_buttons, button_postback, send_text, send_attachment, send_list, list_element, quick_reply
 from ..data import by_uuid, get_dates, get_results_team, get_results_shooter
+from .parser import get_meyton, get_meyton_results
 import datetime
 
 
@@ -13,7 +14,6 @@ def table_api(event, parameters, **kwargs):
     buli = parameters.get('league') # first or second BuLi
     region =  parameters.get('region')
     weapon = parameters.get('weapon')
-
 
 
 
@@ -125,4 +125,42 @@ def shooter_results(event,payload,**kwargs):
             send_text(sender_id, 'Hier Ergebnisse zu ' + last_name + ' vom ' + club+'.')
     else:
         send_text(sender_id, 'Hier Ergebnisse von '+first_name+' '+last_name+' vom '+ club+'.')
+
+
+
+def buli_live_api(event, parameters, **kwargs):
+
+
+    buli_live(event)
+
+
+
+def buli_live(event,**kwargs):
+    sender_id = event['sender']['id']
+
+    links = get_meyton()
+    options = []
+    for  key, href in links.items():
+        options.append(
+            quick_reply(key,{'buli_live_competition': href})
+        )
+
+
+    send_text(sender_id,'Live Ergebnisse folgender Ausrichter', quick_replies = options)
+
+
+
+def buli_live_competition(event,payload,**kwargs):
+    sender_id = event['sender']['id']
+    href = payload['buli_live_competition']
+
+    live = get_meyton_results(href)
+
+    if live == 'Zur Zeit kein Wettkampf':
+        send_text(sender_id, live )
+
+    else:
+        send_text(sender_id, live['fight'].iloc[0])
+        
+
 
