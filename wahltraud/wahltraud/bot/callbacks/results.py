@@ -175,19 +175,19 @@ def buli_live_competition(event,payload,**kwargs):
                     )
                       )
 
-            if live['fight'] != 'Zur Zeit kein Wettkampf':
-                for index in range(0,5):
 
-                    send_text(sender_id,
-                              '#{position}: {home}  {points_home}:{points_guest}  {guest}'.format(
-                                  position = str(index),
-                                  home = live['name'].iloc[(2*index)],
-                                  points_home = live['result'].iloc[(2*index)],
-                                  guest=live['name'].iloc[(2 * index+1)],
-                                  points_guest=live['result'].iloc[(2 * index+1)]
-                              ),
-                    quick_reply('Aktualisieren', {'buli_live_competition': href})
-                              )
+            for index in range(0,5):
+
+                send_text(sender_id,
+                          '#{position}: {home}  {points_home}:{points_guest}  {guest}'.format(
+                              position = str(index),
+                              home = live['name'].iloc[(2*index)],
+                              points_home = live['result'].iloc[(2*index)],
+                              guest=live['name'].iloc[(2 * index+1)],
+                              points_guest=live['result'].iloc[(2 * index+1)]
+                          )#,
+                #quick_reply('Aktualisieren', {'buli_live_competition': href})
+                          )
 
     except:
         send_text(sender_id,'Zur Zeit kein Wettkampf',quick_reply('Aktualisieren',{'buli_live_competition': href}))
