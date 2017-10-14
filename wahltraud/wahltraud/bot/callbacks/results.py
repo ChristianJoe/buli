@@ -145,7 +145,7 @@ def buli_live(event,**kwargs):
     sender_id = event['sender']['id']
 
     links = get_meyton(hrefs = True)
-    options = []
+    options = [quick_reply('Aktualisieren', ['buli_live'])]
 
     for key, href in links.items():
 
@@ -206,7 +206,8 @@ def buli_live(event,**kwargs):
         except:
             send_text(sender_id,'Zur Zeit kein Wettkampf')
 
-    send_text(sender_id,'Zu den Ergebnisse im Detail:', quick_replies = options)
+
+    send_text(sender_id,'Zu den Schützen respektive Aktualisieren.', quick_replies = options)
 
 
 
