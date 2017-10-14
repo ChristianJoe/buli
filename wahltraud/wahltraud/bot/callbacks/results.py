@@ -163,28 +163,27 @@ def buli_live_competition(event,payload,**kwargs):
 
     live = get_meyton_results(href)
 
-    if live.empty:
-
-        send_text(sender_id, live )
-
-    else:''
-        send_text(sender_id,
-                  '{fight}'
-               '{home} : {guest}'.format(
-                    fight = live['fight'],
-                      home = live['home_team'].iloc[0],
-                      guest = live['guest_team'].iloc[0]
-                )
-                  )
-        for index in range(0,5):
+    try:
+        if live['fight']:
 
             send_text(sender_id,
-                      '#{position}: {home}  {points_home}:{points_guest}  {guest}'.format(
-                          position = str(index),
-                          home = live['name'].iloc[(2*index)],
-                          points_home = live['result'].iloc[(2*index)],
-                          guest=live['name'].iloc[(2 * index+1)],
-                          points_guest=live['result'].iloc[(2 * index+1)]
+                      "{fight}\n{home} : {guest}".format(
+                        fight = live['fight'],
+                          home = live['home_team'].iloc[0],
+                          guest = live['guest_team'].iloc[0]
+                    )
                       )
-                      )
+            if live['fight'] != 'Zur Zeit kein Wettkampf':
+                for index in range(0,5):
 
+                    send_text(sender_id,
+                              '#{position}: {home}  {points_home}:{points_guest}  {guest}'.format(
+                                  position = str(index),
+                                  home = live['name'].iloc[(2*index)],
+                                  points_home = live['result'].iloc[(2*index)],
+                                  guest=live['name'].iloc[(2 * index+1)],
+                                  points_guest=live['result'].iloc[(2 * index+1)]
+                              )
+                              )
+    except:
+        send_text(sender_id,'Zur Zeit kein Wettkampf')
