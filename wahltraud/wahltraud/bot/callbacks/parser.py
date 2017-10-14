@@ -300,7 +300,7 @@ def get_meyton():
         for key, value in links.items():
             site = value
 
-            get_meyton_results(site)
+        get_meyton_results(site)
 
     return links
 
@@ -314,7 +314,7 @@ def get_meyton_results(site):
 
     fight = soup.find(id='match-phase').text
 
-    if fight != 'Zur Zeit kein Wettkampf':
+    if fight == 'Wettkampf' or fight == 'Probe':
 
         teams = soup.find(id='match-title').text.split(':')
         try:
