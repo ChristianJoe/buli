@@ -169,7 +169,9 @@ def buli_live_competition(event,payload,**kwargs):
 
     else:
         send_text(sender_id,
-                  '{home} : {guest}'.format(
+                  '{fight}'
+                {home} : {guest}'.format(
+                    fight = live['fight'],
                       home = live['home_team'].iloc[0],
                       guest = live['guest_team'].iloc[0]
                 )
