@@ -169,12 +169,12 @@ def buli_live_competition(event,payload,**kwargs):
 
             send_text(sender_id,
                       "{fight}\n{home} : {guest}".format(
-                        fight = live['fight'],
+                        fight = live['fight'].iloc[0],
                           home = live['home_team'].iloc[0],
                           guest = live['guest_team'].iloc[0]
                     )
                       )
-            '''
+
             if live['fight'] != 'Zur Zeit kein Wettkampf':
                 for index in range(0,5):
 
@@ -185,8 +185,9 @@ def buli_live_competition(event,payload,**kwargs):
                                   points_home = live['result'].iloc[(2*index)],
                                   guest=live['name'].iloc[(2 * index+1)],
                                   points_guest=live['result'].iloc[(2 * index+1)]
+                              ),
+                    quick_reply('Aktualisieren', {'buli_live_competition': href})
                               )
-                              )
-            '''
+
     except:
         send_text(sender_id,'Zur Zeit kein Wettkampf',quick_reply('Aktualisieren',{'buli_live_competition': href}))
