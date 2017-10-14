@@ -194,8 +194,9 @@ def buli_live_competition(event,payload,**kwargs):
 
             send_text(sender_id,
                           reply,
-                          quick_replies = [quick_reply('Aktualisieren', {'buli_live_competition': href}),
-                                           quick_reply('Schützen', {'shooter_live': live,  'href':href})]
+                          quick_replies = [quick_reply('Aktualisieren', {'buli_live_competition': href})#,
+                                           #quick_reply('Schützen', {'shooter_live': live,  'href':href})
+                       ]
                           )
 
     except:
