@@ -285,7 +285,7 @@ def meyton_update():
     day = datetime.datetime.today().weekday()
     now = datetime.datetime.now().time()
     if day == 5:
-        if now >= datetime.time(18, 40) and now <= datetime.time(18, 45):
+        if now >= datetime.time(13, 30) and now <= datetime.time(18, 30):
             parser.get_meyton()
 
     elif day == 6:

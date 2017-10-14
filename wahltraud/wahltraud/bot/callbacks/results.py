@@ -163,7 +163,8 @@ def buli_live_competition(event,payload,**kwargs):
 
     live = get_meyton_results(href)
 
-    if live == 'Zur Zeit kein Wettkampf':
+    if live.empty:
+
         send_text(sender_id, live )
 
     else:
