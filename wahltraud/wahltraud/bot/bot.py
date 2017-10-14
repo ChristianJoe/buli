@@ -3,6 +3,7 @@ from threading import Thread
 from time import sleep
 import os
 import json
+import datetime
 
 import schedule
 #from django.utils.timezone import localtime, now
@@ -278,13 +279,23 @@ def dsb_update():
     #parser_setlist
     #parser.update_setlist()
 
+def meyton_update():
 
+    #check for saturday (5) or sunday(6)
+    day = datetime.datetime.today().weekday()
+    now = datetime.datetime.now().time()
+    if day == 5:
+        if now >= datetime.time(13, 30) and now <= datetime.time(18, 15):
+            parser.get_meyton()
 
+    elif day == 6:
+        if now >= datetime.time(7, 00) and now <= datetime.time(13, 00):
+            parser.get_meyton()
 
 #schedule.every(60).seconds.do(push_breaking)
 #schedule.every().day.at("18:00").do(push_notification)
 schedule.every().day.at("22:50").do(dsb_update)
-schedule.every(60).seconds.do(parser.get_meyton)
+schedule.every(60).seconds.do(meyton_update)
 
 
 

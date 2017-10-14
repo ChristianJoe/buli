@@ -314,7 +314,7 @@ def get_meyton_results(site):
 
     fight = soup.find(id='match-phase').text
 
-    if fight == 'Wettkampf' or fight == 'Probe':
+    if fight != 'Zur Zeit kein Wettkampf':
 
         teams = soup.find(id='match-title').text.split(':')
         try:
