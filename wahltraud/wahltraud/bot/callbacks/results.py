@@ -146,10 +146,12 @@ def buli_live(event,**kwargs):
     sender_id = event['sender']['id']
 
     links = get_meyton()
-    options = []
+    options = [
+            quick_reply('Alle',{'buli_live_competition': links})
+        ]
     for  key, href in links.items():
         options.append(
-            quick_reply(key,{'buli_live_competition': href})
+            quick_reply(key,{'buli_live_competition': {'key':  href}})
         )
 
 
@@ -159,51 +161,54 @@ def buli_live(event,**kwargs):
 
 def buli_live_competition(event,payload,**kwargs):
     sender_id = event['sender']['id']
-    href = payload['buli_live_competition']
-
-    live = get_meyton_results(href)
-
-    try:
-        if not live.empty:
-            #calculate points
-            data = live['points'].dropna()
-            home_points = 0
-            guest_points = 0
-            for row in data.iteritems():
-                home_points += int(list(row)[1].split(':')[0].strip())
-                guest_points += int(list(row)[1].split(':')[1].strip())
-
-            send_text(sender_id,
-                      "{fight}\n{home} : {guest}\n{home_points}:{guest_points}".format(
-                        fight = live['fight'].iloc[0],
-                          home = live['home_team'].iloc[0],
-                          guest = live['guest_team'].iloc[0],
-                          home_points = home_points,
-                          guest_points = guest_points
-                    )
-                      )
+    links = payload['buli_live_competition']
 
 
-            reply = ""
-            for index in range(0,5):
-                reply += '#{position}:   {points_home}:{points_guest}  \n'.format(
-                              position = str(index+1),
-                              points_home = live['result'].iloc[(2*index)],
-                              points_guest=live['result'].iloc[(2 * index+1)]
-                          )#,
+    for key, href in links.items():
 
-            send_text(sender_id,
-                          reply,
-                          quick_replies = [quick_reply('Aktualisieren', {'buli_live_competition': href})#,
-                                           #quick_reply('Schützen', {'shooter_live': live,  'href':href})
-                       ]
+        live = get_meyton_results(href)
+        
+        try:
+            if not live.empty:
+                #calculate points
+                data = live['points'].dropna()
+                home_points = 0
+                guest_points = 0
+                for row in data.iteritems():
+                    home_points += int(list(row)[1].split(':')[0].strip())
+                    guest_points += int(list(row)[1].split(':')[1].strip())
+
+                send_text(sender_id,
+                          "{fight}\n{home} : {guest}\n{home_points}:{guest_points}".format(
+                            fight = live['fight'].iloc[0],
+                              home = live['home_team'].iloc[0],
+                              guest = live['guest_team'].iloc[0],
+                              home_points = home_points,
+                              guest_points = guest_points
+                        )
                           )
 
-    except:
-        send_text(sender_id,
-                  'Zur Zeit kein Wettkampf',
-                  quick_replies=[quick_reply('Aktualisieren', {'buli_live_competition': href})]
-                  )
+
+                reply = ""
+                for index in range(0,5):
+                    reply += '#{position}:   {points_home}  :  {points_guest}  \n'.format(
+                                  position = str(index+1),
+                                  points_home = live['result'].iloc[(2*index)],
+                                  points_guest=live['result'].iloc[(2 * index+1)]
+                              )#,
+
+                send_text(sender_id,
+                              reply,
+                              quick_replies = [quick_reply('Aktualisieren', {'buli_live_competition': href}),
+                                               quick_reply('Schützen', {'shooter_live' : live ,  'href':href})
+                           ]
+                              )
+
+        except:
+            send_text(sender_id,
+                      'Zur Zeit kein Wettkampf',
+                      quick_replies=[quick_reply('Aktualisieren', {'buli_live_competition': href})]
+                      )
 
 
 def shooter_live(event,payload,**kwargs):
