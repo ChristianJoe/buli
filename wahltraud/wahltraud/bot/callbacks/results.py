@@ -167,7 +167,7 @@ def buli_live_competition(event,payload,**kwargs):
     for key, href in links.items():
 
         live = get_meyton_results(href)
-        
+
         try:
             if not live.empty:
                 #calculate points
@@ -199,7 +199,7 @@ def buli_live_competition(event,payload,**kwargs):
 
                 send_text(sender_id,
                               reply,
-                              quick_replies = [quick_reply('Aktualisieren', {'buli_live_competition': href}),
+                              quick_replies = [quick_reply('Aktualisieren', {'buli_live_competition': links}),
                                                quick_reply('Schützen', {'shooter_live' : live ,  'href':href})
                            ]
                               )
@@ -207,7 +207,7 @@ def buli_live_competition(event,payload,**kwargs):
         except:
             send_text(sender_id,
                       'Zur Zeit kein Wettkampf',
-                      quick_replies=[quick_reply('Aktualisieren', {'buli_live_competition': href})]
+                      quick_replies=[quick_reply('Aktualisieren', {'buli_live_competition': links})]
                       )
 
 
