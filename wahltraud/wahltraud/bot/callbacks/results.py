@@ -166,31 +166,36 @@ def buli_live_competition(event,payload,**kwargs):
     try:
         if not live.empty:
             #calculate points
-
+            data = live['points'].dropna()
+            home_points = 0
+            guest_points = 0
+            for row in data.iteritems():
+                home_points += int(list(row)[1].split(':')[0].strip())
+                guest_points += int(list(row)[1].split(':')[1].strip())
 
             send_text(sender_id,
-                      "{fight}\n{home} : {guest}\n{points}".format(
+                      "{fight}\n{home} : {guest}\n{home_points}:{guest_points}".format(
                         fight = live['fight'].iloc[0],
                           home = live['home_team'].iloc[0],
                           guest = live['guest_team'].iloc[0],
-                          points = "3:2"
+                          home_points = home_points,
+                          guest_points = guest_points
                     )
                       )
 
 
             reply = ""
             for index in range(0,5):
-                reply += '#{position}: {home}  {points_home}:{points_guest}  {guest}\n'.format(
+                reply += '#{position}:   {points_home}:{points_guest}  \n'.format(
                               position = str(index+1),
-                              home = live['name'].iloc[(2*index)],
                               points_home = live['result'].iloc[(2*index)],
-                              guest=live['name'].iloc[(2 * index+1)],
                               points_guest=live['result'].iloc[(2 * index+1)]
                           )#,
 
-                send_text(sender_id,
+            send_text(sender_id,
                           reply,
-                          quick_replies = [quick_reply('Aktualisieren', {'buli_live_competition': href})]
+                          quick_replies = [quick_reply('Aktualisieren', {'buli_live_competition': href}),
+                                           quick_reply('Schützen', {'schooter_live': live,  'href':href})]
                           )
 
     except:
@@ -198,3 +203,25 @@ def buli_live_competition(event,payload,**kwargs):
                   'Zur Zeit kein Wettkampf',
                   quick_replies=[quick_reply('Aktualisieren', {'buli_live_competition': href})]
                   )
+
+
+def shooter_live(event,payload,**kwargs):
+    sender_id = event['sender']['id']
+    live = payload['schooter_live']
+    href = payload['href']
+
+    reply = ""
+    for index in range(0, 5):
+        reply += '#{position}: {home} : {guest}\n'.format(
+            position=str(index + 1),
+            home=live['name'].iloc[(2 * index)],
+
+            guest=live['name'].iloc[(2 * index + 1)],
+
+        )
+
+    send_text(sender_id,
+              reply,
+              quick_replies=[quick_reply('Aktualisieren', {'buli_live_competition': href}),
+                             quick_reply('Schützen', {'schooter_live': live})]
+              )
