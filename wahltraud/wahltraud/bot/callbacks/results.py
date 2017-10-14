@@ -173,6 +173,7 @@ def buli_live_competition(event,payload,**kwargs):
                           guest = live['guest_team'].iloc[0]
                     )
                       )
+            '''
             if live['fight'] != 'Zur Zeit kein Wettkampf':
                 for index in range(0,5):
 
@@ -185,5 +186,6 @@ def buli_live_competition(event,payload,**kwargs):
                                   points_guest=live['result'].iloc[(2 * index+1)]
                               )
                               )
+            '''
     except:
         send_text(sender_id,'Zur Zeit kein Wettkampf')
