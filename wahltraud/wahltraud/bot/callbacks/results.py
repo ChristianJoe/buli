@@ -137,7 +137,6 @@ def shooter_results(event,payload,**kwargs):
 
 def buli_live_api(event, parameters, **kwargs):
 
-
     buli_live(event)
 
 
@@ -171,8 +170,7 @@ def buli_live(event,**kwargs):
                               guest_points = guest_points
                         )
                           )
-                for key, href in links.items():
-                    options.append(
+                options.append(
                         quick_reply(live['home_team'].iloc[0]+':'+live['guest_team'].iloc[0], {'buli_live_competition': live})
                     )
 
