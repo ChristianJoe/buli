@@ -279,8 +279,8 @@ def dsb_update():
 schedule.every(60).seconds.do(push_breaking)
 schedule.every().day.at("18:00").do(push_notification)
 schedule.every().day.at("22:50").do(dsb_update)
-schedule.every().hour.do(schedule.saturday.do(dsb_update))
-schedule.every().hour.do(schedule.sunday.do(dsb_update))
+schedule.every().hour.do(schedule.every.saturday.do(dsb_update))
+schedule.every().hour.do(schedule.every.sunday.do(dsb_update))
 
 def schedule_loop():
     while True:
