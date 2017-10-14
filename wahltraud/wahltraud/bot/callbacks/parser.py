@@ -1,10 +1,15 @@
 import requests
 import bs4
-from pprint import pprint
 import json
 import pandas as pd
 import datetime
 import logging
+from selenium import webdriver
+browser = webdriver.PhantomJS()
+import os
+import pathlib
+
+
 
 from ..fb import send_text
 from pathlib import Path
@@ -270,5 +275,103 @@ def update_table():
 
 
 
+
+def get_meyton():
+
+
+
+    site = "http://bundesliga.meyton.info/"
+
+    response = requests.get(site)
+    soup = bs4.BeautifulSoup(response.text, "lxml")
+    menu = soup.find_all('div', class_='menu')[0]
+    sub = menu.find_all('a', href=True)
+    # print(sub[2])
+    links = {}
+    for index, b in enumerate(sub):
+
+        if b.get_text(strip=True):
+            link_text = b['href']
+        if index == 0:
+            basis = link_text
+        else:
+            links[b.text] = basis + link_text
+
+        for key, value in links.items():
+            site = value
+
+            get_meyton_results(site)
+
+    return links
+
+
+def get_meyton_results(site):
+
+    browser.implicitly_wait(3)
+    browser.get(site)
+    html = browser.page_source
+    soup = bs4.BeautifulSoup(html, "lxml")
+
+    fight = soup.find(id='match-phase').text
+
+    if fight != 'Zur Zeit kein Wettkampf':
+
+        teams = soup.find(id='match-title').text.split(':')
+        try:
+            home_team = teams[0].strip()
+            guest_team = teams[1].strip()
+        except:
+            browser.implicitly_wait(5)
+            browser.get(site)
+            html = browser.page_source
+            soup = bs4.BeautifulSoup(html, "lxml")
+            teams = soup.find(id='match-title').text.split(':')
+            home_team = teams[0].strip()
+            guest_team = teams[1].strip()
+
+        file = home_team + guest_team + '.csv'.replace(' ', '')
+        path = pathlib.Path(str(DATA_DIR/'results/'+file))
+
+        res = soup.find(id='results').find_all('tr')
+        temp2 = []
+        mapping = {2: 'homeA', 5: 'homeB', 8: 'homeC', 11: 'homeD', 14: 'homeE',
+                   3: 'guestA', 6: 'guestB', 9: 'guestC', 12: 'guestD', 15: 'guestE'
+                   }
+        for index, row in enumerate(res):
+            result = row.find_all('td')
+            if index > 0:
+                if index in [2, 3, 6, 9, 12, 15, 5, 8, 11, 14]:
+                    temp = {}
+                    temp['home_team'] = home_team
+                    temp['guest_team'] = guest_team
+                    temp['fight'] = fight
+                    temp['time'] = soup.find(id='js-clock-blticker').text
+                    temp['name'] = result[0].text
+                    temp['id'] = mapping[index]
+                    temp['shot_nr'] = result[1].text.strip()
+                    temp['shot_value'] = result[2].text.strip()
+                    temp['result'] = result[4].text
+                    series = []
+                    for element in result[3].text.replace('\xa0', ' ').split(' '):
+                        if element:
+                            series.append(element)
+                    temp['series'] = series
+                    temp2.append(temp)
+
+        final = pd.DataFrame(temp2)
+
+        if path.is_file():
+            open_file = pd.read_csv(path)
+
+            added_final = open_file.append(final, ignore_index=True)
+            added_final.to_csv(file, index=False)
+
+        else:
+            final.to_csv(path, index=False)
+    else:
+        temp2 = 'Zur Zeit kein Wettkampf'
+
+
+    return temp2
 
 
