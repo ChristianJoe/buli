@@ -330,7 +330,7 @@ def get_meyton_results(site):
             guest_team = teams[1].strip()
 
         file = (home_team + guest_team + '.csv').replace(' ', '')
-        path = pathlib.Path(str(DATA_DIR)+'/data/'+file)
+        path = pathlib.Path(str(DATA_DIR)+'/data/competitions/'+file)
 
         res = soup.find(id='results').find_all('tr')
         temp2 = []
