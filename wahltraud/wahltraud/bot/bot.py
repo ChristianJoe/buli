@@ -276,6 +276,8 @@ def dsb_update():
 
 def every_saturday():
     schedule.every().saturday.do(dsb_update)
+    schedule.every().sunday.do(dsb_update)
+
 
 schedule.every(60).seconds.do(push_breaking)
 schedule.every().day.at("18:00").do(push_notification)
