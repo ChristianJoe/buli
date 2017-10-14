@@ -22,45 +22,39 @@ digital_word_list = json.load(open(str(DATA_DIR/'digital_words.json')))['words']
 structural_data_district = pd.read_csv(DATA_DIR/'btw17_strukturdaten.csv', delimiter = ';')
 
 
-# load data BuLi
-dates = pd.read_csv(DATA_DIR/'parser/buli17dates.csv')
-dates['date']= pd.to_datetime(dates['date'])
-
-results_team = pd.read_csv(DATA_DIR/'team_results.csv')
-results_team['date'] = pd.to_datetime(results_team['date'])
 
 
-results_shooter = pd.read_csv(DATA_DIR/'shooter_results.csv')
+
+
+
+
+
+
 
 
 def get_results_shooter():
+    results_shooter = pd.read_csv(DATA_DIR/'shooter_results.csv')
     return results_shooter
 
 
 def get_results_team():
+    results_team = pd.read_csv(DATA_DIR/'team_results.csv')
+    results_team['date'] = pd.to_datetime(results_team['date'])
     return results_team
 
 
 def get_dates():
+    # load data BuLi
+    dates = pd.read_csv(DATA_DIR/'parser/buli17dates.csv')
+    dates['date'] = pd.to_datetime(dates['date'])
     dates_sorted = dates.sort_values(by='date')
     return dates_sorted
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+def get_tables():
+    tables = pd.read_csv(DATA_DIR/'buli17_tables.csv')
+    return tables
 
 
 
