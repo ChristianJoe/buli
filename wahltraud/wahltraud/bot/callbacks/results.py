@@ -18,11 +18,13 @@ def table_api(event, parameters, **kwargs):
     region =  parameters.get('region')
     weapon = parameters.get('weapon')
 
+    payload = {'buli': buli,
+               'region': region,
+               'weapon': weapon}
 
 
     if buli and region and weapon:
-        league = weapon+buli+' '+region
-        table_league(event,{'table_league': league})
+        table_league(event,{'table_league': payload})
     else:
         competitons = { "1.BuLi Nord": 'BuLi Nord',
                         "1.BuLi Süd": 'BuLi Süd'
@@ -40,14 +42,61 @@ def table_api(event, parameters, **kwargs):
 
 def table_league(event,payload,**kwargs):
     sender_id = event['sender']['id']
-    league = payload['table_league']
+    payloads = payload['table_league']
+
+    offset = int(payload.get('offset', 0))
+    buli = payloads['buli']
+    region = payloads['region']
+    weapon = payloads['weapon']
+
+    id = weapon + buli + ' ' + region
 
     tables = get_tables()
-    table_league = tables[tables['id']== league]
-    send_text(sender_id,'Hier Die Tabelle '+league)
+    table_league = tables[tables['id']== id]
 
 
-    send_text(sender_id, '#1: TuS Hilgert')
+
+    logger.info('Ergebnisliste: {id}'.format(
+        id=id))
+
+    num_league = 4
+
+    if table_league.shape[0] - (offset + num_league) == 1:
+        num_league = 3
+    elements = []
+    for index in range(offset, offset + num_league):
+        data = table_league.iloc[index]
+        elements.append(
+            list_element(
+                '#{rank} {club} '.format(
+                    rank=data['rank'],
+                    club=data['club']
+                ),
+                subtitle="%d : %d   %d : %d" % (
+                data['single_won'], data['single_lost'], data['team_won'], data['team_lost']),
+                buttons=[button_postback("Info", {'info_club': {'info_club': data['club']}})]
+                # image_url=candidate.get('img') or None
+            )
+        )
+
+    if table_league.shape[0] - offset > num_league:
+        button = button_postback("Mehr anzeigen",
+                                 {'table_league': payloads,
+                                  'offset': offset + num_league})
+    else:
+        button = button_postback("Andere Liga", {'table_league': payloads})
+
+    if offset == 0:
+        send_text(sender_id, '{buli} {weapon}. Gruppe {region}'.format(
+            buli=buli,
+            weapon=weapon,
+            region=region
+                    )
+                  )
+    send_list(sender_id, elements, button=button)
+
+
+
 
 
 

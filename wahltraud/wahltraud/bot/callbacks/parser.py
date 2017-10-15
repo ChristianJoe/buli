@@ -387,4 +387,5 @@ def update_results(event, **kwargs):
 
     send_text(sender_id, 'Update ist in arbeit...')
 
+    update_table()
     get_results_pd()
