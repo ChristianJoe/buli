@@ -153,7 +153,7 @@ def club_list_competitions(event,payload,**kwargs):
 
 
     num_league = 4
-    
+
     if results_club.shape[0] - (offset + num_league) == 1:
         num_league = 3
     elements = []
@@ -171,7 +171,7 @@ def club_list_competitions(event,payload,**kwargs):
                     guest=data['guest_team']
                 ),
                 subtitle=sbtle,
-                buttons=[button_postback("Einzelergebnisse", {'info_club': {'info_club': data['club']}})]
+                buttons=[button_postback("Einzelergebnisse", ['about'])]
                 # image_url=candidate.get('img') or None
             )
         )
