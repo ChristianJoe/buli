@@ -168,7 +168,8 @@ def club_list_competitions(event,payload,**kwargs):
                      'comp_id' : data['comp_id']
                      }
         if data['home_points'] + data['guest_points'] != 0:
-            sbtle = "%d : %d  " % (data['home_points'], data['guest_points'])
+            sbtle = "%d : %d \t  %d : %d" % (data['home_points'], data['guest_points'],
+                                             data['home_result'], data['guest_result'])
             button_comp = [button_postback("Einzelergebnisse", {'competition_results': info_dict})]
         else:
             sbtle = data['time'] + ' Ausrichter ' + data['host']
