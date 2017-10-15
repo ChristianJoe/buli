@@ -177,6 +177,21 @@ def club_list_competitions(event,payload,**kwargs):
         )
 
 
+    if results_club.shape[0] - offset > num_league:
+        button = button_postback("Wettkämpfe %d - %d" %(offset+num_league+1, (offset+2*num_league)),
+                                 {'club_list_competitions': info,
+                                  'offset': offset + num_league})
+    else:
+        button = button_postback("von vorn", {'club_list_competitions': info})
+
+    if offset == 0:
+        send_text(sender_id, 'Wettkampfübersicht {club}'.format(
+            club=club
+                    )
+                  )
+    send_list(sender_id, elements, button=button)
+
+
 def results_api(event, parameters, **kwargs):
     club = parameters.get('clubs')
 
