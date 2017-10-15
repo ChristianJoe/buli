@@ -172,7 +172,8 @@ def club_list_competitions(event,payload,**kwargs):
                                              data['home_result'], data['guest_result'])
             button_comp = [button_postback("Einzelergebnisse", {'competition_results': info_dict})]
         else:
-            sbtle = data['date']+', '+ data['time'] + ' - Ausrichter: ' + data['host']
+            date = data['date'].strftime("%d.%m.%Y")
+            sbtle = date+', '+ data['time'] + ' - Ausrichter: ' + data['host']
             button_comp = [button_postback('Info Gegner', ['info_club'])]
 
         elements.append(
