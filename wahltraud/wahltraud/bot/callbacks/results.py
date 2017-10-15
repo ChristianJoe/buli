@@ -100,6 +100,8 @@ def table_league(event,payload,**kwargs):
     elements = []
     for index in range(offset, offset + num_league):
         data = table_league.iloc[index]
+        payload_button = payloads
+        payload_button['club'] = data['club']
         elements.append(
             list_element(
                 '#{rank} {club} '.format(
@@ -108,7 +110,7 @@ def table_league(event,payload,**kwargs):
                 ),
                 subtitle="TEAM   %d : %d    EINZEL   %d : %d" % (
                  data['team_won'], data['team_lost'],data['single_won'], data['single_lost'],),
-                buttons=[button_postback("Wettkämpfe",  {'club_list_competitions': data['club']})]
+                buttons=[button_postback("Wettkämpfe",  {'club_list_competitions': payload_button})]
                 # image_url=candidate.get('img') or None
             )
         )
@@ -132,12 +134,47 @@ def table_league(event,payload,**kwargs):
 
 def club_list_competitions(event,payload,**kwargs):
     sender_id = event['sender']['id']
+    info = payload['club_list_competitions']
+    offset = int(payload.get('offset', 0))
 
-    send_text(sender_id, 'hier kommt die liste von {club}'.format(
-        club = payload['club_list_competitions']
-    ))
+    weapon = info['weapon']
+    club = info['club']
+    league = info['buli'] +' '+ info['region']
+
+    if weapon == "LP":
+        abbrv_weapon = "Luftpistole"
+    else:
+        abbrv_weapon = "Luftgewehr"
+
+    results = get_results_team()
+
+    results_league = results[(results['league'] == league) & (results['weapon'] == abbrv_weapon)]
+    results_club = results_league[(results_league['guest_team'] == club) | (results_league['home_team'] == club)]
 
 
+    num_league = 4
+    
+    if results_club.shape[0] - (offset + num_league) == 1:
+        num_league = 3
+    elements = []
+    for index in range(offset, offset + num_league):
+        data = results_club.iloc[index]
+        if data['home_points'] + data['guest_points'] == 0:
+            sbtle = "%d : %d   %d : %d" % (data['home_points'], data['guest_points'], data['team_won'], data['team_lost']),
+        else:
+            sbtle = data['time'] + ' Ausrichter ' + data['host']
+
+        elements.append(
+            list_element(
+                '{home} : {guest} '.format(
+                    home=data['home_team'],
+                    guest=data['guest_team']
+                ),
+                subtitle=sbtle,
+                buttons=[button_postback("Einzelergebnisse", {'info_club': {'info_club': data['club']}})]
+                # image_url=candidate.get('img') or None
+            )
+        )
 
 
 def results_api(event, parameters, **kwargs):
