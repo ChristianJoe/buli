@@ -165,8 +165,10 @@ def club_list_competitions(event,payload,**kwargs):
         data = results_club.iloc[index]
         if data['home_points'] + data['guest_points'] != 0:
             sbtle = "%d : %d  " % (data['home_points'], data['guest_points'])
+            button_comp = [button_postback("Einzelergebnisse", ['table_second_league'])]
         else:
             sbtle = data['time'] + ' Ausrichter ' + data['host']
+            button_comp = [button_postback('Info Gegner', ['info_club'])]
 
         elements.append(
             list_element(
@@ -175,13 +177,13 @@ def club_list_competitions(event,payload,**kwargs):
                     guest=data['guest_team']
                 ),
                 subtitle=sbtle,
-                buttons=[button_postback("Einzelergebnisse", ['table_second_league'])]
+                buttons=button_comp
                 # image_url=candidate.get('img') or None
             )
         )
 
 
-    if results_club.shape[0] - offset > num_league+100:
+    if results_club.shape[0] - offset > num_league:
         button = button_postback("Wettkämpfe %d - %d" %(offset+num_league+1, (offset+2*num_league)),
                                 {'club_list_competitions': info,
                                   'offset': offset + num_league})

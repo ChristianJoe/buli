@@ -34,7 +34,10 @@ def update_api(event,**kwargs):
 
 
 
+def info_club(event,payload,**kwargs):
+    sender_id = event['sender']['id']
 
+    send_text(sender_id,'Hier gibt es bald info zum Verein')
 
 
 def greetings(event, **kwargs):
