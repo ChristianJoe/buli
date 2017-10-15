@@ -7,7 +7,8 @@ from ..data import by_uuid, get_dates, get_results_team, get_results_shooter, ge
 from .parser import get_meyton, get_meyton_results
 import datetime
 
-
+#enable logging
+logger = logging.getLogger(__name__)
 
 
 
