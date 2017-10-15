@@ -163,10 +163,13 @@ def club_list_competitions(event,payload,**kwargs):
     elements = []
     for index in range(offset, offset + num_league):
         data = results_club.iloc[index]
-        dict = data.to_dict()
+        info_dict = {'home_team': data['home_team'],
+                     'guest_team': data['guest_team'],
+                     'comp_id' : data['comp_id']
+                     }
         if data['home_points'] + data['guest_points'] != 0:
             sbtle = "%d : %d  " % (data['home_points'], data['guest_points'])
-            button_comp = [button_postback("Einzelergebnisse", {'competition_results': dict})]
+            button_comp = [button_postback("Einzelergebnisse", {'competition_results': info_dict})]
         else:
             sbtle = data['time'] + ' Ausrichter ' + data['host']
             button_comp = [button_postback('Info Gegner', ['info_club'])]
