@@ -77,8 +77,12 @@ def make_event_handler():
         PayloadHandler(dates.competition_info, ['comp_id']),
 
         ApiAiHandler(results.table_api,'table'),
+
         PayloadHandler(results.table_second_league, ['table_second_league']),
         PayloadHandler(results.table_league, ['table_league']),
+        PayloadHandler(results.club_list_competitions, ['club_list_competitions']),
+
+
 
         PayloadHandler(table_start,['table_start']),
         PayloadHandler(competition_start,['competition_start']),

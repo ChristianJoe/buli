@@ -26,19 +26,52 @@ def table_api(event, parameters, **kwargs):
 
     if buli and region and weapon:
         table_league(event,{'table_league': payload})
-    else:
-        competitons = { "1.BuLi Nord": 'BuLi Nord',
-                        "1.BuLi Süd": 'BuLi Süd'
-                        }
+    else:#nothing given
         options = []
-        for element, key in competitons.items():
+        for key in [ 'BuLi Nord', 'BuLi Süd' ]:
+            payload = {'buli': '1.BuLi',
+                       'region': key.split(' ')[1],
+                       'weapon': 'LG'}
             options.append(
-                quick_reply(key, {'table_league': element})
+                quick_reply(key, {'table_league': payload})
             )
         options.append(
                 quick_reply('2.Buli', ['table_second_league'])
             )
         send_text(sender_id, 'Welche Liga?' , quick_replies = options)
+
+
+
+
+
+def table_second_league(event,**kwargs):
+    #choosing second league
+    sender_id = event['sender']['id']
+
+    competitons = {
+                   "2.BuLi Süd": 'Süd' ,
+                   "2.BuLi Nord": 'Nord',
+                   "2.BuLi West": 'West',
+                   "2.BuLi Ost": 'Ost',
+                   "2.BuLi Südwest": 'Südwest'
+                   }
+
+    options = []
+    for  element, key in competitons.items():
+        options.append(
+            quick_reply(key,{'table_league': element})
+        )
+
+
+    send_text(sender_id,'Such dir eine Liga aus.', quick_replies = options)
+
+
+
+
+
+
+
+
 
 
 def table_league(event,payload,**kwargs):
@@ -75,13 +108,13 @@ def table_league(event,payload,**kwargs):
                 ),
                 subtitle="%d : %d   %d : %d" % (
                 data['single_won'], data['single_lost'], data['team_won'], data['team_lost']),
-                buttons=[button_postback("Info", {'info_club': {'info_club': data['club']}})]
+                buttons=[button_postback("Wettkämpfe", {'list_competitions': {'club_list_competitions': data['club']}})]
                 # image_url=candidate.get('img') or None
             )
         )
 
     if table_league.shape[0] - offset > num_league:
-        button = button_postback("Plätze %d - %d" %(offset + num_league, (offset+2*num_league)),
+        button = button_postback("Plätze %d - %d" %(offset+num_league+1, (offset+2*num_league)),
                                  {'table_league': payloads,
                                   'offset': offset + num_league})
     else:
@@ -97,32 +130,11 @@ def table_league(event,payload,**kwargs):
     send_list(sender_id, elements, button=button)
 
 
-
-
-
-
-
-
-def table_second_league(event,**kwargs):
-    #choosing second league
+def club_list_cometitions(event,payload,**kwargs):
     sender_id = event['sender']['id']
 
-    competitons = {
-                   "2.BuLi Süd": 'Süd' ,
-                   "2.BuLi Nord": 'Nord',
-                   "2.BuLi West": 'West',
-                   "2.BuLi Ost": 'Ost',
-                   "2.BuLi Südwest": 'Südwest'
-                   }
-
-    options = []
-    for  element, key in competitons.items():
-        options.append(
-            quick_reply(key,{'table_league': element})
-        )
 
 
-    send_text(sender_id,'Such dir eine Liga aus.', quick_replies = options)
 
 
 def results_api(event, parameters, **kwargs):
