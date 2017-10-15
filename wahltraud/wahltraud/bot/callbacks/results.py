@@ -106,8 +106,8 @@ def table_league(event,payload,**kwargs):
                     rank=data['rank'],
                     club=data['club']
                 ),
-                subtitle="%d : %d   %d : %d" % (
-                data['single_won'], data['single_lost'], data['team_won'], data['team_lost']),
+                subtitle="TEAM   %d : %d    EINZEL   %d : %d" % (
+                 data['team_won'], data['team_lost'],data['single_won'], data['single_lost'],),
                 buttons=[button_postback("Wettkämpfe",  {'club_list_competitions': data['club']})]
                 # image_url=candidate.get('img') or None
             )
