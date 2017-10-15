@@ -163,7 +163,7 @@ def club_list_competitions(event,payload,**kwargs):
     elements = []
     for index in range(offset, offset + num_league):
         data = results_club.iloc[index]
-        if data['home_points'] + data['guest_points'] == 0:
+        if data['home_points'] + data['guest_points'] != 0:
             sbtle = "%d : %d  " % (data['home_points'], data['guest_points'])
         else:
             sbtle = data['time'] + ' Ausrichter ' + data['host']
