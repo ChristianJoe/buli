@@ -66,6 +66,10 @@ def make_event_handler():
 
         ApiAiHandler(dates.dates_api, 'next_event_club'),
         ApiAiHandler(update_api, 'update'),
+        PayloadHandler(parser.update_table, ['update_table']),
+        PayloadHandler(parser.update_results, ['update_results']),
+
+
 
         ApiAiHandler(results.results_api, 'results'),
         PayloadHandler(results.results_club,'results_club'),
@@ -73,7 +77,7 @@ def make_event_handler():
         ApiAiHandler(results.shooter_results_api,'shooter_who_is'),
         PayloadHandler(results.shooter_results,['first_name','last_name','club']),
 
-        PayloadHandler(parser.update_results, ['update_results']),
+
         PayloadHandler(dates.competition_info, ['comp_id']),
 
         ApiAiHandler(results.table_api,'table'),

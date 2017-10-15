@@ -260,7 +260,7 @@ def update_table():
                             'club': values[1].text,
                             'single_won': values[2].text.split(':')[0],
                             'single_lost': values[2].text.split(':')[1],
-                            'team_won': values[3].text.split(':')[1],
+                            'team_won': values[3].text.split(':')[0],
                             'team_lost': values[3].text.split(':')[1],
                             'club_page': link_text,
                             'id': weapon_short + league
@@ -277,7 +277,6 @@ def update_table():
 
 
 def get_meyton(hrefs = False):
-
 
 
     site = "http://bundesliga.meyton.info/"
@@ -386,6 +385,14 @@ def update_results(event, **kwargs):
     sender_id = event['sender']['id']
 
     send_text(sender_id, 'Update ist in arbeit...')
-
-    update_table()
     get_results_pd()
+
+
+
+
+def update_table(event, **kwargs):
+    sender_id = event['sender']['id']
+
+    send_text(sender_id, 'Update ist in arbeit...')
+    update_table()
+
