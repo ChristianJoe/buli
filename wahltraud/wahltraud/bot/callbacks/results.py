@@ -132,6 +132,10 @@ def table_league(event,payload,**kwargs):
     send_list(sender_id, elements, button=button)
 
 
+
+
+
+
 def club_list_competitions(event,payload,**kwargs):
     sender_id = event['sender']['id']
     info = payload['club_list_competitions']
@@ -171,7 +175,7 @@ def club_list_competitions(event,payload,**kwargs):
                     guest=data['guest_team']
                 ),
                 subtitle=sbtle,
-                buttons=[button_postback("Einzelergebnisse", ['about'])]
+                buttons=[button_postback("Einzelergebnisse", ['table_second_league'])]
                 # image_url=candidate.get('img') or None
             )
         )
@@ -182,7 +186,7 @@ def club_list_competitions(event,payload,**kwargs):
                                  {'club_list_competitions': info,
                                   'offset': offset + num_league})
     else:
-        button = button_postback("von vorn", {'club_list_competitions': info})
+        button = button_postback("von vorn", ['table_second_league'])
 
     if offset == 0:
         send_text(sender_id, 'Wettkampfübersicht {club}'.format(
@@ -190,6 +194,10 @@ def club_list_competitions(event,payload,**kwargs):
                     )
                   )
     send_list(sender_id, elements, button=button)
+
+
+
+
 
 
 def results_api(event, parameters, **kwargs):
