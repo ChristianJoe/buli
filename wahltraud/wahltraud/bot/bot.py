@@ -66,7 +66,7 @@ def make_event_handler():
 
         ApiAiHandler(dates.dates_api, 'next_event_club'),
         ApiAiHandler(update_api, 'update'),
-        PayloadHandler(parser.update_table, ['update_table']),
+        PayloadHandler(parser.update_table_payload, ['update_table_payload']),
         PayloadHandler(parser.update_results, ['update_results']),
 
 

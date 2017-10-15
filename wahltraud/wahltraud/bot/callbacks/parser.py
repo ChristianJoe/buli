@@ -390,7 +390,7 @@ def update_results(event, **kwargs):
 
 
 
-def update_table(event, **kwargs):
+def update_table_payload(event, **kwargs):
     sender_id = event['sender']['id']
 
     send_text(sender_id, 'Update ist in arbeit...')
