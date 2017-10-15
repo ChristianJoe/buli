@@ -81,7 +81,7 @@ def table_league(event,payload,**kwargs):
         )
 
     if table_league.shape[0] - offset > num_league:
-        button = button_postback("Mehr anzeigen",
+        button = button_postback("Plätze %d - %d" %(offset + num_league, (offset+2*num_league)),
                                  {'table_league': payloads,
                                   'offset': offset + num_league})
     else:
