@@ -382,7 +382,9 @@ def get_meyton_results(site):
     return final
 
 
-def update_result(event, **kwargs):
+def update_results(event, **kwargs):
     sender_id = event['sender']['id']
+
     send_text(sender_id, 'Update ist in arbeit...')
+
     get_results_pd()
