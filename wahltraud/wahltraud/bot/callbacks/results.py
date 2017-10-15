@@ -165,7 +165,7 @@ def club_list_competitions(event,payload,**kwargs):
         data = results_club.iloc[index]
         if data['home_points'] + data['guest_points'] != 0:
             sbtle = "%d : %d  " % (data['home_points'], data['guest_points'])
-            button_comp = [button_postback("Einzelergebnisse", ['table_second_league'])]
+            button_comp = [button_postback("Einzelergebnisse", {'competition_results': data})]
         else:
             sbtle = data['time'] + ' Ausrichter ' + data['host']
             button_comp = [button_postback('Info Gegner', ['info_club'])]
@@ -198,7 +198,14 @@ def club_list_competitions(event,payload,**kwargs):
     send_list(sender_id, elements, button=button)
 
 
+def competition_results(event,payload,**kwargs):
+    sender_id = event['sender']['id']
+    data = payload['competition_results']
 
+    send_text(sender_id, 'deine info zur competition {home} gegen {guest} kommt bald'.format(
+        home = data['home_team'],
+        guest = data['guest_team']
+    ))
 
 
 
