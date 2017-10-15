@@ -352,7 +352,10 @@ def get_meyton_results(site):
                     temp['shot_value'] = result[2].text.strip()
                     temp['result'] = result[4].text
                     if index in [3, 6, 9, 12, 15]:
-                        temp['points'] = result[5].text
+                        try:
+                            temp['points'] = result[5].text
+                        except:
+                            temp['points'] = None
                     else:
                         temp['points'] = None
                     series = []

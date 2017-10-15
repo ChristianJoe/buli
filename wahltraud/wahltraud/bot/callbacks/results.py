@@ -207,7 +207,7 @@ def buli_live(event,**kwargs):
             send_text(sender_id,'Zur Zeit kein Wettkampf')
 
 
-    send_text(sender_id,'Zu den Schützen respektive Aktualisieren.', quick_replies = options)
+    send_text(sender_id,'Aktualisieren. Oder schau dir die Schützen im Detail an.', quick_replies = options)
 
 
 
