@@ -36,6 +36,7 @@ def update_api(event,**kwargs):
 
 
 
+
 def greetings(event, **kwargs):
     sender_id = event['sender']['id']
     infos = Info.objects.all().order_by('-id')[:1]

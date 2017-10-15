@@ -9,6 +9,9 @@ import datetime
 
 
 
+
+
+
 def table_api(event, parameters, **kwargs):
     sender_id = event['sender']['id']
     buli = parameters.get('league') # first or second BuLi
