@@ -108,7 +108,7 @@ def table_league(event,payload,**kwargs):
                 ),
                 subtitle="%d : %d   %d : %d" % (
                 data['single_won'], data['single_lost'], data['team_won'], data['team_lost']),
-                buttons=[button_postback("Wettkämpfe", {'list_competitions': {'club_list_competitions': data['club']}})]
+                buttons=[button_postback("Wettkämpfe",  {'club_list_competitions': data['club']})]
                 # image_url=candidate.get('img') or None
             )
         )
@@ -130,9 +130,12 @@ def table_league(event,payload,**kwargs):
     send_list(sender_id, elements, button=button)
 
 
-def club_list_cometitions(event,payload,**kwargs):
+def club_list_competitions(event,payload,**kwargs):
     sender_id = event['sender']['id']
 
+    send_text(sender_id, 'hier kommt die liste von {club}'.format(
+        club = payload['club_list_competitions']
+    ))
 
 
 
