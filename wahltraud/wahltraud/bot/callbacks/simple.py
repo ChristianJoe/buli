@@ -26,7 +26,7 @@ def update_api(event,**kwargs):
                             button_postback("Ergebnisse",
                                           ['update_results']
                                         ),
-                            button_postback('Tabelle', ['update_table']),
+                            button_postback('Tabelle', ['update_table_payload']),
                          # button_postback('Erklär mal...', ['about'])
                      ])
     else:
