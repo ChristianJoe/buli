@@ -165,7 +165,7 @@ def club_list_competitions(event,payload,**kwargs):
         data = results_club.iloc[index]
         if data['home_points'] + data['guest_points'] != 0:
             sbtle = "%d : %d  " % (data['home_points'], data['guest_points'])
-            button_comp = [button_postback("Einzelergebnisse", {'competition_results': data})]
+            button_comp = [button_postback("Einzelergebnisse", {'competition_results': data.to_dict()})]
         else:
             sbtle = data['time'] + ' Ausrichter ' + data['host']
             button_comp = [button_postback('Info Gegner', ['info_club'])]
