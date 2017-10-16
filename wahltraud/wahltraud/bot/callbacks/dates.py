@@ -11,13 +11,13 @@ def dates_api(event, parameters, **kwargs):
     club = parameters.get('clubs')
 
 
-    next_event(event,{'club':club})
+    next_event(event,{'next_event':club})
 
 
 
 def next_event(event,payload,**kwargs):
     sender_id = event['sender']['id']
-    club = payload['club']
+    club = payload['next_event']
 
     dates = get_results_team()
     options = []
