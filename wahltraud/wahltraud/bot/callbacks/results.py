@@ -41,13 +41,13 @@ def table_payload(event,payload,*kwarks):
     if not weapon:
         payloads_LG = payloads
         payloads_LG['weapon'] = "LG"
-        payloads_LP = payloads
+        payloads_LP = payloads_LG
         payloads_LP['weapon'] = "LP"
         send_text(sender_id,
                   'Was interessiert dich?',
                   quick_replies = [
                       quick_reply("Luftgewehr", {'table_payload': payloads_LG }),
-                      quick_reply("Luftpistole",{'table_paylaod': payloads_LP})
+                      quick_reply("Luftpistole",{'table_paylaod': payloads_LP })
                   ]
                   )
     else:#nothing given
