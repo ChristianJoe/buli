@@ -50,10 +50,30 @@ def get_tables():
 
 
 
-def get_club_info_weapon_buli_region():
 
+
+def get_club_info_weapon_buli_region(club):
+    club_all = results[results['guest_team_short'] == club]
+    elements = list(set(list(club_all['guest_team'].values)))
+    if len(elements) == 1:
+        club_pd = club_all[club_all['guest_team'] == elements[0]].iloc[0]
+        info = take_info(club_pd)
+        return info
+    else:
+        infos = []
+        for clubAB in elements:
+            club_pd = club_all[club_all['guest_team'] == clubAB].iloc[0]
+            infos.append(take_info(club_pd))
+        return infos
+
+
+def take_info(club_pd):
+    info = {'club': club_pd['guest_team'],
+            'buli': club_pd['league'].split(' ')[0],
+            'region': club_pd['league'].split(' ')[1],
+            'weapon': club_pd['weapon']
+            }
     return info
-
 
 
 

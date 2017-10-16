@@ -58,7 +58,7 @@
 56,LG2.BuLi Nord1F,Sven,True,Kohlhause,1,LG2.BuLi Nord1F4,4,383, ,Freischütz Rautheim
 57,LG2.BuLi Nord1F,Stefanie,False,Breuer,0,LG2.BuLi Nord1F4,4,382, ,SV Stoppelmarkt
 58,LG2.BuLi Nord1F,Christian,True,Zierz,0,LG2.BuLi Nord1F5,5,377, ,Freischütz Rautheim
-59,LG2.BuLi Nord1F,Nadine,False,Riedemann,1,LG2.BuLi Nord1F5,5,383, ,SV Stoppelmarkt
+59,LG2.BuLi Nord1F,Tim,False,Juschkat,1,LG2.BuLi Nord1F5,5,383, ,SV Stoppelmarkt
 60,LG2.BuLi Nord1G,Stephanie,True,Schwarz,1,LG2.BuLi Nord1G1,1,390,9,SGi Steinkirchen
 61,LG2.BuLi Nord1G,Ann-Katrin,False,Näther,0,LG2.BuLi Nord1G1,1,390,6,SV Stoppelmarkt
 62,LG2.BuLi Nord1G,Annika,True,Neumann,1,LG2.BuLi Nord1G2,2,395, ,SGi Steinkirchen
@@ -313,12 +313,12 @@
 311,LG2.BuLi Südwest1H,Peter,False,Gehrlein,0,LG2.BuLi Südwest1H1,1,383, ,SV Jockgrim
 312,LG2.BuLi Südwest1H,Gregor,True,Stabel,0,LG2.BuLi Südwest1H2,2,388, ,SV Fenken
 313,LG2.BuLi Südwest1H,Sophie,False,Petry,1,LG2.BuLi Südwest1H2,2,392, ,SV Jockgrim
-314,LG2.BuLi Südwest1H,Catharina,True,Westermayer,0,LG2.BuLi Südwest1H3,3,385,"10,1",SV Fenken
-315,LG2.BuLi Südwest1H,Alexandre,False,Welsch,1,LG2.BuLi Südwest1H3,3,385,"10,5",SV Jockgrim
+314,LG2.BuLi Südwest1H,Catharina,True,Westermayer,1,LG2.BuLi Südwest1H3,3,385,10,SV Fenken
+315,LG2.BuLi Südwest1H,Alexandre,False,Welsch,0,LG2.BuLi Südwest1H3,3,385,9,SV Jockgrim
 316,LG2.BuLi Südwest1H,Dominik,True,Boschenrieder,0,LG2.BuLi Südwest1H4,4,382, ,SV Fenken
 317,LG2.BuLi Südwest1H,Andreas,False,Horn,1,LG2.BuLi Südwest1H4,4,385, ,SV Jockgrim
-318,LG2.BuLi Südwest1H,Miriam,True,Friedrich,1,LG2.BuLi Südwest1H5,5,390,10,SV Fenken
-319,LG2.BuLi Südwest1H,Simone,False,Keiber,0,LG2.BuLi Südwest1H5,5,390,9,SV Jockgrim
+318,LG2.BuLi Südwest1H,Miriam,True,Friedrich,0,LG2.BuLi Südwest1H5,5,390,"10,1",SV Fenken
+319,LG2.BuLi Südwest1H,Simone,False,Keiber,1,LG2.BuLi Südwest1H5,5,390,"10,5",SV Jockgrim
 320,LG2.BuLi Süd1A,Sebastian,True,Hahn,0,LG2.BuLi Süd1A1,1,390, ,SV Petersaurach 2
 321,LG2.BuLi Süd1A,Christine,False,Schachner,1,LG2.BuLi Süd1A1,1,392, ,Hubertus Kastl
 322,LG2.BuLi Süd1A,Jenifer,True,Hens,0,LG2.BuLi Süd1A2,2,391, ,SV Petersaurach 2

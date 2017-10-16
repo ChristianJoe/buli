@@ -214,6 +214,7 @@ def club_list_competitions(event,payload,**kwargs):
     else:
         abbrv_weapon = "Luftgewehr"
 
+
     results = get_results_team()
 
     results_league = results[(results['league'] == league) & (results['weapon'] == abbrv_weapon)]

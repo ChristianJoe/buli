@@ -2,7 +2,7 @@ import logging
 import operator
 
 from ..fb import send_buttons, button_postback, send_text, send_attachment, send_list, list_element, quick_reply
-from ..data import by_uuid, get_dates, get_results_team, get_results_shooter
+from ..data import by_uuid, get_dates, get_results_team, get_results_shooter, get_club_info_weapon_buli_region
 import datetime
 
 
@@ -12,6 +12,20 @@ def dates_api(event, parameters, **kwargs):
 
 
     next_event(event,{'next_event':club})
+
+def club_info_api(event,parameters,**kwargs):
+    sender_id = event['sender']['id']
+    club = parameters.get('clubs')
+
+    info = get_club_info_weapon_buli_region(club)
+
+
+    send_text(sender_id, 'Info zu {club}, {menge}'.format(club= club,
+                                                          menge = len(info)))
+
+
+
+
 
 
 
