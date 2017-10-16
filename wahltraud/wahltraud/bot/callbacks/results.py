@@ -30,26 +30,56 @@ def table_payload(event,payload,*kwarks):
     sender_id = event['sender']['id']
     payloads = payload['table_payload']
 
-    buli = payloads['buli']
-    region = payloads['region']
-    weapon = payloads['weapon']
+    try:
+        buli = payloads['buli']
+    except:
+        buli = ""
+    try:
+        region = payloads['region']
+    except:
+        region = ""
+    try:
+        weapon = payloads['weapon']
+    except:
+        weapon = ""
 
 
 
     if buli and region and weapon:
         table_league(event,{'table_league': payloads})
-    elif not weapon:
-        payloads_LG = payloads
-        payloads_LG['weapon'] = "LG"
-        payloads_LP = payloads_LG
-        payloads_LP['weapon'] = "LP"
+    elif buli and region:
+        payloads_LG = {'buli': buli,
+                       'region': region,
+                       'weapon': "LG"}
+        payloads_LP = {'buli': buli,
+                       'region': region,
+                       'weapon': "LP"}
+
         send_text(sender_id,
-                  'Was interessiert dich?',
+                  'Luftgewehr oder Pistole?',
                   quick_replies = [
                       quick_reply("Luftgewehr", {'table_payload': payloads_LG }),
                       quick_reply("Luftpistole",{'table_paylaod': payloads_LP })
                   ]
                   )
+    elif buli:
+        if buli == "1.BuLi":
+            payload_north = {'buli': '1.BuLi',
+                            'region': 'Nord',
+                            'weapon': weapon}
+            payload_south = {'buli': '1.BuLi',
+                            'region': 'Süd',
+                            'weapon': weapon}
+            send_text(sender_id,
+                      'Nord oder Süd',
+                      quick_replies = [
+                          quick_reply('Nord', payload_north),
+                          quick_reply('Süd', payload_south)
+
+                      ]
+                      )
+        else:
+          table_second_league(event,['table_second_league'])
     else:#nothing given
         options = []
         for key in [ 'BuLi Nord', 'BuLi Süd' ]:
