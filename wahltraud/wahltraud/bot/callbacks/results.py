@@ -66,8 +66,6 @@ def table_payload(event,payload,*kwarks):
                      )
                       ]
                      )
-
-
     elif buli:
         if buli == "1.BuLi":
             payload_north = {'buli': '1.BuLi',
@@ -119,12 +117,11 @@ def table_second_league(event,payload,**kwargs):
 
     for  element, key in competitons.items():
         payloads = {'buli': "2.BuLi",
-                    'region': key,
-                    'weapon': ''}
+                    'region': key}
 
 
         options.append(
-            quick_reply(key,{'table_league': payloads })
+            quick_reply(key,{'table_payload': payloads })
         )
 
 
