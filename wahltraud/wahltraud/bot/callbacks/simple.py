@@ -50,7 +50,10 @@ def club_info(event,payload,**kwargs):
 
     info = get_club_info_weapon_buli_region(club)
 
-    #table
+    if len(info) == 2:
+        for element in info:
+            if element['club'] == club:
+                info = element
 
     if len(info) == 4:
         send_buttons(sender_id,

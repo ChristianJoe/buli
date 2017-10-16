@@ -147,6 +147,11 @@ def table_league(event,payload,**kwargs):
     region = payloads['region']
     weapon = payloads['weapon']
 
+    if weapon == 'Luftgewehr':
+        weapon = 'LG'
+    elif weapon == 'Luftpistole':
+        weapon = 'LP'
+
     id = weapon + buli + ' ' + region
 
     tables = get_tables()
