@@ -73,6 +73,7 @@ def make_event_handler():
         PayloadHandler(parser.update_results, ['update_results']),
 
         ApiAiHandler(dates.club_info_api, 'club_info'),
+        PayloadHandler(dates.club_info,['club_info']),
 
         ApiAiHandler(results.results_api, 'results'),
         PayloadHandler(results.results_club,'results_club'),
