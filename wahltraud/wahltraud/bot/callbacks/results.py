@@ -45,24 +45,29 @@ def table_payload(event,payload,*kwarks):
 
 
 
+
+
     if buli and region and weapon:
         table_league(event,{'table_league': payloads})
     elif buli and region:
-        payloads_LG = {'buli': buli,
+        payloadsLG = {'buli': buli,
                        'region': region,
                        'weapon': "LG"}
-        payloads_LP = {'buli': buli,
+        payloadsLP = {'buli': buli,
                        'region': region,
                        'weapon': "LP"}
 
-        send_text(sender_id,
-                  'Luftgewehr oder Pistole?',
-                  quick_replies = [
-                      quick_reply("Luftpistole", {'table_paylaod': payloads_LP}),
-                      quick_reply("Luftgewehr", {'table_payload': payloads_LG })
+        send_buttons(sender_id,
+                     'Triff eine wahl',
+                     [button_postback('Luftgewehr',
+                                      {'table_payload': payloadsLG}),
+                      button_postback('Luftpistole',
+                                      {'table_payload': payloadsLP}
+                     )
+                      ]
+                     )
 
-                  ]
-                  )
+
     elif buli:
         if buli == "1.BuLi":
             payload_north = {'buli': '1.BuLi',
