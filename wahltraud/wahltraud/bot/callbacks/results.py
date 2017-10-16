@@ -85,7 +85,7 @@ def table_payload(event,payload,*kwarks):
         for key in [ 'LG BuLi Nord', 'LG BuLi Süd', 'LP BuLi Nord', 'LP BuLi Süd' ]:
             payloads = {'buli': '1.BuLi',
                        'region': key.split(' ')[2],
-                       'weapon': key.spilt(' ')[0]}
+                       'weapon': key.split(' ')[0]}
             options.append(
                 quick_reply(key, {'table_league': payloads})
             )
