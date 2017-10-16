@@ -13,39 +13,6 @@ def dates_api(event, parameters, **kwargs):
 
     next_event(event,{'next_event':club})
 
-def club_info_api(event,parameters,**kwargs):
-    club = parameters.get('clubs')
-
-    club_info(event,{'club_info': club})
-
-
-def club_info(event,payload,**kwargs):
-    sender_id = event['sender']['id']
-    club = payload['club_info']
-
-    info = get_club_info_weapon_buli_region(club)
-
-    if len(info) == 4:
-        send_buttons(sender_id,
-                     'Die Mannschaft {club} startet in der {weapon} {buli} {region}.'.format(
-                         club=info['club'],
-                         weapon = info['weapon'],
-                         buli = info['buli'],
-                        region = info['region']
-                     ),
-                     [button_postback('Wettkämpfe',
-                                {'club_list_competitions': info}),
-                      button_postback('Tabelle',
-                                       {'table_payload': info})
-                      #button_postback('Setzliste',
-                      #                {'club_list_competitions': info})
-                       ]
-                     )
-
-    else:
-
-        send_text(sender_id, 'Info zu {club}, {menge}'.format(club= club,
-                                                          menge = len(info)))
 
 
 

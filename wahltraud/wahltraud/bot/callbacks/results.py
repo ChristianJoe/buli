@@ -239,7 +239,7 @@ def club_list_competitions(event,payload,**kwargs):
         else:
             date = data['date'].strftime("%d.%m.%Y")
             sbtle = date+', '+ data['time'] + ' - Ausrichter: ' + data['host']
-            button_comp = [button_postback('Info Gegner', ['info_club'])]
+            button_comp = [button_postback('Info Gegner', ['club_info'])]
 
         elements.append(
             list_element(

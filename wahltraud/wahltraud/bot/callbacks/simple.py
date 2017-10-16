@@ -12,7 +12,7 @@ from ..fb import (send_buttons, button_postback, send_text, quick_reply, send_ge
                   generic_element, button_web_url, button_share, send_attachment,
                   send_attachment_by_id, guess_attachment_type)
 from .shared import get_pushes, schema, send_push, get_pushes_by_date
-from ..data import by_district_id
+from ..data import by_district_id, get_club_info_weapon_buli_region
 
 logger = logging.getLogger(__name__)
 
@@ -33,11 +33,55 @@ def update_api(event,**kwargs):
         send_text(sender_id, 'jo jo jo, kommt')
 
 
+def club_info_api(event,parameters,**kwargs):
+    club = parameters.get('clubs')
 
-def info_club(event,payload,**kwargs):
+    club_info(event,{'club_info': club})
+
+
+
+
+def club_info(event,payload,**kwargs):
     sender_id = event['sender']['id']
+    club = payload['club_info']
 
-    send_text(sender_id,'Hier gibt es bald info zum Verein')
+    for ending in ['II', 'I', '2', 'FSG']:
+        club = club.replace(ending, '').strip()
+
+
+
+    info = get_club_info_weapon_buli_region(club)
+
+    if len(info) == 4:
+        send_buttons(sender_id,
+                     'Die Mannschaft {club} startet in der {weapon} {buli} {region}.'.format(
+                         club=info['club'],
+                         weapon = info['weapon'],
+                         buli = info['buli'],
+                        region = info['region']
+                     ),
+                     [button_postback('Wettkämpfe',
+                                {'club_list_competitions': info}),
+                      button_postback('Tabelle',
+                                       {'table_payload': info})
+                      #button_postback('Setzliste',
+                      #                {'club_list_competitions': info})
+                       ]
+                     )
+
+    else:
+
+        send_text(sender_id, 'Info zu {club}, {menge}'.format(club= club,
+                                                          menge = len(info)))
+
+
+
+
+
+
+
+
+
 
 
 def greetings(event, **kwargs):

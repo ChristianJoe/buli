@@ -18,7 +18,7 @@ from .callbacks.simple import (get_started, push, subscribe, unsubscribe, wiki, 
                                apiai_fulfillment, about_manifesto, menue_manifesto, about,
                                questions,share_bot, push_step,  menue_data,
                                more_data, sunday_poll, greetings, presidents, chancelor, who_votes,
-                               update_api, infos_backend, table_start, competition_start, info_club)
+                               update_api, infos_backend, table_start, competition_start, club_info, club_info_api)
 from .callbacks.shared import (get_pushes, get_breaking, send_push, schema)
 from .callbacks import candidate, district, browse_lists, manifesto, party, dates, parser, results
 from .data import by_district_id
@@ -72,8 +72,8 @@ def make_event_handler():
         PayloadHandler(parser.update_table_payload, ['update_table_payload']),
         PayloadHandler(parser.update_results, ['update_results']),
 
-        ApiAiHandler(dates.club_info_api, 'club_info'),
-        PayloadHandler(dates.club_info,['club_info']),
+        ApiAiHandler(club_info_api, 'club_info'),
+        PayloadHandler(club_info,['club_info']),
 
         ApiAiHandler(results.results_api, 'results'),
         PayloadHandler(results.results_club,'results_club'),
