@@ -33,15 +33,15 @@ def table_payload(event,payload,*kwarks):
     try:
         buli = payloads['buli']
     except:
-        buli = ""
+        buli = ''
     try:
         region = payloads['region']
     except:
-        region = ""
+        region = ''
     try:
         weapon = payloads['weapon']
     except:
-        weapon = ""
+        weapon =  ''
 
 
 
@@ -114,7 +114,7 @@ def table_second_league(event,payload,**kwargs):
     for  element, key in competitons.items():
         payloads = {'buli': "2.BuLi",
                     'region': key,
-                    'weapon': ""}
+                    'weapon': ''}
 
 
         options.append(
