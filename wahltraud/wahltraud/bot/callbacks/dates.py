@@ -19,7 +19,7 @@ def club_info_api(event,parameters,**kwargs):
     club_info(event,{'club_info': club})
 
 
-def club_info(event,payload,,**kwargs):
+def club_info(event,payload,**kwargs):
     sender_id = event['sender']['id']
     club = payload['club_info']
 
