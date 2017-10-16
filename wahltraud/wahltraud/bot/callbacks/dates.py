@@ -33,8 +33,8 @@ def club_info(event,payload,**kwargs):
                          buli = info['buli'],
                         region = info['region']
                      ),
-                     buttons = ['Wettkämpfe',
-                                {'club_list_competitions': info}
+                     [button_postback('Wettkämpfe',
+                                {'club_list_competitions': info})
                      ]
                      )
 
