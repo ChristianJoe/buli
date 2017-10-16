@@ -17,7 +17,10 @@ def dates_api(event, parameters, **kwargs):
 
 def next_event(event,payload,**kwargs):
     sender_id = event['sender']['id']
-    club = payload['next_event']
+    try:
+        club = payload['next_event']
+    except:
+        club = None
 
     dates = get_results_team()
     options = []
