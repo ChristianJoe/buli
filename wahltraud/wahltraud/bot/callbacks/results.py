@@ -38,6 +38,18 @@ def table_payload(event,payload,*kwarks):
 
     if buli and region and weapon:
         table_league(event,{'table_league': payloads})
+    if not weapon:
+        payloads_LG = payloads
+        payloads_LG['weapon'] = "LG"
+        payloads_LP = payloads
+        payloads_LP['weapon'] = "LP"
+        send_text(sender_id,
+                  'Was interessiert dich?',
+                  quick_replies = [
+                      quick_reply("Luftgewehr",{'table_payload': payloads_LG }),
+                      quick_reply("Luftpistole",{'table_paylaod': payloads_LP})
+                  ]
+                  )
     else:#nothing given
         options = []
         for key in [ 'BuLi Nord', 'BuLi Süd' ]:
@@ -56,10 +68,9 @@ def table_payload(event,payload,*kwarks):
 
 
 
-def table_second_league(event,**kwargs):
+def table_second_league(event,payload,**kwargs):
     #choosing second league
     sender_id = event['sender']['id']
-
     competitons = {
                    "2.BuLi Süd": 'Süd' ,
                    "2.BuLi Nord": 'Nord',
@@ -69,9 +80,15 @@ def table_second_league(event,**kwargs):
                    }
 
     options = []
+
     for  element, key in competitons.items():
+        payloads = {'buli': "2.BuLi",
+                    'region': key,
+                    'weapon': None}
+
+
         options.append(
-            quick_reply(key,{'table_league': element})
+            quick_reply(key,{'table_league': payloads })
         )
 
 
