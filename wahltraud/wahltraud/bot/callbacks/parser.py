@@ -125,10 +125,13 @@ def get_results_pd():
                     home_team = ele.find_all('td')[2].text.strip(),
                     guest_team = ele.find_all('td')[10].text.strip(),
 
+                    home_team_short = home_team[0]
+                    guest_team_short = guest_team[0]
+
                     for ending in ['II', 'I', '2', 'FSG']:
                         host = host.replace(ending, '').strip()
-                        home_team_short = home_team[0].replace(ending, '').strip()
-                        guest_team_short = guest_team[0].replace(ending, '').strip()
+                        home_team_short = home_team_short.replace(ending, '').strip()
+                        guest_team_short = guest_team_short.replace(ending, '').strip()
                     if home_team_short not in clubs:
                         clubs.append(home_team_short)
 

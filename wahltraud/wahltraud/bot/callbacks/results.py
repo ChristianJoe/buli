@@ -44,6 +44,8 @@ def table_payload(event,payload,*kwarks):
         weapon =  ''
 
 
+    if region in ['West','Ost','Südwest']:
+        buli = '2.BuLi'
 
 
 
@@ -265,6 +267,9 @@ def club_list_competitions(event,payload,**kwargs):
                     )
                   )
     send_list(sender_id, elements, button=button)
+
+
+
 
 
 def competition_results(event,payload,**kwargs):
