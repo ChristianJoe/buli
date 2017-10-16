@@ -182,7 +182,7 @@ def table_league(event,payload,**kwargs):
                                  {'table_league': payloads,
                                   'offset': offset + num_league})
     else:
-        button = button_postback("Andere Liga", {'table_league': payloads})
+        button = button_postback("Andere Liga", {'table_league': {'weapon': 'LG'} })
 
     if offset == 0:
         send_text(sender_id, '{buli} {weapon}. Gruppe {region}'.format(
@@ -237,7 +237,7 @@ def club_list_competitions(event,payload,**kwargs):
         else:
             date = data['date'].strftime("%d.%m.%Y")
             sbtle = date+', '+ data['time'] + ' - Ausrichter: ' + data['host']
-            button_comp = [button_postback('Info Gegner', ['club_info'])]
+            button_comp = [button_postback('Info Gegner', {'club_info': data['guest_team']})]
 
         elements.append(
             list_element(
