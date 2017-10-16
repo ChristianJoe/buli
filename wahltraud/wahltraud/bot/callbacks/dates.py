@@ -23,6 +23,11 @@ def next_event(event,payload,**kwargs):
     options = []
     now = datetime.date.today()
 
+    send_text(sender_id, "Hier zeige ich dir demnächst das nächste Event nach dem {date} and".format(
+        date=now.strftime("%d.%m.%Y")
+    ))
+
+    '''
     if not club:
         for i in range(0, 100):
             look_up_date = now + datetime.timedelta(days=i)
@@ -58,7 +63,7 @@ def next_event(event,payload,**kwargs):
             )
 
     send_text(sender_id, text, quick_replies = options)
-
+    '''
 
 def competition_info(event, payload, **kwargs):
     sender_id = event['sender']['id']

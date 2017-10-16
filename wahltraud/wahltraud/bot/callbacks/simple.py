@@ -236,8 +236,8 @@ def competition_start(event, **kwargs):
     sender_id = event['sender']['id']
     send_text(sender_id,
             "Im wesentlichen kannst du mich nach einem Wochenende fragen und ich sage dir, welche Wettkämpfe da stattfinden.",
-              [quick_reply('Nächste Wettkämpfe', ['next_event']),
-               quick_reply('Ausrichter', ['next_event'])]
+              [quick_reply('Nächste Wettkämpfe', ['next_event'])
+               #quick_reply('Ausrichter', ['next_event'])]
               )
 
 
