@@ -34,7 +34,7 @@ def table_payload(event,payload,*kwarks):
     region = payloads['region']
     weapon = payloads['weapon']
 
-    
+
 
     if buli and region and weapon:
         table_league(event,{'table_league': payloads})

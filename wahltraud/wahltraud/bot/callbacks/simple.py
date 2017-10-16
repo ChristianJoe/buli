@@ -133,8 +133,8 @@ Starte einfach indem du mich mit \"Hallo\" begrüßt!.
             '''
     send_buttons(sender_id, reply,
                 buttons = [
-                    button_postback("Tabellen", ['menue_candidates']),
-                    button_postback("Wettkämpfe", ['menue_manifesto']),
+                    button_postback("Tabellen", ['table_payload']),
+                    button_postback("Wettkämpfe", ['competitions_payload']),
                     button_postback("Daten-Quellen", ['menue_data'])
                 ])
 
@@ -248,8 +248,8 @@ def table_start(event, **kwargs):
     sender_id = event['sender']['id']
     send_text(sender_id,
             "Ich kenne alle aktuellen Tabellenstände der 1. und 2. BuLi. Glaubste nicht?",
-              [quick_reply('1. BuLi Nord', {'table_league': "1.BuLi Nord"}),
-               quick_reply('1. BuLi Süd', {'table_league': "2.BuLi Nord"}),
+              [quick_reply('1. BuLi Nord', {'table_league': {'buli': "1.BuLi", "region":  "Nord"}),
+               quick_reply('1. BuLi Süd', {'table_league': {'buli': "1.BuLi", "region":  "Süd"}}),
                quick_reply('2. BuLi', ['table_second_league'])]
               )
 
@@ -303,6 +303,7 @@ def menue_data(event, **kwargs):
 Um dich mit so vielen Informationen beliefern zu können, musste ich mich natürlich selbst erstmal schlau machen.
 Folgende Quellen habe ich dazu verwendet:
 - http://bundesliga.dsb.de/
+- http://bundesliga.meyton.info/
 - Homepages der Vereine""",
     [quick_reply('Und meine Daten', ['more_data'])])
 
@@ -310,8 +311,8 @@ def more_data(event, **kwargs):
     sender_id = event['sender']['id']
     send_text(sender_id, """
 Damit ich verstehen kann was du von mir willst, schicke ich die von dir verschickte Textnachricht an dialogflow.com einen Google Assistant.
-Die Daten auf die ich zurückgreife kannst du dir auch auf GitHub anschauen\nhttps://github.com/ChristianJoe/buli
-Ich halte mich an die Datenschutzbestimmungen des \"Westdeutschen Rundfunks\"\nhttp://www1.wdr.de/hilfe/datenschutz102.html"""
+Die Daten auf die ich zurückgreife kannst du dir auch auf GitHub anschauen\nhttps://github.com/ChristianJoe/buli\n
+Ich halte mich an die Facebook Datenschutzbestimmungen \nhttps://www.facebook.com/about/privacy"""
     )
 
 def story(event, payload, **kwargs):
