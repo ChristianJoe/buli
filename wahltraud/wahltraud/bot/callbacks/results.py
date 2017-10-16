@@ -46,7 +46,7 @@ def table_payload(event,payload,*kwarks):
         send_text(sender_id,
                   'Was interessiert dich?',
                   quick_replies = [
-                      quick_reply("Luftgewehr",{'table_payload': payloads_LG }),
+                      quick_reply("Luftgewehr", {'table_payload': payloads_LG }),
                       quick_reply("Luftpistole",{'table_paylaod': payloads_LP})
                   ]
                   )
@@ -55,7 +55,7 @@ def table_payload(event,payload,*kwarks):
         for key in [ 'BuLi Nord', 'BuLi Süd' ]:
             payloads = {'buli': '1.BuLi',
                        'region': key.split(' ')[1],
-                       'weapon': 'LG'}
+                       'weapon': weapon}
             options.append(
                 quick_reply(key, {'table_league': payloads})
             )
