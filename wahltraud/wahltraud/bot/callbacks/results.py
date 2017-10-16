@@ -114,7 +114,7 @@ def table_second_league(event,payload,**kwargs):
     for  element, key in competitons.items():
         payloads = {'buli': "2.BuLi",
                     'region': key,
-                    'weapon': None}
+                    'weapon': ""}
 
 
         options.append(
