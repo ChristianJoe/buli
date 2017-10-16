@@ -34,8 +34,12 @@ def club_info(event,payload,**kwargs):
                         region = info['region']
                      ),
                      [button_postback('Wettkämpfe',
-                                {'club_list_competitions': info})
-                     ]
+                                {'club_list_competitions': info}),
+                      button_postback('Tabelle',
+                                       {'table_payload': info})
+                      #button_postback('Setzliste',
+                      #                {'club_list_competitions': info})
+                       ]
                      )
 
     else:
