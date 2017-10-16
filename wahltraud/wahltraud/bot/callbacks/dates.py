@@ -25,7 +25,7 @@ def club_info(event,payload,**kwargs):
 
     info = get_club_info_weapon_buli_region(club)
 
-    if len(info) == 1:
+    if len(info) == 4:
         send_buttons(sender_id,
                      'Die Mannschaft {club} startet in der {weapon} {buli} {region}.'.format(
                          club=info['club'],
