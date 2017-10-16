@@ -86,6 +86,8 @@ def make_event_handler():
         PayloadHandler(results.table_league, ['table_league']),
         PayloadHandler(results.club_list_competitions, ['club_list_competitions']),
         PayloadHandler(results.competition_results, ['competition_results']),
+        PayloadHandler(results.table_payload,['table_payload']),
+
 
         PayloadHandler(info_club, ['info_club']),
 

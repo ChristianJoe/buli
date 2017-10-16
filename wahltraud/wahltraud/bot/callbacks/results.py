@@ -19,21 +19,33 @@ def table_api(event, parameters, **kwargs):
     region =  parameters.get('region')
     weapon = parameters.get('weapon')
 
-    payload = {'buli': buli,
+    payloads = {'buli': buli,
                'region': region,
                'weapon': weapon}
 
+    table_payload(event,{'table_payload': payloads})
+
+
+def table_payload(event,payload,*kwarks):
+    sender_id = event['sender']['id']
+    payloads = payload['table_payload']
+
+
+
+    payloads = {'buli': buli,
+               'region': region,
+               'weapon': weapon}
 
     if buli and region and weapon:
-        table_league(event,{'table_league': payload})
+        table_league(event,{'table_league': payloads})
     else:#nothing given
         options = []
         for key in [ 'BuLi Nord', 'BuLi Süd' ]:
-            payload = {'buli': '1.BuLi',
+            payloads = {'buli': '1.BuLi',
                        'region': key.split(' ')[1],
                        'weapon': 'LG'}
             options.append(
-                quick_reply(key, {'table_league': payload})
+                quick_reply(key, {'table_league': payloads})
             )
         options.append(
                 quick_reply('2.Buli', ['table_second_league'])
@@ -104,7 +116,7 @@ def table_league(event,payload,**kwargs):
         payload_button['club'] = data['club']
         elements.append(
             list_element(
-                '#{rank} {club} '.format(
+                '{rank}. {club} '.format(
                     rank=data['rank'],
                     club=data['club']
                 ),
@@ -168,7 +180,7 @@ def club_list_competitions(event,payload,**kwargs):
                      'comp_id' : data['comp_id']
                      }
         if data['home_points'] + data['guest_points'] != 0:
-            sbtle = "%d : %d \t  %d : %d" % (data['home_points'], data['guest_points'],
+            sbtle = "%d : %d --  %d : %d" % (data['home_points'], data['guest_points'],
                                              data['home_result'], data['guest_result'])
             button_comp = [button_postback("Einzelergebnisse", {'competition_results': info_dict})]
         else:
@@ -178,7 +190,8 @@ def club_list_competitions(event,payload,**kwargs):
 
         elements.append(
             list_element(
-                '{home} : {guest} '.format(
+                '#{index} - {home} : {guest} '.format(
+                    index = index,
                     home=data['home_team'],
                     guest=data['guest_team']
                 ),
