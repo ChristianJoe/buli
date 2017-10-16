@@ -152,8 +152,6 @@ def table_league(event,payload,**kwargs):
     tables = get_tables()
     table_league = tables[tables['id']== id]
 
-
-
     logger.info('Ergebnisliste: {id}'.format(
         id=id))
 
