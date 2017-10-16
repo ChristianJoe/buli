@@ -248,8 +248,8 @@ def table_start(event, **kwargs):
     sender_id = event['sender']['id']
     send_text(sender_id,
             "Ich kenne alle aktuellen Tabellenstände der 1. und 2. BuLi. Glaubste nicht?",
-              [quick_reply('1. BuLi Nord', {'table_league': {'buli': "1.BuLi", "region":  "Nord"}}),
-               quick_reply('1. BuLi Süd', {'table_league': {'buli': "1.BuLi", "region":  "Süd"}}),
+              [quick_reply('1. BuLi Nord', {'table_league': {'buli': "1.BuLi", "region":  "Nord", "weapon": None}}),
+               quick_reply('1. BuLi Süd', {'table_league': {'buli': "1.BuLi", "region":  "Süd", "weapon": None}}),
                quick_reply('2. BuLi', ['table_second_league'])]
               )
 
