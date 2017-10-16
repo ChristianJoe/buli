@@ -30,11 +30,11 @@ def table_payload(event,payload,*kwarks):
     sender_id = event['sender']['id']
     payloads = payload['table_payload']
 
+    buli = payloads['buli']
+    region = payloads['region']
+    weapon = payloads['weapon']
 
-
-    payloads = {'buli': buli,
-               'region': region,
-               'weapon': weapon}
+    
 
     if buli and region and weapon:
         table_league(event,{'table_league': payloads})
