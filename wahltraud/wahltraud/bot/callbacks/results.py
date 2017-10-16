@@ -38,7 +38,7 @@ def table_payload(event,payload,*kwarks):
 
     if buli and region and weapon:
         table_league(event,{'table_league': payloads})
-    if not weapon:
+    elif not weapon:
         payloads_LG = payloads
         payloads_LG['weapon'] = "LG"
         payloads_LP = payloads_LG
