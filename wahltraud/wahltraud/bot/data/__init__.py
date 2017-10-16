@@ -53,7 +53,7 @@ def get_tables():
 
 
 def get_club_info_weapon_buli_region(club):
-    club_all = results[results['guest_team_short'] == club]
+    club_all = results_team[results_team['guest_team_short'] == club]
     elements = list(set(list(club_all['guest_team'].values)))
     if len(elements) == 1:
         club_pd = club_all[club_all['guest_team'] == elements[0]].iloc[0]
