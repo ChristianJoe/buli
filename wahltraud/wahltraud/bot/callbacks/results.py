@@ -396,26 +396,27 @@ def shooter_results(event,payload,**kwargs):
         person = data[data['team_full'] == club]
         oponent = data[data['team_full']!= club]
 
-        info_dict = {'first_name': oponent['first_name'],
-                     'last_name': oponent['last_name'],
-                     'club': oponent['team_full']
+        info_dict = {'first_name': oponent['first_name'].iloc[0],
+                     'last_name': oponent['last_name'].iloc[0],
+                     'club': oponent['team_full'].iloc[0]
                      }
-        sbtle = "Position {position}".format(position = person['position'])
+        sbtle = "Position {position}".format(position = person['position'].iloc[0])
         if person['shoot_off'].iloc[0]:
             sbtle += "Entscheidung im Stechen: {person}:{oponent}".format(
-                person = person['shoot_off'],
-                oponent = oponent['shoot_off']
+                person = person['shoot_off'].iloc[0],
+                oponent = oponent['shoot_off'].iloc[0]
             )
 
         button_comp = [button_postback("Info {first_name} {last_name}".format(
-                first_name = oponent['first_name'],
-                last_name = oponent['last_name']
+                first_name = oponent['first_name'].iloc[0],
+                last_name = oponent['last_name'].iloc[0]
             ), {'shooter_results': info_dict})]
 
 
         elements.append(
             list_element(
-                "%d : %d --  %s %s" % (person['result'], oponent['result'], oponent['first_name'], oponent['last_name']),
+                "%d : %d --  %s %s" % (person['result'].iloc[0], oponent['result'].iloc[0],
+                                       oponent['first_name'].iloc[0], oponent['last_name'].iloc[0]),
                 subtitle=sbtle,
                 buttons=button_comp
                 # image_url=candidate.get('img') or None
