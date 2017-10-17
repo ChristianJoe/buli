@@ -348,7 +348,7 @@ def competition_results(event,payload,**kwargs):
     if offset == 0:
         goal = '🎯🎯🎯🎯🎯'
         total_points_home = results_club[results_club['home'] == True]['point'].sum()
-        text_first = '{home}  {home_points}:{guest_points}  {guest}'.format(
+        text_first = '{home}  {home_points}  :  {guest_points}  {guest}'.format(
             home = results_club['team_full'].iloc[0],
             guest = results_club['team_full'].iloc[1],
             home_points = goal[0:total_points_home],
@@ -357,9 +357,9 @@ def competition_results(event,payload,**kwargs):
 
 
         if len(results_club['shoot_off'].unique()) != 1:
-            text_first += "\n Punkte durch Stechen: {home}:{guest}".format(
-                home = goal[0:results_club[(results_club['shoot_off']!=' ') & results_club['home']== True]['point'].sum()],
-                guest = goal[0:results_club[(results_club['shoot_off']!=' ') & results_club['home']== False]['point'].sum()]
+            text_first += "\n Punkte durch Stechen: {home} : {guest}".format(
+                home = goal[0:results_club[(results_club['shoot_off']!=' ') & (results_club['home']== True)]['point'].sum()],
+                guest = goal[0:results_club[(results_club['shoot_off']!=' ') & (results_club['home']== False)]['point'].sum()]
             )
 
 
