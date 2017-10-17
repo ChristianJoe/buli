@@ -301,7 +301,7 @@ def competition_results(event,payload,**kwargs):
         home = results_club.iloc[2*index]
         guest = results_club.iloc[2*index+1]
 
-        sbtle = "{first_home}{last_home} : {first_guest}{last_guest}".format(
+        sbtle = "🎯{first_home} {last_home} : {first_guest} {last_guest}".format(
             first_home = home['first_name'],
             last_home = home['last_name'],
             first_guest = guest['first_name'],
@@ -309,7 +309,7 @@ def competition_results(event,payload,**kwargs):
         )
         #button_comp = [button_postback("Einzelergebnisse", {'competition_results': data['comp_id']})]
 
-        text = "#{pos}: {h_punkt}:{g_punkt} --- {h_ringe}:{g_ringe}".format(
+        text = "#{pos}: {h_punkt}:{g_punkt} -- {h_ringe}:{g_ringe}".format(
             h_punkt = home['point'],
             h_ringe = home['result'],
             g_ringe = guest['result'],
@@ -318,7 +318,7 @@ def competition_results(event,payload,**kwargs):
         )
 
         if home['shoot_off'] != guest['shoot_off']:
-            text += " -- Stechen --  {home}:{guest}".format(home = home['shoot_off'],guest=guest['shoot_off'])
+            text += "  --> Stechen <--  {home}:{guest}".format(home = home['shoot_off'],guest=guest['shoot_off'])
 
         elements.append(
             list_element(
@@ -351,12 +351,17 @@ def competition_results(event,payload,**kwargs):
             home_points = total_points_home,
             guest_points = 5- total_points_home
         )
-        if len(results_club['shoot_off'].unique()) != 0:
+        if total_points_home >= 3:
+            text_first_top = '🎯 ' + text_first
+        else:
+            text_first_top = text_first + ' 🎯'
+
+        if len(results_club['shoot_off'].unique()) != 1:
             text_first += "\n Es gab mindestens ein Stechen!"
 
 
 
-        send_text(sender_id,text_first)
+        send_text(sender_id,text_first_top)
 
     send_list(sender_id, elements, button=button)
 
