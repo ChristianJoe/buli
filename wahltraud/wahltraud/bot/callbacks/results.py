@@ -227,8 +227,9 @@ def club_list_competitions(event,payload,**kwargs):
 
     num_league = 4
 
-    if results_club.shape[0] - (offset + num_league) == 1:
+    if results_club.shape[0]-1 - (offset + num_league) == 1:
         num_league = 3
+
     elements = []
     for index in range(offset, offset + num_league):
         data = results_club.iloc[index]
