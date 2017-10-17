@@ -449,18 +449,20 @@ def shooter_results(event,payload,**kwargs):
         adj = ''
         if avg > 390:
             adj = 'gute'
-            if avg > 395:
-                adj = 'starke'
-                if avg > 396:
-                    adj = 'wahnsinnige'
-                    if avg > 397:
-                        adj = 'unglaubliche'
-                        if avg > 398:
-                            adj = 'galaktische'
-                            if avg > 399:
-                               adj = 'unmenschliche'
-                            else:
-                                adj = 'passable'
+            if avg> 393:
+                adj = 'extrem gute'
+                if avg > 395:
+                    adj = 'starke'
+                    if avg > 396:
+                        adj = 'wahnsinnige'
+                        if avg > 397:
+                            adj = 'unglaubliche'
+                            if avg > 398:
+                                adj = 'galaktische'
+                                if avg > 399:
+                                   adj = 'unmenschliche'
+                                else:
+                                    adj = 'passable'
 
 
         text_first_response = '{first_name} {last_name} startet diese Saison für {club}.\n' \
