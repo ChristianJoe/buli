@@ -324,9 +324,9 @@ def table_start(event, **kwargs):
     send_buttons(sender_id,
                  "Ich kenne alle aktuellen Tabellenstände der 1. und 2. BuLi. Glaubste nicht?",
                  [button_postback('1. BuLi Nord',
-                                  {'table_league': {'buli': "1.BuLi", "region": "Nord"}}),
+                                  {'table_payload': {'buli': "1.BuLi", "region": "Nord"}}),
                   button_postback('1. BuLi Süd',
-                                  {'table_league': {'buli': "1.BuLi", "region":  "Süd"}}
+                                  {'table_payload': {'buli': "1.BuLi", "region":  "Süd"}}
                                   ),
                   button_postback('2. BuLi',
                                   ['table_second_league']

@@ -143,6 +143,7 @@ def table_league(event,payload,**kwargs):
     payloads = payload['table_league']
 
     offset = int(payload.get('offset', 0))
+
     buli = payloads['buli']
     region = payloads['region']
     weapon = payloads['weapon']
