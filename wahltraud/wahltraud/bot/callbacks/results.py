@@ -311,16 +311,16 @@ def competition_results(event,payload,**kwargs):
         )
         #button_comp = [button_postback("Einzelergebnisse", {'competition_results': data['comp_id']})]
 
-        text = "#{pos}: {h_punkt}:{g_punkt} -- {h_ringe}:{g_ringe}".format(
-            h_punkt = home['point'],
+        text = "#{pos}:    {h_ringe} : {g_ringe}".format(
+            #h_punkt = home['point'],
             h_ringe = home['result'],
             g_ringe = guest['result'],
-            g_punkt = guest['point'],
+            #g_punkt = guest['point'],
             pos = home['position']
         )
 
         if home['shoot_off'] != guest['shoot_off']:
-            text += "  --> Stechen <--  {home}:{guest}".format(home = home['shoot_off'],guest=guest['shoot_off'])
+            text += "    --> Stechen <--  {home} : {guest}".format(home = home['shoot_off'],guest=guest['shoot_off'])
 
         elements.append(
             list_element(
@@ -351,13 +351,13 @@ def competition_results(event,payload,**kwargs):
         text_first = '{home}  {home_points}  :  {guest_points}  {guest}'.format(
             home = results_club['team_full'].iloc[0],
             guest = results_club['team_full'].iloc[1],
-            home_points = goal[0:total_points_home],
-            guest_points = goal[0:(5- total_points_home)]
+            home_points =total_points_home,      # goal[0:total_points_home],
+            guest_points =5 - total_points_home  # goal[0:(5- total_points_home)]
         )
 
 
         if len(results_club['shoot_off'].unique()) != 1:
-            text_first += "\n Punkte durch Stechen: {home} : {guest}".format(
+            text_first += "\n Davon waren Punkte durch Stechen: {home}{guest}".format(
                 home = goal[0:results_club[(results_club['shoot_off']!=' ') & (results_club['home']== True)]['point'].sum()],
                 guest = goal[0:results_club[(results_club['shoot_off']!=' ') & (results_club['home']== False)]['point'].sum()]
             )
