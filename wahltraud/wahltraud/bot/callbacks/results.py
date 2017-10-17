@@ -241,7 +241,7 @@ def club_list_competitions(event,payload,**kwargs):
                                              data['home_result'], data['guest_result'])
             button_comp = [button_postback("Einzelergebnisse", {'competition_results': info_dict})]
         else:
-            date = data['date'].strftime("%d.%m.%Y")
+            date = data['date'].strftime("%m.%d.%Y")
             sbtle = date+', '+ data['time'] + ' - Ausrichter: ' + data['host']
             club_oponent = data['guest_team']
             if club_oponent == club:
@@ -399,7 +399,6 @@ def shooter_results(event,payload,**kwargs):
      #   {}
     #info_person['first_name'] =  workdata['first_name'].iloc[0]
     #info_person['last_name'] =  workdata['last_name'].iloc[0]
-    workdata = workdata.reset_index(drop=True)
     try:
         club = workdata['team_full'].iloc[0]
     except:
