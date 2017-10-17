@@ -395,10 +395,11 @@ def shooter_results(event,payload,**kwargs):
                   'Mhmm, den Namen kenne ich noch nicht. Zumindest hat er noch keinen Wettkampf geschossen!')
         return
 
-    info_person = {}
-    info_person['first_name'] =  workdata['first_name'].iloc[0]
-    info_person['last_name'] =  workdata['last_name'].iloc[0]
-                   
+    info_person = payloads
+     #   {}
+    #info_person['first_name'] =  workdata['first_name'].iloc[0]
+    #info_person['last_name'] =  workdata['last_name'].iloc[0]
+
     club = workdata['team_full'].iloc[0]
 
     if workdata.shape[0] - (offset + num_league) == 1:
