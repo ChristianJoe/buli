@@ -105,7 +105,8 @@ def club_info(event,payload,**kwargs):
 
 
 def letsgo(event,**kwargs):
-    get_started(event)
+
+    get_started(event,**kwargs)
 
 
 
@@ -141,8 +142,11 @@ def infos_backend(event,payload,**kwargs):
 
 def get_started(event, **kwargs):
     sender_id = event['sender']['id']
-    referral = event.get('postback').get('referral')
-
+    try:
+        referral = event.get('postback').get('referral')
+    except:
+        referral = None
+        
     if referral:
         ref = referral.get('ref')
         logging.info('Bot wurde mit neuem User geteilt: ' + ref)
