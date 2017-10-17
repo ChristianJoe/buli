@@ -400,7 +400,7 @@ def shooter_results(event,payload,**kwargs):
                      'last_name': oponent['last_name'],
                      'club': oponent['team_full']
                      }
-        sbtle = "Position {position}".format(person['position'])
+        sbtle = "Position {position}".format(position = person['position'])
         if person['shoot_off']:
             sbtle += "Entscheidung im Stechen: {person}:{oponent}".format(
                 person = person['shoot_off'],
