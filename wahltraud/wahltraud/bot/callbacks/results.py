@@ -464,8 +464,8 @@ def shooter_results(event,payload,**kwargs):
 
 
         text_first_response = '{first_name} {last_name} startet diese Saison für {club}.\n' \
-                              'Von {competitions} Wettkämpfen hat er/sie {wins} gewonnen.\n' \
-                              'Sein/Ihr Liga-Ø beträgt {adj} {avg_result}'.format(
+                              '{competitions} Wettkämpfe, davon {wins} gewonnen.\n' \
+                              'Liga-Ø: {adj} {avg_result}'.format(
             first_name = workdata['first_name'].iloc[0],
             last_name = workdata['last_name'].iloc[0],
             competitions=workdata.shape[0],
@@ -480,7 +480,12 @@ def shooter_results(event,payload,**kwargs):
     if workdata.shape[0] != 1:
         send_list(sender_id, elements, button=button)
     else:
-        send_text(sender_id, 'Not enough data')
+        send_buttons(sender_id,
+                     list_text_title+'\n'+sbtle,
+                     buttons = [button_comp[0],
+                         button
+                      ]
+                     )
 
 
 
