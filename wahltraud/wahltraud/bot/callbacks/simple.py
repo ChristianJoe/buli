@@ -45,10 +45,11 @@ def club_info(event,payload,**kwargs):
     sender_id = event['sender']['id']
     club = payload['club_info']
 
+    club_repl = club
     for ending in ['II', 'I', '2', 'FSG']:
-        club = club.replace(ending, '').strip()
+        club_repl = club_repl.replace(ending, '').strip()
 
-    infoall = get_club_info_weapon_buli_region(club)
+    infoall = get_club_info_weapon_buli_region(club_repl)
 
     addbutton = False
     if len(infoall) == 2:
