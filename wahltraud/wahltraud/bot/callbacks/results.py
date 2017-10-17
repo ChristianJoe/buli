@@ -397,7 +397,7 @@ def shooter_results(event,payload,**kwargs):
         oponent = data[data['team_full']!= club]
 
         info_dict = {'first_name': oponent['first_name'],
-                     'last_name': oponent['guest_team'],
+                     'last_name': oponent['last_name'],
                      'club': oponent['team_full']
                      }
         sbtle = "Position {position}".format(person['position'])
