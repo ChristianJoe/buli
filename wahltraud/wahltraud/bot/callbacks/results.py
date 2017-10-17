@@ -380,22 +380,22 @@ def shooter_results(event,payload,**kwargs):
         check_unique_club = list(set(list(data_club['first_name'])))
         if len(check_unique_club) == 1:
             workdata = data_club
-        else:
-            send_text(sender_id,
-                      'Mhmm, den Namen kenne ich noch nicht. Zumindest hat er noch keinen Wettkampf geschossen!')
 
-    info_person = {first_name :  workdata['first_name'].iloc[0],
-                    last_name :  workdata['last_name'].iloc[0]}
-    club = workdata['team_full'].iloc[0]
-
-
-    num_league = 4
-    if workdata.shape[0]<4:
-        num_league = workdata.shape[0]
-    if workdata.shape[0]==1:
-        send_text(sender_id, 'Zu wenig data yet')
+    try:
+        num_league = 4
+        if workdata.shape[0]<4:
+            num_league = workdata.shape[0]
+        if workdata.shape[0]==1:
+            send_text(sender_id, 'Zu wenig data yet')
+            return
+    except:
+        send_text(sender_id,
+                  'Mhmm, den Namen kenne ich noch nicht. Zumindest hat er noch keinen Wettkampf geschossen!')
         return
 
+    info_person = {first_name: workdata['first_name'].iloc[0],
+                   last_name: workdata['last_name'].iloc[0]}
+    club = workdata['team_full'].iloc[0]
 
     if workdata.shape[0] - (offset + num_league) == 1:
         num_league = 3
@@ -411,7 +411,8 @@ def shooter_results(event,payload,**kwargs):
 
                      }
         sbtle = "Position {position}".format(position = person['position'].iloc[0])
-        if person['shoot_off'].iloc[0] != '':
+
+        if person['shoot_off'].iloc[0].strip() != '':
             sbtle += " -- Entscheidung im Stechen: {person}:{oponent}".format(
                 person = person['shoot_off'].iloc[0],
                 oponent = oponent['shoot_off'].iloc[0]
