@@ -44,7 +44,8 @@ def get_results_shooter():
 
 
 def get_results_team():
-    results_team['date'] = pd.to_datetime(results_team['date'])
+    results_team['date'] = pd.to_datetime(results_team['date'],format='%d.%m.%Y')
+
     return results_team
 
 

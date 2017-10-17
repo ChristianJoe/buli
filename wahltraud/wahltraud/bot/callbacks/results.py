@@ -244,7 +244,7 @@ def club_list_competitions(event,payload,**kwargs):
                                              data['home_result'], data['guest_result'])
             button_comp = [button_postback("Einzelergebnisse", {'competition_results': info_dict})]
         else:
-            date = data['date'].strftime("%m.%d.%Y")
+            date = data['date'].strftime("%d.%m.%Y")
             sbtle = date+', '+ data['time'] + ' - Ausrichter: ' + data['host']
             club_oponent = data['guest_team']
             if club_oponent == club:
