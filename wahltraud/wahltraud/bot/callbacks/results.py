@@ -235,14 +235,11 @@ def club_list_competitions(event,payload,**kwargs):
     elements = []
     for index in range(offset, offset + num_league):
         data = results_club.iloc[index]
-        info_dict = {'home_team': data['home_team'],
-                     'guest_team': data['guest_team'],
-                     'comp_id' : data['comp_id']
-                     }
+
         if data['home_points'] + data['guest_points'] != 0:
             sbtle = "%d : %d --  %d : %d" % (data['home_points'], data['guest_points'],
                                              data['home_result'], data['guest_result'])
-            button_comp = [button_postback("Einzelergebnisse", {'competition_results': info_dict})]
+            button_comp = [button_postback("Einzelergebnisse", {'competition_results':  data['comp_id']})]
         else:
             date = data['date'].strftime("%d.%m.%Y")
             sbtle = date+', '+ data['time'] + ' - Ausrichter: ' + data['host']
@@ -285,19 +282,80 @@ def club_list_competitions(event,payload,**kwargs):
 
 def competition_results(event,payload,**kwargs):
     sender_id = event['sender']['id']
-    data = payload['competition_results']
+    offset = int(payload.get('offset', 0))
+    comp_id = payload['competition_results']
 
-    info_dict = {'home_team': data['home_team'],
-                 'guest_team': data['guest_team'],
-                 'comp_id': data['comp_id']
-                 }
+    results_shooter = get_results_shooter()
+
+    results_club = results_shooter[results_shooter['comp_id'] == comp_id]
+
+    num_league = 4
+
+    if results_club.shape[0]/2 - (offset + num_league) == 1:
+        num_league = 3
+    if results_club.shape[0]/2 - (offset + num_league) < 1:
+        num_league = 4 + (results_club.shape[0]/2 - (offset + num_league))
+
+    elements = []
+    for index in range(offset, offset + num_league):
+        home = results_club.iloc[2*index+1]
+        guest = results_club.iloc[2*index+1]
+
+        sbtle = "{first_home}{last_home} : {first_guest}{last_guest}".format(
+            first_home = home['first_name'],
+            last_home = home['last_name'],
+            first_guest = guest['first_name'],
+            last_guest = guest['last_name']
+        )
+        #button_comp = [button_postback("Einzelergebnisse", {'competition_results': data['comp_id']})]
+
+        text = "#{pos}:  {h_ringe}:{g_ringe} -- {h_punkt}:{g_punkt}".format(
+            h_punkt = home['point'],
+            h_ringe = home['result'],
+            g_ringe = guest['result'],
+            g_punkt = guest['point'],
+            pos = home['position']
+        )
+
+        elements.append(
+            list_element(
+                text,
+                subtitle=sbtle,
+                #buttons=button_comp
+                # image_url=candidate.get('img') or None
+            )
+        )
+
+    if results_club.shape[0] - offset > num_league:
+        button = button_postback("Paarung %d - %d" % (offset + num_league + 1, (offset + 2 * num_league)),
+                                 {'club_list_competitions': comp_id,
+                                  'offset': offset + num_league})
+    else:
+        button = button_postback("Tabelle {comp}".format(
+            comp = comp_id[2:][:-2]
+            ),
+            {'table_payload': {'buli': comp_id[2:].split(' ')[0] ,
+                                 'region': comp_id[2:].split(' ')[1][:-2],
+                                'weapon': comp_id[0:2],
+                                                               }})
+
+    if offset == 0:
+        total_points_home = results_club[results_club['home'] == True]['point'].sum()
+        text_first = '{home} : {guest}\n  {home_points}:{guest_points}\n'.format(
+            home = results_club['team_full'].iloc[0],
+            guest = results_club['team_full'].iloc[1],
+            home_points = total_points_home,
+            guest_points = 5- total_points_home
+        )
+        if len(results_club['shoot_off'].unique()) != 0:
+            text_first += "Es gab mindestens ein Stechen!"
 
 
 
-    send_text(sender_id, 'deine info zur competition {home} gegen {guest} kommt bald'.format(
-        home = data['home_team'],
-        guest = data['guest_team']
-    ))
+        send_text(sender_id,text_first)
+
+    send_list(sender_id, elements, button=button)
+
 
 
 
