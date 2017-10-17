@@ -301,11 +301,13 @@ def competition_results(event,payload,**kwargs):
         home = results_club.iloc[2*index]
         guest = results_club.iloc[2*index+1]
 
-        sbtle = "🎯{first_home} {last_home} : {first_guest} {last_guest}".format(
+        sbtle = "{fl_home} {first_home} {last_home} : {first_guest} {last_guest} {fl_guest}".format(
             first_home = home['first_name'],
             last_home = home['last_name'],
             first_guest = guest['first_name'],
-            last_guest = guest['last_name']
+            last_guest = guest['last_name'],
+            fl_home = '🎯' if home['point'] == '1' else '',
+            fl_guest='🎯' if guest['point'] == '1' else ''
         )
         #button_comp = [button_postback("Einzelergebnisse", {'competition_results': data['comp_id']})]
 
@@ -344,24 +346,25 @@ def competition_results(event,payload,**kwargs):
                                                                }})
 
     if offset == 0:
+        goal = '🎯🎯🎯🎯🎯'
         total_points_home = results_club[results_club['home'] == True]['point'].sum()
         text_first = '{home}  {home_points}:{guest_points}  {guest}'.format(
             home = results_club['team_full'].iloc[0],
             guest = results_club['team_full'].iloc[1],
-            home_points = total_points_home,
-            guest_points = 5- total_points_home
+            home_points = goal[0:total_points_home],
+            guest_points = goal[0:(5- total_points_home)]
         )
-        if total_points_home >= 3:
-            text_first_top = '🎯 ' + text_first
-        else:
-            text_first_top = text_first + ' 🎯'
+
 
         if len(results_club['shoot_off'].unique()) != 1:
-            text_first += "\n Es gab mindestens ein Stechen!"
+            text_first += "\n Punkte durch Stechen: {home}:{guest}".format(
+                home = goal[0:results_club[(results_club['shoot_off']!=' ') & results_club['home']== True]['point'].sum()],
+                guest = goal[0:results_club[(results_club['shoot_off']!=' ') & results_club['home']== False]['point'].sum()]
+            )
 
 
 
-        send_text(sender_id,text_first_top)
+        send_text(sender_id,text_first)
 
     send_list(sender_id, elements, button=button)
 
