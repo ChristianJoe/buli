@@ -80,7 +80,7 @@ def make_event_handler():
         PayloadHandler(results.results_club,'results_club'),
 
         ApiAiHandler(results.shooter_results_api,'shooter_who_is'),
-        PayloadHandler(results.shooter_results,['first_name','last_name','club']),
+        PayloadHandler(results.shooter_results,['shooter_results']),
 
         PayloadHandler(dates.next_event, ['next_event']),
         PayloadHandler(dates.competition_info, ['comp_id']),

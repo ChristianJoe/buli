@@ -319,28 +319,29 @@ def shooter_results_api(event, parameters, **kwargs):
     last_name = parameters.get('last_name')
     club = parameters.get('club')
 
-    payload = {'first_name': first_name,
+    payloads = {'first_name': first_name,
                'last_name': last_name,
                'club' : club
                }
 
-    shooter_results(event,payload,**kwargs)
+    shooter_results(event,{'shooter_results': payloads},**kwargs)
 
 
 def shooter_results(event,payload,**kwargs):
     sender_id = event['sender']['id']
     offset = int(payload.get('offset', 0))
+    payloads = payload['shooter_results']
 
     try:
-        first_name = payload['first_name']
+        first_name = payloads['first_name']
     except:
         first_name = None
     try:
-        last_name = payload['last_name']
+        last_name = payloads['last_name']
     except:
         last_name = None
     try:
-        club = payload['club']
+        club = payloads['club']
     except:
         club = None
 
@@ -386,6 +387,7 @@ def shooter_results(event,payload,**kwargs):
         if workdata.shape[0]<4:
             num_league = workdata.shape[0]
         if workdata.shape[0]==1:
+
             send_text(sender_id, 'Zu wenig data yet')
             return
     except:
