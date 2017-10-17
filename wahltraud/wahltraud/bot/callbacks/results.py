@@ -309,13 +309,16 @@ def competition_results(event,payload,**kwargs):
         )
         #button_comp = [button_postback("Einzelergebnisse", {'competition_results': data['comp_id']})]
 
-        text = "#{pos}:  {h_ringe}:{g_ringe} -- {h_punkt}:{g_punkt}".format(
+        text = "#{pos}: {h_punkt}:{g_punkt} --- {h_ringe}:{g_ringe}".format(
             h_punkt = home['point'],
             h_ringe = home['result'],
             g_ringe = guest['result'],
             g_punkt = guest['point'],
             pos = home['position']
         )
+
+        if home['shoot_off'] != guest['shoot_off']:
+            text += " -- Stechen --  {home}:{guest}".format(home = home['shoot_off'],guest=guest['shoot_off'])
 
         elements.append(
             list_element(
