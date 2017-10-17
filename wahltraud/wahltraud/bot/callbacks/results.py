@@ -351,7 +351,7 @@ def shooter_results(event,payload,**kwargs):
         return
 
     shooter = get_results_shooter()
-
+    workdata = pd.DataFrame()
     if last_name:
         data_last = shooter[shooter['last_name'] == last_name]
         check_unique_last_name = list(set(list(data_last['first_name'])))
@@ -371,17 +371,20 @@ def shooter_results(event,payload,**kwargs):
 
     data_club = pd.DataFrame()
 
-    if club and last_name:
-        if len(check_unique_last_name) != 0:
-            data_club = data_last[data_last['team_full'] == club]
-    elif club and first_name:
-        if len(check_unique_first_name) != 0:
-            data_club = data_first[data_first['team_full'] == club]
-
-    if not data_club.empty:
-        check_unique_club = list(set(list(data_club['first_name'])))
-        if len(check_unique_club) == 1:
-            workdata = data_club
+    if workdata.empty:
+        if club and last_name:
+            if len(check_unique_last_name) != 0:
+                data_club = data_last[data_last['team_full'] == club]
+                check_unique_club = list(set(list(data_club['first_name'])))
+                if len(check_unique_club) == 1:
+                    workdata = data_club
+    if workdata.empy:
+        if club and first_name:
+            if len(check_unique_first_name) != 0:
+                data_club = data_first[data_first['team_full'] == club]
+                check_unique_club = list(set(list(data_club['first_name'])))
+                if len(check_unique_club) == 1:
+                    workdata = data_club
         else:
             send_text(sender_id,
                       'Ich habe irgendwie mehr als eine Person gefunden... Kannst du den Namen spezifizieren?')
