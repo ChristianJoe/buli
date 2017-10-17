@@ -382,10 +382,10 @@ def shooter_results(event,payload,**kwargs):
             check_unique_club = list(set(list(data_club['last_name'])))
             if len(check_unique_club) == 1:
                 workdata = data_club
-        else:
-            send_text(sender_id,
+            else:
+                send_text(sender_id,
                       'Ich habe irgendwie mehr als eine Person gefunden... Kannst du den Namen spezifizieren?')
-            return
+                return
     try:
         num_league = 4
         if workdata.shape[0]<4:
