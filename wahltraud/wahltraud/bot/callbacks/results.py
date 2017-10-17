@@ -411,8 +411,8 @@ def shooter_results(event,payload,**kwargs):
 
                      }
         sbtle = "Position {position}".format(position = person['position'].iloc[0])
-        if person['shoot_off'].iloc[0]:
-            sbtle += "Entscheidung im Stechen: {person}:{oponent}".format(
+        if person['shoot_off'].iloc[0] != '':
+            sbtle += " -- Entscheidung im Stechen: {person}:{oponent}".format(
                 person = person['shoot_off'].iloc[0],
                 oponent = oponent['shoot_off'].iloc[0]
             )
@@ -425,8 +425,8 @@ def shooter_results(event,payload,**kwargs):
 
         elements.append(
             list_element(
-                "%d : %d --  %s %s" % (person['result'].iloc[0], oponent['result'].iloc[0],
-                                       oponent['first_name'].iloc[0], oponent['last_name'].iloc[0]),
+                "%d : %d --  %s %s (%s)" % (person['result'].iloc[0], oponent['result'].iloc[0],
+                                       oponent['first_name'].iloc[0], oponent['last_name'].iloc[0], oponent['team_full'].iloc[0]),
                 subtitle=sbtle,
                 buttons=button_comp
                 # image_url=candidate.get('img') or None
