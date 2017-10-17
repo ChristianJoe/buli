@@ -242,7 +242,10 @@ def club_list_competitions(event,payload,**kwargs):
         else:
             date = data['date'].strftime("%d.%m.%Y")
             sbtle = date+', '+ data['time'] + ' - Ausrichter: ' + data['host']
-            button_comp = [button_postback('Info Gegner', {'club_info': data['guest_team']})]
+            club_oponent = data['guest_team']
+            if club_oponent == club:
+                club_oponent = data['home_team']
+            button_comp = [button_postback('Info Gegner', {'club_info': club_oponent})]
 
         elements.append(
             list_element(
@@ -279,6 +282,13 @@ def club_list_competitions(event,payload,**kwargs):
 def competition_results(event,payload,**kwargs):
     sender_id = event['sender']['id']
     data = payload['competition_results']
+
+    info_dict = {'home_team': data['home_team'],
+                 'guest_team': data['guest_team'],
+                 'comp_id': data['comp_id']
+                 }
+
+
 
     send_text(sender_id, 'deine info zur competition {home} gegen {guest} kommt bald'.format(
         home = data['home_team'],
@@ -324,6 +334,9 @@ def shooter_results(event,payload,**kwargs):
     club = payload['club']
 
     results = get_results_shooter()
+
+    if not first_name and not last_name:
+        club_list_competitions(event,{'club':club})
 
     if not club:
         if not first_name:

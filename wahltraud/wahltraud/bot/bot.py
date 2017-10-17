@@ -21,7 +21,7 @@ from .callbacks.simple import (get_started, push, subscribe, unsubscribe, wiki, 
                                update_api, infos_backend, table_start, competition_start, club_info, club_info_api)
 from .callbacks.shared import (get_pushes, get_breaking, send_push, schema)
 from .callbacks import candidate, district, browse_lists, manifesto, party, dates, parser, results
-from .data import by_district_id
+from .data import by_district_id, reopen_data
 
 # TODO: The idea is simple. When you send "subscribe" to the bot, the bot server would add a record according to the sender_id to their
 # database or memory , then the bot server could set a timer to distribute the news messages to those sender_id who have subscribed for the news.
@@ -284,7 +284,6 @@ def push_breaking():
     data.delivered = True
     data.save(update_fields=['delivered'])
 
-
 def dsb_update():
     # update results just on weekend till monday every 15min
     parser.get_results_pd()
@@ -292,7 +291,10 @@ def dsb_update():
     parser.update_table()
     # update otherwise once a day
     #parser_setlist
-    #parser.update_setlist()
+
+    # update data for bot
+    reopen_data()
+
 
 def meyton_update():
 
@@ -306,6 +308,10 @@ def meyton_update():
     elif day == 6:
         if now >= datetime.time(7, 00) and now <= datetime.time(13, 00):
             parser.get_meyton()
+
+
+
+
 
 #schedule.every(60).seconds.do(push_breaking)
 #schedule.every().day.at("18:00").do(push_notification)

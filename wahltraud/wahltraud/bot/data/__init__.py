@@ -8,6 +8,7 @@ import operator
 from itertools import groupby
 import pandas as pd
 
+
 logger = logging.getLogger(__name__)
 DATA_DIR = Path(__file__).absolute().parent
 
@@ -26,6 +27,16 @@ results_team = pd.read_csv(DATA_DIR / 'team_results.csv')
 dates = pd.read_csv(DATA_DIR / 'parser/buli17dates.csv')
 tables = pd.read_csv(DATA_DIR / 'buli17_tables.csv')
 results_shooter = pd.read_csv(DATA_DIR / 'shooter_results.csv')
+
+def reopen_data():
+    global tables
+    tables = pd.read_csv(DATA_DIR / 'buli17_tables.csv')
+    global results_shooter
+    results_shooter = pd.read_csv(DATA_DIR / 'shooter_results.csv')
+    global results_team
+    results_team = pd.read_csv(DATA_DIR / 'team_results.csv')
+
+
 
 
 def get_results_shooter():
@@ -47,6 +58,11 @@ def get_dates():
 
 def get_tables():
     return tables
+
+
+
+
+
 
 
 
@@ -74,6 +90,16 @@ def take_info(club_pd):
             'weapon': club_pd['weapon']
             }
     return info
+
+
+
+
+
+
+
+
+
+
 
 
 

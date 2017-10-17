@@ -48,29 +48,50 @@ def club_info(event,payload,**kwargs):
     for ending in ['II', 'I', '2', 'FSG']:
         club = club.replace(ending, '').strip()
 
-    info = get_club_info_weapon_buli_region(club)
+    infoall = get_club_info_weapon_buli_region(club)
 
-    if len(info) == 2:
-        for element in info:
+    addbutton = False
+    if len(infoall) == 2:
+        for index,element in enumerate(infoall):
             if element['club'] == club:
                 info = element
+                break
+            else:
+                info = allinfo[0]
+                info2 = allinfo[1]
+                addbutton = True
+    else:
+        info = infoall
+
+
 
     if len(info) == 4:
-        send_buttons(sender_id,
-                     'Die Mannschaft {club} startet in der {buli} {weapon} {region}.'.format(
-                         club=info['club'],
-                         weapon = info['weapon'],
-                         buli = info['buli'],
-                        region = info['region']
-                     ),
-                     [button_postback('Wettkämpfe',
+
+        buttons = [button_postback('Wettkämpfe',
                                 {'club_list_competitions': info}),
                       button_postback('Tabelle',
                                        {'table_league': info})
                       #button_postback('Setzliste',
                       #                {'club_list_competitions': info})
                        ]
+
+        if addbutton:
+            buttons.append(
+                button_postback(info2['club'],
+                                {'club_info': info2['club']}
+                                )
+            )
+        send_buttons(sender_id,
+                     'Die Mannschaft {club} startet in der {buli} {weapon} {region}.'.format(
+                         club=info['club'],
+                         weapon=info['weapon'],
+                         buli=info['buli'],
+                         region=info['region']
+                     ),
+                     buttons = buttons
+
                      )
+
 
     else:
 
