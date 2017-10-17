@@ -306,8 +306,8 @@ def competition_results(event,payload,**kwargs):
             last_home = home['last_name'],
             first_guest = guest['first_name'],
             last_guest = guest['last_name'],
-            fl_home = '🎯' if home['point'] == '1' else '',
-            fl_guest='🎯' if guest['point'] == '1' else ''
+            fl_home = '🎯' if home['point'] == 1 else '',
+            fl_guest='🎯' if guest['point'] == 1 else ''
         )
         #button_comp = [button_postback("Einzelergebnisse", {'competition_results': data['comp_id']})]
 
