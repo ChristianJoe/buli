@@ -294,7 +294,7 @@ def competition_results(event,payload,**kwargs):
     if results_club.shape[0]/2 - (offset + num_league) == 1:
         num_league = 3
     if results_club.shape[0]/2 - (offset + num_league) < 1:
-        num_league = 4 + (results_club.shape[0]/2 - (offset + num_league))
+        num_league = 4 + (int(results_club.shape[0]/2) - (offset + num_league))
 
     elements = []
     for index in range(offset, offset + num_league):
@@ -325,7 +325,7 @@ def competition_results(event,payload,**kwargs):
                 # image_url=candidate.get('img') or None
             )
         )
-    
+
 
     if results_club.shape[0] - offset > num_league:
         button = button_postback("Paarung %d - %d" % (offset + num_league + 1, (offset + 2 * num_league-1)),
