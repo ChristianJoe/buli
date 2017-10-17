@@ -365,8 +365,8 @@ def shooter_results(event,payload,**kwargs):
             workdata = data_first
         else:
             data_first_last = data_first[data_first['last_name'] == last_name]
-            check_unique_last_name = list(set(list(data_first_last['first_name'])))
-            if len(check_unique_last_name) == 1:
+            check_unique_last_name2 = list(set(list(data_first_last['first_name'])))
+            if len(check_unique_last_name2) == 1:
                 workdata = data_first_last
 
     data_club = pd.DataFrame()
@@ -382,6 +382,9 @@ def shooter_results(event,payload,**kwargs):
         check_unique_club = list(set(list(data_club['first_name'])))
         if len(check_unique_club) == 1:
             workdata = data_club
+        else:
+            send_text(sender_id,
+                      'Ich habe irgendwie mehr als eine Person gefunden... Kannst du den Namen spezifizieren?')
 
     try:
         num_league = 4
