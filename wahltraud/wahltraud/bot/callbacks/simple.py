@@ -104,8 +104,8 @@ def club_info(event,payload,**kwargs):
 
 
 
-
-
+def letsgo(event,**kwargs):
+    get_started(event)
 
 
 

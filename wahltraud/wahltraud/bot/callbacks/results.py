@@ -329,9 +329,18 @@ def shooter_results_api(event, parameters, **kwargs):
 
 def shooter_results(event,payload,**kwargs):
     sender_id = event['sender']['id']
-    first_name = payload['first_name']
-    last_name = payload['last_name']
-    club = payload['club']
+    try:
+        first_name = payload['first_name']
+    except:
+        first_name = None
+    try:
+        last_name = payload['last_name']
+    except:
+        last_name = None
+    try:
+        club = payload['club']
+    except:
+        club = None
 
     results = get_results_shooter()
 
