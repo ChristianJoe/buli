@@ -390,9 +390,13 @@ def shooter_results(event,payload,**kwargs):
 
 
     num_league = 4
-    #if workdata.shape[0]<4:
-    #    num_league = workdata.shape
+    if workdata.shape[0]<4:
+        num_league = workdata.shape
+    if workdata.shape[0]==1:
+        send_text(sender_id, 'Zu wenig data yet')
+        return
 
+    
     if workdata.shape[0] - (offset + num_league) == 1:
         num_league = 3
     elements = []
