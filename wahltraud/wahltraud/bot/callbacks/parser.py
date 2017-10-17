@@ -10,7 +10,7 @@ import os
 import pathlib
 
 
-
+from ..data import reopen_data
 from ..fb import send_text
 from pathlib import Path
 logger = logging.getLogger(__name__)
@@ -390,7 +390,7 @@ def update_results(event, **kwargs):
 
     send_text(sender_id, 'Update ist in arbeit...')
     get_results_pd()
-
+    reopen_data()
 
 
 
@@ -399,4 +399,4 @@ def update_table_payload(event, **kwargs):
 
     send_text(sender_id, 'Update ist in arbeit...')
     update_table()
-
+    reopen_data()

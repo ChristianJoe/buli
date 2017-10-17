@@ -14,6 +14,7 @@ from ..fb import (send_buttons, button_postback, send_text, quick_reply, send_ge
 from .shared import get_pushes, schema, send_push, get_pushes_by_date
 from ..data import by_district_id, get_club_info_weapon_buli_region
 
+
 logger = logging.getLogger(__name__)
 
 
