@@ -23,13 +23,14 @@ DATA_DIR = Path(__file__).absolute().parent.parent
 weapon = {"1" : "Luftgewehr",
           "2" : "Luftpistole",
          }
-league = {"1" :  "2.BuLi Nord",
+league = {"6" :  "1.BuLi Nord",
+          "7" :  "1.BuLi Süd",
+          "1" :  "2.BuLi Nord",
           "2" :  "2.BuLi Ost",
           "3" :  "2.BuLi West",
           "4" :  "2.BuLi Südwest",
-          "5" :  "2.BuLi Süd",
-          "6" :  "1.BuLi Nord",
-          "7" :  "1.BuLi Süd"
+          "5" :  "2.BuLi Süd"
+
         }
 page_id = {"205" : "setlist",
            "231" : "date_result",
