@@ -352,6 +352,7 @@ def shooter_results(event,payload,**kwargs):
 
     shooter = get_results_shooter()
     workdata = pd.DataFrame()
+
     if last_name:
         data_last = shooter[shooter['last_name'] == last_name]
         check_unique_last_name = list(set(list(data_last['first_name'])))
@@ -378,11 +379,11 @@ def shooter_results(event,payload,**kwargs):
                 check_unique_club = list(set(list(data_club['first_name'])))
                 if len(check_unique_club) == 1:
                     workdata = data_club
-    if workdata.empy:
+    if workdata.empty:
         if club and first_name:
             if len(check_unique_first_name) != 0:
                 data_club = data_first[data_first['team_full'] == club]
-                check_unique_club = list(set(list(data_club['first_name'])))
+                check_unique_club = list(set(list(data_club['last_name'])))
                 if len(check_unique_club) == 1:
                     workdata = data_club
         else:
@@ -393,7 +394,6 @@ def shooter_results(event,payload,**kwargs):
         num_league = 4
         if workdata.shape[0]<4:
             num_league = workdata.shape[0]
-
     except:
         send_text(sender_id,
                   'Mhmm, den Namen kenne ich noch nicht. Zumindest hat er noch keinen Wettkampf geschossen!')
