@@ -469,7 +469,8 @@ def shooter_results(event,payload,**kwargs):
             competitions=workdata.shape[0],
             wins = sum(workdata['point']),
             avg_result = avg,
-            adj = adj
+            adj = adj,
+            club = workdata['team_full']
         )
         send_text(sender_id, text_first_response
 
