@@ -407,8 +407,8 @@ def shooter_results(event,payload,**kwargs):
         oponent = data[data['team_full']!= club]
 
         info_dict = {'first_name': oponent['first_name'].iloc[0],
-                     'last_name': oponent['last_name'].iloc[0],
-                     'club': oponent['team_full'].iloc[0]
+                     'last_name': oponent['last_name'].iloc[0]
+
                      }
         sbtle = "Position {position}".format(position = person['position'].iloc[0])
         if person['shoot_off'].iloc[0]:
