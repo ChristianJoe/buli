@@ -465,7 +465,8 @@ def shooter_results(event,payload,**kwargs):
 
         text_first_response = '{first_name} {last_name} startet diese Saison für {club}.\n' \
                               '{competitions} Wettkämpfe, davon {wins} gewonnen.\n' \
-                              'Liga-Ø: {adj} {avg_result}'.format(
+                              'Liga-Ø: {adj} {avg_result}\n\n' \
+                              'Hier die bisherigen Begegnungen:'.format(
             first_name = workdata['first_name'].iloc[0],
             last_name = workdata['last_name'].iloc[0],
             competitions=workdata.shape[0],
