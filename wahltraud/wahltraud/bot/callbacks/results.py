@@ -298,7 +298,7 @@ def competition_results(event,payload,**kwargs):
 
     elements = []
     for index in range(offset, offset + num_league):
-        home = results_club.iloc[2*index+1]
+        home = results_club.iloc[2*index]
         guest = results_club.iloc[2*index+1]
 
         sbtle = "{first_home}{last_home} : {first_guest}{last_guest}".format(
@@ -325,10 +325,11 @@ def competition_results(event,payload,**kwargs):
                 # image_url=candidate.get('img') or None
             )
         )
+    
 
     if results_club.shape[0] - offset > num_league:
-        button = button_postback("Paarung %d - %d" % (offset + num_league + 1, (offset + 2 * num_league)),
-                                 {'club_list_competitions': comp_id,
+        button = button_postback("Paarung %d - %d" % (offset + num_league + 1, (offset + 2 * num_league-1)),
+                                 {'competition_results': comp_id,
                                   'offset': offset + num_league})
     else:
         button = button_postback("Tabelle {comp}".format(
