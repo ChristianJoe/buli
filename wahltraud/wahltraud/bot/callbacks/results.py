@@ -372,13 +372,13 @@ def shooter_results(event,payload,**kwargs):
 
     if workdata.empty:
         if club and last_name:
-            data_club = data_last[data_last['team_full'] == club]
+            data_club = shooter[(shooter['team_full'] == club) & (shooter['last_name']== last_name)]
             check_unique_club = list(set(list(data_club['first_name'])))
             if len(check_unique_club) == 1:
                 workdata = data_club
     if workdata.empty:
         if club and first_name:
-            data_club = data_first[data_first['team_full'] == club]
+            data_club = shooter[(shooter['team_full'] == club) & (shooter['first_name'] == first_name)]
             check_unique_club = list(set(list(data_club['last_name'])))
             if len(check_unique_club) == 1:
                 workdata = data_club
