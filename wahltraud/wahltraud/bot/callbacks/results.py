@@ -399,6 +399,7 @@ def shooter_results(event,payload,**kwargs):
      #   {}
     #info_person['first_name'] =  workdata['first_name'].iloc[0]
     #info_person['last_name'] =  workdata['last_name'].iloc[0]
+    workdata = workdata.reset_index(drop=True)
 
     club = workdata['team_full'].iloc[0]
 
