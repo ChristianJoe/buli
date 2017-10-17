@@ -445,13 +445,31 @@ def shooter_results(event,payload,**kwargs):
     if offset == 0:
         pd.to_numeric(workdata['result'], errors='ignore')
         pd.to_numeric(workdata['point'], errors='ignore')
-        competitions = workdata.shape[0]
-        wins = sum(workdata['point'])
-        avg_result = workdata['result'].mean()
+        avg = workdata['result'].mean()
+        adj = ''
+        if avg > 390:
+            adj = 'gute'
+            if avg > 395:
+                adj = 'starke'
+                if avg > 396:
+                    adj = 'wahnsinnige'
+                    if avg > 397:
+                        adj = 'unglaubliche'
+                        if avg > 398:
+                            adj = 'galaktische'
+                            if avg > 399:
+                               adj = 'unmenschliche'
 
-        text_first_response = '{first_name} {last_name}'.format(
+
+        text_first_response = '{first_name} {last_name} startet diese Saison für {club}.\n' \
+                              'Von {competitions} Wettkämpfen hat sie {wins} gewonnen.\n' \
+                              'Ihr Liga-Ø beträgt {adj} {avg_result}'.format(
             first_name = workdata['first_name'].iloc[0],
-            last_name = workdata['last_name'].iloc[0]
+            last_name = workdata['last_name'].iloc[0],
+            competitions=workdata.shape[0],
+            wins = sum(workdata['point']),
+            avg_result = avg,
+            adj = adj
         )
         send_text(sender_id, text_first_response
 
