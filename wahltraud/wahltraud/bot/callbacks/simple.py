@@ -51,16 +51,15 @@ def club_info(event,payload,**kwargs):
 
     infoall = get_club_info_weapon_buli_region(club_repl)
 
-    addbutton = False
     if len(infoall) == 2:
-        for index,element in enumerate(infoall):
+        addbutton = True
+        info = infoall[0]
+        info2 = infoall[1]
+        for element in infoall:
             if element['club'] == club:
                 info = element
+                addbutton = False
                 break
-            else:
-                info = infoall[0]
-                info2 = infoall[1]
-                addbutton = True
     else:
         info = infoall
 
