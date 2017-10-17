@@ -459,18 +459,20 @@ def shooter_results(event,payload,**kwargs):
                             adj = 'galaktische'
                             if avg > 399:
                                adj = 'unmenschliche'
+                            else:
+                                adj = 'passable'
 
 
         text_first_response = '{first_name} {last_name} startet diese Saison für {club}.\n' \
-                              'Von {competitions} Wettkämpfen hat sie {wins} gewonnen.\n' \
-                              'Ihr Liga-Ø beträgt {adj} {avg_result}'.format(
+                              'Von {competitions} Wettkämpfen hat er/sie {wins} gewonnen.\n' \
+                              'Sein/Ihr Liga-Ø beträgt {adj} {avg_result}'.format(
             first_name = workdata['first_name'].iloc[0],
             last_name = workdata['last_name'].iloc[0],
             competitions=workdata.shape[0],
             wins = sum(workdata['point']),
             avg_result = avg,
             adj = adj,
-            club = workdata['team_full']
+            club = workdata['team_full'].iloc[0]
         )
         send_text(sender_id, text_first_response
 
