@@ -380,7 +380,7 @@ def shooter_results(event,payload,**kwargs):
 
     send_text(sender_id, 'Hier Ergebnisse von {first_name} {last_name}: {points} ' .format(
         first_name = workdata['first_name'].iloc[0],
-        last_name =  last_name['last_name'].iloc[0],
+        last_name =  workdata['last_name'].iloc[0],
         points = workdata['result'].iloc[0]
     )
               )
