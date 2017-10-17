@@ -329,6 +329,8 @@ def shooter_results_api(event, parameters, **kwargs):
 
 def shooter_results(event,payload,**kwargs):
     sender_id = event['sender']['id']
+    offset = int(payload.get('offset', 0))
+
     try:
         first_name = payload['first_name']
     except:
@@ -378,26 +380,77 @@ def shooter_results(event,payload,**kwargs):
                       'Mhmm, den Namen kenne ich noch nicht. Zumindest hat er noch keinen Wettkampf geschossen!')
             return
 
-    send_text(sender_id, 'Hier Ergebnisse von {first_name} {last_name}: {points} ' .format(
-        first_name = workdata['first_name'].iloc[0],
-        last_name =  workdata['last_name'].iloc[0],
-        points = workdata['result'].iloc[0]
-    )
-              )
+    info_person = {first_name :  workdata['first_name'].iloc[0],
+                    last_name :  workdata['last_name'].iloc[0]}
+    club = workdata['team_full'].iloc[0]
+
+
+    num_league = 4
+
+    if workdata.shape[0] - (offset + num_league) == 1:
+        num_league = 3
+    elements = []
+    for index in range(offset, offset + num_league):
+        data = shooter[(shooter['comp_id'] == workdata['comp_id'].iloc[index]) & (
+                        shooter['position'] == workdata['position'].iloc[index])]
+        person = data[data['team_full'] == club]
+        oponent = data[data['team_full']!= club]
+
+        info_dict = {'first_name': oponent['first_name'],
+                     'last_name': oponent['guest_team'],
+                     'club': oponent['team_full']
+                     }
+        sbtle = "Position {position}".format(person['position'])
+        if person['shoot_off']:
+            sbtle += "Entscheidung im Stechen: {person}:{oponent}".format(
+                person = person['shoot_off'],
+                oponent = oponent['shoot_off']
+            )
+
+        button_comp = [button_postback("Info {first_name} {last_name}".format(
+                first_name = oponent['first_name'],
+                last_name = oponent['last_name']
+            ), {'shooter_results': info_dict})]
+
+
+        elements.append(
+            list_element(
+                "%d : %d --  %s %s" % (person['result'], oponent['result'], oponent['first_name'], oponent['last_name']),
+                subtitle=sbtle,
+                buttons=button_comp
+                # image_url=candidate.get('img') or None
+            )
+        )
+
+    if workdata.shape[0] - offset > num_league:
+        button = button_postback("Wettkämpfe %d - %d" % (offset + num_league + 1, (offset + 2 * num_league)),
+                                 {'shooter_results': info_person,
+                                  'offset': offset + num_league})
+    else:
+        button = button_postback(club, {'club_info': club})
+
+    if offset == 0:
+        text_first_response = '{first_name} {last_name}'.format(
+            first_name = workdata['first_name'].iloc[0],
+            last_name = workdata['last_name'].iloc[0]
+        )
+        send_text(sender_id, text_first_response
+
+                  )
+    send_list(sender_id, elements, button=button)
 
 
 
 
 
 
-
-
+#################################
 def buli_live_api(event, parameters, **kwargs):
 
     buli_live(event)
 
 
-
+######################################
 def buli_live(event,**kwargs):
     sender_id = event['sender']['id']
 
