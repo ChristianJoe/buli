@@ -360,6 +360,8 @@ def shooter_results(event,payload,**kwargs):
         if check_unique_first_name == 1:
             workdata = data_first
 
+    data_club = pd.DataFrame()
+
     if club and last_name:
         if len(check_unique_last_name) != 0:
             data_club = data_last[data_last['team_full'] == club]
