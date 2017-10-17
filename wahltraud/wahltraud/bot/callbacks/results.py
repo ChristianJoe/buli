@@ -345,14 +345,14 @@ def competition_results(event,payload,**kwargs):
 
     if offset == 0:
         total_points_home = results_club[results_club['home'] == True]['point'].sum()
-        text_first = '{home} : {guest}\n  {home_points}:{guest_points}\n'.format(
+        text_first = '{home}  {home_points}:{guest_points}  {guest}'.format(
             home = results_club['team_full'].iloc[0],
             guest = results_club['team_full'].iloc[1],
             home_points = total_points_home,
             guest_points = 5- total_points_home
         )
         if len(results_club['shoot_off'].unique()) != 0:
-            text_first += "Es gab mindestens ein Stechen!"
+            text_first += "\n Es gab mindestens ein Stechen!"
 
 
 
