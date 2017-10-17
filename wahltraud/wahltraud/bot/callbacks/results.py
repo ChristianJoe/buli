@@ -387,10 +387,7 @@ def shooter_results(event,payload,**kwargs):
         num_league = 4
         if workdata.shape[0]<4:
             num_league = workdata.shape[0]
-        if workdata.shape[0]==1:
 
-            send_text(sender_id, 'Zu wenig data yet')
-            return
     except:
         send_text(sender_id,
                   'Mhmm, den Namen kenne ich noch nicht. Zumindest hat er noch keinen Wettkampf geschossen!')
@@ -426,11 +423,12 @@ def shooter_results(event,payload,**kwargs):
                 last_name = oponent['last_name'].iloc[0]
             ), {'shooter_results': info_dict})]
 
-
+        list_text_title  = "%d : %d --  %s %s (%s)" % (person['result'].iloc[0], oponent['result'].iloc[0],
+                                    oponent['first_name'].iloc[0], oponent['last_name'].iloc[0],
+                                    oponent['team_full'].iloc[0])
         elements.append(
             list_element(
-                "%d : %d --  %s %s (%s)" % (person['result'].iloc[0], oponent['result'].iloc[0],
-                                       oponent['first_name'].iloc[0], oponent['last_name'].iloc[0], oponent['team_full'].iloc[0]),
+                list_text_title,
                 subtitle=sbtle,
                 buttons=button_comp
                 # image_url=candidate.get('img') or None
@@ -445,6 +443,12 @@ def shooter_results(event,payload,**kwargs):
         button = button_postback(club, {'club_info': club})
 
     if offset == 0:
+        pd.to_numeric(workdata['result'], errors='ignore')
+        pd.to_numeric(workdata['point'], errors='ignore')
+        competitions = workdata.shape[0]
+        wins = sum(workdata['point'])
+        avg_result = workdata['result'].mean()
+
         text_first_response = '{first_name} {last_name}'.format(
             first_name = workdata['first_name'].iloc[0],
             last_name = workdata['last_name'].iloc[0]
@@ -452,7 +456,10 @@ def shooter_results(event,payload,**kwargs):
         send_text(sender_id, text_first_response
 
                   )
-    send_list(sender_id, elements, button=button)
+    if workdata.shape[0] != 1:
+        send_list(sender_id, elements, button=button)
+    else:
+        send_text(sender_id, 'Not enough data')
 
 
 
