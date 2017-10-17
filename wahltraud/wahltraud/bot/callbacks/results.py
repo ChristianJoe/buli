@@ -342,33 +342,51 @@ def shooter_results(event,payload,**kwargs):
     except:
         club = None
 
-    results = get_results_shooter()
-
-    if not first_name and not last_name:
+    if not first_name and not last_name and club:
         club_list_competitions(event,{'club':club})
+        return
 
-    if not club:
-        if not first_name:
-            send_text(sender_id,'Hier Ergebnisse zu_'+ last_name+'.')
-        elif not last_name:
-            send_text(sender_id, 'Hier Ergebnisse zu ' + first_name+'.')
+    shooter = get_results_shooter()
+
+    if last_name:
+        data_last = shooter[shooter['last_name'] == last_name]
+        check_unique_last_name = list(set(list(data_last['first_name'])))
+        if len(check_unique_last_name) == 1:
+            workdata = data_last
+
+    if first_name:
+        data_first = shooter[shooter['first_name'] == first_name]
+        check_unique_first_name = list(set(list(data_first['first_name'])))
+        if check_unique_first_name == 1:
+            workdata = data_first
+
+    if club and last_name:
+        if len(check_unique_last_name) != 0:
+            data_club = data_last[data_last['team_full'] == club]
+    elif club and first_name:
+        if len(check_unique_first_name) != 0:
+            data_club = data_first[data_first['team_full'] == club]
+
+    if not data_club.empty:
+        check_unique_club = list(set(list(data_club['first_name'])))
+        if len(check_unique_club) == 1:
+            workdata = data_club
         else:
-            data = results[(results['last_name'] == last_name) & (results['first_name'] == first_name)]
+            send_text(sender_id,
+                      'Mhmm, den Namen kenne ich noch nicht. Zumindest hat er noch keinen Wettkampf geschossen!')
+            return
 
-            send_text(sender_id, 'Hier Ergebnisse von {first_name} {last_name}: {points} ' .format(
-                first_name = first_name,
-                last_name =  last_name,
-                points = data['result'].iloc[0]
-            )
-                      )
+    send_text(sender_id, 'Hier Ergebnisse von {first_name} {last_name}: {points} ' .format(
+        first_name = workdata['first_name'].iloc[0],
+        last_name =  last_name['last_name'].iloc[0],
+        points = workdata['result'].iloc[0]
+    )
+              )
 
-    elif not first_name:
-        if not last_name:
-            send_text(sender_id, 'Hier Ergebnisse zu ' + club+'.')
-        else:
-            send_text(sender_id, 'Hier Ergebnisse zu ' + last_name + ' vom ' + club+'.')
-    else:
-        send_text(sender_id, 'Hier Ergebnisse von '+first_name+' '+last_name+' vom '+ club+'.')
+
+
+
+
 
 
 

@@ -146,7 +146,7 @@ def get_started(event, **kwargs):
         referral = event.get('postback').get('referral')
     except:
         referral = None
-        
+
     if referral:
         ref = referral.get('ref')
         logging.info('Bot wurde mit neuem User geteilt: ' + ref)
