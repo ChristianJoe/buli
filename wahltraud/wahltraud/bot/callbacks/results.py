@@ -254,7 +254,7 @@ def club_list_competitions(event,payload,**kwargs):
         elements.append(
             list_element(
                 '#{index} - {home} : {guest} '.format(
-                    index = index,
+                    index = index+1,
                     home=data['home_team'],
                     guest=data['guest_team']
                 ),
