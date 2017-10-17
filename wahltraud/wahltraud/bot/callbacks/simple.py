@@ -57,8 +57,8 @@ def club_info(event,payload,**kwargs):
                 info = element
                 break
             else:
-                info = allinfo[0]
-                info2 = allinfo[1]
+                info = infoall[0]
+                info2 = infoall[1]
                 addbutton = True
     else:
         info = infoall
