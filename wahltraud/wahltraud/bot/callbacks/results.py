@@ -372,7 +372,7 @@ def competition_results(event,payload,**kwargs):
 
 
         if len(results_club['shoot_off'].unique()) != 1:
-            text_first += "\n Davon waren Punkte durch Stechen: {home}{guest}".format(
+            text_first += "\nPunkte durch Stechen: {home}{guest}".format(
                 home = goal[0:results_club[(results_club['shoot_off']!=' ') & (results_club['home']== True)]['point'].sum()],
                 guest = goal[0:results_club[(results_club['shoot_off']!=' ') & (results_club['home']== False)]['point'].sum()]
             )
