@@ -593,8 +593,8 @@ def former_champions_LG(event,**kwargs):
     2000/01 Der Bund München
     1999/00 Der Bund München
     1998/99 SV Affalterbach
-    1997/98 SV Affalterbach""",
-              quick_reply('Meister LP',['champions_LP'])
+    1997/98 SV Affalterbach"""#,
+             # quick_reply('Meister LP',['champions_LP'])
               )
 
 
