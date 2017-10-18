@@ -17,7 +17,7 @@ from .handlers.apiaihandler import ApiAiHandler
 from .callbacks.simple import (get_started, push, subscribe, unsubscribe, wiki, story,
                                apiai_fulfillment, about_manifesto, menue_manifesto, about,
                                questions,share_bot, push_step,  menue_data,
-                               more_data, sunday_poll, greetings, presidents, chancelor, who_votes,
+                               more_data, sunday_poll, greetings, who_votes,
                                update_api, infos_backend, table_start, competition_start, club_info, club_info_api,
                                letsgo,champions_api,champions_LG, champions_LP, former_champions_LG, former_champions_LP )
 from .callbacks.shared import (get_pushes, get_breaking, send_push, schema)
