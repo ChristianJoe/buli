@@ -271,9 +271,22 @@ def club_list_competitions(event,payload,**kwargs):
         button = button_postback("von vorn", ['table_second_league'])
 
     if offset == 0:
-        send_text(sender_id, 'Wettkampfübersicht {club}'.format(
-            club=club
-                    )
+        id = info['weapon'] + info['buli'] + ' ' + info['region']
+        tables = get_tables()
+        go_table = tables[(tables['id'] == id ) & tables['club']== club].iloc[0]
+
+        text_reply = '{club} liegt derzeit auf Platz {pos} der {liga} {region}\n\n Teampunkte: {win} : {los}\n Einzelpunkte: {winE}: {losE}'.format(
+                                 club=club,
+                                 liga = info['buli'],
+                                 region = info['region'],
+                                 pos = go_table['rank'],
+                                 win = go_table['team_won'],
+                                 los = go_table['team_lost'],
+                                 winE = go_table['single_won'],
+                                 losE = go_table['single_lost']
+                                )
+
+        send_text(sender_id, text_reply
                   )
     send_list(sender_id, elements, button=button)
 
