@@ -531,8 +531,8 @@ def former_champions_LP(event,**kwargs):
                     1999/00 PSV Olympia Berlin
                     1998/99 PSV Olympia Berlin
                     1997/98 PSV Olympia Berlin
-                    """,
-                    [quick_reply('Luftgewehr',['champions_LG'])]
+                    """#,
+                    #[quick_reply('Luftgewehr',['champions_LG'])]
               )
 
 
