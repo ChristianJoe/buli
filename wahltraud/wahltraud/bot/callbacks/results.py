@@ -373,18 +373,16 @@ def competition_results(event,payload,**kwargs):
 
 
 def results_api(event, parameters, **kwargs):
+    club = parameters.get('club')
 
-    club = parameters.get('clubs')
-
-    if club:
-        results_club(event, {'results_club': club})
+    results_club(event, {'results_club': club})
 
 
 
 
 def results_club(event, payload, **kwargs):
     sender_id = event['sender']['id']
-    club = payload['club']
+    club = payload['results_club']
 
     club_repl = club
     for ending in ['II', 'I', '2', 'FSG']:
