@@ -192,7 +192,7 @@ def table_league(event,payload,**kwargs):
         button = button_postback("Andere Liga", {'table_league': {'weapon': 'LG'} })
 
     if offset == 0:
-        send_text(sender_id, 'Ich präsentiere die Tabelle der \n\n{buli} {region} - {weapon}\n\n  nach dem {nter} Wettkampftag:'.format(
+        send_text(sender_id, 'Ich präsentiere die Tabelle der \n\n{buli} {region} - {weapon}\n\nnach dem {nter}. Wettkampftag:'.format(
             buli=buli,
             weapon=weapon,
             region=region,
