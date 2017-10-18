@@ -3,8 +3,9 @@ import operator
 import pandas as pd
 
 from ..fb import send_buttons, button_postback, send_text, send_attachment, send_list, list_element, quick_reply
-from ..data import by_uuid, get_dates, get_results_team, get_results_shooter, get_tables
+from ..data import by_uuid, get_dates, get_results_team, get_results_shooter, get_tables, get_club_info_weapon_buli_region
 from .parser import get_meyton, get_meyton_results
+from .simple import club_info
 import datetime
 
 #enable logging
@@ -372,6 +373,7 @@ def competition_results(event,payload,**kwargs):
 
 
 def results_api(event, parameters, **kwargs):
+
     club = parameters.get('clubs')
 
     if club:
@@ -384,7 +386,17 @@ def results_club(event, payload, **kwargs):
     sender_id = event['sender']['id']
     club = payload['club']
 
-    send_text(sender_id, 'hier das Ergebnise von '+club)
+    club_repl = club
+    for ending in ['II', 'I', '2', 'FSG']:
+        club_repl = club_repl.replace(ending, '').strip()
+
+    infoall = get_club_info_weapon_buli_region(club_repl)
+
+    if len(infoall) == 2:
+        club_info(event,{'club_info':club})
+    else:
+        club_list_competitions(event,{'club_list_competitions': infoall})
+
 
 
 
