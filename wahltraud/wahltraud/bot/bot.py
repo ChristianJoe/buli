@@ -104,7 +104,7 @@ def make_event_handler():
         PayloadHandler(results.buli_live_competition,['buli_live_competition']),
         PayloadHandler(results.shooter_live,['shooter_live']),
 
-        ApiAiHandler(champions, 'amtierender deutscher Meister'),
+        ApiAiHandler(champions_api, 'amtierender deutscher Meister'),
         #ApiAiHandler(chancelor, 'bundeskanzler'),
         #ApiAiHandler(candidate.basics, 'kandidat'),
         #ApiAiHandler(party.basics, 'parteien'),
