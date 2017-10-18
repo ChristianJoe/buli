@@ -18,7 +18,8 @@ from .callbacks.simple import (get_started, push, subscribe, unsubscribe, wiki, 
                                apiai_fulfillment, about_manifesto, menue_manifesto, about,
                                questions,share_bot, push_step,  menue_data,
                                more_data, sunday_poll, greetings, presidents, chancelor, who_votes,
-                               update_api, infos_backend, table_start, competition_start, club_info, club_info_api, letsgo)
+                               update_api, infos_backend, table_start, competition_start, club_info, club_info_api,
+                               letsgo,champions_api,champions_LG, champions_LP, former_champions_LG, former_champions_LP )
 from .callbacks.shared import (get_pushes, get_breaking, send_push, schema)
 from .callbacks import candidate, district, browse_lists, manifesto, party, dates, parser, results
 from .data import by_district_id, reopen_data
@@ -103,16 +104,16 @@ def make_event_handler():
         PayloadHandler(results.buli_live_competition,['buli_live_competition']),
         PayloadHandler(results.shooter_live,['shooter_live']),
 
-        #ApiAiHandler(presidents, 'bundespräsident'),
+        ApiAiHandler(champions, 'amtierender deutscher Meister'),
         #ApiAiHandler(chancelor, 'bundeskanzler'),
         #ApiAiHandler(candidate.basics, 'kandidat'),
         #ApiAiHandler(party.basics, 'parteien'),
         #ApiAiHandler(party.top_candidates_apiai, 'spitzenkandidat'),
         #ApiAiHandler(sunday_poll, 'umfrage'),
-        #PayloadHandler(party.show_parties, ['show_parties']),
-        #PayloadHandler(party.show_electorial, ['show_electorial']),
-        #PayloadHandler(party.show_party_options, ['show_party_options']),
-        #PayloadHandler(party.show_party_candidates,['show_party_candidates']),
+        PayloadHandler(champions_LG, ['champions_LG']),
+        PayloadHandler(champions_LP, ['champions_LP']),
+        PayloadHandler(former_champions_LG, ['former_champions_LG']),
+        PayloadHandler(former_champions_LP,['former_champions_LP']),
         #PayloadHandler(party.show_list_all, ['show_list_all']),
         #PayloadHandler(party.show_top_candidates,['show_top_candidates']),
         #ApiAiHandler(candidate.candidate_check, 'kandidatencheck'),

@@ -491,42 +491,113 @@ def sunday_poll(event, **kwargs):
               )
 
 
-def presidents(event,**kwargs):
+def champions_LP(event,**kwargs):
     sender_id = event['sender']['id']
     send_text(sender_id,
               '''
-              Hier die Bundespräsidenten der Bundesrepublik Deutschland seit 1949:
-
-seit 18. März 2017: Frank-Walter Steinmeier (SPD)
-2012-18. März 2017: Joachim Gauck (parteilos)
-2010-2012: Christian Wulff (CDU)
-2004-2010: Horst Köhler (CDU)
-1999-2004: Johannes Rau (SPD)
-1994-1999: Roman Herzog (CDU)
-1984-1994: Richard von Weizsäcker (CDU)
-1979-1984: Karl Carstens (CDU)
-1974-1979: Walter Scheel (FDP)
-1969-1974: Gustav Heinemann (SPD)
-1959-1969: Heinrich Lübke (CDU)
-1949-1959: Theodor Heuss (FDP)
+              Aktuelle und damit amtierender Deutscher Meister ist der SV Kelheim-Gmünd.
+              In einem Spannenden Finale der Saison 2016/17 setze er sich mit 4:1 gegen SV 1935 Kriftel
+              durch.
               ''')
+    send_text(sender_id,
+              'Ich bin gespannt, wer dieses Jahr gewinnt!',
+              [quick_reply('Bisherige Meister',['former_champions_LP']),
+              quick_reply('Luftgewehr',['champions_LG'])
+               ]
+              )
 
-def chancelor(event, **kwargs):
+
+def former_champions_LP(event,**kwargs):
+    sender_id = event['sender']['id']
+
+    send_text(sender_id, '''
+                        Hier die bisherigen Deutschen Mannschaftsmeister mit der Luftpistole:'
+                                         
+                    2015/16 SGi Waldkirch
+                    2014/15 SV Kelheim-Gmünd
+                    2013/14 SGi Waldenburg
+                    2012/13 SV 1935 Kriftel
+                    2011/12 SGi Waldenburg
+                    2010/11 SGi Waldenburg
+                    2009/10 SGi Waldenburg
+                    2008/09 SV Kelheim-Gmünd
+                    2007/08 SGi Waldenburg
+                    2006/07 ESV Weil am Rhein
+                    2005/06 SGi Waldenburg
+                    2004/05 SGi Waldenburg
+                    2003/04 VSS Haltern
+                    2002/03 PSV Olympia Berlin
+                    2001/02 VSS Haltern
+                    2000/01 PSV Olympia Berlin
+                    1999/00 PSV Olympia Berlin
+                    1998/99 PSV Olympia Berlin
+                    1997/98 PSV Olympia Berlin
+                    ''',
+                    quick_reply('Luftgewehr',['champions_LG'])
+              )
+
+
+def champions_api(event,parameters,**kwargs):
+    sender_id = event['sender']['id']
+    weapon = parameters.get('weapon')
+
+    if weapon == 'LG':
+        champions_LG(event)
+    elif weapon == 'LP':
+        champions_LP(event)
+    else:
+        send_buttons(sender_id,
+                     "In welcher Diziplin?",
+                     [button_postback('Luftgewehr',
+                                      ['champions_LG']),
+                      button_postback('Luftpistole',
+                                      ['champions_LP']
+                                      )
+                      ]
+                     )
+
+
+
+def champions_LG(event, **kwargs):
     sender_id = event['sender']['id']
     send_text(sender_id,
               '''
-Seit 2005 ist Angela Merkel (CDU) Bundeskanzlerin der Bundesrepublik Deutschland.
-Wer nach ihr BundeskanzlerIn wird, entscheidet die Bundestagswahl am 24.Semptember.
+                Amtierender Meister des Bundesliga Sportschießen Luftgewehr ist der SSV St. Hubertus Elsen.
+                Im Finale haben sie sich mit 3:2 gegen Eichenlaub Saltendorf durchgesetzt.
+                ''',
+              [quick_reply('Vergangene Meister',['former_champions_LG']),
+              quick_reply('Luftpistole',['champions_LG'])
+               ]
+              )
 
-Hier Ihre Vorgänger:\n
-1998-2005: Gerhard Schröder (SPD)
-1982-1998: Helmut Kohl (CDU)
-1974-1982: Helmut Schmidt (SPD)
-1969-1974: Willy Brandt (SPD)
-1966-1969: Kurt Georg Kiesinger (CDU)
-1963-1966: Ludwig Erhard (CDU)
-1949-1963: Konrad Adenauer (CDU)
-              ''')
+
+
+def former_champions_LG(event,**kwargs):
+    sender_id = event['sender']['id']
+    send_text(sender_id,'''
+    Die bisherigen Deutschen Manschaftsmeister:
+    
+    2015/16 SSV St. Hubertus Elsen
+    2014/15 SG Coburg
+    2013/14 HSG München
+    2012/13 HSG München
+    2011/12 SSV St. Hubertus Elsen
+    2010/11 Der Bund München
+    2009/10 HSG München
+    2008/09 SG Coburg
+    2007/08 SG Coburg
+    2006/07 Post SV Plattling
+    2005/06 SSV St. Hubertus Elsen
+    2004/05 BSV Buer-Bülse
+    2003/04 SV Affalterbach
+    2002/03 BSV Buer-Bülse
+    2001/02 BSV Buer-Bülse
+    2000/01 Der Bund München
+    1999/00 Der Bund München
+    1998/99 SV Affalterbach
+    1997/98 SV Affalterbach
+                  ''',
+              quick_reply('Meister LP',['champions_LP']))
 
 
 
