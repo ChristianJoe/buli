@@ -240,7 +240,7 @@ def club_list_competitions(event,payload,**kwargs):
         if data['home_points'] + data['guest_points'] != 0:
             sbtle = "%d : %d --  %d : %d" % (data['home_points'], data['guest_points'],
                                              data['home_result'], data['guest_result'])
-            button_comp = [button_postback("Einzelergebnisse", {'competition_results':  data['comp_id']})]
+            button_comp = [button_postback("Paarungen", {'competition_results':  data['comp_id']})]
         else:
             date = data['date'].strftime("%d.%m.%Y")
             sbtle = date+', '+ data['time'] + ' - Ausrichter: ' + data['host']
@@ -275,7 +275,7 @@ def club_list_competitions(event,payload,**kwargs):
         tables = get_tables()
         go_table = tables[(tables['club']== club)].iloc[0]
 
-        text_reply = '{club} liegt derzeit auf Platz {pos} der {liga} {region}\n\n Teampunkte: {win} : {los}\n Einzelpunkte: {winE}: {losE}'.format(
+        text_reply = '{club} liegt derzeit auf Platz {pos} der {liga} {region}\n\n Teampunkte: {win} : {los}\nEinzelpunkte: {winE} : {losE}'.format(
                                  club=club,
                                  liga = info['buli'],
                                  region = info['region'],
@@ -346,7 +346,7 @@ def competition_results(event,payload,**kwargs):
         )
 
 
-    if results_club.shape[0] - offset > num_league:
+    if results_club.shape[0]/2 - offset > num_league:
         button = button_postback("Paarung %d - %d" % (offset + num_league + 1, (offset + 2 * num_league-1)),
                                  {'competition_results': comp_id,
                                   'offset': offset + num_league})
