@@ -373,7 +373,7 @@ def competition_results(event,payload,**kwargs):
 
 
 def results_api(event, parameters, **kwargs):
-    club = parameters.get('club')
+    club = parameters.get('clubs')
 
     results_club(event, {'results_club': club})
 
