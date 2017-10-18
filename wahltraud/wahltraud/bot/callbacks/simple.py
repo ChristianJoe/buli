@@ -573,7 +573,7 @@ def champions_LG(event, **kwargs):
 
 def former_champions_LG(event,**kwargs):
     sender_id = event['sender']['id']
-    send_text(sender_id,'''Die bisherigen Deutschen Manschaftsmeister im Luftgewehr:
+    send_buttons(sender_id,'''Die bisherigen Deutschen Manschaftsmeister im Luftgewehr:
     
     2015/16 SSV St. Hubertus Elsen
     2014/15 SG Coburg
@@ -594,7 +594,7 @@ def former_champions_LG(event,**kwargs):
     1999/00 Der Bund München
     1998/99 SV Affalterbach
     1997/98 SV Affalterbach''',
-              quick_reply('Meister LP',['champions_LP'])
+              button_postback('Meister LP',['champions_LP'])
               )
 
 
