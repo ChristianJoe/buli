@@ -273,7 +273,7 @@ def club_list_competitions(event,payload,**kwargs):
     if offset == 0:
         id = info['weapon'] + info['buli'] + ' ' + info['region']
         tables = get_tables()
-        go_table = tables[(tables['id'] == id ) & (tables['club']== club)].iloc[0]
+        go_table = tables[(tables['id'] == id ) & (tables['club']== club)]
 
         text_reply = '{club} liegt derzeit auf Platz {pos} der {liga} {region}\n\n Teampunkte: {win} : {los}\n Einzelpunkte: {winE}: {losE}'.format(
                                  club=club,
