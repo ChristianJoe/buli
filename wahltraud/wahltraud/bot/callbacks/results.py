@@ -245,7 +245,7 @@ def club_list_competitions(event,payload,**kwargs):
                 home=data['home_team'],
                 guest=data['guest_team'],
                 fl_home='🎯' if data['home_points'] == 1 else '',
-                fl_guest='🎯' if data['guest_point'] == 1 else ''
+                fl_guest='🎯' if data['guest_points'] == 1 else ''
             )
             sbtle = "%d : %d --  %d : %d" % (data['home_points'], data['guest_points'],
                                              data['home_result'], data['guest_result'])
