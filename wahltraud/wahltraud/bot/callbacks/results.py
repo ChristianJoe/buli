@@ -408,10 +408,10 @@ def results_api(event, parameters, **kwargs):
         results = get_results_team()
         if club1:
             try:
-                data = results[(results['guest_team'] == club) & (results['home_team'] == club1)].iloc[0]
+                data = results[(results['guest_team_short'] == club) & (results['home_team_short'] == club1)].iloc[0]
             except:
                 try:
-                    data = results[(results['guest_team'] == club1) & (results['home_team'] == club)].iloc[0]
+                    data = results[(results['guest_team_short'] == club1) & (results['home_team_short'] == club)].iloc[0]
                 except:
                     info0 = get_club_info_weapon_buli_region(club)
                     info1 = get_club_info_weapon_buli_region(club1)
