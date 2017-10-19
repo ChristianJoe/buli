@@ -216,8 +216,7 @@ def push(event, parameters, **kwargs):
     sender_id = event['sender']['id']
     date = parameters.get('date')
 
-    last_push = Push.objects.filter(
-        published=True).exclude(pub_date__date__gt=date).latest('pub_date')
+    last_push = Push.objects.filter(published=True).exclude(pub_date__date__gt=date).latest('pub_date')
     schema(last_push, sender_id)
     """
     if not date:
