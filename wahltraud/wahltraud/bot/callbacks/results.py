@@ -380,7 +380,7 @@ def competition_results(event,payload,**kwargs):
             home_points =total_points_home,      # goal[0:total_points_home],
             guest_points =5 - total_points_home , # goal[0:(5- total_points_home)]
             fl_home = '🎉' if total_points_home >=3 else '',
-            fl_guest = '🎉' if (5-total_points_home)<3else ''
+            fl_guest = '🎉' if (5-total_points_home)>=3else ''
         )
 
 
