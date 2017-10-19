@@ -408,11 +408,10 @@ def results_api(event, parameters, **kwargs):
         results = get_results_team()
         if club1:
             try:
-                comp_id = results[(results['guest_team'] == club) & (results['home_team'] == club1)]['comp_id'].iloc[0]
+                data = results[(results['guest_team'] == club) & (results['home_team'] == club1)].iloc[0]
             except:
                 try:
-                    comp_id = \
-                    results[(results['guest_team'] == club1) & (results['home_team'] == club)]['comp_id'].iloc[0]
+                    data = results[(results['guest_team'] == club1) & (results['home_team'] == club)].iloc[0]
                 except:
                     info0 = get_club_info_weapon_buli_region(club)
                     info1 = get_club_info_weapon_buli_region(club1)
@@ -428,6 +427,21 @@ def results_api(event, parameters, **kwargs):
                                  "Diese Wettkampf-Paarung find ich nicht in meinem Archiv.",
                                  buttons = buttons)
                     return
+        if data['guest_result'] == 0:
+            text = """Der Wettkampf zwischen {club} und {club1} hat nocht nicht stattgefunden.
+                
+                   Termin: {date}, {time} 
+                   Ausrichter: {host}""".format(
+                club = club,
+                club1 = club1,
+                date = data['date'].strftime("%d.%m.%Y"),
+                time = data['time'],
+                host = data['host']
+            )
+            send_text(sender_id,text)
+        else:
+            comp_id = data['comp_id']
+
 
         competition_results(event,{'competition_results': comp_id})
 
