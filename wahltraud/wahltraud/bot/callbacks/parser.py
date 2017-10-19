@@ -75,6 +75,9 @@ def build_html(kind, weapon, league, competition="1"):
     elif kind == "date" or kind == 'result':
         adding = "?page_id=231&waffe=" + inverted_weapon[weapon] + "&liga=" + inverted_league[
             league] + "&wettkampf=" + competition
+    elif kind == "setlist":
+        adding = "?page_id=205&waffe=" + inverted_weapon[weapon] + inverted_league[league] + "&kompl=1"
+
     else:
         logger.info('wrong url')
 
