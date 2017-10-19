@@ -218,7 +218,8 @@ def push(event, parameters, **kwargs):
 
 
     if not date:
-        data = get_pushes(True)
+        data = get_pushes()
+
         if len(data) == 0:
             schema(data, sender_id)
             #reply = 'Dein Wahl-Update ist noch in Arbeit. Versuche es nach 18 Uhr wieder...'

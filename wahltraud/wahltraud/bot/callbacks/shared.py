@@ -18,15 +18,14 @@ def get_pushes(force_latest=False):
     if time.hour < 18 and not force_latest:
         infos = Push.objects.filter(
             pub_date__date=date,
-            pub_date__hour__lt=8,
+            #pub_date__hour__lt=8,
             published=True)
             # breaking=False)
 
     else:
         infos = Push.objects.filter(
             pub_date__date=date,
-            pub_date__hour__gte=8,
-            pub_date__hour__lt=20,
+            #pub_date__hour__lt=20,
             published=True)
             # breaking=False)
 
