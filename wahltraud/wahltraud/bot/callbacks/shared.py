@@ -61,7 +61,7 @@ def get_breaking():
 
 
 def schema(data, user_id):
-    reply = "Hier kommt dein Update zur Bundestagswahl"
+    reply = "Hier kommt dein Update zur Bundesliga"
     send_text(user_id, reply)
     reply = ""
     first_id = None

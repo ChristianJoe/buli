@@ -264,7 +264,7 @@ def subscribe(event, **kwargs):
 
         send_buttons(user_id, reply,
                      buttons=[
-                         button_postback('Letzter Wettkampftag',
+                         button_postback('Letzte Push-Nachricht',
                                          {'push': last_push.id, 'next_state': 'intro'}),
                      ])
 
