@@ -124,7 +124,7 @@ def greetings(event, **kwargs):
         send_text(sender_id, reply)
 
 
-def infos_backend(event,payload,**kwargs):
+def infos_backend(event,**kwargs):
     sender_id = event['sender']['id']
     infos = Info.objects.all().order_by('-id')[:1]
 
