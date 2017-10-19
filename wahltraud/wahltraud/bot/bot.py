@@ -292,7 +292,7 @@ def dsb_update():
     parser.update_table()
     # update otherwise once a day
     #parser_setlist
-
+    parser.get_setlist()
     # update data for bot
     reopen_data()
 

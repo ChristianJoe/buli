@@ -27,6 +27,7 @@ results_team = pd.read_csv(DATA_DIR / 'team_results.csv')
 dates = pd.read_csv(DATA_DIR / 'parser/buli17dates.csv')
 tables = pd.read_csv(DATA_DIR / 'buli17_tables.csv')
 results_shooter = pd.read_csv(DATA_DIR / 'shooter_results.csv')
+#setlist = pd.read_csv(DATA_DIR / 'buli17_setlist.csv')
 
 def reopen_data():
     global tables
@@ -35,7 +36,8 @@ def reopen_data():
     results_shooter = pd.read_csv(DATA_DIR / 'shooter_results.csv')
     global results_team
     results_team = pd.read_csv(DATA_DIR / 'team_results.csv')
-
+    global setlist
+    setlist = pd.read_csv(DATA_DIR / 'buli17_tables.csv')
 
 
 

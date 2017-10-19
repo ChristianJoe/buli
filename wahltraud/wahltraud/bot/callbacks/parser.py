@@ -283,6 +283,58 @@ def update_table():
     send_text('1642888035775604', 'Update_table done')
 
 
+def get_setlist():
+    kind = "setlist"
+    tables_all = []
+    clubs = []
+    for weapon in inverted_weapon:
+
+        # for i in range(0,total_competitions):
+        if weapon == "Luftgewehr":
+            weapon_short = "LG"
+        else:
+            weapon_short = "LP"
+        for league in inverted_league:
+            site = build_html(kind, weapon, league, str(1))
+            response = requests.get(site)
+            soup = bs4.BeautifulSoup(response.text, "lxml")
+            table = soup.find_all('table', class_='same-page')
+            for index1, row in enumerate(table):
+                if index1 > 0:
+                    small = row.find_all('tr')
+
+                    for index2, ro in enumerate(small):
+                        if index2 == 0:
+
+                            club = ro.find_all('b')[0].text
+                        else:
+                            temp = {}
+
+                            for index3, element in enumerate(ro.find_all('td')):
+
+                                temp['club'] = club
+                                temp['buli'] = league
+                                temp['weapon'] = weapon_short
+                                temp['id'] = weapon_short + league
+                                if index3 == 0:
+                                    temp['first_name'] = element.text.split(',')[1].strip()
+                                    temp['last_name'] = element.text.split(',')[0].strip()
+                                elif index3 == 1:
+                                    temp['fixed'] = True if element.text == 'S' else False
+                                elif index3 == 2:
+                                    temp['avg'] = element.text
+                                else:
+                                    temp[str(index3 - 2)] = element.text
+
+                            tables_all.append(temp)
+
+    setlist = pd.DataFrame(tables_all)
+    setlist.to_csv(str(DATA_DIR/'data/buli17_setlist.csv'))
+
+
+
+
+
 
 
 def get_meyton(hrefs = False):
@@ -404,4 +456,11 @@ def update_table_payload(event, **kwargs):
 
     send_text(sender_id, 'Update ist in arbeit...')
     update_table()
+    reopen_data()
+
+def update_setlist(event, **kwargs):
+    sender_id = event['sender']['id']
+
+    send_text(sender_id, 'Update ist in arbeit...')
+    update_setlist()
     reopen_data()
