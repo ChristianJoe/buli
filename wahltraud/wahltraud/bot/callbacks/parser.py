@@ -306,9 +306,9 @@ def get_setlist():
                                     temp['first_name'] = element.text.split(',')[1].strip()
                                     temp['last_name'] = element.text.split(',')[0].strip()
                                     if temp['first_name'] not in first_name:
-                                        first_name.append(temp_home['first_name'])
+                                        first_name.append(temp['first_name'])
                                     if temp['last_name'] not in last_name:
-                                        last_name.append(temp_home['last_name'])
+                                        last_name.append(temp['last_name'])
                                 elif index3 == 1:
                                     temp['fixed'] = True if element.text == 'S' else False
                                 elif index3 == 2:
