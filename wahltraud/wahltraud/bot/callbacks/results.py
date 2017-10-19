@@ -240,7 +240,7 @@ def club_list_competitions(event,payload,**kwargs):
         data = results_club.iloc[index]
 
         if data['home_points'] + data['guest_points'] != 0:
-            title = '#{index} - {fl_home}{home} : {guest}{fl_guest} '.format(
+            title = '#{index} - {fl_home} {home} : {guest} {fl_guest} '.format(
                 index=index + 1,
                 home=data['home_team'],
                 guest=data['guest_team'],
@@ -412,12 +412,19 @@ def results_api(event, parameters, **kwargs):
                     comp_id = \
                     results[(results['guest_team'] == club1) & (results['home_team'] == club)]['comp_id'].iloc[0]
                 except:
-                    info_club_0 = get_club_info_weapon_buli_region(club)
-                    info_club_1 = get_club_info_weapon_buli_region(club1)
+                    info0 = get_club_info_weapon_buli_region(club)
+                    info1 = get_club_info_weapon_buli_region(club1)
+                    buttons = []
+                    for info in [info0,info1]:
+                        if len(info) == 2:
+                            buttons.append(button_postback(info[0]['club'],{'club_list_competitions': info[0]}))
+                            buttons.append(button_postback(info[1]['club'],{'club_list_competitions': info[1]}))
+                        else:
+                            buttons.append(button_postback(info['club'],{'club_list_competitions': info}))
+
                     send_buttons(sender_id,
                                  "Diese Wettkampf-Paarung find ich nicht in meinem Archiv.",
-                                 [button_postback(club,{'club_list_competitions': info_club_0}),
-                                  button_postback(club1,{'club_list_compoetions': info_club_1})])
+                                 buttons = buttons)
                     return
 
         competition_results(event,{'competition_results': comp_id})
