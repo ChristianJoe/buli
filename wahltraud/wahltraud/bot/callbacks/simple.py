@@ -311,13 +311,15 @@ def unsubscribe(event, **kwargs):
 def competition_start(event, **kwargs):
     sender_id = event['sender']['id']
     send_text(sender_id,
-            "Im wesentlichen kannst du mich nach einem Wochenende fragen und ich sage dir, welche Wettkämpfe da stattfinden.",
-              [quick_reply('Nächste Wettkämpfe', ['next_event'])
+            "Im wesentlichen kannst du mich nach jedem Wettkampf aus der 1. und/oder 2. Bundesliga fragen und ich sage dir, wie er ausgegangen respektive wann er stattfindet."
+            ""
+            "Frag zum Beispiel: \"Wie lief der Wettkampf zwischen Kelheim und Waldkirch?\""#,
+              #[quick_reply('Nächste Wettkämpfe', ['next_event'])
                #quick_reply('Ausrichter', ['next_event'])]
-              ]
+              
               )
 
-
+''
 
 
 
