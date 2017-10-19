@@ -216,7 +216,10 @@ def push(event, parameters, **kwargs):
     sender_id = event['sender']['id']
     date = parameters.get('date')
 
-
+    last_push = Push.objects.filter(
+        published=True).exclude(pub_date__date__gt=date).latest('pub_date')
+    schema(last_push, sender_id)
+    """
     if not date:
         data = get_pushes()
 
@@ -237,7 +240,7 @@ def push(event, parameters, **kwargs):
             send_text(sender_id, reply)
         else:
             schema(data, sender_id)
-
+    """
 
 def share_bot(event, **kwargs):
     sender_id = event['sender']['id']
