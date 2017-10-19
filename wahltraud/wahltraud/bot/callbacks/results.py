@@ -486,7 +486,6 @@ def shooter_results(event,payload,**kwargs):
     except:
         club = None
 
-    send_text(sender_id, first_name+last_name+club)
 
     if not first_name and not last_name and club:
         club_list_competitions(event,{'club':club})
