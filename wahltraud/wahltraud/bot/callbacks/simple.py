@@ -208,7 +208,7 @@ Starte einfach indem du mich mit \"Hallo\" begrüßt!.
     send_buttons(sender_id, reply,
                 buttons = [
                     button_postback("Tabellen", ['table_payload']),
-                    button_postback("Wettkämpfe", ['competitions_payload']),
+                    button_postback("Wettkämpfe", ['competition_start']),
                     button_postback("Daten-Quellen", ['menue_data'])
                 ])
 
@@ -305,6 +305,8 @@ def unsubscribe(event, **kwargs):
     else:
         reply = "Du bist noch kein Nutzer der BuLi-News. Wenn du dich anmelden möchtest wähle \"Anmelden\" über das Menü."
         send_text(user_id, reply)
+
+
 
 def competition_start(event, **kwargs):
     sender_id = event['sender']['id']
