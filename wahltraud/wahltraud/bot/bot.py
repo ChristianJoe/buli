@@ -72,7 +72,7 @@ def make_event_handler():
         ApiAiHandler(update_api, 'update'),
         PayloadHandler(parser.update_table_payload, ['update_table_payload']),
         PayloadHandler(parser.update_results, ['update_results']),
-        PayloadHandler(parser.update_setlist, ['update_setlist']),
+        PayloadHandler(parser.update_setlist_payload, ['update_setlist']),
 
         ApiAiHandler(club_info_api, 'club_info'),
         PayloadHandler(club_info,['club_info']),

@@ -458,7 +458,8 @@ def update_table_payload(event, **kwargs):
     update_table()
     reopen_data()
 
-def update_setlist(event, **kwargs):
+
+def update_setlist_payload(event, **kwargs):
     sender_id = event['sender']['id']
 
     send_text(sender_id, 'Update ist in arbeit...')
