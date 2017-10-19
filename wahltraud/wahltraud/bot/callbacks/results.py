@@ -552,8 +552,9 @@ def shooter_results(event,payload,**kwargs):
         num_league = 3
     elements = []
     for index in range(offset, offset + num_league):
-        data = shooter[(shooter['comp_id'] == workdata['comp_id'].iloc[index]) & (
-                        shooter['position'] == workdata['position'].iloc[index])]
+        data = shooter[(shooter['pos_id'] == workdata['pos_id'].iloc[index])
+                        # & (shooter['position'] == workdata['position'].iloc[index])
+             ]
         person = data[data['team_full'] == club]
         oponent = data[data['team_full']!= club]
 
