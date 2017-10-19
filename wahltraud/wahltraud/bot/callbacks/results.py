@@ -223,8 +223,9 @@ def club_list_competitions(event,payload,**kwargs):
 
     results = get_results_team()
 
-    results_league = results[(results['league'] == league) & (results['weapon'] == abbrv_weapon)]
-    results_club = results_league[(results_league['guest_team'] == club) | (results_league['home_team'] == club)]
+    #results_league = results[(results['league'] == league) & (results['weapon'] == abbrv_weapon)]
+    #results_club = results_league[(results_league['guest_team'] == club) | (results_league['home_team'] == club)]
+    results_club = results[(results['guest_team'] == club) | (results['home_team'] == club)]
 
 
     num_league = 4
