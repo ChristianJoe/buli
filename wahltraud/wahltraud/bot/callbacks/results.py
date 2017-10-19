@@ -313,6 +313,8 @@ def competition_results(event,payload,**kwargs):
 
     results_club = results_shooter[results_shooter['comp_id'] == comp_id]
 
+
+
     num_league = 4
 
     if results_club.shape[0]/2 - (offset + num_league) == 1:
@@ -396,9 +398,32 @@ def competition_results(event,payload,**kwargs):
 
 
 def results_api(event, parameters, **kwargs):
+    sender_id = event['sender']['id']
     club = parameters.get('clubs')
+    club1 = parameters.get('clubs1')
 
-    results_club(event, {'results_club': club})
+    if club1:
+        results = get_results_team()
+        if club1:
+            try:
+                comp_id = results[(results['guest_team'] == club) & (results['home_team'] == club1)]['comp_id'].iloc[0]
+            except:
+                try:
+                    comp_id = \
+                    results[(results['guest_team'] == club1) & (results['home_team'] == club)]['comp_id'].iloc[0]
+                except:
+                    info_club_0 = get_club_info_weapon_buli_region(club)
+                    info_club_1 = get_club_info_weapon_buli_region(club1)
+                    send_buttons(sender_id,
+                                 "Diese Wettkampf-Paarung find ich nicht in meinem Archiv.",
+                                 [button_postback(club,{'club_list_competitions': info_club_0}),
+                                  button_postback(club1,{'club_list_compoetions': info_club_1})])
+                    return
+
+        competition_results(event,{'competition_results': comp_id})
+
+    else:
+        results_club(event, {'results_club': club})
 
 
 
