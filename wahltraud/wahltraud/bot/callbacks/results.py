@@ -525,9 +525,9 @@ def shooter_results(event,payload,**kwargs):
                           'Ich habe irgendwie mehr als eine Person gefunden... Kannst du den Namen spezifizieren?')
                 return
 
-    if workdata.empty:
-        send_text(sender_id,'Ich konnte den Namen nicht eindeutig zuordnen...')
-        return
+    #if workdata.empty:
+    #    send_text(sender_id,'Ich konnte den Namen nicht eindeutig zuordnen...')
+    #    return
 
     try:
         num_league = 4
