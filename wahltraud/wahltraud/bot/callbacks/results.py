@@ -458,7 +458,7 @@ def results_club(event, payload, **kwargs):
 def shooter_results_api(event, parameters, **kwargs):
     first_name = parameters.get('first_name')
     last_name = parameters.get('last_name')
-    club = parameters.get('club')
+    club = parameters.get('clubs')
 
     payloads = {'first_name': first_name,
                'last_name': last_name,
