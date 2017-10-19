@@ -316,7 +316,7 @@ def competition_start(event, **kwargs):
             "Frag zum Beispiel: \"Wie lief der Wettkampf zwischen Kelheim und Waldkirch?\""#,
               #[quick_reply('Nächste Wettkämpfe', ['next_event'])
                #quick_reply('Ausrichter', ['next_event'])]
-              
+
               )
 
 ''

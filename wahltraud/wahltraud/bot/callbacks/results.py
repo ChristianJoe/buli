@@ -244,8 +244,8 @@ def club_list_competitions(event,payload,**kwargs):
                 index=index + 1,
                 home=data['home_team'],
                 guest=data['guest_team'],
-                fl_home='🎯' if data['home_points'] == 1 else '',
-                fl_guest='🎯' if data['guest_points'] == 1 else ''
+                fl_home='🎉' if data['home_points'] == 1 else '',
+                fl_guest='🎉' if data['guest_points'] == 1 else ''
             )
             sbtle = "%d : %d --  %d : %d" % (data['home_points'], data['guest_points'],
                                              data['home_result'], data['guest_result'])
@@ -374,11 +374,13 @@ def competition_results(event,payload,**kwargs):
     if offset == 0:
         goal = '🎯🎯🎯🎯🎯'
         total_points_home = results_club[results_club['home'] == True]['point'].sum()
-        text_first = '{home}  {home_points}  :  {guest_points}  {guest}'.format(
+        text_first = '{fl_home} {home}  {home_points}  :  {guest_points}  {guest} {fl_guest}'.format(
             home = results_club['team_full'].iloc[0],
             guest = results_club['team_full'].iloc[1],
             home_points =total_points_home,      # goal[0:total_points_home],
-            guest_points =5 - total_points_home  # goal[0:(5- total_points_home)]
+            guest_points =5 - total_points_home , # goal[0:(5- total_points_home)]
+            fl_home = '🎉' if total_home_points >=3 else '',
+            fl_guest = '🎉' if (5-total_points_home)<3else ''
         )
 
 
