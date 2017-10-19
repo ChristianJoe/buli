@@ -439,6 +439,7 @@ def results_api(event, parameters, **kwargs):
                 host = data['host']
             )
             send_text(sender_id,text)
+            return
         else:
             comp_id = data['comp_id']
 
