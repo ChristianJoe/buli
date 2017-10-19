@@ -500,6 +500,8 @@ def shooter_results(event,payload,**kwargs):
         if len(check_unique_last_name) == 1:
             workdata = data_last
         elif club:
+            send_text(sender_id,
+                      'hier bin ich')
             data_club = shooter[(shooter['team_short'] == club) & (shooter['last_name'] == last_name)]
             check_unique_club = list(set(list(data_club['first_name'])))
             if len(check_unique_club) == 1:
