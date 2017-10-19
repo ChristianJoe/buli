@@ -165,6 +165,7 @@ def get_results_pd():
                             temp_home = {
                                 'comp_id': test['comp_id'],
                                 'team_full': test['home_team'],
+                                'team_short': test['home_team_short'],
                                 'home': True,
                                 'position': pos + 1,
                                 'first_name': subtab.find_all('td')[2].text.split(',')[1].strip(),
@@ -178,6 +179,7 @@ def get_results_pd():
                             temp_guest = {
                                 'comp_id': test['comp_id'],
                                 'team_full': test['guest_team'],
+                                'team_short': test['guest_team_short'],
                                 'home': False,
                                 'position': pos+1,
                                 'first_name': subtab.find_all('td')[10].text.split(',')[1].strip(),
