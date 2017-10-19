@@ -463,5 +463,5 @@ def update_setlist_payload(event, **kwargs):
     sender_id = event['sender']['id']
 
     send_text(sender_id, 'Update ist in arbeit...')
-    update_setlist()
+    get_setlist()
     reopen_data()
