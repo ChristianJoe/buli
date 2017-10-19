@@ -215,25 +215,6 @@ def get_results_pd():
     result.to_csv(str(DATA_DIR/'data/team_results.csv'))
     result_shooter.to_csv(str(DATA_DIR/'data/shooter_results.csv'))
 
-    # do the api.ai entities
-    for list_names in [last_name, first_name, clubs]:
-        add = 'last'
-        if list_names == first_name:
-            add = 'first'
-        elif list_names == clubs:
-            add = 'club'
-        api = []
-        for name in list_names:
-            name2 = name.replace('-', ' ')
-            name2 = name2.replace('/', ' ')
-            name2 = name2.replace('van der', ' ')
-            synonyms = [x for x in name2.split(' ')]
-            synonyms.append(name)
-            temp = {"value": name, "synonyms": synonyms}
-            api.append(temp)
-
-        with open(str(DATA_DIR/'data')+'/'+ add + 'names_apiai.json', "w", encoding="utf8") as output_file:
-            json.dump(api, output_file, ensure_ascii=False)
 
 
     #tabelle
@@ -290,6 +271,8 @@ def get_setlist():
     kind = "setlist"
     tables_all = []
     clubs = []
+    first_name = []
+    last_name = []
     for weapon in inverted_weapon:
 
         # for i in range(0,total_competitions):
@@ -322,6 +305,10 @@ def get_setlist():
                                 if index3 == 0:
                                     temp['first_name'] = element.text.split(',')[1].strip()
                                     temp['last_name'] = element.text.split(',')[0].strip()
+                                    if temp['first_name'] not in first_name:
+                                        first_name.append(temp_home['first_name'])
+                                    if temp['last_name'] not in last_name:
+                                        last_name.append(temp_home['last_name'])
                                 elif index3 == 1:
                                     temp['fixed'] = True if element.text == 'S' else False
                                 elif index3 == 2:
@@ -334,7 +321,27 @@ def get_setlist():
     setlist = pd.DataFrame(tables_all)
     setlist.to_csv(str(DATA_DIR/'data/buli17_setlist.csv'))
 
+    # do the api.ai entities
+    for list_names in [last_name, first_name, clubs]:
+        add = 'last'
+        if list_names == first_name:
+            add = 'first'
+        elif list_names == clubs:
+            add = 'club'
+        api = []
+        for name in list_names:
+            name2 = name.replace('-', ' ')
+            name2 = name2.replace('/', ' ')
+            name2 = name2.replace('van der', ' ')
+            synonyms = [x for x in name2.split(' ')]
+            synonyms.append(name)
+            temp = {"value": name, "synonyms": synonyms}
+            api.append(temp)
 
+        with open(str(DATA_DIR / 'data') + '/' + add + 'names_apiai.json', "w", encoding="utf8") as output_file:
+            json.dump(api, output_file, ensure_ascii=False)
+
+    send_text('1642888035775604', 'Update_results done')
 
 
 
