@@ -492,7 +492,6 @@ def shooter_results(event,payload,**kwargs):
 
     shooter = get_results_shooter()
 
-    workdata = pd.DataFrame()
 
     if last_name:
         data_last = shooter[shooter['last_name'] == last_name]
