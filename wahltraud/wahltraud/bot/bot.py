@@ -57,7 +57,7 @@ def make_event_handler():
         ApiAiHandler(unsubscribe, 'abmelden'),
         PayloadHandler(push_step, ['push', 'next_state']),
         PayloadHandler(push, ['push']),
-        ApiAiHandler(push, 'push'),
+        ApiAiHandler(infos_backend, 'push'),
         ApiAiHandler(wiki, 'wiki'),
         ApiAiHandler(letsgo,'los gehts'),
         #PayloadHandler(questions, ['questions']),
@@ -67,7 +67,6 @@ def make_event_handler():
         PayloadHandler(about_manifesto, ['about_manifesto']),
 
         ApiAiHandler(dates.dates_api, 'next_event_club'),
-
 
 
         ApiAiHandler(update_api, 'update'),
