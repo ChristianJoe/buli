@@ -207,7 +207,7 @@ Starte einfach indem du mich mit \"Hallo\" begrüßt!.
             '''
     send_buttons(sender_id, reply,
                 buttons = [
-                    button_postback("Tabellen", ['table_payload']),
+                    button_postback("Tabellen", ['table_start']),
                     button_postback("Wettkämpfe", ['competition_start']),
                     button_postback("Daten-Quellen", ['menue_data'])
                 ])
