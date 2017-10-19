@@ -240,10 +240,22 @@ def club_list_competitions(event,payload,**kwargs):
         data = results_club.iloc[index]
 
         if data['home_points'] + data['guest_points'] != 0:
+            title = '#{index} - {fl_home}{home} : {guest}{fl_guest} '.format(
+                index=index + 1,
+                home=data['home_team'],
+                guest=data['guest_team'],
+                fl_home='🎯' if data['home_points'] == 1 else '',
+                fl_guest='🎯' if guest['guest_point'] == 1 else ''
+            )
             sbtle = "%d : %d --  %d : %d" % (data['home_points'], data['guest_points'],
                                              data['home_result'], data['guest_result'])
             button_comp = [button_postback("Paarungen", {'competition_results':  data['comp_id']})]
         else:
+            title = '#{index} - {home} : {guest}'.format(
+                index=index + 1,
+                home=data['home_team'],
+                guest=data['guest_team']
+            )
             date = data['date'].strftime("%d.%m.%Y")
             sbtle = date+', '+ data['time'] + ' - Ausrichter: ' + data['host']
             club_oponent = data['guest_team']
@@ -253,11 +265,7 @@ def club_list_competitions(event,payload,**kwargs):
 
         elements.append(
             list_element(
-                '#{index} - {home} : {guest} '.format(
-                    index = index+1,
-                    home=data['home_team'],
-                    guest=data['guest_team']
-                ),
+                title = title,
                 subtitle=sbtle,
                 buttons=button_comp
                 # image_url=candidate.get('img') or None
@@ -277,7 +285,7 @@ def club_list_competitions(event,payload,**kwargs):
         tables = get_tables()
         go_table = tables[(tables['club']== club)].iloc[0]
 
-        text_reply = '{club} liegt derzeit auf Platz {pos} der {liga} {region}\n\n Teampunkte: {win} : {los}\nEinzelpunkte: {winE} : {losE}'.format(
+        text_reply = '{club} liegt derzeit auf Platz {pos} der {liga} {region}\n\nTeampunkte: {win} : {los}\nEinzelpunkte: {winE} : {losE}'.format(
                                  club=club,
                                  liga = info['buli'],
                                  region = info['region'],
