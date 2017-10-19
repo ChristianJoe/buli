@@ -129,7 +129,7 @@ def get_results_pd():
                     home_team_short = home_team[0]
                     guest_team_short = guest_team[0]
 
-                    for ending in ['II', 'I', '2', 'FSG']:
+                    for ending in [' II', ' I', ' 2', 'FSG']:
                         host = host.replace(ending, '').strip()
                         home_team_short = home_team_short.replace(ending, '').strip()
                         guest_team_short = guest_team_short.replace(ending, '').strip()

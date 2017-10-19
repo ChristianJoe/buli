@@ -47,7 +47,7 @@ def club_info(event,payload,**kwargs):
     club = payload['club_info']
 
     club_repl = club
-    for ending in ['II', 'I', '2', 'FSG']:
+    for ending in [' II', ' I', ' 2', 'FSG']:
         club_repl = club_repl.replace(ending, '').strip()
 
     infoall = get_club_info_weapon_buli_region(club_repl)
