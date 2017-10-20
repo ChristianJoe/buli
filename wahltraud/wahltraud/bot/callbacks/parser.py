@@ -139,10 +139,10 @@ def get_results_pd():
                             home_team_short = home_team_short.replace(ending, '').strip()
                         if guest_team_short.endswith(ending) or ending == 'FSG':
                             guest_team_short = guest_team_short.replace(ending, '').strip()
-                    if home_team == 'ST Hubertus Elsen':
-                        home_team = 'ST Hubertus Elsen I'
-                    if guest_team == 'ST Hubertus Elsen':
-                        guest_team = 'ST Hubertus Elsen I'
+                    if home_team[0] == 'ST Hubertus Elsen:
+                        home_team[0] = 'ST Hubertus Elsen I'
+                    if guest_team[0] == 'ST Hubertus Elsen':
+                        guest_team[0] = 'ST Hubertus Elsen I'
 
                     if home_team_short not in clubs:
                         clubs.append(home_team_short)
