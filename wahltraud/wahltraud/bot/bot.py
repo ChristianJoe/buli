@@ -94,7 +94,7 @@ def make_event_handler():
         PayloadHandler(results.competition_results, ['competition_results']),
         PayloadHandler(results.table_payload,['table_payload']),
 
-
+        PayloadHandler(results.setlist_payload, ['setlist_payload']),
 
         PayloadHandler(table_start,['table_start']),
         PayloadHandler(competition_start,['competition_start']),

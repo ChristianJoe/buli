@@ -27,7 +27,7 @@ results_team = pd.read_csv(DATA_DIR / 'team_results.csv')
 dates = pd.read_csv(DATA_DIR / 'parser/buli17dates.csv')
 tables = pd.read_csv(DATA_DIR / 'buli17_tables.csv')
 results_shooter = pd.read_csv(DATA_DIR / 'shooter_results.csv')
-#setlist = pd.read_csv(DATA_DIR / 'buli17_setlist.csv')
+setlist = pd.read_csv(DATA_DIR / 'buli17_setlist.csv')
 
 def reopen_data():
     global tables
@@ -57,21 +57,19 @@ def get_dates():
     dates_sorted = dates.sort_values(by='date')
     return dates_sorted
 
-
+def get_setlist():
+    return setlist
 
 def get_tables():
     return tables
 
 
-
-
-
-
-
-
-
-
 def get_club_info_weapon_buli_region(club):
+    club_repl = club
+    for ending in [' II', ' I', ' 2', 'FSG']:
+        if club_repl.endswith(ending):
+            club_repl = club_repl.replace(ending, '').strip()
+    club = club_repl
     club_all = results_team[results_team['guest_team_short'] == club]
     elements = list(set(list(club_all['guest_team'].values)))
     if len(elements) == 1:
@@ -84,6 +82,7 @@ def get_club_info_weapon_buli_region(club):
             club_pd = club_all[club_all['guest_team'] == clubAB].iloc[0]
             infos.append(take_info(club_pd))
         return infos
+
 
 
 def take_info(club_pd):

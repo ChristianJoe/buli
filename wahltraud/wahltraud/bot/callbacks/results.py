@@ -3,7 +3,7 @@ import operator
 import pandas as pd
 
 from ..fb import send_buttons, button_postback, send_text, send_attachment, send_list, list_element, quick_reply
-from ..data import by_uuid, get_dates, get_results_team, get_results_shooter, get_tables, get_club_info_weapon_buli_region
+from ..data import by_uuid, get_dates, get_results_team, get_results_shooter, get_tables, get_club_info_weapon_buli_region,get_setlist
 from .parser import get_meyton, get_meyton_results
 from .simple import club_info
 import datetime
@@ -660,10 +660,33 @@ def shooter_results(event,payload,**kwargs):
                      )
 
 
+def setlist_payload(event,payload,**kwargs):
+    sender_id = event['sender']['id']
+    club = payload['setlist_payload']
+
+    setlist = get_setlist()
+    set_club = setlist[setlist['club_short'] == club]
+    clubs = list(set(list(set_club['club'])))
+    if len(clubs) == 1:
+        send_text(sender_id, 'Setzliste '+ clubs[0])
+    elif len(clubs) == 2:
+        send_buttons(sender_id,
+                    'Die Setzliste welcher Mannschaft genau?',
+                    [button_postback(clubs[0],{'setlist_payload', clubs[0]}),
+                     button_postback(clubs[1],{'setlist_payload', clubs[1]})
+                    ]
+                    )
+    else:
+        send_text(sender_id, 'Kein Team mit dem Namen '+ club+' gefunden')
 
 
 
 
+
+
+
+############
+############
 #################################
 def buli_live_api(event, parameters, **kwargs):
 
@@ -742,7 +765,7 @@ def buli_live(event,**kwargs):
 
 
 
-
+###############
 def buli_live_competition(event,payload,**kwargs):
     sender_id = event['sender']['id']
     payload_reply = payload['buli_live_competition']
@@ -754,7 +777,7 @@ def buli_live_competition(event,payload,**kwargs):
                ]
                   )
 
-
+##################
 def shooter_live(event,payload,**kwargs):
     sender_id = event['sender']['id']
     payload_reply = payload['shooter_live']
