@@ -293,12 +293,17 @@ def get_setlist():
                         if index2 == 0:
 
                             club = ro.find_all('b')[0].text
+                            club_short = club
+                            for ending in [' II', ' I', ' 2', 'FSG']:
+                                if club_short.endswith(ending):
+                                    club_short = club_short.replace(ending, '').strip()
                         else:
                             temp = {}
 
                             for index3, element in enumerate(ro.find_all('td')):
 
                                 temp['club'] = club
+                                temp['club_short'] = club_short
                                 temp['buli'] = league
                                 temp['weapon'] = weapon_short
                                 temp['id'] = weapon_short + league
