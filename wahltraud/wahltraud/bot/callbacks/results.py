@@ -560,7 +560,7 @@ def shooter_results(event,payload,**kwargs):
         elif last_name:
             sets= set_list[(set_list['last_name'] == last_name)]
         elif first_name:
-            sets = set_list[(set_list['first'] == first_name)]
+            sets = set_list[(set_list['first_name'] == first_name)]
 
         if sets.empty:
             reply = "Sorry, aber ich finde nichts und niemanden der zu deiner Suche passt."
