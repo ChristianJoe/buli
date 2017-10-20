@@ -52,6 +52,8 @@ def club_info(event,payload,**kwargs):
     #        club_repl = club_repl.replace(ending, '').strip()
 
     infoall = club_weapon_buli_region(event,{'club_weapon_buli_region': club_repl, 'payl': 'club_info'})
+    if not infoall:
+        return
 
     addbutton = False
     info = infoall
@@ -134,7 +136,7 @@ def club_weapon_buli_region(event,payload,**kwargs):
         send_buttons(sender_id,
                      'Der {club} hat 2 Mannschaften am Start.'.format(club = club),
                      buttons = buttons)
-
+        return None
 
 
 
