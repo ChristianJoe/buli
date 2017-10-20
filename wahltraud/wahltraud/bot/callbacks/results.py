@@ -80,8 +80,8 @@ def table_payload(event,payload,*kwarks):
             send_text(sender_id,
                       'Nord oder Süd',
                       quick_replies = [
-                          quick_reply('Nord', payload_north),
-                          quick_reply('Süd', payload_south)
+                          quick_reply('Nord',{'table_payload': payload_north}),
+                          quick_reply('Süd', {'table_payload': payload_south})
 
                       ]
                       )
