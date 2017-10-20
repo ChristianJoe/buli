@@ -679,9 +679,28 @@ def setlist_payload(event,payload,**kwargs):
     set_club = setlist[(setlist['club_short'] == club) | (setlist['club'] == club)]
 
     clubs = list(set(list(set_club['club'])))
-
+    for i in range(1, 13):
+        if sum(set_club[str(i)]) != 0:
+            day = i
+        else:
+            break
     if len(clubs) == 1:
-        send_text(sender_id, 'Setzliste '+ clubs[0])
+        reply = '{club}\n\nSetzliste nach dem {day}. Wettkampf:\n'.format(
+            club=club,
+            day= day
+        )
+        for index, row in set_club.iterrows():
+            reply += " Ø {avg} {tendency}{comps} - {first_name}. {last_name}\n".format(
+                avg=row['avg'],
+                first_name=row['first_name'][0],
+                last_name=row['last_name'],
+                tendency='↘' if (
+                sum([row[str(i)] for i in range(1, day)]) / (day - 1) > float(row['avg'].replace(',', '.'))) else '↗',
+                comps = 2
+            )
+            reply += "\nSchnitt, Tendenz, (# Wettkämpfe)"
+
+        send_text(sender_id,reply )
     elif len(clubs) == 2:
         send_buttons(sender_id,
                     'Die Setzliste welcher Mannschaft genau?',
