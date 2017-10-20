@@ -130,7 +130,7 @@ def club_weapon_buli_region(event,payload,**kwargs):
         for clubAB in elements:
             club_pd = club_all[club_all['guest_team'] == clubAB].iloc[0]
             infos.append(take_info(club_pd))
-            buttons.append(button_postback(clubAB,{"club_weapon_buli_region": clubAB, 'payl': payl}))
+            buttons.append(button_postback(clubAB,{payl: clubAB}))
         send_buttons(sender_id,
                      'Der {club} hat 2 Mannschaften am Start.'.format(club = club),
                      buttons = buttons)
