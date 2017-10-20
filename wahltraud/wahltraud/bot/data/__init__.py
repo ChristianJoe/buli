@@ -23,21 +23,21 @@ digital_word_list = json.load(open(str(DATA_DIR/'digital_words.json')))['words']
 structural_data_district = pd.read_csv(DATA_DIR/'btw17_strukturdaten.csv', delimiter = ';')
 
 ### Daten shooting
-results_team = pd.read_csv(DATA_DIR / 'team_results.csv')
-dates = pd.read_csv(DATA_DIR / 'parser/buli17dates.csv')
-tables = pd.read_csv(DATA_DIR / 'buli17_tables.csv')
-results_shooter = pd.read_csv(DATA_DIR / 'shooter_results.csv')
-setlist = pd.read_csv(DATA_DIR / 'buli17_setlist.csv')
+results_team = pd.read_csv(DATA_DIR/'team_results.csv')
+dates = pd.read_csv(DATA_DIR/'parser/buli17dates.csv')
+tables = pd.read_csv(DATA_DIR/'buli17_tables.csv')
+results_shooter = pd.read_csv(DATA_DIR/'shooter_results.csv')
+setlist = pd.read_csv(DATA_DIR/'buli17_setlist.csv')
 
 def reopen_data():
     global tables
-    tables = pd.read_csv(DATA_DIR / 'buli17_tables.csv')
+    tables = pd.read_csv(DATA_DIR/'buli17_tables.csv')
     global results_shooter
-    results_shooter = pd.read_csv(DATA_DIR / 'shooter_results.csv')
+    results_shooter = pd.read_csv(DATA_DIR/'shooter_results.csv')
     global results_team
-    results_team = pd.read_csv(DATA_DIR / 'team_results.csv')
+    results_team = pd.read_csv(DATA_DIR/'team_results.csv')
     global setlist
-    setlist = pd.read_csv(DATA_DIR / 'buli17_tables.csv')
+    setlist = pd.read_csv(DATA_DIR/'buli17_tables.csv')
 
 
 
