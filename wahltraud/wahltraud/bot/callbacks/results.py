@@ -696,10 +696,10 @@ def setlist_payload(event,payload,**kwargs):
 
             summe =  sum([row[str(i)] for i in range(1, day)]) / (day - 1)
             avg = float(row['avg'].replace(',', '.'))
-            tendency = '\t' if (row[str(day)] == 0) else ('↘' if (summe > avg) else ('➡' if ((summe == avg) or summe == 0) else '↗'))
+            tendency = '    ' if (row[str(day)] == 0) else ('↘' if (summe > avg) else ('➡' if ((summe == avg) or summe == 0) else '↗'))
 
 
-            reply += " ({comps})  Ø {avg} {tendency} - {first_name}. {last_name}\n".format(
+            reply += "({comps}) Ø {avg} {tendency} - {first_name}. {last_name}\n".format(
                 avg=row['avg'],
                 first_name=row['first_name'][0],
                 last_name=row['last_name'],
