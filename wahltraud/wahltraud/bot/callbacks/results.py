@@ -665,8 +665,10 @@ def setlist_payload(event,payload,**kwargs):
     club = payload['setlist_payload']
 
     setlist = get_setlist()
-    set_club = setlist[setlist['club_short'] == club]
+    set_club = setlist[(setlist['club_short'] == club) | (setlist['club'] == club)]
+
     clubs = list(set(list(set_club['club'])))
+
     if len(clubs) == 1:
         send_text(sender_id, 'Setzliste '+ clubs[0])
     elif len(clubs) == 2:
