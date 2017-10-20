@@ -693,12 +693,13 @@ def setlist_payload(event,payload,**kwargs):
 
         reply =''
         for index, row in set_club.iterrows():
-            reply += "{tendency} Ø {avg}({comps}) - {first_name}. {last_name}\n".format(
+            summe =  sum([row[str(i)] for i in range(1, day)]) / (day - 1)
+            avg = float(row['avg'].replace(',', '.'))
+            reply += "{tendency} ({comps})  Ø {avg}  - {first_name}. {last_name}\n".format(
                 avg=row['avg'],
                 first_name=row['first_name'][0],
                 last_name=row['last_name'],
-                tendency='↘' if (
-                sum([row[str(i)] for i in range(1, day)]) / (day - 1) > float(row['avg'].replace(',', '.'))) else '↗',
+                tendency='↘' if (summe > avg) else ( '➡' if summe== avg else '↗'),
                 comps = sum(x is not 0 for x in [row[str(i)] for i in range(1,11)])
             )
         reply += "\nTendenz (der Ø ↘ oder ↗ im vlg. zum vorherigen Wettkampf), Liga-Ø, (# Wettkämpfe)"
