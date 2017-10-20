@@ -704,9 +704,9 @@ def setlist_payload(event,payload,**kwargs):
             )
         reply += "Für die Ergebnisse der einzelnen Schützen gib Ihren Namen und den Verein ein."
 
-        send_text(sender_id,reply, quick_reply('Blauer Pfeil?',['blue_arrows'])
+        send_text(sender_id,reply, [quick_reply('Blauer Pfeil?',['blue_arrows'])]
                   )
-        
+
 
     elif len(clubs) == 2:
         send_buttons(sender_id,
