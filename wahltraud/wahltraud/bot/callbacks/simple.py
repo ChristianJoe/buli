@@ -64,7 +64,7 @@ def club_info(event,payload,**kwargs):
                 info = element
                 addbutton = False
                 break
-    
+
 
 
 
