@@ -699,7 +699,7 @@ def setlist_payload(event,payload,**kwargs):
                 avg=row['avg'],
                 first_name=row['first_name'][0],
                 last_name=row['last_name'],
-                tendency='↘' if (summe > avg) else ( '➡' if summe== avg else '↗'),
+                tendency='↘' if (summe > avg) else ( '➡' if ((summe==avg)or summe==0) else '↗'),
                 comps = sum(x is not 0 for x in [row[str(i)] for i in range(1,11)])
             )
         reply += "\nTendenz (der Ø ↘ oder ↗ im vlg. zum vorherigen Wettkampf), Liga-Ø, (# Wettkämpfe)"
