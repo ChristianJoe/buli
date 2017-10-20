@@ -699,7 +699,7 @@ def setlist_payload(event,payload,**kwargs):
                 avg=row['avg'],
                 first_name=row['first_name'][0],
                 last_name=row['last_name'],
-                tendency='' if (row[str(day)]==0) else ('↘' if (summe > avg) else ( '➡' if ((summe==avg)or summe==0) else '↗')),
+                tendency='  ' if (row[str(day)]==0) else ('↘' if (summe > avg) else ( '➡' if ((summe==avg)or summe==0) else '↗')),
                 comps = sum(x is not 0 for x in [row[str(i)] for i in range(1,11)])
             )
         reply += "Für die Ergebnisse der einzelnen Schützen gib Ihren Namen und den Verein ein."
@@ -724,7 +724,9 @@ def blue_arrows(event, **kwargs):
     sender_id = event['sender']['id']
 
     send_text(sender_id,
-              'Pfeile'
+              """Die Schützen mit Pfeil haben den letzten Wettkampf mitgeschossen.\n
+              Darüber hinaus signalisiert der Pfeil ob der Schütze beim letzten Wettkampf seinen Liga-Ø verbessern konnte oder nicht!""" \
+
               )
 
 
