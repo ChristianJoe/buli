@@ -137,7 +137,7 @@ def get_results_pd():
                             host = host.replace(ending, '').strip()
                         if home_team_short.endswith(ending):
                             home_team_short = home_team_short.replace(ending, '').strip()
-                        if home_team_short.endswith(ending):
+                        if guest_team_short.endswith(ending):
                             guest_team_short = guest_team_short.replace(ending, '').strip()
                     if home_team_short not in clubs:
                         clubs.append(home_team_short)
