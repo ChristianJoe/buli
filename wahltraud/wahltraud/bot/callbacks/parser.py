@@ -139,6 +139,11 @@ def get_results_pd():
                             home_team_short = home_team_short.replace(ending, '').strip()
                         if guest_team_short.endswith(ending) or ending == 'FSG':
                             guest_team_short = guest_team_short.replace(ending, '').strip()
+                    if home_team == 'ST Hubertus Elsen':
+                        home_team = 'ST Hubertus Elsen I'
+                    if guest_team == 'ST Hubertus Elsen':
+                        guest_team = 'ST Hubertus Elsen I'
+
                     if home_team_short not in clubs:
                         clubs.append(home_team_short)
 
@@ -249,8 +254,11 @@ def update_table():
                     if a.get_text(strip=True):
                         link_text = a['href']
                 if index != 0:
+                    home_team = values[1].text
+                    if home_team == 'ST Hubertus Elsen':
+                        home_team = 'ST Hubertus Elsen I'
                     temp = {'rank': values[0].text,
-                            'club': values[1].text,
+                            'club': home_team,
                             'single_won': values[2].text.split(':')[0],
                             'single_lost': values[2].text.split(':')[1],
                             'team_won': values[3].text.split(':')[0],
@@ -297,6 +305,8 @@ def get_setlist():
                             for ending in [' II', ' I', ' 2', 'FSG']:
                                 if club_short.endswith(ending):
                                     club_short = club_short.replace(ending, '').strip()
+                            if club == 'ST Hubertus Elsen':
+                                club = 'ST Hubertus Elsen I'
                         else:
                             temp = {}
 
