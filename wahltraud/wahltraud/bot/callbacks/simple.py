@@ -78,7 +78,7 @@ def club_info(event,payload,**kwargs):
                       ),
                                        {'table_league': info}),
                       button_postback('Setzliste',
-                                      {'setlist_payload': info['club']})
+                                      {'setlist_payload': club})
                        ]
 
         if addbutton:
