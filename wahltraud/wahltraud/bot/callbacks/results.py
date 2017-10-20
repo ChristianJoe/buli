@@ -702,7 +702,7 @@ def setlist_payload(event,payload,**kwargs):
                 tendency='↘' if (summe > avg) else ( '➡' if ((summe==avg)or summe==0) else '↗'),
                 comps = sum(x is not 0 for x in [row[str(i)] for i in range(1,11)])
             )
-        reply += "\nTendenz (der Ø ↘ oder ↗ im vlg. zum vorherigen Wettkampf), Liga-Ø, (# Wettkämpfe)"
+        reply += "\nDie Entwicklung gibt an, ob der Ø seit nach dem letzten besser geworden, stagniert oder fällt. In Klammern steht die Anzahl der Wettkämpfe in der Liga."
 
         send_text(sender_id,reply )
     elif len(clubs) == 2:
