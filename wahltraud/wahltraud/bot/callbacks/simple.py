@@ -73,7 +73,7 @@ def club_info(event,payload,**kwargs):
         buttons = [button_postback('Wettkämpfe',
                                 {'club_list_competitions': info}),
                       button_postback('Tabelle',
-                                       {'table_league': info})
+                                       {'table_league': info}),
                       button_postback('Setzliste',
                                       {'setlist_payload': info['club']})
                        ]
