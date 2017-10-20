@@ -690,8 +690,8 @@ def setlist_payload(event,payload,**kwargs):
             day= day
         )
         send_text(sender_id, reply1)
-        reply = "\nTendenz (der Ø ↘ oder ↗ im vlg. zum vorherigen Wettkampf), Liga-Ø, (# Wettkämpfe)"
 
+        reply =''
         for index, row in set_club.iterrows():
             reply += "{tendency} Ø {avg}({comps}) - {first_name}. {last_name}\n".format(
                 avg=row['avg'],
@@ -701,6 +701,7 @@ def setlist_payload(event,payload,**kwargs):
                 sum([row[str(i)] for i in range(1, day)]) / (day - 1) > float(row['avg'].replace(',', '.'))) else '↗',
                 comps = 2
             )
+        reply += "\nTendenz (der Ø ↘ oder ↗ im vlg. zum vorherigen Wettkampf), Liga-Ø, (# Wettkämpfe)"
 
         send_text(sender_id,reply )
     elif len(clubs) == 2:
