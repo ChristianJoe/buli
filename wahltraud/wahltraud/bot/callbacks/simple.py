@@ -72,13 +72,17 @@ def club_info(event,payload,**kwargs):
 
         buttons = [button_postback('Wettkämpfe',
                                 {'club_list_competitions': info}),
-                      button_postback('Tabelle',
+                      button_postback('Tabelle {buli} {region}'.format(
+                          buli = info['buli'],
+                          region = info['region']
+                      ),
                                        {'table_league': info}),
                       button_postback('Setzliste',
                                       {'setlist_payload': info['club']})
                        ]
 
         if addbutton:
+            buttons = [buttons[0],buttons[-1]]
             buttons.append(
                 button_postback(info2['club'],
                                 {'club_info': info2['club']}
