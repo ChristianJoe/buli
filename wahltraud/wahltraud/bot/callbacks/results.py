@@ -552,26 +552,26 @@ def shooter_results(event,payload,**kwargs):
     except:
         set_list = get_setlist()
         if last_name and first_name:
-            set = set_list[(set_list['last_name']== last_name) & (set_list['first_name'] == first_name)]
+            sets = set_list[(set_list['last_name']== last_name) & (set_list['first_name'] == first_name)]
         elif last_name and club:
-            set = set_list[(set_list['last_name'] == last_name) & (set_list['club_short'] == club)]
+            sets = set_list[(set_list['last_name'] == last_name) & (set_list['club_short'] == club)]
         elif first_name and club:
-            set = set_list[(set_list['first_name'] == first_name) & (set_list['club_short'] == club)]
+            sets = set_list[(set_list['first_name'] == first_name) & (set_list['club_short'] == club)]
         elif last_name:
-            set= set_list[(set_list['last_name'] == last_name)]
+            sets= set_list[(set_list['last_name'] == last_name)]
         elif first_name:
-            set = set_list[(set_list['first'] == first_name)]
+            sets = set_list[(set_list['first'] == first_name)]
 
-        if set.empty:
+        if sets.empty:
             reply = "Sorry, aber ich finde nichts und niemanden der zu deiner Suche passt."
             send_text(sender_id,reply)
             return
 
         quicks = []
-        if offset==0 and set.shape[0]>1:
+        if offset==0 and sets.shape[0]>1:
             send_text(sender_id, "Mhmm, ich habe mehre Schützen gefunden, die auf deine Anfrage passen. Meinst du...")
 
-        row = set.iloc[offset]
+        row = sets.iloc[offset]
         reply = "{first_name}{last_name} schießt für {club}, hat diese Saison allerdings noch keinen Wettkampf absolviert.\n\n{fixsub} mit einem Ø von {avg}".format(
             first_name = row['first_name'],
             last_name = row['last_name'],
@@ -580,7 +580,7 @@ def shooter_results(event,payload,**kwargs):
             avg = row['avg']
         )
 
-        if set.shape[0]>1:
+        if sets.shape[0]>1:
             quicks.append(quick_reply('Ne, der nicht.',{'shooter_results': payloads, 'offset': offset+1}))
 
         quicks.append(quick_reply('Setzliste'+row['club_short'], {'setlist_payload':row['club_short']}))
