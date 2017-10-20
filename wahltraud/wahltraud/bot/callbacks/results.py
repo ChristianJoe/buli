@@ -577,7 +577,7 @@ def shooter_results(event,payload,**kwargs):
 
         row = sets.iloc[offset]
         comps = sum(x is not 0 for x in [row[str(i)] for i in range(1, 11)])
-        reply = "{first_name} {last_name} schießt für {club}{shot} und hat {comps} Wettkämpfe in der aktuellen Saison bestritten.\n\n{fixsub} mit einem Ø von {avg}".format(
+        reply = "{first_name} {last_name} schießt für {club}{shot} und hat {shot} Wettkämpfe in der aktuellen Saison bestritten.\n\n{fixsub} mit einem Ø von {avg}".format(
             first_name = row['first_name'],
             last_name = row['last_name'],
             club = row['club_short'],
