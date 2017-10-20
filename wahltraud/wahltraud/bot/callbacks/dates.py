@@ -31,7 +31,7 @@ def next_event(event,payload,**kwargs):
     options = []
     now = datetime.date.today()
 
-    send_text(sender_id, "Hier zeige ich dir demnächst das Event an, welches nach dem {date} stattfindet.".format(
+    send_text(sender_id, "Hier zeige ich dir demnächst das Event an, welches nach dem {date} stattfindet. (Feature in Entwicklung)".format(
         date=now.strftime("%d.%m.%Y")
     ))
 
