@@ -115,7 +115,7 @@ def club_weapon_buli_region(event,payload,**kwargs):
             club_repl = club_repl.replace(ending, '').strip()
     results_team = get_results_team()
 
-    club_all = results_team[results_team['guest_team_short'] == club_repl]
+    club_all = results_team[(results_team['guest_team'] == club_repl) | (results_team['guest_team_short'] == club_repl)]
 
     elements = list(set(list(club_all['guest_team'])))
     if len(elements) == 1:
