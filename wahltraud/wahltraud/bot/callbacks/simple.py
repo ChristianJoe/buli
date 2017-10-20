@@ -54,6 +54,7 @@ def club_info(event,payload,**kwargs):
     infoall = get_club_info_weapon_buli_region(club_repl)
 
     addbutton = False
+    info = infoall
     if len(infoall) == 2:
         addbutton = True
         info = infoall[0]
@@ -63,8 +64,8 @@ def club_info(event,payload,**kwargs):
                 info = element
                 addbutton = False
                 break
-    else:
-        info = infoall
+    
+
 
 
 
