@@ -685,12 +685,15 @@ def setlist_payload(event,payload,**kwargs):
         else:
             break
     if len(clubs) == 1:
-        reply = '{club}\n\nSetzliste nach dem {day}. Wettkampf:\n'.format(
+        reply1 = 'Hier die Setzliste nach dem {day}. Wettkampf von {club}:\n'.format(
             club=club,
             day= day
         )
+        send_text(sender_id, reply1)
+        reply = "\nTendenz (der Ø ↘ oder ↗ im vlg. zum vorherigen Wettkampf), Liga-Ø, (# Wettkämpfe)"
+
         for index, row in set_club.iterrows():
-            reply += " Ø {avg} {tendency}({comps}) - {first_name}. {last_name}\n".format(
+            reply += "{tendency} Ø {avg}({comps}) - {first_name}. {last_name}\n".format(
                 avg=row['avg'],
                 first_name=row['first_name'][0],
                 last_name=row['last_name'],
@@ -698,7 +701,6 @@ def setlist_payload(event,payload,**kwargs):
                 sum([row[str(i)] for i in range(1, day)]) / (day - 1) > float(row['avg'].replace(',', '.'))) else '↗',
                 comps = 2
             )
-        reply += "\nSchnitt, Tendenz (der Ø ↘ oder ↗ im vlg. zum vorherigen Wettkampf), (# Wettkämpfe)"
 
         send_text(sender_id,reply )
     elif len(clubs) == 2:
