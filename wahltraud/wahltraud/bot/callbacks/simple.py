@@ -12,7 +12,7 @@ from ..fb import (send_buttons, button_postback, send_text, quick_reply, send_ge
                   generic_element, button_web_url, button_share, send_attachment,
                   send_attachment_by_id, guess_attachment_type)
 from .shared import get_pushes, schema, send_push, get_pushes_by_date
-from ..data import by_district_id, get_club_info_weapon_buli_region
+from ..data import by_district_id, get_club_info_weapon_buli_region, get_results_team, take_info
 
 
 logger = logging.getLogger(__name__)
@@ -51,7 +51,7 @@ def club_info(event,payload,**kwargs):
     #    if club_repl.endswith(ending):
     #        club_repl = club_repl.replace(ending, '').strip()
 
-    infoall = get_club_info_weapon_buli_region(club_repl)
+    infoall = club_weapon_buli_region(event,{'club_weapon_buli_region': club_repl, 'payl': 'club_info'})
 
     addbutton = False
     info = infoall
@@ -64,10 +64,6 @@ def club_info(event,payload,**kwargs):
                 info = element
                 addbutton = False
                 break
-
-
-
-
 
     if len(info) == 4:
 
@@ -105,6 +101,36 @@ def club_info(event,payload,**kwargs):
 
         send_text(sender_id, 'Info zu {club}, {menge}'.format(club= club,
                                                           menge = len(info)))
+
+
+
+def club_weapon_buli_region(event,payload,**kwargs):
+    sender_id = event['sender']['id']
+    club = payload['club_weapon_buli_region']
+    payl = payload['payl']
+
+    club_repl = club
+    for ending in [' II', ' I', ' 2', 'FSG']:
+        if club_repl.endswith(ending):
+            club_repl = club_repl.replace(ending, '').strip()
+    results_team = get_results_team()
+
+    club_all = results_team[results_team['guest_team_short'] == club_repl]
+
+    elements = list(set(list(club_all['guest_team'])))
+    if len(elements) == 1:
+        club_pd = club_all[club_all['guest_team'] == elements[0]].iloc[0]
+        info = take_info(club_pd)
+        return info
+    else:
+        infos = []
+        buttons = []
+        for clubAB in elements:
+            club_pd = club_all[club_all['guest_team'] == clubAB].iloc[0]
+            infos.append(take_info(club_pd))
+            buttons.append(button_postback(clubAB,{"club_weapon_buli_region": clubAB, 'payl': payl}))
+        send_buttons(sender_id,'Der {club} hat 2 Mannschaften am Start.',
+                     buttons = buttons)
 
 
 

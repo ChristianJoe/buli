@@ -19,7 +19,8 @@ from .callbacks.simple import (get_started, push, subscribe, unsubscribe, wiki, 
                                questions,share_bot, push_step,  menue_data,
                                more_data, sunday_poll, greetings, who_votes,
                                update_api, infos_backend, table_start, competition_start, club_info, club_info_api,
-                               letsgo,champions_api,champions_LG, champions_LP, former_champions_LG, former_champions_LP )
+                               letsgo,champions_api,champions_LG, champions_LP, former_champions_LG, former_champions_LP,
+                               club_weapon_buli_region)
 from .callbacks.shared import (get_pushes, get_breaking, send_push, schema)
 from .callbacks import candidate, district, browse_lists, manifesto, party, dates, parser, results
 from .data import by_district_id, reopen_data
@@ -68,7 +69,7 @@ def make_event_handler():
 
         ApiAiHandler(dates.dates_api, 'next_event_club'),
 
-
+        PayloadHandler(club_weapon_buli_region,['club_weapon_buli_region','payl']),
         ApiAiHandler(update_api, 'update'),
         PayloadHandler(parser.update_table_payload, ['update_table_payload']),
         PayloadHandler(parser.update_results, ['update_results']),
