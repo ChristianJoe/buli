@@ -114,6 +114,7 @@ def club_weapon_buli_region(event,payload,**kwargs):
         if club_repl.endswith(ending):
             club_repl = club_repl.replace(ending, '').strip()
     results_team = get_results_team()
+    send_text(sender_id, club + ' ' + club_repl)
 
     club_all = results_team[(results_team['guest_team'] == club_repl) | (results_team['guest_team_short'] == club_repl)]
 
