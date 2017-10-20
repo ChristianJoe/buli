@@ -66,11 +66,13 @@ def get_tables():
 
 def get_club_info_weapon_buli_region(club):
     club_repl = club
-    for ending in [' II', ' I', ' 2', 'FSG']:
-        if club_repl.endswith(ending):
-            club_repl = club_repl.replace(ending, '').strip()
+    #for ending in [' II', ' I', ' 2', 'FSG']:
+    #    if club_repl.endswith(ending):
+    #        club_repl = club_repl.replace(ending, '').strip()
 
-    club_all = results_team[results_team['guest_team_short'] == club_repl]
+
+
+    club_all = results_team[results_team['guest_team_short'] == club]
     elements = list(set(list(club_all['guest_team'])))
     if len(elements) == 1:
         club_pd = club_all[club_all['guest_team'] == elements[0]].iloc[0]
