@@ -110,9 +110,9 @@ def club_weapon_buli_region(event,payload,**kwargs):
     payl = payload['payl']
 
     club_repl = club
-    for ending in [' II', ' I', ' 2', 'FSG']:
-        if club_repl.endswith(ending):
-            club_repl = club_repl.replace(ending, '').strip()
+    #for ending in [' II', ' I', ' 2', 'FSG']:
+    #    if club_repl.endswith(ending):
+    #        club_repl = club_repl.replace(ending, '').strip()
     results_team = get_results_team()
 
     club_all = results_team[(results_team['guest_team'] == club_repl) | (results_team['guest_team_short'] == club_repl)]
@@ -131,7 +131,8 @@ def club_weapon_buli_region(event,payload,**kwargs):
             club_pd = club_all[club_all['guest_team'] == clubAB].iloc[0]
             infos.append(take_info(club_pd))
             buttons.append(button_postback(clubAB,{"club_weapon_buli_region": clubAB, 'payl': payl}))
-        send_buttons(sender_id,'Der {club} hat 2 Mannschaften am Start.',
+        send_buttons(sender_id,
+                     'Der {club} hat 2 Mannschaften am Start.'.format(club = club),
                      buttons = buttons)
 
 

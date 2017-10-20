@@ -133,11 +133,11 @@ def get_results_pd():
                     guest_team_short = guest_team[0]
 
                     for ending in [' II', ' I', ' 2', 'FSG']:
-                        if host.endswith(ending):
+                        if host.endswith(ending) or ending == 'FSG':
                             host = host.replace(ending, '').strip()
-                        if home_team_short.endswith(ending):
+                        if home_team_short.endswith(ending) or ending == 'FSG':
                             home_team_short = home_team_short.replace(ending, '').strip()
-                        if guest_team_short.endswith(ending):
+                        if guest_team_short.endswith(ending) or ending == 'FSG':
                             guest_team_short = guest_team_short.replace(ending, '').strip()
                     if home_team_short not in clubs:
                         clubs.append(home_team_short)
