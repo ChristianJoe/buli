@@ -516,8 +516,6 @@ def shooter_results(event,payload,**kwargs):
         if len(check_unique_last_name) == 1:
             workdata = data_last
         elif club:
-            send_text(sender_id,
-                      'hier bin ich')
             data_club = shooter[(shooter['team_short'] == club) & (shooter['last_name'] == last_name)]
             check_unique_club = list(set(list(data_club['first_name'])))
             if len(check_unique_club) == 1:
@@ -553,7 +551,10 @@ def shooter_results(event,payload,**kwargs):
             num_league = workdata.shape[0]
     except:
         send_text(sender_id,
-                  'Mhmm, den Namen kenne ich noch nicht. Zumindest hat er noch keinen Wettkampf geschossen!')
+                  'Mhmm, den Namen {first_name}{last_name} kenne ich noch nicht. Zumindest hat er noch keinen Wettkampf geschossen!'.format(
+                      first_name = first_name,
+                      last_name = last_name
+                  ))
         return
 
     info_person = payloads
