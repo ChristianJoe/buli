@@ -685,10 +685,10 @@ def setlist_payload(event,payload,**kwargs):
         else:
             break
     if len(clubs) == 1:
-        reply1 = 'Hier die Setzliste nach dem {day}. Wettkampf von {club}:\n'.format(
+        reply1 = 'Hier die Setzliste nach dem {day}. Wettkampf von {club}:'.format(
             club=club,
             day= day
-        )
+                 )
         send_text(sender_id, reply1)
 
         reply =''
@@ -699,12 +699,15 @@ def setlist_payload(event,payload,**kwargs):
                 avg=row['avg'],
                 first_name=row['first_name'][0],
                 last_name=row['last_name'],
-                tendency='↘' if (summe > avg) else ( '➡' if ((summe==avg)or summe==0) else '↗'),
+                tendency='' if (row[str(day)]!=0) else ('↘' if (summe > avg) else ( '➡' if ((summe==avg)or summe==0) else '↗')),
                 comps = sum(x is not 0 for x in [row[str(i)] for i in range(1,11)])
             )
-        reply += "\nDie Entwicklung gibt an, ob der Ø seit nach dem letzten besser geworden, stagniert oder fällt. In Klammern steht die Anzahl der Wettkämpfe in der Liga."
+        reply += "Für die Ergebnisse der einzelnen Schützen gib Ihren Namen und den Verein ein."
 
-        send_text(sender_id,reply )
+        send_text(sender_id,reply, quick_reply('Blauer Pfeil?',['blue_arrows'])
+                  )
+        
+
     elif len(clubs) == 2:
         send_buttons(sender_id,
                     'Die Setzliste welcher Mannschaft genau?',
@@ -717,11 +720,15 @@ def setlist_payload(event,payload,**kwargs):
 
 
 
+def blue_arrows(event, **kwargs):
+    sender_id = event['sender']['id']
+
+    send_text(sender_id,
+              'Pfeile'
+              )
 
 
-
-
-############
+    ############
 ############
 #################################
 def buli_live_api(event, parameters, **kwargs):

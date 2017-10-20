@@ -86,7 +86,7 @@ def make_event_handler():
 
         PayloadHandler(dates.next_event, ['next_event']),
         PayloadHandler(dates.competition_info, ['comp_id']),
-
+        PayloadHandler(results.blue_arrows,['blue_arrows']),
         ApiAiHandler(results.table_api,'table'),
 
         PayloadHandler(results.table_second_league, ['table_second_league']),
