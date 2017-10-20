@@ -660,6 +660,17 @@ def shooter_results(event,payload,**kwargs):
                      )
 
 
+def setlist_api(event,parameters,**kwargs):
+    sender_id = event['sender']['id']
+    club = parameters.get('clubs')
+
+    setlist_payload(event,
+                    {'setlist_payload': club}
+                    )
+
+
+
+
 def setlist_payload(event,payload,**kwargs):
     sender_id = event['sender']['id']
     club = payload['setlist_payload']
@@ -674,8 +685,8 @@ def setlist_payload(event,payload,**kwargs):
     elif len(clubs) == 2:
         send_buttons(sender_id,
                     'Die Setzliste welcher Mannschaft genau?',
-                    [button_postback(clubs[0],{'setlist_payload', clubs[0]}),
-                     button_postback(clubs[1],{'setlist_payload', clubs[1]})
+                    [button_postback(clubs[0],{'setlist_payload', clubs[0]['club']}),
+                     button_postback(clubs[1],{'setlist_payload', clubs[1]['club']})
                     ]
                     )
     else:
