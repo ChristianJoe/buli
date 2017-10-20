@@ -521,6 +521,8 @@ def shooter_results(event,payload,**kwargs):
             if len(check_unique_club) == 1:
                 workdata = data_club
 
+
+
     if first_name:
         data_first = shooter[shooter['first_name'] == first_name]
         check_unique_first_name = list(set(list(data_first['last_name'])))
@@ -569,13 +571,17 @@ def shooter_results(event,payload,**kwargs):
 
         quicks = []
         if offset==0 and sets.shape[0]>1:
-            send_text(sender_id, "Mhmm, ich habe mehre Schützen gefunden, die auf deine Anfrage passen. Meinst du...")
+            send_text(sender_id, "Mhmm, ich habe mehre {number} Schützen gefunden, die auf deine Anfrage passen. Meinst du...".format(
+                number = sets.shape[0]
+            ))
 
         row = sets.iloc[offset]
-        reply = "{first_name}{last_name} schießt für {club}, hat diese Saison allerdings noch keinen Wettkampf absolviert.\n\n{fixsub} mit einem Ø von {avg}".format(
+        comps = sum(x is not 0 for x in [row[str(i)] for i in range(1, 11)])
+        reply = "{first_name} {last_name} schießt für {club}{shot}.\n\n{fixsub} mit einem Ø von {avg}".format(
             first_name = row['first_name'],
             last_name = row['last_name'],
             club = row['club_short'],
+            shot = ', hat diese Saison allerdings noch keinen Wettkampf absolviert' if comps ==0  else '',
             fixsub = 'Stammschütze' if row['fixed'] == True else 'Ersatzschütze',
             avg = row['avg']
         )
