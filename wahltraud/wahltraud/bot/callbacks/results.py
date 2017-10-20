@@ -685,8 +685,8 @@ def setlist_payload(event,payload,**kwargs):
     elif len(clubs) == 2:
         send_buttons(sender_id,
                     'Die Setzliste welcher Mannschaft genau?',
-                    [button_postback(clubs[0],{'setlist_payload', clubs[0]}),
-                     button_postback(clubs[1],{'setlist_payload', clubs[1]})
+                    [button_postback(clubs[0],{'setlist_payload': clubs[0]}),
+                     button_postback(clubs[1],{'setlist_payload': clubs[1]})
                     ]
                     )
     else:
