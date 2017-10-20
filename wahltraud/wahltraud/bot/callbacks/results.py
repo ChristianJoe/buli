@@ -587,11 +587,13 @@ def shooter_results(event,payload,**kwargs):
         )
 
         if sets.shape[0]>1:
-            quicks.append(quick_reply('Ne, der nicht.',{'shooter_results': payloads, 'offset': offset+1}))
-            shooter_info = {'first_name': row['first_name'],
+            if comps >0:
+                shooter_info = {'first_name': row['first_name'],
                             'last_name': row['last_name'],
                             'club': row['club_short']}
-            quicks.append(quick_reply('Genau! Mehr Info',{'shooter_results': shooter_info}))
+                quicks.append(quick_reply('Genau! Mehr Info',{'shooter_results': shooter_info}))
+            quicks.append(quick_reply('Ne, der nicht.',{'shooter_results': payloads, 'offset': offset+1}))
+
         quicks.append(quick_reply('Setzliste '+row['club_short'], {'setlist_payload':row['club_short']}))
 
         send_text(sender_id,
