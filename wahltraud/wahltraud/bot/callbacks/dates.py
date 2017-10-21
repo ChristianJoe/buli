@@ -43,12 +43,12 @@ def dates_api(event, parameters, **kwargs):
         if region in ['West', 'Ost', 'Südwest']:
             league = '2.BuLi'
         send_text(sender_id, 'LG oder eher LP??',
-                        [quick_reply('LG', {next_event_league: {'buli': league,
+                        [quick_reply('LG', {'next_event_league': {'buli': league,
                                                                'region': region,
                                                                'weapon': 'LG'}
                                                        }
                                      ),
-                         quick_reply('LP', {next_event_league: {'buli': league,
+                         quick_reply('LP', {'next_event_league': {'buli': league,
                                                                'region': region,
                                                                'weapon': 'LP'}
                                                        }
