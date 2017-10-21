@@ -28,12 +28,12 @@ def dates_api(event, parameters, **kwargs):
                                                                 'weapon': weapon}})
         else:
             send_text(sender_id, 'Mhmm. 1.BuLi oder 2. BuLi? Oder hast du einen Verein nachdem ich gucken soll?',
-                      [quick_reply('1. Bundesliga', {next_event_league:{'buli': '1.BuLi',
+                      [quick_reply('1. Bundesliga', {'next_event_league':{'buli': '1.BuLi',
                                                                 'region': region,
                                                                 'weapon': weapon}
                                                }
                                    ),
-                       quick_reply('2. Bundesliga', {next_event_league: {'buli': '2.BuLi',
+                       quick_reply('2. Bundesliga', {'next_event_league': {'buli': '2.BuLi',
                                                                    'region': region,
                                                                    'weapon': weapon}
                                                }
