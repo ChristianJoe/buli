@@ -9,9 +9,17 @@ import datetime
 def dates_api(event, parameters, **kwargs):
     sender_id = event['sender']['id']
     club = parameters.get('clubs')
+    date = parameters.get('date')
+    league = parameters.get('league')
+    weapon = parameters.get('weapon')
 
+    if not club and not league:
+        send_text(sender_id,'Welcher Verein, oder welche Liga interessiert dich?')
 
-    next_event(event,{'next_event':club})
+    elif club:
+        next_event(event,{'next_event':club})
+    else:
+        send_text(sender_id,league)
 
 
 
@@ -34,7 +42,7 @@ def next_event(event,payload,**kwargs):
 
 
 
-    send_text(sender_id, "Hier zeige ich dir demnächst das Event an, welches nach dem {date} stattfindet. (Feature in Entwicklung)".format(
+    send_text(sender_id, "Hier zeige ich dir demnächst das Event von {club} an, welches nach dem {date} stattfindet. (Feature in Entwicklung)".format(
         date=now.strftime("%d.%m.%Y")
     ))
 

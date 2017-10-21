@@ -289,15 +289,26 @@ def push_breaking():
     data.save(update_fields=['delivered'])
 
 def dsb_update():
-    # update results just on weekend till monday every 15min
-    parser.get_results_pd()
-    # update set list just on saturday, sunday, monday
-    parser.update_table()
-    # update otherwise once a day
-    #parser_setlist
-    parser.get_setlist()
-    # update data for bot
-    reopen_data()
+    # check for saturday (5) or sunday(6)
+    day = datetime.datetime.today().weekday()
+    now = datetime.datetime.now().time()
+    if day == 5:
+        if now >= datetime.time(13, 30) and now <= datetime.time(20, 00):
+            parser.get_results_pd()
+            parser.update_table()
+            parser.get_setlist()
+            reopen_data()
+
+    elif day == 6:
+        if now >= datetime.time(9, 00) and now <= datetime.time(15, 00):
+            parser.get_results_pd()
+            parser.update_table()
+            parser.get_setlist()
+            reopen_data()
+
+
+
+
 
 
 def meyton_update():
@@ -319,7 +330,10 @@ def meyton_update():
 
 #schedule.every(60).seconds.do(push_breaking)
 #schedule.every().day.at("18:00").do(push_notification)
-schedule.every().day.at("22:50").do(dsb_update)
+schedule.every().day.at("22:00").do(dsb_update)
+
+schedule.every(30).minutes.do(dsb_update)
+
 schedule.every(60).seconds.do(meyton_update)
 
 
