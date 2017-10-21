@@ -140,8 +140,8 @@ def next_event(event,payload,**kwargs):
             reply = 'Dann schauen wir mal wann {club} wieder an den Start geht!'.format(club=club)
             send_buttons(sender_id,
                          reply,
-                         button_postback("Ausrichter {club}".format(club=club), {'next_event': club,
-                                                                                 'host': True})
+                         [button_postback("Ausrichter {club}".format(club=club), {'next_event': club,
+                                                                                 'host': True})]
                          )
         else:
             reply = '{club} ist Ausrichter für folgende Paarungen:'.format(club=club)
