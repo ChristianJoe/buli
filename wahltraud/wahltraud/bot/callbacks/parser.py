@@ -171,49 +171,51 @@ def get_results_pd():
                     test['weapon'] = weapon
 
                     if tables2:
-                        subtables = tables2[index]
-                        for pos in range(0, 5):
-                            posstr_id = test['comp_id']+str(pos+1)
-                            subtab = subtables.find_all('tr')[pos]
-                            temp_home = {
-                                'comp_id': test['comp_id'],
-                                'team_full': test['home_team'],
-                                'team_short': test['home_team_short'],
-                                'home': True,
-                                'position': pos + 1,
-                                'first_name': subtab.find_all('td')[2].text.split(',')[1].strip(),
-                                'last_name': subtab.find_all('td')[2].text.split(',')[0].strip(),
-                                'result': int(subtab.find_all('td')[4].text),
-                                'point': int(subtab.find_all('td')[5].text),
-                                'shoot_off': subtab.find_all('td')[3].text,
-                                'pos_id': posstr_id
+                        try:
+                            subtables = tables2[index]
+                            for pos in range(0, 5):
+                                posstr_id = test['comp_id']+str(pos+1)
+                                subtab = subtables.find_all('tr')[pos]
+                                temp_home = {
+                                    'comp_id': test['comp_id'],
+                                    'team_full': test['home_team'],
+                                    'team_short': test['home_team_short'],
+                                    'home': True,
+                                    'position': pos + 1,
+                                    'first_name': subtab.find_all('td')[2].text.split(',')[1].strip(),
+                                    'last_name': subtab.find_all('td')[2].text.split(',')[0].strip(),
+                                    'result': int(subtab.find_all('td')[4].text),
+                                    'point': int(subtab.find_all('td')[5].text),
+                                    'shoot_off': subtab.find_all('td')[3].text,
+                                    'pos_id': posstr_id
 
-                            }
-                            temp_guest = {
-                                'comp_id': test['comp_id'],
-                                'team_full': test['guest_team'],
-                                'team_short': test['guest_team_short'],
-                                'home': False,
-                                'position': pos+1,
-                                'first_name': subtab.find_all('td')[10].text.split(',')[1].strip(),
-                                'last_name': subtab.find_all('td')[10].text.split(',')[0].strip(),
-                                'result': int(subtab.find_all('td')[8].text),
-                                'point': int(subtab.find_all('td')[7].text),
-                                'shoot_off': subtab.find_all('td')[9].text,
-                                'pos_id':posstr_id
+                                }
+                                temp_guest = {
+                                    'comp_id': test['comp_id'],
+                                    'team_full': test['guest_team'],
+                                    'team_short': test['guest_team_short'],
+                                    'home': False,
+                                    'position': pos+1,
+                                    'first_name': subtab.find_all('td')[10].text.split(',')[1].strip(),
+                                    'last_name': subtab.find_all('td')[10].text.split(',')[0].strip(),
+                                    'result': int(subtab.find_all('td')[8].text),
+                                    'point': int(subtab.find_all('td')[7].text),
+                                    'shoot_off': subtab.find_all('td')[9].text,
+                                    'pos_id':posstr_id
 
-                            }
-                            result_data.append(temp_home)
-                            result_data.append(temp_guest)
-                            if temp_home['first_name'] not in first_name:
-                                first_name.append(temp_home['first_name'])
-                            if temp_guest['first_name'] not in first_name:
-                                first_name.append(temp_guest['first_name'])
-                            if temp_home['last_name'] not in last_name:
-                                last_name.append(temp_home['last_name'])
-                            if temp_guest['last_name'] not in last_name:
-                                last_name.append(temp_guest['last_name'])
-
+                                }
+                                result_data.append(temp_home)
+                                result_data.append(temp_guest)
+                                if temp_home['first_name'] not in first_name:
+                                    first_name.append(temp_home['first_name'])
+                                if temp_guest['first_name'] not in first_name:
+                                    first_name.append(temp_guest['first_name'])
+                                if temp_home['last_name'] not in last_name:
+                                    last_name.append(temp_home['last_name'])
+                                if temp_guest['last_name'] not in last_name:
+                                    last_name.append(temp_guest['last_name'])
+                        except:
+                            x=None
                     data.append(test)
 
     result = pd.DataFrame(data)
