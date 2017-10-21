@@ -92,9 +92,10 @@ def next_event_league(event,payload,**kwargs):
     elements = []
     for index in range(offset, offset + num_league):
         data = events.iloc[index]
-        list_text = "{home} - {guest}".format(
+        list_text = "{today} {home} - {guest}".format(
             home = data['home_team'],
-            guest = data['guest_team']
+            guest = data['guest_team'],
+            today = "**HEUTE**" if data['date'] == now else ''
         )
         sbtl = "{date}, {time}, Ausrichter: {host}".format(
             date = data['date'].strftime("%d.%m.%Y"),
@@ -149,7 +150,6 @@ def next_event(event,payload,**kwargs):
     offset = payload.get('offset',0)
 
     dates = get_results_team()
-    now = datetime.date.today()
 
     dates = dates.sort_values(['date', 'time'])
     now = datetime.date.today()
@@ -172,9 +172,10 @@ def next_event(event,payload,**kwargs):
     elements = []
     for index in range(offset, offset + num_league):
         data = events.iloc[index]
-        list_text = "{home} - {guest}".format(
+        list_text = "{today}{home} - {guest}".format(
             home = data['home_team'],
-            guest = data['guest_team']
+            guest = data['guest_team'],
+            today="**HEUTE** " if data['date'] == now else ''
         )
         sbtl = "{date}, {time}, Ausrichter: {host}".format(
             date = data['date'].strftime("%d.%m.%Y"),

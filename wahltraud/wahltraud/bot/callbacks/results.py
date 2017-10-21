@@ -78,7 +78,7 @@ def table_payload(event,payload,*kwarks):
                             'region': 'Süd',
                             'weapon': weapon}
             send_text(sender_id,
-                      'Nord oder Süd',
+                      'Nord oder Süd ist hier die Frage...',
                       quick_replies = [
                           quick_reply('Nord',{'table_payload': payload_north}),
                           quick_reply('Süd', {'table_payload': payload_south})
@@ -591,8 +591,8 @@ def shooter_results(event,payload,**kwargs):
                 shooter_info = {'first_name': row['first_name'],
                             'last_name': row['last_name'],
                             'club': row['club_short']}
-                quicks.append(quick_reply('Genau! Mehr Info',{'shooter_results': shooter_info}))
-            quicks.append(quick_reply('Ne, der nicht.',{'shooter_results': payloads, 'offset': offset+1}))
+                quicks.append(quick_reply('Genau! Mehr Info bitte!',{'shooter_results': shooter_info}))
+            quicks.append(quick_reply('Nicht richtig.',{'shooter_results': payloads, 'offset': offset+1}))
 
         quicks.append(quick_reply('Setzliste '+row['club_short'], {'setlist_payload':row['club_short']}))
 
@@ -725,12 +725,28 @@ def setlist_payload(event,payload,**kwargs):
     setlist = get_setlist()
     set_club = setlist[(setlist['club_short'] == club) | (setlist['club'] == club)]
 
+
+
+
+
     clubs = list(set(list(set_club['club'])))
     for i in range(1, 13):
         if sum(set_club[str(i)]) != 0:
             day = i
         else:
             break
+    """
+     # check how many competitions
+    shooter = get_results_shooter()
+    just_club = shooter[(shooter['club_short'] == set_club['club_short'].iloc[0])]
+    just_club = just_club[just_club['result'].notnull()]
+    if 3*day != just_club.shape[0]:
+        #create new table
+        add = just_club.tail()
+        for index1,row in add:
+            set_club.loc[(set_club['first_name']==row['first_name'])&(set_club['last_name'] == row['last_name'])][str(day+1)] = row['result']
+    """
+
     if len(clubs) == 1:
         reply1 = 'Hier die Setzliste nach dem {day}. Wettkampf von {club}:'.format(
             club=club,

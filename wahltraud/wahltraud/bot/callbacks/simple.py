@@ -133,7 +133,7 @@ def club_weapon_buli_region(event,payload,**kwargs):
             infos.append(take_info(club_pd))
             buttons.append(button_postback(clubAB,{payl: clubAB}))
         send_buttons(sender_id,
-                     'Der {club} hat 2 Mannschaften am Start.'.format(club = club),
+                     '{club} hat 2 Mannschaften am Start.'.format(club = club),
                      buttons = buttons)
         return None
 
