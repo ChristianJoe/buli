@@ -17,13 +17,13 @@ def dates_api(event, parameters, **kwargs):
     if club:
         next_event(event,{'next_event':club})
     elif league and weapon and region:
-        next_event_league(sender_id, {'next_event_league': {'buli': league,
+        next_event_league(event, {'next_event_league': {'buli': league,
                                                             'region': region,
                                                             'weapon': weapon}} )
     elif region and weapon:
         if region in ['West', 'Ost', 'Südwest']:
             league = '2.BuLi'
-            next_event_league(sender_id, {'next_event_league': {'buli': league,
+            next_event_league(event, {'next_event_league': {'buli': league,
                                                                 'region': region,
                                                                 'weapon': weapon}})
         else:
@@ -69,13 +69,15 @@ def next_event_league(event,payload,**kwargs):
     sender_id = event['sender']['id']
     info = payload['next_event_league']
     offset = payload.get('offset',0)
-    dates = get_results_team()
     buli = info['buli']
     region = info['region']
     weapon = info['weapon']
     we_long = {'LG': 'Luftgewehr',
                'LP': 'Luftpistole'
                }
+
+
+    dates = get_results_team()
 
     dates = dates.sort_values(['date', 'time'])
     now = datetime.date.today()
@@ -84,7 +86,7 @@ def next_event_league(event,payload,**kwargs):
     events = events[events['date'] >= now]
 
     send_text(sender_id, str(events.shape[0]))
-    
+
 
 
     num_league = 4
