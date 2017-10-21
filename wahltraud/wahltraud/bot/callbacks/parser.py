@@ -227,7 +227,7 @@ def get_results_pd():
     #tabelle
 
 
-    send_text('1642888035775604', 'Update_results done')
+    #send_text('1642888035775604', 'Update_results done')
 
     return
 
@@ -274,7 +274,7 @@ def update_table():
     tables = pd.DataFrame(tables_all)
     tables.to_csv(str(DATA_DIR/'data/buli17_tables.csv'))
 
-    send_text('1642888035775604', 'Update_table done')
+    #send_text('1642888035775604', 'Update_table done')
 
 
 def get_setlist():
@@ -358,7 +358,7 @@ def get_setlist():
         with open(str(DATA_DIR / 'data') + '/' + add + 'names_apiai.json', "w", encoding="utf8") as output_file:
             json.dump(api, output_file, ensure_ascii=False)
 
-    send_text('1642888035775604', 'Update_results done')
+    #send_text('1642888035775604', 'Update_results done')
 
 
 
