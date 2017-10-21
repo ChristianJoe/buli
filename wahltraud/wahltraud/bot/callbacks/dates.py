@@ -85,9 +85,6 @@ def next_event_league(event,payload,**kwargs):
                    (dates['weapon'] == we_long[weapon])]
     events = events[events['date'] >= now]
 
-    send_text(sender_id, str(events.shape[0]))
-
-
 
     num_league = 4
     if events.shape[0] - (offset + num_league) == 1:
@@ -111,8 +108,8 @@ def next_event_league(event,payload,**kwargs):
             list_element(
                 list_text,
                 subtitle=sbtl,
-                buttons=[button_postback("Ausrichter {club}".format(club=data['guest_team']),
-                                         {'next_event': data['guest_team'],
+                buttons=[button_postback("Ausrichter {club}".format(club=data['host']),
+                                         {'next_event': data['host'],
                                           'host': True
                                           }
                                          )
@@ -122,7 +119,7 @@ def next_event_league(event,payload,**kwargs):
         )
 
     if events.shape[0] - offset > num_league:
-        button = button_postback("Nächsten Termine",
+        button = button_postback("Weiter Termine",
                                  {'next_event_league': info,
                                   'offset': offset + num_league})
     else:

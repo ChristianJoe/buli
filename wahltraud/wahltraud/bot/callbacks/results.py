@@ -716,8 +716,8 @@ def setlist_api(event,parameters,**kwargs):
                     )
 
 
-
-
+### Alte Setzliste vielleicht zu bestimmten tagen
+'''
 def setlist_payload(event,payload,**kwargs):
     sender_id = event['sender']['id']
     club = payload['setlist_payload']
@@ -735,17 +735,7 @@ def setlist_payload(event,payload,**kwargs):
             day = i
         else:
             break
-    """
-     # check how many competitions
-    shooter = get_results_shooter()
-    just_club = shooter[(shooter['club_short'] == set_club['club_short'].iloc[0])]
-    just_club = just_club[just_club['result'].notnull()]
-    if 3*day != just_club.shape[0]:
-        #create new table
-        add = just_club.tail()
-        for index1,row in add:
-            set_club.loc[(set_club['first_name']==row['first_name'])&(set_club['last_name'] == row['last_name'])][str(day+1)] = row['result']
-    """
+
 
     if len(clubs) == 1:
         reply1 = 'Hier die Setzliste nach dem {day}. Wettkampf von {club}:'.format(
@@ -784,6 +774,120 @@ def setlist_payload(event,payload,**kwargs):
                     )
     else:
         send_text(sender_id, 'Kein Team mit dem Namen '+ club+' gefunden')
+'''
+
+def setlist_payload(event,payload,**kwargs):
+    sender_id = event['sender']['id']
+    club = payload['setlist_payload']
+
+    set_list = get_setlist()
+    shooter = get_results_shooter()
+
+    set_club = set_list[(set_list['club_short'] == club) | (set_list['club'] == club)]
+
+    clubs = list(set(list(set_club['club'])))
+
+    if len(clubs) >1 and len(clubs)<=3:
+        buttons = []
+        for el in clubs:
+            buttons.append(
+                button_postback(el, {'setlist_payload': el})
+            )
+        send_buttons(sender_id,
+                     'Die Setzliste welcher Mannschaft genau?',
+                     buttons = buttons
+                     )
+    elif len(clubs) <=0 or len(clubs)>3:
+        send_text(sender_id,
+                  'Fuck, da ist was schief gegangen. Sry'
+                  )
+    else:
+        final_list = []
+        number = []
+        for index, row in set_club.iterrows():
+            first = row['first_name']
+            last = row['last_name']
+            shooter_pers = shooter[(shooter['first_name'] == first) & (shooter['last_name'] == last)]
+            temp = {'first_name': first,
+                    'last_name': last
+                    }
+            if not shooter_pers.empty:
+                avg = 0
+                counter = 0
+                alle = []
+                temp['comps'] = shooter_pers.shape[0]
+
+                for index2, row2 in shooter_pers.iterrows():
+                    if row2['counter'] not in number:
+                        number.append(row2['counter'])
+                    temp[row2['counter']] = row2['result']
+                    alle.append(row2['result'])
+                    avg += float(row2['result'])
+                    counter += 1
+                    temp['avg' + str(row2['counter'])] = round(avg / (counter), 2)
+                temp['avg'] = round(avg / (counter), 2)
+                temp['best'] = max(alle)
+                temp[100] = float(row['avg'].replace(',', '.'))
+            else:
+                temp['avg'] = float(row['avg'].replace(',', '.'))
+                temp[100] = float(row['avg'].replace(',', '.'))
+
+            final_list.append(temp)
+        king = pd.DataFrame(final_list)
+        king = king.sort_values(by=['avg', 'comps'], ascending=False)
+        king.head()
+        col = {}
+        number = sorted(number)
+        for i, val in enumerate(number):
+            col[val] = i + 1
+            col['avg' + str(val)] = 100 + i + 1
+        king = king.rename(columns=col)
+        king = king.fillna(0)
+        num = len(number)
+        king['trend'] = king[100]
+        king['trend'] = -99
+        for index, row in king.iterrows():
+            avg_ind = row[100 + num]
+            if row[num] != 0:
+                for i in range(1, 12):
+                    print(row[100 + num - 1])
+                    if row[100 + num - 1] != 0 and num - i >= 0:
+                        if avg_ind > row[100 + num - 1]:
+                            trend = 1
+                            break
+                        elif avg_ind < row[100 + num - 1]:
+                            trend = -1
+                            break
+                        else:
+                            trend = 0
+                            break
+                king.loc[index, 'trend'] = trend
+        reply1 = 'Hier die Setzliste nach dem {day}. Wettkampf von {club}:'.format(
+            club=club,
+            day = num
+        )
+        send_text(sender_id, reply1)
+
+        reply = ''
+        for index, row in king.iterrows():
+
+
+            tendency = '    ' if (row['trend'] == -99) else (
+            '↘' if (row['trend'] == -1) else ('➡' if ((row['trend']==0)) else '↗'))
+
+            reply += "({comps}) Ø {avg} {tendency} - {first_name}. {last_name}\n".format(
+                avg=row['avg'],
+                first_name=row['first_name'][0],
+                last_name=row['last_name'],
+                tendency=tendency,
+                comps=row['comps']
+            )
+        reply += "Für die Ergebnisse der einzelnen Schützen gib Ihren Namen und den Verein ein."
+
+        send_text(sender_id, reply, [quick_reply(' Was bedeuten ↗➡↘', ['blue_arrows'])]
+                  )
+
+
 
 
 
