@@ -1,6 +1,8 @@
 import logging
 import operator
 import pandas as pd
+import locale
+
 
 from ..fb import send_buttons, button_postback, send_text, send_attachment, send_list, list_element, quick_reply
 from ..data import by_uuid, get_dates, get_results_team, get_results_shooter, get_tables, get_club_info_weapon_buli_region,get_setlist
@@ -10,6 +12,7 @@ import datetime
 
 #enable logging
 logger = logging.getLogger(__name__)
+locale.setlocale(locale.LC_NUMERIC, 'de_DE.UTF-8')
 
 
 
@@ -850,7 +853,6 @@ def setlist_payload(event,payload,**kwargs):
             avg_ind = row[100 + num]
             if row[num] != 0:
                 for i in range(1, 12):
-                    print(row[100 + num - 1])
                     if row[100 + num - 1] != 0 and num - i >= 0:
                         if avg_ind > row[100 + num - 1]:
                             trend = 1
@@ -876,11 +878,11 @@ def setlist_payload(event,payload,**kwargs):
             '↘' if (row['trend'] == -1) else ('➡' if ((row['trend']==0)) else '↗'))
 
             reply += "({comps}) Ø {avg} {tendency} - {first_name}. {last_name}\n".format(
-                avg=row['avg'],
+                avg= locale.format('%.2f',row['avg']),
                 first_name=row['first_name'][0],
                 last_name=row['last_name'],
                 tendency=tendency,
-                comps=row['comps']
+                comps=int(row['comps'])
             )
         reply += "Für die Ergebnisse der einzelnen Schützen gib Ihren Namen und den Verein ein."
 
