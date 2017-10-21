@@ -29,15 +29,25 @@ tables = pd.read_csv(DATA_DIR/'buli17_tables.csv')
 results_shooter = pd.read_csv(DATA_DIR/'shooter_results.csv')
 setlist = pd.read_csv(DATA_DIR/'buli17_setlist.csv')
 
+tables = tables.replace('Andreas Hofer Sassanfahr', 'Andreas Hofer Sassanfahrt')
+results_shooter = results_shooter.replace('Andreas Hofer Sassanfahr', 'Andreas Hofer Sassanfahrt')
+results_team = results_team.replace('Andreas Hofer Sassanfahr', 'Andreas Hofer Sassanfahrt')
+setlist = setlist.replace('Andreas Hofer Sassanfahr', 'Andreas Hofer Sassanfahrt')
+
+
 def reopen_data():
     global tables
     tables = pd.read_csv(DATA_DIR/'buli17_tables.csv')
+    tables = tables.replace('Andreas Hofer Sassanfahr',	'Andreas Hofer Sassanfahrt')
     global results_shooter
     results_shooter = pd.read_csv(DATA_DIR/'shooter_results.csv')
+    results_shooter = results_shooter.replace('Andreas Hofer Sassanfahr', 'Andreas Hofer Sassanfahrt')
     global results_team
     results_team = pd.read_csv(DATA_DIR/'team_results.csv')
+    results_team = results_team.replace('Andreas Hofer Sassanfahr', 'Andreas Hofer Sassanfahrt')
     global setlist
     setlist = pd.read_csv(DATA_DIR/'buli17_setlist.csv')
+    setlist = setlist.replace('Andreas Hofer Sassanfahr', 'Andreas Hofer Sassanfahrt')
 
 
 
