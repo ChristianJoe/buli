@@ -66,7 +66,7 @@ def next_event(event,payload,**kwargs):
         club= club
     ))
 
-
+    '''
     if not club:
         for i in range(0, 100):
             look_up_date = now + datetime.timedelta(days=i)
