@@ -37,8 +37,7 @@ def next_event(event,payload,**kwargs):
     dates = get_results_team()
     options = []
     now = datetime.date.today()
-    hour = datetime.time.hour()
-    minute = datetime.time.minute()
+  
 
 
 
