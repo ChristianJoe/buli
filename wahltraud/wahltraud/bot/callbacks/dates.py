@@ -27,14 +27,37 @@ def dates_api(event, parameters, **kwargs):
                                                                 'region': region,
                                                                 'weapon': weapon}})
         else:
-            send_text(sender_id, 'Mhmm. 1.BuLi oder 2. BuLi? Oder hast du einen Verein nachdem ich gucken soll?')
+            send_text(sender_id, 'Mhmm. 1.BuLi oder 2. BuLi? Oder hast du einen Verein nachdem ich gucken soll?',
+                      [quick_reply('1. Bundesliga', {next_event_league:{'buli': '1.BuLi',
+                                                                'region': region,
+                                                                'weapon': weapon}
+                                               }
+                                   ),
+                       quick_reply('2. Bundesliga', {next_event_league: {'buli': '2.BuLi',
+                                                                   'region': region,
+                                                                   'weapon': weapon}
+                                               }
+                                   ),
+                      ])
     elif league and region:
-        send_text(sender_id, 'LG oder eher LP??')
+        send_text(sender_id, 'LG oder eher LP??',
+                        [quick_reply('LG', {next_event_league: {'buli': league,
+                                                                           'region': region,
+                                                                           'weapon': "LG"}
+                                                       }
+                                     ),
+                         quick_reply('LP', {next_event_league: {'buli': league,
+                                                                           'region': region,
+                                                                           'weapon': "LP"}
+                                                       }
+                                     ),
+                         ]
+                                  )
     elif league:
         if league == "1.BuLi":
-            send_text(sender_id,'Nord? Süd?')
+            send_text(sender_id,'Gewehr oder Pistole? Nord oder Süd? ')
         else:
-            send_text(sender_id,'Nord? Süd? West? Ost? Südwest?')
+            send_text(sender_id,'Gewehr oder Pistole? Nord? Süd? West? Ost? Südwest?')
     else:
         send_text(sender_id,'Welcher Verein, oder welche Liga interessiert dich?')
 
@@ -53,56 +76,79 @@ def next_event_league(event,payload,**kwargs):
 
 def next_event(event,payload,**kwargs):
     sender_id = event['sender']['id']
-
     club = payload['next_event']
-
+    host = payload.get('host', False)
+    offset = payload.get('offset',0)
 
     dates = get_results_team()
-    options = []
     now = datetime.date.today()
 
-    send_text(sender_id, "Hier zeige ich dir demnächst das Event von {club} an, welches nach dem {date} stattfindet. (Feature in Entwicklung)".format(
-        date=now.strftime("%d.%m.%Y"),
-        club= club
-    ))
-
-    '''
-    if not club:
-        for i in range(0, 100):
-            look_up_date = now + datetime.timedelta(days=i)
-            next_dates = dates[dates['date'] == look_up_date]
-            if not next_dates.empty:
-                break
-
-
-        text =  'Der nächste Wettkampftag ist am {date}.'.format(
-                            date = look_up_date.strftime("%d.%m.%Y")
-                        )
-        # quick replies
-        for i in range(0, next_dates.shape[0]):
-            league =  next_dates['league'].iloc[i]
-            options.append(
-                quick_reply(
-                    league,
-                    {'comp_id': next_dates['comp_id'].iloc[i]}
-                )
-            )
+    dates = dates.sort_values(['date', 'time'])
+    now = datetime.date.today()
+    if not host:
+        events = dates[(dates['guest_team'] == club) |
+                       (dates['guest_team_short'] == club) |
+                       (dates['home_team'] == club) |
+                       (dates['home_team_short'] == club)]
+        events = events[events['date'] >= now]
     else:
-        dates_club = dates[dates['host'] == club]
+        events = dates[dates['host'] == club]
 
-        text = club + ' ist Ausrichter folgender Wettkämpfe:'
+    if not host:
+        reply = 'Dann schauen wir mal wann {club} wieder an den Start geht!'.format(club = club)
+    else:
+        reply = '{club} ist Ausrichter für folgende Paarungen:'
 
-        for i in range(0, dates_club.shape[0]):
-            league = dates_club['league'].iloc[i]
-            date = dates_club['date'].iloc[i].strftime("%d.%m.%Y")
-            options.append(
-                quick_reply(
-                    date + ' ' + league,
-                    {'comp_id': dates_club['comp_id'].iloc[i]})
+    num_league = 4
+    if events.shape[0] - (offset + num_league) == 1:
+        num_league = 3
+    if events.shape[0] - (offset + num_league) < 1:
+        num_league = 4 + (events.shape[0] - (offset + num_league))
+    elements = []
+    for index in range(offset, offset + num_league):
+        data = events.iloc[index]
+        list_text = "{home} - {guest}".format(
+            home = data['home_team'],
+            guest = data['guest_team']
+        )
+        sbtl = "{date}, {time}, Ausrichter: {host}".format(
+            date = data['date'].strftime("%d.%m.%Y"),
+            time = data['time'],
+            host = data['host']
+        )
+        elements.append(
+            list_element(
+                list_text,
+                subtitle=sbtl,
+                #buttons=[button_postback("Wettkämpfe", {'club_list_competitions': payload_button})]
+                # image_url=candidate.get('img') or None
             )
+        )
 
-    send_text(sender_id, text, quick_replies = options)
-    '''
+    if events.shape[0] - offset > num_league:
+        button = button_postback("Nächsten Termine",
+                                 {'next_event': club,
+                                  'offset': offset + num_league})
+    else:
+        button = button_postback("Ausrichter {club}".format(club=club), {'next_event': club,
+                                                                         'host': True})
+
+    if offset == 0:
+        send_text(sender_id,
+                  reply
+                  )
+
+    send_list(sender_id, elements, button=button)
+
+
+
+
+
+
+
+
+
+
 
 def competition_info(event, payload, **kwargs):
     sender_id = event['sender']['id']
