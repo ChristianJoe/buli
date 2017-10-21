@@ -68,7 +68,7 @@ def make_event_handler():
         PayloadHandler(about_manifesto, ['about_manifesto']),
 
         ApiAiHandler(dates.dates_api, 'next_event_club'),
-        ApiAiHandler(dates.dates_api, 'next_event'),
+        ApiAiHandler(dates.dates_api, 'next_event_context'),
 
         PayloadHandler(club_weapon_buli_region,['club_weapon_buli_region','payl']),
         ApiAiHandler(update_api, 'update'),
