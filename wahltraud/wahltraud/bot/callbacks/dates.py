@@ -83,6 +83,9 @@ def next_event_league(event,payload,**kwargs):
                    (dates['weapon'] == we_long[weapon])]
     events = events[events['date'] >= now]
 
+    send_text(sender_id, str(events.shape[0]))
+    
+
 
     num_league = 4
     if events.shape[0] - (offset + num_league) == 1:
@@ -95,7 +98,7 @@ def next_event_league(event,payload,**kwargs):
         list_text = "{today} {home} - {guest}".format(
             home = data['home_team'],
             guest = data['guest_team'],
-            today = "**HEUTE**" if data['date'] == now else ''
+            today = "**HEUTE**" if data['date'].date() == now else ''
         )
         sbtl = "{date}, {time}, Ausrichter: {host}".format(
             date = data['date'].strftime("%d.%m.%Y"),
@@ -175,7 +178,7 @@ def next_event(event,payload,**kwargs):
         list_text = "{today}{home} - {guest}".format(
             home = data['home_team'],
             guest = data['guest_team'],
-            today="**HEUTE** " if data['date'] == now else ''
+            today="**HEUTE** " if data['date'].date() == now else ''
         )
         sbtl = "{date}, {time}, Ausrichter: {host}".format(
             date = data['date'].strftime("%d.%m.%Y"),
