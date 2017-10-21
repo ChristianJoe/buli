@@ -66,11 +66,77 @@ def dates_api(event, parameters, **kwargs):
 def next_event_league(event,payload,**kwargs):
     sender_id = event['sender']['id']
     info = payload['next_event_league']
-
+    offset = payload.get('offset',0)
     dates = get_results_team()
+    buli = info['buli']
+    region = info['region']
+    weapon = info['weapon']
+    we_long = {'LG': 'Luftgewehr',
+               'LP': 'Luftpistole'
+               }
+
+    dates = dates.sort_values(['date', 'time'])
+    now = datetime.date.today()
+    events = dates[(dates['league'] == buli + ' ' + region) &
+                   (dates['weapon'] == we_long[weapon])]
+    events = events[events['date'] >= now]
 
 
-    send_text(sender_id, 'hier info zur liga')
+    num_league = 4
+    if events.shape[0] - (offset + num_league) == 1:
+        num_league = 3
+    if events.shape[0] - (offset + num_league) < 1:
+        num_league = 4 + (events.shape[0] - (offset + num_league))
+    elements = []
+    for index in range(offset, offset + num_league):
+        data = events.iloc[index]
+        list_text = "{home} - {guest}".format(
+            home = data['home_team'],
+            guest = data['guest_team']
+        )
+        sbtl = "{date}, {time}, Ausrichter: {host}".format(
+            date = data['date'].strftime("%d.%m.%Y"),
+            time = data['time'],
+            host = data['host']
+        )
+        elements.append(
+            list_element(
+                list_text,
+                subtitle=sbtl,
+                buttons=[button_postback("Ausrichter {club}".format(club=data['guest_team']),
+                                         {'next_event': data['guest_team'],
+                                          'host': True
+                                          }
+                                         )
+                         ]
+                # image_url=candidate.get('img') or None
+            )
+        )
+
+    if events.shape[0] - offset > num_league:
+        button = button_postback("Nächsten Termine",
+                                 {'next_event_league': info,
+                                  'offset': offset + num_league})
+    else:
+        button = button_postback("Tabelle {liga}".format(liga=buli+' '+region),
+                                 {'table_league':{'buli': buli,
+                                                'region': region,
+                                                'weapon': weapon}
+                                  }
+                                 )
+
+    if offset == 0:
+        reply = 'Hier die nächsten Begegnungen in der {weapon} {buli} {region}'.format(
+                                                            buli=buli,
+                                                        region=region,
+                                                        weapon=weapon
+                                                        )
+        send_text(sender_id, reply)
+
+    send_list(sender_id, elements, button=button)
+
+
+
 
 
 
