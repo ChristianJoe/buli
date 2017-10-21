@@ -137,8 +137,6 @@ def next_event(event,payload,**kwargs):
 
     if offset == 0:
         if not host:
-
-        if not host:
             reply = 'Dann schauen wir mal wann {club} wieder an den Start geht!'.format(club=club)
             send_buttons(sender_id,
                          reply,
