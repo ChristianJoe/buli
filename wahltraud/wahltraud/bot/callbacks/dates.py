@@ -43,7 +43,8 @@ def next_event(event,payload,**kwargs):
 
 
     send_text(sender_id, "Hier zeige ich dir demnächst das Event von {club} an, welches nach dem {date} stattfindet. (Feature in Entwicklung)".format(
-        date=now.strftime("%d.%m.%Y")
+        date=now.strftime("%d.%m.%Y"),
+        club= club
     ))
 
     '''
