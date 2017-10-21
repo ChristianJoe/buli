@@ -22,14 +22,17 @@ def dates_api(event, parameters, **kwargs):
 
 def next_event(event,payload,**kwargs):
     sender_id = event['sender']['id']
-    try:
-        club = payload['next_event']
-    except:
-        club = None
+
+    club = payload['next_event']
+
 
     dates = get_results_team()
     options = []
     now = datetime.date.today()
+    hour = datetime.time.hour()
+    minute = datetime.time.minute()
+
+
 
     send_text(sender_id, "Hier zeige ich dir demnächst das Event an, welches nach dem {date} stattfindet. (Feature in Entwicklung)".format(
         date=now.strftime("%d.%m.%Y")

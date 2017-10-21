@@ -37,7 +37,7 @@ def reopen_data():
     global results_team
     results_team = pd.read_csv(DATA_DIR/'team_results.csv')
     global setlist
-    setlist = pd.read_csv(DATA_DIR/'buli17_tables.csv')
+    setlist = pd.read_csv(DATA_DIR/'buli17_setlist.csv')
 
 
 
