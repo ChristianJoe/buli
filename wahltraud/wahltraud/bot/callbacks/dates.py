@@ -94,10 +94,7 @@ def next_event(event,payload,**kwargs):
     else:
         events = dates[dates['host'] == club]
 
-    if not host:
-        reply = 'Dann schauen wir mal wann {club} wieder an den Start geht!'.format(club = club)
-    else:
-        reply = '{club} ist Ausrichter für folgende Paarungen:'
+
 
     num_league = 4
     if events.shape[0] - (offset + num_league) == 1:
@@ -120,7 +117,12 @@ def next_event(event,payload,**kwargs):
             list_element(
                 list_text,
                 subtitle=sbtl,
-                #buttons=[button_postback("Wettkämpfe", {'club_list_competitions': payload_button})]
+                buttons=[button_postback("Ausrichter {club}".format(club=data['guest_team']),
+                                         {'next_event': data['guest_team'],
+                                          'host': True
+                                          }
+                                         )
+                         ]
                 # image_url=candidate.get('img') or None
             )
         )
@@ -134,9 +136,18 @@ def next_event(event,payload,**kwargs):
                                                                          'host': True})
 
     if offset == 0:
-        send_text(sender_id,
-                  reply
-                  )
+        if not host:
+
+        if not host:
+            reply = 'Dann schauen wir mal wann {club} wieder an den Start geht!'.format(club=club)
+            send_buttons(sender_id,
+                         reply,
+                         button_postback("Ausrichter {club}".format(club=club), {'next_event': club,
+                                                                                 'host': True})
+                         )
+        else:
+            reply = '{club} ist Ausrichter für folgende Paarungen:'.format(club=club)
+            send_text(sender_id, reply)
 
     send_list(sender_id, elements, button=button)
 
