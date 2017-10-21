@@ -99,6 +99,7 @@ def get_results_pd():
     first_name = []
     last_name = []
     clubs = []
+    counter = 1
     for weapon in inverted_weapon:
         for league in inverted_league:
             total_competitions = competitons[league]
@@ -141,7 +142,7 @@ def get_results_pd():
                             home_team_short = home_team_short.replace(ending, '').strip()
                         if guest_team_short.endswith(ending) or ending == 'FSG':
                             guest_team_short = guest_team_short.replace(ending, '').strip()
-                    if home_team1 == 'ST Hubertus Elsen':
+                    if home_team1 == 'S Hubertus Elsen':
                         home_team1 = 'ST Hubertus Elsen I'
                     if guest_team1 == 'ST Hubertus Elsen':
                         guest_team1 = 'ST Hubertus Elsen I'
@@ -161,7 +162,7 @@ def get_results_pd():
                         'time': ele.find_all('td')[1].text,
                         'date': date,
                         'host': host,
-                        'site': site
+                        'site': site,
                     }
 
                     test['winner'] = 'home' if test['home_points'] >= 3 else 'guest'
@@ -187,7 +188,8 @@ def get_results_pd():
                                     'result': int(subtab.find_all('td')[4].text),
                                     'point': int(subtab.find_all('td')[5].text),
                                     'shoot_off': subtab.find_all('td')[3].text,
-                                    'pos_id': posstr_id
+                                    'pos_id': posstr_id,
+                                    'counter': counter
 
                                 }
                                 temp_guest = {
@@ -201,9 +203,11 @@ def get_results_pd():
                                     'result': int(subtab.find_all('td')[8].text),
                                     'point': int(subtab.find_all('td')[7].text),
                                     'shoot_off': subtab.find_all('td')[9].text,
-                                    'pos_id':posstr_id
+                                    'pos_id':posstr_id,
+                                    'counter': counter
 
                                 }
+
                                 result_data.append(temp_home)
                                 result_data.append(temp_guest)
                                 if temp_home['first_name'] not in first_name:
@@ -214,6 +218,7 @@ def get_results_pd():
                                     last_name.append(temp_home['last_name'])
                                 if temp_guest['last_name'] not in last_name:
                                     last_name.append(temp_guest['last_name'])
+                            counter += 1
                         except:
                             x=None
                     data.append(test)
