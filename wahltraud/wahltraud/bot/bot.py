@@ -85,6 +85,8 @@ def make_event_handler():
         ApiAiHandler(results.shooter_results_api,'shooter_who_is'),
         PayloadHandler(results.shooter_results,['shooter_results']),
 
+        PayloadHandler(dates.next_event_league, ['next_event_league']),
+
         PayloadHandler(dates.next_event, ['next_event']),
         PayloadHandler(dates.competition_info, ['comp_id']),
         PayloadHandler(results.blue_arrows,['blue_arrows']),

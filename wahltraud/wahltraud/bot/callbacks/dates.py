@@ -12,19 +12,42 @@ def dates_api(event, parameters, **kwargs):
     date = parameters.get('date')
     league = parameters.get('league')
     weapon = parameters.get('weapon')
+    region = parameters.get('region')
 
-    if not club and not league:
+    if club:
+        next_event(event,{'next_event':club})
+    elif league and weapon and region:
+        next_event_league(sender_id, {'next_event_league': {'buli': league,
+                                                            'region': region,
+                                                            'weapon': weapon}} )
+    elif region and weapon:
+        if region in ['West', 'Ost', 'Südwest']:
+            league = '2.BuLi'
+            next_event_league(sender_id, {'next_event_league': {'buli': league,
+                                                                'region': region,
+                                                                'weapon': weapon}})
+        else:
+            send_text(sender_id, 'Mhmm. 1.BuLi oder 2. BuLi? Oder hast du einen Verein nachdem ich gucken soll?')
+    elif league and region:
+        send_text(sender_id, 'LG oder eher LP??')
+    elif league:
+        if league == "1.BuLi":
+            send_text(sender_id,'Nord? Süd?')
+        else:
+            send_text(sender_id,'Nord? Süd? West? Ost? Südwest?')
+    else:
         send_text(sender_id,'Welcher Verein, oder welche Liga interessiert dich?')
 
-    elif club:
-        next_event(event,{'next_event':club})
-    else:
-        send_text(sender_id,league)
 
 
+def next_event_league(event,payload,**kwargs):
+    sender_id = event['sender']['id']
+    info = payload['next_event_league']
+
+    dates = get_results_team()
 
 
-
+    send_text(sender_id, 'hier info zur liga')
 
 
 
@@ -37,16 +60,13 @@ def next_event(event,payload,**kwargs):
     dates = get_results_team()
     options = []
     now = datetime.date.today()
-  
-
-
 
     send_text(sender_id, "Hier zeige ich dir demnächst das Event von {club} an, welches nach dem {date} stattfindet. (Feature in Entwicklung)".format(
         date=now.strftime("%d.%m.%Y"),
         club= club
     ))
 
-    '''
+
     if not club:
         for i in range(0, 100):
             look_up_date = now + datetime.timedelta(days=i)
