@@ -645,7 +645,7 @@ def shooter_results(event,payload,**kwargs):
             sbtle += " -- {club}".format(
                 club = person['team_full'].iloc[0]
             )
-            
+
 
         button_comp = [button_postback("Info {first_name} {last_name}".format(
                 first_name = oponent['first_name'].iloc[0],
@@ -693,14 +693,14 @@ def shooter_results(event,payload,**kwargs):
                                    adj = 'unmenschliche'
                                 else:
                                     adj = 'passable'
-        send_text(sender_id,'Hier ein paar Infos zu {first_name}{last_name}:'.format(
+        send_text(sender_id,'Hier ein paar Infos zu {first_name} {last_name}:'.format(
             first_name=workdata['first_name'].iloc[0],
             last_name=workdata['last_name'].iloc[0],
         ))
 
 
-        text_first_response = 'Verein: {club}.\n' \
-                              '{competitions} Wettkämpfe\n{wins} gewonnen\n\n' \
+        text_first_response = '{club}\n\n' \
+                              '{competitions} Wettkämpfe\n{wins} gewonnen\n' \
                               'Saison-Bestleistung: {best} \nLiga-Ø: {adj} {avg_result}\n\n' \
                               'Hier die bisherigen Begegnungen:'.format(
             competitions=workdata.shape[0],
