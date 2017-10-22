@@ -9,7 +9,6 @@ browser = webdriver.PhantomJS()
 import os
 import pathlib
 
-
 from ..data import reopen_data
 from ..fb import send_text
 from pathlib import Path

@@ -7,7 +7,6 @@ from collections import defaultdict
 import operator
 from itertools import groupby
 import pandas as pd
-from ..callbacks.parser import get_meyton_results, get_meyton
 import datetime
 
 
@@ -52,10 +51,7 @@ def reopen_data():
     setlist = setlist.replace('Andreas Hofer Sassanfahr', 'Andreas Hofer Sassanfahrt')
 
 
-
-
-
-
+from ..callbacks.parser import get_meyton_results, get_meyton
 
 
 def update_live_global(links):
@@ -67,6 +63,7 @@ def update_live_global(links):
         for key, value in links.items():
             site = value
             live_results.append(get_meyton_results(site))
+    return
 
 def meyton_update():
 
@@ -84,7 +81,7 @@ def meyton_update():
         links = "Zur Zeit kein Wettkampf in der 1. Bundesliga."
 
     update_live_global(links)
-
+    return
 
 
 live_results = meyton_update()
