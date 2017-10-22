@@ -23,7 +23,7 @@ from .callbacks.simple import (get_started, push, subscribe, unsubscribe, wiki, 
                                club_weapon_buli_region)
 from .callbacks.shared import (get_pushes, get_breaking, send_push, schema)
 from .callbacks import candidate, district, browse_lists, manifesto, party, dates, parser, results
-from .data import by_district_id, reopen_data
+from .data import by_district_id, reopen_data, update_live_global
 
 # TODO: The idea is simple. When you send "subscribe" to the bot, the bot server would add a record according to the sender_id to their
 # database or memory , then the bot server could set a timer to distribute the news messages to those sender_id who have subscribed for the news.
@@ -321,12 +321,15 @@ def meyton_update():
     now = datetime.datetime.now().time()
     if day == 5:
         if now >= datetime.time(13, 30) and now <= datetime.time(18, 30):
-            parser.get_meyton()
+           links =  parser.get_meyton()
 
     elif day == 6:
         if now >= datetime.time(7, 00) and now <= datetime.time(13, 00):
-            parser.get_meyton()
+           links =  parser.get_meyton()
+    else:
+        links = "Zur Zeit kein Wettkampf in der 1. Bundesliga."
 
+    update_live_global(links)
 
 
 
@@ -335,7 +338,7 @@ def meyton_update():
 #schedule.every().day.at("18:00").do(push_notification)
 schedule.every().day.at("22:00").do(dsb_update)
 
-schedule.every(30).minutes.do(dsb_update)
+schedule.every(15).minutes.do(dsb_update)
 
 schedule.every(60).seconds.do(meyton_update)
 

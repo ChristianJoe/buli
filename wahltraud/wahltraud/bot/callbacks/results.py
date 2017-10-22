@@ -5,7 +5,8 @@ import locale
 
 
 from ..fb import send_buttons, button_postback, send_text, send_attachment, send_list, list_element, quick_reply
-from ..data import by_uuid, get_dates, get_results_team, get_results_shooter, get_tables, get_club_info_weapon_buli_region,get_setlist
+from ..data import (by_uuid, get_dates, get_results_team, get_results_shooter,
+                    get_tables, get_club_info_weapon_buli_region,get_setlist, get_live_results)
 from .parser import get_meyton, get_meyton_results
 from .simple import club_info
 import datetime
@@ -929,12 +930,13 @@ def buli_live_api(event, parameters, **kwargs):
 def buli_live(event,**kwargs):
     sender_id = event['sender']['id']
 
-    links = get_meyton(hrefs = True)
+    #links = get_meyton(hrefs = True)
     options = [quick_reply('Aktualisieren', ['buli_live'])]
+    live_results = get_live_results()
 
-    for key, href in links.items():
+    for live in live_results:
 
-        live = get_meyton_results(href)
+        #live = get_meyton_results(href)
 
         try:
             if not live.empty:

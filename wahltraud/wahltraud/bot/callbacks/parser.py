@@ -10,7 +10,7 @@ import os
 import pathlib
 
 
-from ..data import reopen_data
+from ..data import reopen_data, update_live_global
 from ..fb import send_text
 from pathlib import Path
 logger = logging.getLogger(__name__)
@@ -390,12 +390,14 @@ def get_meyton(hrefs = False):
             basis = link_text
         else:
             links[b.text] = basis + link_text
+
+    """         
     for key, value in links.items():
         site = value
         if not hrefs:
 
             get_meyton_results(site)
-
+    """
     return links
 
 

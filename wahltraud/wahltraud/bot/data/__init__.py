@@ -7,6 +7,8 @@ from collections import defaultdict
 import operator
 from itertools import groupby
 import pandas as pd
+from ..bot import meyton_update
+from ..callbacks.parser import get_meyton_results
 
 
 logger = logging.getLogger(__name__)
@@ -49,6 +51,22 @@ def reopen_data():
     setlist = pd.read_csv(DATA_DIR/'buli17_setlist.csv')
     setlist = setlist.replace('Andreas Hofer Sassanfahr', 'Andreas Hofer Sassanfahrt')
 
+live_results = meyton_update()
+
+
+def update_live_global(links):
+    live_results = []
+    global live_results
+    if links == "Zur Zeit kein Wettkampf in der 1. Bundesliga.":
+        live_results.append(links)
+    else:
+        for key, value in links.items():
+            site = value
+            live_results.append(get_meyton_results(site))
+
+
+def get_live_results():
+    return live_results
 
 
 def get_results_shooter():
