@@ -985,8 +985,7 @@ def buli_live(event,**kwargs):
                     )
 
                 payload_reply = {'reply_shooters': reply_shooters,
-                                'reply_positions': reply_positions,
-                                'href': href}
+                                'reply_positions': reply_positions}
 
                 quickreplyname = live['home_team'].iloc[0] + ':' + live['guest_team'].iloc[0]
 
