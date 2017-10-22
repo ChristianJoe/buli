@@ -8,7 +8,8 @@ import operator
 from itertools import groupby
 import pandas as pd
 from ..bot import meyton_update
-from ..callbacks.parser import get_meyton_results
+from ..callbacks.parser import get_meyton_results, get_meyton
+import datetime
 
 
 logger = logging.getLogger(__name__)
@@ -51,6 +52,11 @@ def reopen_data():
     setlist = pd.read_csv(DATA_DIR/'buli17_setlist.csv')
     setlist = setlist.replace('Andreas Hofer Sassanfahr', 'Andreas Hofer Sassanfahrt')
 
+
+
+
+
+
 live_results = meyton_update()
 
 
@@ -63,6 +69,24 @@ def update_live_global(links):
         for key, value in links.items():
             site = value
             live_results.append(get_meyton_results(site))
+
+def meyton_update():
+
+    #check for saturday (5) or sunday(6)
+    day = datetime.datetime.today().weekday()
+    now = datetime.datetime.now().time()
+    if day == 5:
+        if now >= datetime.time(13, 30) and now <= datetime.time(18, 30):
+           links =  get_meyton()
+
+    elif day == 6:
+        if now >= datetime.time(7, 00) and now <= datetime.time(13, 00):
+           links =  get_meyton()
+    else:
+        links = "Zur Zeit kein Wettkampf in der 1. Bundesliga."
+
+    update_live_global(links)
+
 
 
 def get_live_results():
