@@ -412,7 +412,7 @@ def results_api(event, parameters, **kwargs):
     club = parameters.get('clubs')
     club1 = parameters.get('clubs1')
 
-    if club1:
+    if club1 and club != club1:
         results = get_results_team()
         if club1:
             try:
