@@ -7,7 +7,6 @@ from collections import defaultdict
 import operator
 from itertools import groupby
 import pandas as pd
-from ..bot import meyton_update
 from ..callbacks.parser import get_meyton_results, get_meyton
 import datetime
 
