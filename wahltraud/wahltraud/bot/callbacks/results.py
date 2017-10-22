@@ -699,8 +699,8 @@ def shooter_results(event,payload,**kwargs):
                                 else:
                                     adj = 'passable'
         send_text(sender_id,'Hier ein paar Infos zu {first_name} {last_name}:'.format(
-            first_name=person['first_name'],
-            last_name=person['last_name'],
+            first_name=person['first_name'].iloc[0],
+            last_name=person['last_name'].iloc[0],
         ))
 
 
