@@ -72,12 +72,9 @@ def meyton_update():
     #check for saturday (5) or sunday(6)
     day = datetime.datetime.today().weekday()
     now = datetime.datetime.now().time()
-    if day == 5:
-        if now >= datetime.time(13, 30) and now <= datetime.time(18, 30):
+    if day == 5 and( now >= datetime.time(13, 30) and now <= datetime.time(18, 30)):
            links =  get_meyton()
-
-    elif day == 6:
-        if now >= datetime.time(7, 00) and now <= datetime.time(13, 00):
+    elif day == 6 and (now >= datetime.time(7, 00) and now <= datetime.time(13, 00)):
            links =  get_meyton()
     else:
         links = "Zur Zeit kein Wettkampf in der 1. Bundesliga."
