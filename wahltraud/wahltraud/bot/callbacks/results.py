@@ -952,16 +952,26 @@ def buli_live(event,**kwargs):
                     home_points += int(list(row)[1].split(':')[0].strip())
                     guest_points += int(list(row)[1].split(':')[1].strip())
 
+                fight = live['fight'].iloc[0]
+
                 reply_positions = ""
                 for index in range(0, 5):
-                    reply_positions += '#{position}:   {points_home}  :  {points_guest}  \n'.format(
+                    res_home = live['result'].iloc[(2 * index)]
+                    res_guest = live['result'].iloc[(2 * index + 1)]
+                    shoot_off = ' '
+                    if fight == 'Wettkampf ist beendet' and res_home == res_guest:
+                        shoot_off = '  ' + str(live['shot_value'].iloc[(2 * index)] ) + ' : ' + str(live['shot_value'].iloc[(2 * index+1)] )
+
+
+                    reply_positions += '#{position}:   {points_home}  :  {points_guest}  {shoot_off} \n'.format(
                         position=str(index + 1),
-                        points_home=live['result'].iloc[(2 * index)],
-                        points_guest=live['result'].iloc[(2 * index + 1)]
+                        points_home=res_home,
+                        points_guest=res_guest,
+                        shoot_off = shoot_off
                     )  # ,
 
                 reply_overview = "{fight}\n{home} : {guest}\n{home_points}:{guest_points}".format(
-                            fight = live['fight'].iloc[0],
+                            fight =fight,
                               home = live['home_team'].iloc[0],
                               guest = live['guest_team'].iloc[0],
                               home_points = home_points,
