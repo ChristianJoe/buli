@@ -274,7 +274,9 @@ def update_table():
                             'team_lost': values[3].text.split(':')[1],
                             'club_page': link_text,
                             'id': weapon_short + league
+
                             }
+                    temp['comps'] = (temp['team_won']+temp['team_lost'])/2
 
                     tables_all.append(temp)
 

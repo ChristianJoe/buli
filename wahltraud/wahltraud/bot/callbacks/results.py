@@ -196,11 +196,15 @@ def table_league(event,payload,**kwargs):
         button = button_postback("Andere Liga", {'table_league': {'weapon': 'LG'} })
 
     if offset == 0:
-        send_text(sender_id, 'Ich präsentiere die Tabelle der \n\n{buli} {region} - {weapon}\n\nnach dem {nter}. Wettkampftag:'.format(
+        during_comp = False
+        if table_league['comps'].max() != table_league['comps'].min():
+            during_comp = True
+        send_text(sender_id, 'Ich präsentiere die Tabelle der \n\n{buli} {region} - {weapon}\n\n{wording} {nter}. Wettkampftag:'.format(
             buli=buli,
             weapon=weapon,
             region=region,
-            nter = int((data['team_won']+data['team_lost'])/2)
+            nter = table_league['comps'].max(),
+            wording = 'am' if during_comp == True else 'nach dem'
                     )
                   )
     send_list(sender_id, elements, button=button)
@@ -696,7 +700,7 @@ def shooter_results(event,payload,**kwargs):
                                     adj = 'passable'
         send_text(sender_id,'Hier ein paar Infos zu {first_name} {last_name}:'.format(
             first_name=workdata['first_name'].iloc[0],
-            last_name=workdata['last_name'].iloc[0],
+            last_name=workdata['last_name'].loc[0],
         ))
 
 
