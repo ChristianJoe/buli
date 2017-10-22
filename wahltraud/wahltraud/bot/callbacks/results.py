@@ -579,7 +579,7 @@ def shooter_results(event,payload,**kwargs):
 
         quicks = []
         if offset==0 and sets.shape[0]>1:
-            send_text(sender_id, "Mhmm, ich habe mehre {number} Schützen gefunden, die auf deine Anfrage passen. Meinst du...".format(
+            send_text(sender_id, "Mhmm, ich habe {number} Schützen gefunden, die auf deine Anfrage passen. Meinst du...".format(
                 number = sets.shape[0]
             ))
 

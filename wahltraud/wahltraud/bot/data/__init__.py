@@ -35,7 +35,7 @@ results_shooter = results_shooter.replace('Andreas Hofer Sassanfahr', 'Andreas H
 results_team = results_team.replace('Andreas Hofer Sassanfahr', 'Andreas Hofer Sassanfahrt')
 setlist = setlist.replace('Andreas Hofer Sassanfahr', 'Andreas Hofer Sassanfahrt')
 
-live_results = "Zur Zeit kein Wettkampf in der 1. Bundesliga."
+live_results = ["Zur Zeit kein Wettkampf in der 1. Bundesliga."]
 
 
 def reopen_data():

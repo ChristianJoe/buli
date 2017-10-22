@@ -275,7 +275,7 @@ def update_table():
                             'id': weapon_short + league
 
                             }
-                    temp['comps'] = (temp['team_won']+temp['team_lost'])/2
+                    temp['comps'] = (int(temp['team_won'])+int(temp['team_lost']))/2
 
                     tables_all.append(temp)
 
