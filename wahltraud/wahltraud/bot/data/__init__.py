@@ -56,7 +56,6 @@ def reopen_data():
 
 
 
-live_results = meyton_update()
 
 
 def update_live_global(links):
@@ -86,6 +85,9 @@ def meyton_update():
 
     update_live_global(links)
 
+
+
+live_results = meyton_update()
 
 
 def get_live_results():
