@@ -615,6 +615,11 @@ def shooter_results(event,payload,**kwargs):
     except:
         club = club
 
+    more_clubs = False
+    if len(list(set(list(workdata['team_full'])))) > 1:
+        more_clubs = True
+
+
     if workdata.shape[0] - (offset + num_league) == 1:
         num_league = 3
     elements = []
@@ -636,6 +641,11 @@ def shooter_results(event,payload,**kwargs):
                 person = person['shoot_off'].iloc[0],
                 oponent = oponent['shoot_off'].iloc[0]
             )
+        if more_clubs:
+            sbtle += " -- {club}".format(
+                club = person['team_full'].iloc[0]
+            )
+            
 
         button_comp = [button_postback("Info {first_name} {last_name}".format(
                 first_name = oponent['first_name'].iloc[0],
@@ -683,20 +693,22 @@ def shooter_results(event,payload,**kwargs):
                                    adj = 'unmenschliche'
                                 else:
                                     adj = 'passable'
+        send_text(sender_id,'Hier ein paar Infos zu {first_name}{last_name}:'.format(
+            first_name=workdata['first_name'].iloc[0],
+            last_name=workdata['last_name'].iloc[0],
+        ))
 
 
-        text_first_response = '{first_name} {last_name}\n{club}.\n' \
-                              '{competitions} Wettkämpfe, gewonnen {wins}\n' \
+        text_first_response = 'Verein: {club}.\n' \
+                              '{competitions} Wettkämpfe\n{wins} gewonnen\n\n' \
                               'Saison-Bestleistung: {best} \nLiga-Ø: {adj} {avg_result}\n\n' \
                               'Hier die bisherigen Begegnungen:'.format(
-            first_name = workdata['first_name'].iloc[0],
-            last_name = workdata['last_name'].iloc[0],
             competitions=workdata.shape[0],
             wins = sum(workdata['point']),
             avg_result = avg,
             best = best,
             adj = adj,
-            club = workdata['team_full'].iloc[0]
+            club = workdata['team_short'].iloc[0]
         )
         send_text(sender_id, text_first_response
 
