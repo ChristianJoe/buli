@@ -197,14 +197,24 @@ def next_event(event,payload,**kwargs):
                 # image_url=candidate.get('img') or None
             )
         )
-
     if events.shape[0] - offset > num_league:
-        button = button_postback("Nächsten Termine",
-                                 {'next_event': club,
-                                  'offset': offset + num_league})
+        if not host:
+            button = button_postback("Nächsten Termine",
+                                     {'next_event': club,
+                                      'offset': offset + num_league})
+        else:
+            button = button_postback("Weiter Begegnungen",
+                                     {'next_event': club,
+                                      'offset': offset+num_league,
+                                      'host': True
+                                     })
     else:
-        button = button_postback("Ausrichter {club}".format(club=club), {'next_event': club,
+        if not host:
+            button = button_postback("Ausrichter {club}".format(club=club), {'next_event': club,
                                                                          'host': True})
+        else:
+            button = button_postback('Ergebnisse {club}'.format(club=club), {'results_club': club})
+
 
     if offset == 0:
         if not host:
