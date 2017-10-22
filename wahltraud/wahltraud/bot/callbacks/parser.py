@@ -10,7 +10,7 @@ import os
 import pathlib
 
 
-from ..data import reopen_data, update_live_global
+from ..data import reopen_data
 from ..fb import send_text
 from pathlib import Path
 logger = logging.getLogger(__name__)
