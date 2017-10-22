@@ -203,7 +203,7 @@ def table_league(event,payload,**kwargs):
             buli=buli,
             weapon=weapon,
             region=region,
-            nter = table_league['comps'].max(),
+            nter = int(table_league['comps'].max()),
             wording = 'am' if during_comp == True else 'nach dem'
                     )
                   )
