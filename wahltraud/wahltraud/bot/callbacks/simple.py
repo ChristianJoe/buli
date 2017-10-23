@@ -312,10 +312,8 @@ def subscribe(event, **kwargs):
             buttons.append(button_postback('LG & LP anmelden',{'subscribe_weapon' : 'both'}))
 
         send_buttons(user_id, reply,
-                     buttons=[
-                         button_postback('Abmelden',
-                                         {'subscribe_weapon': 'LG'}),
-                     ])
+                     buttons=buttons,
+                     )
 
     else:
         now = timezone.localtime(timezone.now())
