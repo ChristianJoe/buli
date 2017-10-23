@@ -105,10 +105,19 @@ class FacebookUser(models.Model):
 
     uid = models.CharField('User ID', max_length=64, null=False, unique=True)
     state = models.CharField('State', max_length=64, null=True, blank=True)
+    rifle = models.BooleanField('LG', null=False, default=False)
+    pistole = models.BooleanField('LP', null=False, default=False)
+
     add_date = models.DateTimeField('Hinzugefügt am', default=timezone.now)
 
     def __str__(self):
         return str(self.uid)
+
+
+
+
+
+
 
 
 class Wiki(models.Model):
