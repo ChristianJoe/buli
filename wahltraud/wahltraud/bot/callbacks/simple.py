@@ -292,7 +292,7 @@ def subscribe(event, **kwargs):
 
     buttons = []
     if FacebookUser.objects.filter(uid=user_id).exists():
-        p = FacebookUser.objects.filter(uid=user_id)
+        p = FacebookUser.objects.get(uid=user_id)
 
         reply = "Du bist bereits für folgende Ergebnis-Ticker angemeldet:\n\n"
         if p.rifle and p.pistol:
