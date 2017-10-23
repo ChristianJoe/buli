@@ -353,7 +353,7 @@ def subscribe_weapon(event,payload, **kwargs):
 
 
 
-    logger.debug('subscribed user with ID ' + str(FacebookUser.objects.latest('add_date') + ' for ' + weapon))
+    logger.debug('subscribed user with ID ' + user_id + ' for ' + weapon)
 
 
     send_text(user_id,'Tip Top, ab jetzt verpasst du kein Liga Ergebnis mehr!')
