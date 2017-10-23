@@ -290,18 +290,32 @@ def share_bot(event, **kwargs):
 def subscribe(event, **kwargs):
     user_id = event['sender']['id']
 
+    buttons = []
     if FacebookUser.objects.filter(uid=user_id).exists():
-        now = timezone.localtime(timezone.now())
-        date = now.date()
-        time = now.time()
-        reply = "Du bist bereits für Push-Nachrichten angemeldet."
-        last_push = Push.objects.filter(
-            published=True).exclude(pub_date__date__gt=date).latest('pub_date')
+        LG = FacebookUser.objects.filter(uid=user_id).rifle
+        LP = FacebookUser.objects.filter(uid=user_id).pistole
+
+        reply = "Du bist bereits für folgende Ergebnis-Ticker angemeldet:\n\n"
+        if LG and LP:
+            reply += "Luftgewehr und Luftpistole"
+            buttons.append(button_postback('Abmelden Gewehr',{'unsubscribe_weapon': 'rifle'}))
+            buttons.append(button_postback('Abmelden Pistole',{'unsubscribe_weapon' : 'pistole'}))
+        elif LP:
+            reply += "Luftpistole"
+            buttons.append(button_postback('Anmelden Gewehr',{'subscribe_weapon' : 'rifle'}))
+            buttons.append(button_postback('Abmelden Pistole',{'unsubscribe_weapon' : 'pistole'}))
+        elif LG:
+            reply += "Luftgewehr"
+            buttons.append(button_postback('Abmelden Gewehr',{'unsubscribe_weapon': 'rifle'}))
+            buttons.append(button_postback('Anmelden Pistole',{'subscribe_weapon' : 'pistole'}))
+        else:
+            reply += 'Noch gar nicht angemeldet...'
+            buttons.append(button_postback('LG & LP anmelden',{'subscribe_weapon' : 'both'}))
 
         send_buttons(user_id, reply,
                      buttons=[
-                         button_postback('Letzte Push-Nachricht',
-                                         {'push': last_push.id, 'next_state': 'intro'}),
+                         button_postback('Abmelden',
+                                         {'subscribe_weapon': 'LG'}),
                      ])
 
     else:
@@ -326,6 +340,28 @@ Danke für deine Anmeldung! Du erhältst nun nach jedem Wettkampftag eine kurze 
                         button_postback('Letzter Wettkampftag',
                                         {'push': last_push.id, 'next_state': 'intro'}),
                      ])
+
+
+def subscribe_weapon(event,payload, **kwargs):
+    user_id = event['sender']['id']
+    weapon = payload['subscribe_weapon']
+
+    if weapon == 'rifle':
+        FacebookUser.objects.filter(uid=user_id).update(rifle=True)
+    if weapon == 'pistole':
+        FacebookUser.objects.filter(uid=user_id).update(pistole=True)
+    if weapon == 'both':
+        FacebookUser.objects.filter(uid=user_id).update(rifle=True)
+        FacebookUser.objects.filter(uid=user_id).update(pistole=True)
+
+
+
+    logger.debug('subscribed user with ID ' + str(FacebookUser.objects.latest('add_date') + ' for ' + weapon))
+
+
+    send_text(user_id,'Tip Top, ab jetzt verpasst du kein Liga Ergebnis mehr!')
+
+
 
 
 def unsubscribe(event, **kwargs):
