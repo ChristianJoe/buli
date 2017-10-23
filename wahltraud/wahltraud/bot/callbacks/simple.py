@@ -293,40 +293,36 @@ def subscribe(event, **kwargs):
     buttons = []
     if FacebookUser.objects.filter(uid=user_id).exists():
         p = FacebookUser.objects.get(uid=user_id)
-
-        reply = "Du bist für folgende Ergebnis-Ticker angemeldet:\n\n"
-        if p.rifle and p.pistole:
-            reply += "Luftgewehr und Luftpistole"
-            buttons.append(button_postback('Abmelden Gewehr',{'unsubscribe_weapon': 'rifle'}))
-            buttons.append(button_postback('Abmelden Pistole',{'unsubscribe_weapon' : 'pistole'}))
-        elif p.pistole:
-            reply += "Luftpistole"
-            buttons.append(button_postback('Anmelden Gewehr',{'subscribe_weapon' : 'rifle'}))
-            buttons.append(button_postback('Abmelden Pistole',{'unsubscribe_weapon' : 'pistole'}))
-        elif p.rifle:
-            reply += "Luftgewehr"
-            buttons.append(button_postback('Abmelden Gewehr',{'unsubscribe_weapon': 'rifle'}))
-            buttons.append(button_postback('Anmelden Pistole',{'subscribe_weapon' : 'pistole'}))
-        else:
-            reply += 'Noch gar nicht angemeldet...'
-            buttons.append(button_postback('LG & LP anmelden',{'subscribe_weapon' : 'both'}))
-
-        send_buttons(user_id, reply,
-                     buttons=buttons,
-                     )
-
     else:
         FacebookUser.objects.create(uid=user_id)
+        p = FacebookUser.objects.get(uid=user_id)
 
-        logger.debug('subscribed user with ID ' + str(FacebookUser.objects.latest('add_date')))
-        reply = """
-Danke für deine Anmeldung! Du erhältst nun nach jedem Wettkampftag eine kurze Zusammenfassung der Ergebnisse.
-"""
-        send_buttons(user_id, reply,
-                     buttons=[
-                        button_postback('Letzter Wettkampftag',
-                                        {'push': last_push.id, 'next_state': 'intro'}),
-                     ])
+    reply = "Du bist für folgende Ergebnis-Ticker angemeldet:\n\n"
+    if p.rifle and p.pistole:
+        reply += "Luftgewehr und Luftpistole"
+        buttons.append(button_postback('Abmelden Gewehr',{'unsubscribe_weapon': 'rifle'}))
+        buttons.append(button_postback('Abmelden Pistole',{'unsubscribe_weapon' : 'pistole'}))
+        buttons.append(button_postback('Komplett abmelden',{'unsubscribe_weapon' : 'both'}))
+
+    elif p.pistole:
+        reply += "Luftpistole"
+        buttons.append(button_postback('Anmelden Gewehr',{'subscribe_weapon' : 'rifle'}))
+        buttons.append(button_postback('Abmelden Pistole',{'unsubscribe_weapon' : 'pistole'}))
+    elif p.rifle:
+        reply += "Luftgewehr"
+        buttons.append(button_postback('Abmelden Gewehr',{'unsubscribe_weapon': 'rifle'}))
+        buttons.append(button_postback('Anmelden Pistole',{'subscribe_weapon' : 'pistole'}))
+    else:
+        reply += 'Noch gar nicht angemeldet...'
+        buttons.append(button_postback('LG & LP anmelden',{'subscribe_weapon' : 'both'}))
+        buttons.append(button_postback('Anmelden Gewehr',{'subscribe_weapon' : 'rifle'}))
+        buttons.append(button_postback('Anmelden Pistole',{'subscribe_weapon' : 'pistole'}))
+
+    send_buttons(user_id, reply,
+                 buttons=buttons,
+                 )
+
+
 
 
 def subscribe_weapon(event,payload, **kwargs):
@@ -345,7 +341,10 @@ def subscribe_weapon(event,payload, **kwargs):
     logger.debug('subscribed user with ID ' + user_id + ' for ' + weapon)
 
 
-    send_text(user_id,'Tip Top, ab jetzt verpasst du kein Liga Ergebnis mehr!')
+    send_text(user_id,'🙌 Tip Top! Ab jetzt verpasst du keine {weapon} Ergebnis mehr!'.format(
+        weapon = 'LP' if weapon == 'pistole' else('LG' if weapon == 'rifle' else 'LG und LP')
+    )
+              )
 
 
 def unsubscribe_weapon(event, payload, **kwargs):
@@ -361,8 +360,16 @@ def unsubscribe_weapon(event, payload, **kwargs):
         FacebookUser.objects.filter(uid=user_id).update(pistole=False)
 
     logger.debug('subscribed user with ID ' + user_id + ' for ' + weapon)
+    p = FacebookUser.objects.get(uid=user_id)
+    if not p.pistole and not p.rifle:
+        p.delete()
+        reply = 'Ja schade...😞. Gibt es einen Grund für dein Abmeldung? PS: Einfach \"anmelden\" schreiben und du bist wieder dabei!'
+    else:
+        reply = 'Alles klar. keine {weapon} News mehr. Schreib mir einfach \"anmeldeln\" und du bist wieder dabei!'.format(
+            weapon = 'LG' if weapon == 'rifle' else 'LP'
+        )
 
-    send_text(user_id, 'Das mit dem abmelden hat geklappt. Du kannst dich jederzeit wieder übers Menü anmelden!')
+    send_text(user_id, reply)
 
 
 
