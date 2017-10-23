@@ -292,19 +292,18 @@ def subscribe(event, **kwargs):
 
     buttons = []
     if FacebookUser.objects.filter(uid=user_id).exists():
-        LG = FacebookUser.objects.filter(uid=user_id).rifle
-        LP = FacebookUser.objects.filter(uid=user_id).pistole
+        p = FacebookUser.objects.filter(uid=user_id)
 
         reply = "Du bist bereits für folgende Ergebnis-Ticker angemeldet:\n\n"
-        if LG and LP:
+        if p.rifle and p.pistol:
             reply += "Luftgewehr und Luftpistole"
             buttons.append(button_postback('Abmelden Gewehr',{'unsubscribe_weapon': 'rifle'}))
             buttons.append(button_postback('Abmelden Pistole',{'unsubscribe_weapon' : 'pistole'}))
-        elif LP:
+        elif p.pistol:
             reply += "Luftpistole"
             buttons.append(button_postback('Anmelden Gewehr',{'subscribe_weapon' : 'rifle'}))
             buttons.append(button_postback('Abmelden Pistole',{'unsubscribe_weapon' : 'pistole'}))
-        elif LG:
+        elif p.rifle:
             reply += "Luftgewehr"
             buttons.append(button_postback('Abmelden Gewehr',{'unsubscribe_weapon': 'rifle'}))
             buttons.append(button_postback('Anmelden Pistole',{'subscribe_weapon' : 'pistole'}))
