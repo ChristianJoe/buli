@@ -20,7 +20,7 @@ from .callbacks.simple import (get_started, push, subscribe, unsubscribe, wiki, 
                                more_data, sunday_poll, greetings, who_votes,
                                update_api, infos_backend, table_start, competition_start, club_info, club_info_api,
                                letsgo,champions_api,champions_LG, champions_LP, former_champions_LG, former_champions_LP,
-                               club_weapon_buli_region, subscribe_weapon)
+                               club_weapon_buli_region, subscribe_weapon, unsubscribe_weapon)
 from .callbacks.shared import (get_pushes, get_breaking, send_push, schema)
 from .callbacks import candidate, district, browse_lists, manifesto, party, dates, parser, results
 from .data import by_district_id, reopen_data, meyton_update
@@ -54,7 +54,7 @@ def make_event_handler():
         PayloadHandler(share_bot, ['share_bot']),
         PayloadHandler(subscribe, ['subscribe']),
         PayloadHandler(subscribe_weapon,['subscribe_weapon']),
-        PayloadHandler(subscribe_weapon, ['unsubscribe_weapon']),
+        PayloadHandler(unsubscribe_weapon, ['unsubscribe_weapon']),
 
         PayloadHandler(unsubscribe, ['unsubscribe']),
         ApiAiHandler(subscribe, 'anmelden'),

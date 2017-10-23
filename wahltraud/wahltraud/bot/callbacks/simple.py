@@ -294,7 +294,7 @@ def subscribe(event, **kwargs):
     if FacebookUser.objects.filter(uid=user_id).exists():
         p = FacebookUser.objects.get(uid=user_id)
 
-        reply = "Du bist bereits für folgende Ergebnis-Ticker angemeldet:\n\n"
+        reply = "Du bist für folgende Ergebnis-Ticker angemeldet:\n\n"
         if p.rifle and p.pistole:
             reply += "Luftgewehr und Luftpistole"
             buttons.append(button_postback('Abmelden Gewehr',{'unsubscribe_weapon': 'rifle'}))
@@ -316,18 +316,8 @@ def subscribe(event, **kwargs):
                      )
 
     else:
-        now = timezone.localtime(timezone.now())
-        date = now.date()
-        time = now.time()
-
-        if time.hour < 18:
-            last_push = Push.objects.filter(
-                published=True).exclude(pub_date__date__gte=date).latest('pub_date')
-        else:
-            last_push = Push.objects.filter(
-                published=True).exclude(pub_date__date__gt=date).latest('pub_date')
-
         FacebookUser.objects.create(uid=user_id)
+
         logger.debug('subscribed user with ID ' + str(FacebookUser.objects.latest('add_date')))
         reply = """
 Danke für deine Anmeldung! Du erhältst nun nach jedem Wettkampftag eine kurze Zusammenfassung der Ergebnisse.
@@ -343,6 +333,7 @@ def subscribe_weapon(event,payload, **kwargs):
     user_id = event['sender']['id']
     weapon = payload['subscribe_weapon']
 
+
     if weapon == 'rifle':
         FacebookUser.objects.filter(uid=user_id).update(rifle=True)
     if weapon == 'pistole':
@@ -351,12 +342,29 @@ def subscribe_weapon(event,payload, **kwargs):
         FacebookUser.objects.filter(uid=user_id).update(rifle=True)
         FacebookUser.objects.filter(uid=user_id).update(pistole=True)
 
-
-
     logger.debug('subscribed user with ID ' + user_id + ' for ' + weapon)
 
 
     send_text(user_id,'Tip Top, ab jetzt verpasst du kein Liga Ergebnis mehr!')
+
+
+def unsubscribe_weapon(event, payload, **kwargs):
+    user_id = event['sender']['id']
+    weapon = payload['unsubscribe_weapon']
+
+    if weapon == 'rifle':
+        FacebookUser.objects.filter(uid=user_id).update(rifle=False)
+    if weapon == 'pistole':
+        FacebookUser.objects.filter(uid=user_id).update(pistole=False)
+    if weapon == 'both':
+        FacebookUser.objects.filter(uid=user_id).update(rifle=False)
+        FacebookUser.objects.filter(uid=user_id).update(pistole=False)
+
+    logger.debug('subscribed user with ID ' + user_id + ' for ' + weapon)
+
+    send_text(user_id, 'Das mit dem abmelden hat geklappt. Du kannst dich jederzeit wieder übers Menü anmelden!')
+
+
 
 
 
@@ -368,8 +376,8 @@ def unsubscribe(event, **kwargs):
         logger.debug('deleted user with ID: ' + str(FacebookUser.objects.get(uid=user_id)))
         FacebookUser.objects.get(uid=user_id).delete()
         send_text(user_id,
-                "Schade, dass dir mein Service nicht gefallen hat. Du wurdest aus der Empfängerliste für Zusammenfassungen gestrichen. "
-                "Hätte ich was besser machen können, dann schreib es mir gerne. Ich freue mich über Feedback."
+                "Schade. Du erhälst hiermit keine Benachrichtigungen mehr. "
+                "Du kannst dich jederzeit wieder über das Menü anmelden!"
         )
     else:
         reply = "Du bist noch kein Nutzer der BuLi-News. Wenn du dich anmelden möchtest wähle \"Anmelden\" über das Menü."
