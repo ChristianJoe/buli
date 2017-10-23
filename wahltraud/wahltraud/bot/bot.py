@@ -56,9 +56,9 @@ def make_event_handler():
         PayloadHandler(subscribe_weapon,['subscribe_weapon']),
         PayloadHandler(unsubscribe_weapon, ['unsubscribe_weapon']),
 
-        PayloadHandler(unsubscribe, ['unsubscribe']),
+        PayloadHandler(subscribe, ['unsubscribe']),
         ApiAiHandler(subscribe, 'anmelden'),
-        ApiAiHandler(unsubscribe, 'abmelden'),
+        ApiAiHandler(subscribe, 'abmelden'),
         PayloadHandler(push_step, ['push', 'next_state']),
         PayloadHandler(push, ['push']),
         ApiAiHandler(infos_backend, 'push'),
