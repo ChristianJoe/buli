@@ -346,7 +346,7 @@ def get_setlist():
                         else:
                             temp = {}
                             number_of_comps = 0
-                            best = []
+                            best = [0]
                             for index3, element in enumerate(ro.find_all('td')):
 
                                 temp['club'] = club
@@ -369,9 +369,10 @@ def get_setlist():
                                     temp['avg'] = element.text
                                 else:
                                     temp[str(index3 - 2)] = element.text
-                                    if element.text != '0' :
+                                    testelement = int(element.text)
+                                    if testelement > 0 :
                                         number_of_comps +=1
-                                        best.append(element.text)
+                                        best.append(testelement)
                             temp['numer_of_comps'] = number_of_comps
                             temp['best'] = max(best)
 
