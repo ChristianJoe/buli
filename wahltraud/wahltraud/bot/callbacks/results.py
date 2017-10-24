@@ -23,6 +23,12 @@ def best_shooter_api(event,parameters,**kwargs):
     weapon = parameters.get('weapon')
     region = parameters.get('region')
 
+    if weapon == 'Luftgewehr':
+        weapon = 'LG'
+    if weapon == 'Luftpistole':
+        weapon = 'LP'
+
+
     if not club and not liga and not weapon and not region:
         send_text(sender_id,'So insgesamt??? Gewehr oder Pistole?')
     if not club and not liga and not region:
