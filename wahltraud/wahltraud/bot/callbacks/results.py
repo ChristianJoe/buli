@@ -34,7 +34,8 @@ def best_shooter_api(event,parameters,**kwargs):
     if not club and not liga and not region:
         p = ShooterResults.objects.all()[:1].get()
 
-        send_text(sender_id,'Das beste Einzelergebnis ist von {name}'.format(name=p.first_name))
+        send_text(sender_id,'Das beste Einzelergebnis ist von {name} mit {result} *testversion*'.format(name=p.first_name,
+                                                                                                        result = p.result))
     else:
         send_text(sender_id, 'kommt')
 
