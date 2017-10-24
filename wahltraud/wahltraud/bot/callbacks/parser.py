@@ -149,12 +149,12 @@ def get_results_pd():
                     if home_team1 == 'PSV Olympia Berlin':
                         if weapon_short == 'LG':
                             home_team1 = 'PSV Olympia Berlin LG'
-                        elif league == '1.BuLi':
+                        elif '1.BuLi' in league:
                             home_team1 = 'PSV Olympia Berlin I'
                     if guest_team1 == 'PSV Olympia Berlin':
                         if weapon_short == 'LG':
                             guest_team1 = 'PSV Olympia Berlin LG'
-                        elif league == '1.BuLi':
+                        elif '1.BuLi' in league:
                             guest_team1 = 'PSV Olympia Berlin I'
 
 
@@ -282,7 +282,7 @@ def update_table():
                     if home_team == 'PSV Olympia Berlin':
                         if weapon_short == 'LG':
                             home_team = 'PSV Olympia Berlin LG'
-                        elif league == '1.BuLi':
+                        elif '1.BuLi' in league:
                             home_team = 'PSV Olympia Berlin I'
 
 
@@ -340,8 +340,8 @@ def get_setlist():
                                 club = 'ST Hubertus Elsen I'
                             if club == 'PSV Olympia Berlin':
                                 if weapon_short == 'LG':
-                                    club = 'PSV Olympia Berlin LG'
-                                elif league == '1.BuLi':
+                                    club = 'PSV Olympia BerlinLG'
+                                elif '1.BuLi' in league:
                                     club = 'PSV Olympia Berlin I'
                         else:
                             temp = {}

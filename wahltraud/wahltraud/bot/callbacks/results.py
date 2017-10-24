@@ -3,6 +3,7 @@ import operator
 import pandas as pd
 import locale
 
+from backend.models import FacebookUser, ShooterResults
 
 from ..fb import send_buttons, button_postback, send_text, send_attachment, send_list, list_element, quick_reply
 from ..data import (by_uuid, get_dates, get_results_team, get_results_shooter,
@@ -18,10 +19,18 @@ locale.setlocale(locale.LC_NUMERIC, 'de_DE.UTF-8')
 def best_shooter_api(event,parameters,**kwargs):
     sender_id = event['sender']['id']
     club = parameters.get('clubs')
-    liga = parameters.get
-    send_text(sender_id,'Soo, ich arbeite daran, dir demnächst den besten Schützen/die beste Schützin anzeigen zu können!')
+    liga = parameters.get('league')
+    weapon = parameters.get('weapon')
+    region = parameters.get('region')
 
-    return
+    if not club and not liga and not weapon and not region:
+        send_text(sender_id,'Der beste Schütze? Gewehr oder Pistole?')
+    if not club and not liga and not region:
+        ShooterResults.objects.filter(weapon=weapon).
+    else:
+        send_test(sender_id, 'kommt')
+
+
 
 
 
