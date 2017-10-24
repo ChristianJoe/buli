@@ -58,16 +58,35 @@ def best_shooter_api(event,parameters,**kwargs):
     best_result = single['best'].max()
     single_final = single[single['best'] == best_result]
     for index,row in single_final.iterrows():
-        reply_single += "{first_name} {last_name},{team}, {buli}\n".format(
+        reply_single += "{first_name} {last_name} - {team} - {buli}\n".format(
             first_name=row['first_name'],
             last_name = row['last_name'],
             team = row['club_short'],
             buli=row['buli']
         )
 
+    reply_avg = ''
+    max_comp = avg['number_of_comps'].max()
+    #this formula takes into account how many falues are counted
+    fail = sum([1/x for x in range(2,max_comp)])+0.5
+    avg_final = avg[avg['number_of_comps']>(max_comp-fail)].iloc[0:10]
+    for index,row in avg.iterrows():
+        reply_avg += "Ø {avg} {comp} - {first_name} {last_name} - {team} - {buli}\n".format(
+            first_name=row['first_name'],
+            last_name = row['last_name'],
+            team = row['club_short'],
+            buli=row['buli'],
+            comp = row['number_of_comps']
+        )
+    send_text(sender_id,
+              'Im {weapon} stehen {best_result} Ringe ganz oben auf der Liste. Folgende Schützen waren so frei:\n\n'
+              .format(weapon=weapon,
+                      best_result=best_result,
+                      ) + reply_single
+              )
 
 
-    send_text(sender_id, 'Das beste Einzelergebnis {weapon} beträgt {best_result} Ringe und wurde von folgenden Schützen geschossen:\n\n'
+    send_text(sender_id, 'Im Durchschnitt sind die folgenden Schützen die besten im {weapon}:\n\n'
                         .format(weapon=weapon,
                                 best_result=best_result,
                                 ) +reply_single
