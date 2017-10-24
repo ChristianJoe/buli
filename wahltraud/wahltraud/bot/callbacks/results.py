@@ -90,7 +90,7 @@ def best_shooter_api(event,parameters,**kwargs):
     send_text(sender_id, 'Im Durchschnitt sind die folgenden Schützen die besten im {weapon}:\n\n'
                         .format(weapon=weapon,
                                 best_result=best_result,
-                                ) +reply_single
+                                ) +reply_avg
               )
 
 
