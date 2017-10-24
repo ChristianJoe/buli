@@ -186,6 +186,11 @@ def update_shooter_database():
 
 
 
+def make_best_shooter():
+
+    return
+
+
 
 
 

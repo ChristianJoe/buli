@@ -144,9 +144,49 @@ class ShooterResults(models.Model):
     def __str__(self):
         return str(self.uid)
 
+'''
 
-#comp_id,counter,first_name,home,last_name,point,pos_id,position,result,shoot_off,team_full,team_short
+This class was thought to be nice, but it hurts
+class Setlist(models.Model):
 
+    class Meta:
+        verbose_name = 'Setlist Shooter'
+        verbose_name_plural = 'Setlist Schooters'
+
+    shooter_id = models.CharField('shooter_id', max_length=64, null=False, unique=True)
+
+    weapon = models.CharField('Waffe', max_length=64, null=False, unique=False)
+    buli = models.CharField('Liga', max_length=64, null=False, unique=False)
+    region = models.CharField('Region', max_length=64, null=False, unique=False)
+
+    postion = models.PositiveSmallIntegerField('Position', null = False, default=False)
+    first_name = models.CharField('Vorname', max_length=64, null=False, unique=False)
+    last_name = models.CharField('Nachname', max_length=64, null=False, unique=False)
+    team_full = models.CharField('Mannschaft', max_length=64, null=False, unique=False)
+    team_short = models.CharField('Verein', max_length=64, null=False, unique=False)
+    result = models.PositiveSmallIntegerField('Ergebnis', null = False, default=False)
+    result1 = models.PositiveSmallIntegerField('Ergebnis', null = False, default=False)
+    result2 = models.PositiveSmallIntegerField('Ergebnis', null = False, default=False)
+    result3 = models.PositiveSmallIntegerField('Ergebnis', null = False, default=False)
+    result4 = models.PositiveSmallIntegerField('Ergebnis', null = False, default=False)
+    result5 = models.PositiveSmallIntegerField('Ergebnis', null = False, default=False)
+    result6 = models.PositiveSmallIntegerField('Ergebnis', null = False, default=False)
+    result7 = models.PositiveSmallIntegerField('Ergebnis', null = False, default=False)
+    result8 = models.PositiveSmallIntegerField('Ergebnis', null = False, default=False)
+    result9 = models.PositiveSmallIntegerField('Ergebnis', null = False, default=False)
+    result10 = models.PositiveSmallIntegerField('Ergebnis', null = False, default=False)
+    result11 = models.PositiveSmallIntegerField('Ergebnis', null = False, default=False)
+
+    avg = models.DecimalField('Ligaschnitt', max_digits=8, decimal_places=2)
+
+
+    point = models.BooleanField('Sieger', null=False, default=False)
+
+    add_date = models.DateTimeField('Hinzugefügt am', default=timezone.now)
+
+    def __str__(self):
+        return str(self.uid)
+'''
 
 
 
