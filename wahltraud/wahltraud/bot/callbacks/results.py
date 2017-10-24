@@ -15,6 +15,25 @@ import datetime
 logger = logging.getLogger(__name__)
 locale.setlocale(locale.LC_NUMERIC, 'de_DE.UTF-8')
 
+def best_shooter_api(event,parameters,**kwargs):
+    sender_id = event['sender']['id']
+    club = parameters.get('clubs')
+    liga = parameters.get
+    send_text(sender_id,'Soo, ich arbeite daran, dir demnächst den besten Schützen/die beste Schützin anzeigen zu können!')
+
+    return
+
+
+
+
+def best_shooter_liga(event,payload,**kwargs):
+
+    return
+
+
+
+
+
 
 
 

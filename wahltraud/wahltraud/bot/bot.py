@@ -73,6 +73,9 @@ def make_event_handler():
         ApiAiHandler(dates.dates_api, 'next_event_club'),
         ApiAiHandler(dates.dates_api, 'next_event_context'),
 
+        ApiAiHandler(results.best_shooter_api, 'best_shooter'),
+        PayloadHandler(results.best_shooter_liga,'best_shooter_liga'),
+
         PayloadHandler(club_weapon_buli_region,['club_weapon_buli_region','payl']),
         ApiAiHandler(update_api, 'update'),
         PayloadHandler(parser.update_table_payload, ['update_table_payload']),

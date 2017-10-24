@@ -115,6 +115,37 @@ class FacebookUser(models.Model):
 
 
 
+class ShooterResults(models.Model):
+
+    class Meta:
+        verbose_name = 'Shooter Results'
+        verbose_name_plural = 'Shooter Results'
+
+    comp_id = models.CharField('Comp_id', max_length=64, null=False, unique=True)
+
+    weapon = models.CharField('Waffe', max_length=64, null=False, unique=False)
+    buli = models.CharField('Liga', max_length=64, null=False, unique=False)
+    region = models.CharField('Region', max_length=64, null=False, unique=False)
+
+    host = models.CharField('Ausrichter', max_length=64, null=False, unique=False)
+
+    postion = models.PositiveSmallIntegerField('Position', null = False, default=False)
+    first_name = models.CharField('Vorname', max_length=64, null=False, unique=False)
+    last_name = models.CharField('Nachname', max_length=64, null=False, unique=False)
+    team_full = models.CharField('Mannschaft', max_length=64, null=False, unique=False)
+    team_short = models.CharField('Verein', max_length=64, null=False, unique=False)
+    result = models.PositiveSmallIntegerField('Ergebnis', null = False, default=False)
+    shoot_off = models.CharField('Stechen', max_length=64, null=True, blank=True)
+
+    point = models.BooleanField('Sieger', null=False, default=False)
+
+    add_date = models.DateTimeField('Hinzugefügt am', default=timezone.now)
+
+    def __str__(self):
+        return str(self.uid)
+
+
+#comp_id,counter,first_name,home,last_name,point,pos_id,position,result,shoot_off,team_full,team_short
 
 
 
