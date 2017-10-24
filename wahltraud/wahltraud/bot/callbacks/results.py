@@ -61,7 +61,7 @@ def best_shooter_api(event,parameters,**kwargs):
         reply_single += "{first_name} {last_name},{team}, {buli}\n".format(
             first_name=row['first_name'],
             last_name = row['last_name'],
-            team = row['team_short'],
+            team = row['club_short'],
             buli=row['buli']
         )
 
