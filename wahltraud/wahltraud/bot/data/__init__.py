@@ -8,6 +8,7 @@ import operator
 from itertools import groupby
 import pandas as pd
 import datetime
+from ..callbacks.parser_database import update_shooter_database
 
 
 logger = logging.getLogger(__name__)
@@ -51,6 +52,8 @@ def reopen_data():
     global setlist
     setlist = pd.read_csv(DATA_DIR/'buli17_setlist.csv')
     setlist = setlist.replace('Andreas Hofer Sassanfahr', 'Andreas Hofer Sassanfahrt')
+
+    update_shooter_database()
 
 
 from ..callbacks.parser import get_meyton_results, get_meyton
