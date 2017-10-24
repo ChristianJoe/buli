@@ -66,17 +66,18 @@ def best_shooter_api(event,parameters,**kwargs):
         )
 
     reply_avg = ''
-    max_comp = avg['number_of_comps'].max()
+    max_comp = avg['numer_of_comps'].max()
     #this formula takes into account how many falues are counted
     fail = sum([1/x for x in range(2,max_comp)])+0.5
-    avg_final = avg[avg['number_of_comps']>(max_comp-fail)].iloc[0:10]
+    avg_final = avg[avg['numer_of_comps']>(max_comp-fail)].iloc[0:10]
     for index,row in avg.iterrows():
         reply_avg += "Ø {avg} {comp} - {first_name} {last_name} - {team} - {buli}\n".format(
             first_name=row['first_name'],
             last_name = row['last_name'],
             team = row['club_short'],
             buli=row['buli'],
-            comp = row['number_of_comps']
+            comp = row['numer_of_comps'],
+            avg = row['avg']
         )
     send_text(sender_id,
               'Im {weapon} stehen {best_result} Ringe ganz oben auf der Liste. Folgende Schützen waren so frei:\n\n'
