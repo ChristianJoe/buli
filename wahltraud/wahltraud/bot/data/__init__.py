@@ -39,6 +39,12 @@ setlist = setlist.replace('Andreas Hofer Sassanfahr', 'Andreas Hofer Sassanfahrt
 live_results = ["Zur Zeit kein Wettkampf in der 1. Bundesliga."]
 
 
+
+
+
+def get_results_shooter():
+    return results_shooter
+
 def reopen_data():
     global tables
     tables = pd.read_csv(DATA_DIR/'buli17_tables.csv')
@@ -92,8 +98,6 @@ def get_live_results():
     return live_results
 
 
-def get_results_shooter():
-    return results_shooter
 
 
 def get_results_team():

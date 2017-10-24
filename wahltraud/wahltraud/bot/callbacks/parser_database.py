@@ -3,7 +3,7 @@ import json
 import pandas as pd
 
 
-from ..data import reopen_data, get_results_shooter
+from ..data import  get_results_shooter
 from ..fb import send_text
 from pathlib import Path
 logger = logging.getLogger(__name__)
