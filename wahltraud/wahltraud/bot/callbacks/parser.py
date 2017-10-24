@@ -369,7 +369,7 @@ def get_setlist():
                                     temp['avg'] = element.text
                                 else:
                                     temp[str(index3 - 2)] = element.text
-                                    if element.text != 0 :
+                                    if element.text != '0' :
                                         number_of_comps +=1
                                         best.append(element.text)
                             temp['numer_of_comps'] = number_of_comps
