@@ -29,11 +29,11 @@ def best_shooter_api(event,parameters,**kwargs):
         weapon = 'LP'
 
     results = get_setlist()
-    
+
     if not weapon:
-        if FacebookUser.object.filter(uid=sender_id).get(rifle=True):
+        if FacebookUser.objects.filter(uid=sender_id).get(rifle=True):
             weapon = 'LG'
-        elif FacebookUser.object.filter(uid=sender_id).get(pistole=True):
+        elif FacebookUser.objects.filter(uid=sender_id).get(pistole=True):
             weapon = 'LP'
 
 
