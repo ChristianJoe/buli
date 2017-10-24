@@ -141,10 +141,24 @@ def get_results_pd():
                             home_team_short = home_team_short.replace(ending, '').strip()
                         if guest_team_short.endswith(ending) or ending == 'FSG':
                             guest_team_short = guest_team_short.replace(ending, '').strip()
-                    if home_team1 == 'S Hubertus Elsen':
+                    if home_team1 == 'ST Hubertus Elsen':
                         home_team1 = 'ST Hubertus Elsen I'
                     if guest_team1 == 'ST Hubertus Elsen':
                         guest_team1 = 'ST Hubertus Elsen I'
+
+                    if home_team1 == 'PSV Olympia Berlin':
+                        if weapon_short == 'LG':
+                            home_team1 = 'PSV Olympia Berlin LG'
+                        elif league == '1.BuLi':
+                            home_team1 = 'PSV Olympia Berlin I'
+                    if guest_team1 == 'PSV Olympia Berlin':
+                        if weapon_short == 'LG':
+                            guest_team1 = 'PSV Olympia Berlin LG'
+                        elif league == '1.BuLi':
+                            guest_team1 = 'PSV Olympia Berlin I'
+
+
+
 
                     if home_team_short not in clubs:
                         clubs.append(home_team_short)
@@ -265,6 +279,13 @@ def update_table():
                     home_team = values[1].text
                     if home_team == 'ST Hubertus Elsen':
                         home_team = 'ST Hubertus Elsen I'
+                    if home_team == 'PSV Olympia Berlin':
+                        if weapon_short == 'LG':
+                            home_team = 'PSV Olympia Berlin LG'
+                        elif league == '1.BuLi':
+                            home_team = 'PSV Olympia Berlin I'
+
+
                     temp = {'rank': values[0].text,
                             'club': home_team,
                             'single_won': values[2].text.split(':')[0],
@@ -317,6 +338,11 @@ def get_setlist():
                                     club_short = club_short.replace(ending, '').strip()
                             if club == 'ST Hubertus Elsen':
                                 club = 'ST Hubertus Elsen I'
+                            if club == 'PSV Olympia Berlin':
+                                if weapon_short == 'LG':
+                                    club = 'PSV Olympia Berlin LG'
+                                elif league == '1.BuLi':
+                                    club = 'PSV Olympia Berlin I'
                         else:
                             temp = {}
 
