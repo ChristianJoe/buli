@@ -56,7 +56,7 @@ def best_shooter_api(event,parameters,**kwargs):
 
     reply_single = ''
     best_result = single['best'].max()
-    single_final = single[sigle['best'] == best_result]
+    single_final = single[single['best'] == best_result]
     for index,row in single_final.iterrows():
         reply_single += "{first_name} {last_name}, {buli}\n"
 
