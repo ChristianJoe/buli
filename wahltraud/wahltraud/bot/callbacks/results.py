@@ -70,7 +70,7 @@ def best_shooter_api(event,parameters,**kwargs):
     #this formula takes into account how many falues are counted
     fail = sum([1/x for x in range(2,max_comp)])+0.5
     avg_final = avg[avg['numer_of_comps']>(max_comp-fail)].iloc[0:10]
-    for index,row in avg.iterrows():
+    for index,row in avg_final.iterrows():
         reply_avg += "Ø {avg} {comp} - {first_name} {last_name} - {team} - {buli}\n".format(
             first_name=row['first_name'],
             last_name = row['last_name'],
@@ -87,7 +87,7 @@ def best_shooter_api(event,parameters,**kwargs):
               )
 
 
-    send_text(sender_id, 'Im Durchschnitt sind die folgenden Schützen die besten im {weapon}:\n\n'
+    send_text(sender_id, 'Im *Durchschnitt* sind die folgenden Schützen die besten im {weapon}:\n\n'
                         .format(weapon=weapon,
                                 best_result=best_result,
                                 ) +reply_avg
