@@ -8,7 +8,7 @@ import operator
 from itertools import groupby
 import pandas as pd
 import datetime
-from ..callbacks.parser_database import update_shooter_database
+from ...backend.models import ShooterResults
 
 
 logger = logging.getLogger(__name__)
@@ -152,6 +152,32 @@ def take_info(club_pd):
 
 
 
+def update_shooter_database():
+
+    shooter = get_results_shooter()
+
+    for index, row in shooter.iterrows():
+        if not ShooterResults.objects.filter(comp_id=row['comp_id']).exists():
+            ShooterResults.objects.create(comp_id=row['comp_id'])
+
+            item = ShooterResults.objects.get(comp_id=row['comp_id'])
+
+            item.weapon = row['comp_id'][:2]
+            item.buli =row['comp_id'].split(' ')[0][2:]
+            item.region = row['comp_id'].split(' ')[1][:-2]
+
+            item.host = '-'
+
+            item.postion = row['position']
+            item.first_name = row['first_name']
+            item.last_name =row['last_name']
+            item.team_full =row['team_full']
+            item.team_short = row['team_short']
+            item.result = row['result']
+            item.shoot_off = row['shoot_off']
+
+            item.point = row['point']
+            item.save()
 
 
 
