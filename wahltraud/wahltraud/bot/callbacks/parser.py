@@ -352,6 +352,8 @@ def get_setlist():
                                 temp['club'] = club
                                 temp['club_short'] = club_short
                                 temp['buli'] = league
+                                temp['league'] = league.split(' ')[0]
+                                temp['region'] = league.split(' ')[1]
                                 temp['weapon'] = weapon_short
                                 temp['id'] = weapon_short + league
                                 if index3 == 0:
