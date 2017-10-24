@@ -58,20 +58,19 @@ def best_shooter_api(event,parameters,**kwargs):
     best_result = single['best'].max()
     single_final = single[single['best'] == best_result]
     for index,row in single_final.iterrows():
-        reply_single += "{first_name} {last_name}, {buli}\n".format(
+        reply_single += "{first_name} {last_name},{team}, {buli}\n".format(
             first_name=row['first_name'],
             last_name = row['last_name'],
+            team = row['team_short'],
             buli=row['buli']
         )
 
 
 
     send_text(sender_id, 'Das beste Einzelergebnis {weapon} beträgt {best_result} Ringe und wurde von folgenden Schützen geschossen:\n\n'
-                         +reply_single.format(
-        weapon=weapon,
-        best_result=best_result,
-
-    )
+                        .format(weapon=weapon,
+                                best_result=best_result,
+                                ) +reply_single
               )
 
 
