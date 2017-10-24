@@ -80,7 +80,7 @@ def best_shooter_api(event,parameters,**kwargs):
     fail = sum([1/x for x in range(2,max_comp)])+0.5
     avg_final = avg[avg['numer_of_comps']>(max_comp-fail)].iloc[0:10]
     for index,row in avg_final.iterrows():
-        reply_avg += "Ø {avg} ({comp}) - {first_name} {last_name} - {team} - {buli}\n".format(
+        reply_avg += "Ø {avg} ({comp}) - {first_name} {last_name} - {team} - {buli}\n\n".format(
             first_name=row['first_name'],
             last_name = row['last_name'],
             team = row['club_short'],
@@ -99,8 +99,9 @@ def best_shooter_api(event,parameters,**kwargs):
     send_text(sender_id, 'Hier die *Top 10* der Schützen {weapon}:\n\n'
                         .format(weapon='im LG' if weapon=='LG' else 'mit der Luftpistole',
                                 best_result=best_result,
-                                ) +reply_avg
+                                ) +reply_avg+'In Klammern steht die Anzahl der Wettkämpfe'
               )
+
 
 
 def best_shooter(event,payload,**kwargs):
