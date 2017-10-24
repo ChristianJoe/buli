@@ -42,18 +42,18 @@ def best_shooter_api(event,parameters,**kwargs):
     if not club and not liga and not weapon and not region:
         send_text(sender_id,'So insgesamt??? Gewehr oder Pistole?')
         return
-    if not club and not liga and not region:
+    elif not club and not liga and not region:
         results = results[results['weapon']==weapon]
-    if not club and not region:
+    elif not club and not region:
         results = results[results['league']== liga]
-    if not club and not liga:
+    elif not club and not liga:
         results = results[results['region']== region]
-    if not club:
+    elif not club:
         if region in ['West','Ost','Südwest']:
             results = results[results['region'] == region]
         else:
             results = results[(results['region'])==region & (results['league']==liga)]
-    if club:
+    elif club:
         results = results[results['club_short']==club]
     if results.empty:
         send_text(sender_id, 'Mhmm, hier ist was schief gelaufen. ')
