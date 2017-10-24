@@ -41,28 +41,38 @@ def best_shooter_api(event,parameters,**kwargs):
 
     if not club and not liga and not weapon and not region:
         send_text(sender_id,'So insgesamt??? Gewehr oder Pistole?')
+        return
     if not club and not liga and not region:
         results_weapon = results[results['weapon']==weapon]
-        best_single = results.sort_values(by=['best'], ascending=False).iloc[0]
-        best_avg=results.sort_values(by=['avg'])
 
-        send_text(sender_id,'Das beste Einzelergebnis {weapon} wurder erzielt von:\n\n'
-                            '{first_name} {last_name} mit {result} Ringe in der {buli}'.format(
-                            weapon = weapon,
-                            first_name = best_single['first_name'],
-                            last_name = best_single['last_name'],
-                            result = best_single['best'],
-                            buli = best_single['buli']
-                    )
-                  )
+        single = results.sort_values(by=['best'], ascending=False)
+
+        avg = results.sort_values(by=['avg'],ascending=False)
+
+
     else:
         send_text(sender_id, 'kommt')
 
 
+    reply_single = ''
+    best_result = single['best'].max()
+    single_final = single[sigle['best'] == best_result]
+    for index,row in single_final.iterrows():
+        reply_single += "{first_name} {last_name}, {buli}\n"
 
 
-def best_shooter_liga(event,payload,**kwargs):
 
+    send_text(sender_id, 'Das beste Einzelergebnis {weapon} beträgt {best_result} Ringe und wurde von folgenden Schützen geschossen:\n\n'
+                         +reply_single.format(
+        weapon=weapon,
+        best_result=best_result,
+
+    )
+              )
+
+
+def best_shooter(event,payload,**kwargs):
+    sender_id = event['sender']['id']
     return
 
 
