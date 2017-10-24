@@ -8,7 +8,10 @@ import operator
 from itertools import groupby
 import pandas as pd
 import datetime
-from ...backend.models import ShooterResults
+
+
+
+from backend.models import ShooterResults
 
 
 logger = logging.getLogger(__name__)
