@@ -43,15 +43,24 @@ def best_shooter_api(event,parameters,**kwargs):
         send_text(sender_id,'So insgesamt??? Gewehr oder Pistole?')
         return
     if not club and not liga and not region:
-        results_weapon = results[results['weapon']==weapon]
+        results = results[results['weapon']==weapon]
+    if not club and not region:
+        results = results[results['league']== liga]
+    if not club and not liga:
+        results = results[results['region']== region]
+    if not club:
+        if region in ['West','Ost','Südwest']:
+            results = results[results['region'] == region]
+        else:
+            results = results[(results['region'])==region & (results['league']==liga)]
+    if club:
+        results = results[results['club_short']==club]
+    if results.empty:
+        send_text(sender_id, 'Mhmm, hier ist was schief gelaufen. ')
 
-        single = results.sort_values(by=['best'], ascending=False)
+    single = results.sort_values(by=['best'], ascending=False)
+    avg = results.sort_values(by=['avg'], ascending=False)
 
-        avg = results.sort_values(by=['avg'],ascending=False)
-
-
-    else:
-        send_text(sender_id, 'kommt')
 
 
     reply_single = ''
@@ -80,7 +89,7 @@ def best_shooter_api(event,parameters,**kwargs):
             avg = row['avg']
         )
     send_text(sender_id,
-              'Im {weapon} stehen {best_result} Ringe ganz oben auf der Liste. Folgende Schützen waren so frei:\n\n'
+              'Im {weapon} stehen *{best_result} Ringe* ganz oben auf der Liste. Folgende Schützen waren so frei:\n\n'
               .format(weapon=weapon,
                       best_result=best_result,
                       ) + reply_single
