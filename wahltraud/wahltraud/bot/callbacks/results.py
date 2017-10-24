@@ -26,7 +26,7 @@ def best_shooter_api(event,parameters,**kwargs):
     if not club and not liga and not weapon and not region:
         send_text(sender_id,'Der beste Schütze? Gewehr oder Pistole?')
     if not club and not liga and not region:
-        ShooterResults.objects.filter(weapon=weapon).
+        ShooterResults.objects.filter(weapon=weapon)
     else:
         send_test(sender_id, 'kommt')
 
