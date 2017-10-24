@@ -29,17 +29,22 @@ def best_shooter_api(event,parameters,**kwargs):
         weapon = 'LP'
 
     results = get_setlist()
-
-    if not weapon:
-        if FacebookUser.objects.get(uid=sender_id).rifle:
-            weapon = 'LG'
-        elif FacebookUser.objects.get(uid=sender_id).pistole:
-            weapon = 'LP'
-
+    try:
+        if not weapon:
+            if FacebookUser.objects.get(uid=sender_id).rifle:
+                weapon = 'LG'
+            elif FacebookUser.objects.get(uid=sender_id).pistole:
+                weapon = 'LP'
+    except:
+        send_text(sender_id, 'Gewehr oder Pistole?')
+        return
 
     if not club and not liga and not weapon and not region:
         send_text(sender_id,'So insgesamt??? Gewehr oder Pistole?')
     if not club and not liga and not region:
+        results_weapon = results[results['weapon']==weapon]
+        best_single = results.sort_values(by=['best'])
+        best_avg=results.sort_values(by=['avg'])
 
         send_text(sender_id,'Das beste Einzelergebnis ist von {name} mit {result} *testversion*'.format(name=p.first_name,
                                                                                                         result = p.result))
