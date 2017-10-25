@@ -686,7 +686,7 @@ def shooter_results(event,payload,**kwargs):
             first_name = row['first_name'],
             last_name = row['last_name'],
             club = row['club_short'],
-            shot = 'keine' if comps<= 0 else comps,
+            shot = 'noch keine' if comps<= 0 else comps,
             fixsub = 'Stammschütze' if row['fixed'] == True else 'Ersatzschütze',
             avg = row['avg']
         )
