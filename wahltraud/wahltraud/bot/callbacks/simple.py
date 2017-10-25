@@ -646,7 +646,7 @@ def champions_LG(event, **kwargs):
     sender_id = event['sender']['id']
     send_text(sender_id,
               '''
-                Amtierender Meister des Bundesliga Luftgewehr ist der SSV St. Hubertus Elsen.
+                Amtierender Meister der Bundesliga Luftgewehr ist SSV St. Hubertus Elsen.
                 Im Finale der Saison 16/17 haben sie sich mit 3:2 gegen Eichenlaub Saltendorf durchgesetzt. Es bereits der 4.Titel für Elsen. Sie sind somit alleiniger Rekordmeister!\n\n
                 Wer es dieses Jahr wohl werden wird?!
                 ''',
