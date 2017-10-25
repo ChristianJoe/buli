@@ -19,7 +19,7 @@ locale.setlocale(locale.LC_NUMERIC, 'de_DE.UTF-8')
 def best_shooter_api(event,parameters,**kwargs):
     sender_id = event['sender']['id']
     club = parameters.get('clubs')
-    liga = parameters.get('league')
+    league = parameters.get('league')
     weapon = parameters.get('weapon')
     region = parameters.get('region')
 
@@ -38,13 +38,13 @@ def best_shooter_api(event,parameters,**kwargs):
         send_text(sender_id, 'Gewehr oder Pistole?')
         return
 
-    if not club and not liga and not weapon and not region:
+    if not club and not league and not weapon and not region:
         send_text(sender_id,'So insgesamt??? Gewehr oder Pistole?')
         return
 
     info = {
         'club' : club,
-        'liga' : liga,
+        'league' : league,
         'weapon': weapon,
         'region': region,
         'best': False
@@ -60,7 +60,7 @@ def best_shooter(event, payload, **kwargs):
     sender_id = event['sender']['id']
     info = payload['best_shooter']
     club = info['club']
-    liga = info['liga']
+    league = info['league']
     weapon = info['weapon']
     region = info['region']
     best = info['best']
@@ -68,17 +68,17 @@ def best_shooter(event, payload, **kwargs):
     results = get_setlist()
 
 
-    if not club and not liga and not region:
+    if not club and not league and not region:
         results = results[results['weapon']==weapon]
     elif not club and not region:
-        results = results[results['league']== liga]
-    elif not club and not liga:
+        results = results[results['league']== league]
+    elif not club and not league:
         results = results[results['region']== region]
     elif not club:
         if region in ['West','Ost','Südwest']:
             results = results[results['region'] == region]
         else:
-            results = results[(results['region'])==region & (results['league']==liga)]
+            results = results[(results['region']==region) & (results['league']==league)]
     elif club:
         results = results[results['club_short']==club]
     if results.empty:
