@@ -75,6 +75,7 @@ def make_event_handler():
 
         ApiAiHandler(results.best_shooter_api, 'best_shooter'),
         PayloadHandler(results.best_shooter,['best_shooter']),
+        ApiAiHandler(results.best_shooter_api, 'best_shooter_context'),
 
         PayloadHandler(club_weapon_buli_region,['club_weapon_buli_region','payl']),
         ApiAiHandler(update_api, 'update'),
