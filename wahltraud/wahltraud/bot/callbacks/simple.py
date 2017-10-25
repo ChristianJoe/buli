@@ -682,6 +682,25 @@ def former_champions_LG(event,**kwargs):
              # quick_reply('Meister LP',['champions_LP'])
               )
 
+def buli_live_start(event,**kwargs):
+    sender_id = event['sender']['id']
+
+    send_buttons(sender_id,
+              'Wenn ein Wettkampf in der 1. Bundesliga läuft, kannst du mich nach den Live-Ergebnissen fragen. '
+              'Hast du dich für LG und/oder LP angemeldet, schicke ich dir die Ergebnisse als Push sobald der Wettkampf beendet ist!',
+                 buttons=[
+                     button_postback('Zeig Live Ergebnisse',['buli_live']),
+                     button_postback('LG/LP anmelden!!',['subscribe'])
+                 ])
+
+def interviews_start(event,**kwarg):
+    sender_id = event['sender']['id']
+
+    send_text(sender_id,
+              "An dieser Stelle findest du bald Interviews.\n"
+              #"Du bist selbst Schütze und hättest Spaß an einem kurzen Interview? "
+     )
+
 
 
 def who_votes(event, **kwargs):
