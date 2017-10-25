@@ -104,7 +104,7 @@ def best_shooter(event, payload, **kwargs):
                       best_result=best_result,
                       ) + reply_single
         info['best'] = False
-        quick = quick_reply('Bestes Ø-Ergebnis',{'best_shooter': info})
+        quick = [quick_reply('Bestes Ø-Ergebnis',{'best_shooter': info})]
 
     else:
         reply_avg = ''
@@ -125,7 +125,7 @@ def best_shooter(event, payload, **kwargs):
             weapon='im LG' if weapon=='LG' else 'mit der Luftpistole',
                                 ) +reply_avg+'(In Klammern steht die Anzahl absolvierter Wettkämpfe.)'
         info['best'] = True
-        quick = quick_reply('Bestes Einzelergebnis?', {'best_shooter': info})
+        quick = [quick_reply('Bestes Einzelergebnis?', {'best_shooter': info})]
 
     send_text(sender_id,
               reply,
@@ -143,6 +143,19 @@ def table_api(event, parameters, **kwargs):
     buli = parameters.get('league') # first or second BuLi
     region =  parameters.get('region')
     weapon = parameters.get('weapon')
+
+
+    if not weapon:
+        try:
+            if not weapon:
+                if FacebookUser.objects.get(uid=sender_id).rifle:
+                    weapon = 'LG'
+                elif FacebookUser.objects.get(uid=sender_id).pistole:
+                    weapon = 'LP'
+        except:
+            weapon = None
+
+
 
     payloads = {'buli': buli,
                'region': region,
@@ -343,16 +356,11 @@ def club_list_competitions(event,payload,**kwargs):
     club = info['club']
     league = info['buli'] +' '+ info['region']
 
-    if weapon == "LP":
-        abbrv_weapon = "Luftpistole"
-    else:
-        abbrv_weapon = "Luftgewehr"
 
 
     results = get_results_team()
 
-    #results_league = results[(results['league'] == league) & (results['weapon'] == abbrv_weapon)]
-    #results_club = results_league[(results_league['guest_team'] == club) | (results_league['home_team'] == club)]
+
     results_club = results[(results['guest_team'] == club) | (results['home_team'] == club)]
 
 
