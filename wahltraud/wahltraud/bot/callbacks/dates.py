@@ -11,7 +11,7 @@ from backend.models import FacebookUser
 def next_event_payload_to_api(event,**kwargs):
     parameters = {'clubs': None,
                   'date': None,
-                  'league': None,
+                  'league': '1.BuLi',
                   'weapon': None,
                   'region': None
                   }
