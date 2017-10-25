@@ -58,7 +58,7 @@ def best_shooter_api(event,parameters,**kwargs):
 
 def best_shooter(event, payload, **kwargs):
     sender_id = event['sender']['id']
-    info = payload['info']
+    info = payload['best_shooter']
     club = info['club']
     liga = info['liga']
     weapon = info['weapon']
