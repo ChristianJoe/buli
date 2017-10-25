@@ -8,6 +8,17 @@ from backend.models import FacebookUser
 
 
 
+def next_event_payload_to_api(event,**kwargs):
+    parameters = {'clubs': None,
+                  'date': None,
+                  'league': None,
+                  'weapon': None,
+                  'region': None
+                  }
+
+    dates_api(event,parameters)
+
+
 def dates_api(event, parameters, **kwargs):
     sender_id = event['sender']['id']
     club = parameters.get('clubs')
