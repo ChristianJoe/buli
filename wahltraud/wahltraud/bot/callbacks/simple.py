@@ -133,7 +133,7 @@ def club_weapon_buli_region(event,payload,**kwargs):
             infos.append(take_info(club_pd))
             buttons.append(button_postback(clubAB,{payl: clubAB}))
         send_buttons(sender_id,
-                     '{club} hat 2 Mannschaften am Start.'.format(club = club),
+                     '{club} hat mehrere Mannschaften am Start.'.format(club = club),
                      buttons = buttons)
         return None
 
@@ -225,26 +225,23 @@ Wenn Du Dich mit mir unterhältst, kann ich Dir viele Infos zur Bundesliga Sport
         send_buttons(sender_id, reply,
                      buttons=[
                         button_postback('Anmelden', ['subscribe']),
-                        #button_postback('Tägliche Nachricht',
+                        #button_postback('Live Ergebniss',
                         #                {'push': last_push.id, 'next_state': 'intro'}),
-                        #button_postback( 'Mein Wahlkreis', ['intro_district']),
+                        button_postback( 'Start', ['infos_backend']),
                         button_postback('Erklär mal...', ['about']),
                      ])
 
 def about(event, **kwargs):
     sender_id = event['sender']['id']
     reply = '''
-Ich bin ein freundlicher Bot mit dem Ziel dich objektiv über die Bundesliga Sportschießen zu informieren.
-Alle Informationen die ich dir liefer findest du an vielen Stellen (siehe Daten-Quellen) im Netz. Ich trage die Infos zusammen und du kannst mich gezielt ausfragen.
-Du kannst ganz normal mit mir schreiben und ich antworte so gut ich kann.
-Durch deine Fragen können die Menschen die mich programmieren sehen, was dich interessiert. Dadurch 'lerne' ich und kann deine Frage vielleicht bald beantworten.
-
-Starte einfach indem du mich mit \"Hallo\" begrüßt!.
+Ich bin ein freundlicher Bot der dich über die Bundesliga Sportschießen informiert.
+Die Idee ist, dass du mir Fragen stellst die dich interessieren. Ich versuche diese zu beantworten. Ich bin ein lernendes Computerprogramm und 
+durch deine Fragen können die Programmiere sehen, sehen was coole neue Funktionen sind. Also frag einfach drauf los. 
             '''
     send_buttons(sender_id, reply,
                 buttons = [
+                    button_postback("Was kann ich fragen?", ['infos_backend']),
                     button_postback("Tabellen", ['table_start']),
-                    button_postback("Wettkämpfe", ['competition_start']),
                     button_postback("Daten-Quellen", ['menue_data'])
                 ])
 
@@ -278,8 +275,8 @@ def share_bot(event, **kwargs):
     sender_id = event['sender']['id']
     reply = "Teile BotBuLi mit deinen Freunden!"
 
-    title = "BotBuLi informiert die über die Bundesliga im Sportschießen."
-    subtitle = "Befrage den Info Bot zu den Vereinen der 1. und 2. BuLi im Sportschießen, den Schützen und vieles mehr."
+    title = "BotBuLi informiert die über die 1. und 2. Bundesliga im Sportschießen."
+    subtitle = "Befrage den Info Bot zu den Vereinen und Schützen."
     image_url = "https://cc8b346a.ngrok.io/static/bot/final_backround_transparent.png"
     shared_content = [generic_element(title, subtitle, image_url, buttons = [button_web_url("Schreibe BotBuLi", "https://www.m.me/BotBuLi?ref=shared")])]
     message = generic_element("Teile BotBuLi mit deinen Freunden!", buttons = [button_share(shared_content)])
@@ -341,7 +338,7 @@ def subscribe_weapon(event,payload, **kwargs):
     logger.debug('subscribed user with ID ' + user_id + ' for ' + weapon)
 
 
-    send_text(user_id,'🙌 Tip Top! Ab jetzt verpasst du keine {weapon} Ergebnis mehr!'.format(
+    send_text(user_id,'🙌 Tip Top! Ab jetzt verpasst du keine {weapon} Live-Ergebnis mehr und erhälst spannende Infos!'.format(
         weapon = 'LP' if weapon == 'pistole' else('LG' if weapon == 'rifle' else 'LG und LP')
     )
               )
@@ -365,7 +362,7 @@ def unsubscribe_weapon(event, payload, **kwargs):
         p.delete()
         reply = 'Ja schade...😞. Gibt es einen Grund für dein Abmeldung? PS: Einfach \"anmelden\" schreiben und du bist wieder dabei!'
     else:
-        reply = 'Alles klar. keine {weapon} News mehr. Schreib mir einfach \"anmeldeln\" und du bist wieder dabei!'.format(
+        reply = 'Alles klar. keine {weapon} News mehr. Schreib mir einfach \"anmelden\" und du bist wieder dabei!'.format(
             weapon = 'LG' if weapon == 'rifle' else 'LP'
         )
 
@@ -395,7 +392,7 @@ def unsubscribe(event, **kwargs):
 def competition_start(event, **kwargs):
     sender_id = event['sender']['id']
     send_text(sender_id,
-            "Im wesentlichen kannst du mich nach jedem Wettkampf aus der 1. und/oder 2. Bundesliga fragen und ich sage dir, wie er ausgegangen respektive wann er stattfindet."
+            "Im wesentlichen kannst du mich nach jedem Wettkampf aus der 1. oder 2. Bundesliga fragen und ich sage dir, wie er ausgegangen respektive wann er stattfindet."
             ""
             "Frag zum Beispiel: \"Wie lief der Wettkampf zwischen Kelheim und Waldkirch?\""#,
               #[quick_reply('Nächste Wettkämpfe', ['next_event'])
@@ -475,14 +472,14 @@ Folgende Quellen habe ich dazu verwendet:
 - http://bundesliga.dsb.de/
 - http://bundesliga.meyton.info/
 - Homepages der Vereine""",
-    [quick_reply('Und meine Daten', ['more_data'])])
+    [quick_reply('Meine Daten???', ['more_data'])])
 
 def more_data(event, **kwargs):
     sender_id = event['sender']['id']
     send_text(sender_id, """
 Damit ich verstehen kann was du von mir willst, schicke ich die von dir verschickte Textnachricht an dialogflow.com einen Google Assistant.
 Die Daten auf die ich zurückgreife kannst du dir auch auf GitHub anschauen\nhttps://github.com/ChristianJoe/buli\n
-Ich halte mich an die Facebook Datenschutzbestimmungen \nhttps://www.facebook.com/about/privacy"""
+Darüber hinaus halte ich mich an die Facebook Datenschutzbestimmungen \nhttps://www.facebook.com/about/privacy"""
     )
 
 def story(event, payload, **kwargs):
@@ -583,9 +580,9 @@ def champions_LP(event,**kwargs):
     sender_id = event['sender']['id']
     send_text(sender_id,
               '''
-              Aktuelle und damit amtierender Deutscher Meister ist der SV Kelheim-Gmünd.
+              Aktuelle und damit amtierender Deutscher Meister ist der SV Kelheim-Gmünd. 
               In einem Spannenden Finale der Saison 2016/17 setze er sich mit 4:1 gegen SV 1935 Kriftel
-              durch.
+              durch. Es ist bereits der 3. Titel für Kelheim-Gmünd.\n Rekordmeister ist die SGi Walkdenburg mit 7 Titeln.
               ''')
     send_text(sender_id,
               'Ich bin gespannt, wer dieses Jahr gewinnt!',
@@ -601,23 +598,23 @@ def former_champions_LP(event,**kwargs):
     send_text(sender_id,  """Hier die bisherigen Deutschen Mannschaftsmeister mit der Luftpistole:
                                          
                     2015/16 SGi Waldkirch
-                    2014/15 SV Kelheim-Gmünd
-                    2013/14 SGi Waldenburg
-                    2012/13 SV 1935 Kriftel
-                    2011/12 SGi Waldenburg
-                    2010/11 SGi Waldenburg
-                    2009/10 SGi Waldenburg
-                    2008/09 SV Kelheim-Gmünd
-                    2007/08 SGi Waldenburg
+                    2014/15 SV Kelheim-Gmünd (2)
+                    2013/14 SGi Waldenburg (7)
+                    2012/13 SV 1935 Kriftel 
+                    2011/12 SGi Waldenburg (6)
+                    2010/11 SGi Waldenburg (5)
+                    2009/10 SGi Waldenburg (4)
+                    2008/09 SV Kelheim-Gmünd 
+                    2007/08 SGi Waldenburg (3)
                     2006/07 ESV Weil am Rhein
-                    2005/06 SGi Waldenburg
-                    2004/05 SGi Waldenburg
-                    2003/04 VSS Haltern
-                    2002/03 PSV Olympia Berlin
-                    2001/02 VSS Haltern
-                    2000/01 PSV Olympia Berlin
-                    1999/00 PSV Olympia Berlin
-                    1998/99 PSV Olympia Berlin
+                    2005/06 SGi Waldenburg (2)
+                    2004/05 SGi Waldenburg 
+                    2003/04 VSS Haltern (2)
+                    2002/03 PSV Olympia Berlin (5)
+                    2001/02 VSS Haltern 
+                    2000/01 PSV Olympia Berlin (4)
+                    1999/00 PSV Olympia Berlin (3)
+                    1998/99 PSV Olympia Berlin (2)
                     1997/98 PSV Olympia Berlin
                     """#,
                     #[quick_reply('Luftgewehr',['champions_LG'])]
@@ -649,8 +646,8 @@ def champions_LG(event, **kwargs):
     sender_id = event['sender']['id']
     send_text(sender_id,
               '''
-                Amtierender Meister des Bundesliga Sportschießen Luftgewehr ist der SSV St. Hubertus Elsen.
-                Im Finale haben sie sich mit 3:2 gegen Eichenlaub Saltendorf durchgesetzt.
+                Amtierender Meister des Bundesliga Sportschießen Luftgewehr und mit 4 Titel alleiniger Rekordmeister ist der SSV St. Hubertus Elsen.
+                Im Finale der Saison 16/17 haben sie sich mit 3:2 gegen Eichenlaub Saltendorf durchgesetzt.
                 ''',
               [quick_reply('Vergangene Meister',['former_champions_LG']),
               quick_reply('Luftpistole',['champions_LG'])
@@ -663,24 +660,24 @@ def former_champions_LG(event,**kwargs):
     sender_id = event['sender']['id']
     send_text(sender_id,"""Die bisherigen Deutschen Manschaftsmeister im Luftgewehr:
     
-    2015/16 SSV St. Hubertus Elsen
-    2014/15 SG Coburg
-    2013/14 HSG München
-    2012/13 HSG München
-    2011/12 SSV St. Hubertus Elsen
-    2010/11 Der Bund München
+    2015/16 SSV St. Hubertus Elsen (3)
+    2014/15 SG Coburg (3)
+    2013/14 HSG München (3)
+    2012/13 HSG München (2)
+    2011/12 SSV St. Hubertus Elsen (2)
+    2010/11 Der Bund München (3)
     2009/10 HSG München
-    2008/09 SG Coburg
+    2008/09 SG Coburg (2)
     2007/08 SG Coburg
     2006/07 Post SV Plattling
     2005/06 SSV St. Hubertus Elsen
-    2004/05 BSV Buer-Bülse
-    2003/04 SV Affalterbach
-    2002/03 BSV Buer-Bülse
+    2004/05 BSV Buer-Bülse (3)
+    2003/04 SV Affalterbach (3)
+    2002/03 BSV Buer-Bülse (2)
     2001/02 BSV Buer-Bülse
-    2000/01 Der Bund München
-    1999/00 Der Bund München
-    1998/99 SV Affalterbach
+    2000/01 Der Bund München (2)
+    1999/00 Der Bund München 
+    1998/99 SV Affalterbach (2)
     1997/98 SV Affalterbach"""#,
              # quick_reply('Meister LP',['champions_LP'])
               )

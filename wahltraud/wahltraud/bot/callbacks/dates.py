@@ -4,6 +4,8 @@ import operator
 from ..fb import send_buttons, button_postback, send_text, send_attachment, send_list, list_element, quick_reply
 from ..data import by_uuid, get_dates, get_results_team, get_results_shooter, get_club_info_weapon_buli_region
 import datetime
+from backend.models import FacebookUser
+
 
 
 def dates_api(event, parameters, **kwargs):
@@ -13,6 +15,18 @@ def dates_api(event, parameters, **kwargs):
     league = parameters.get('league')
     weapon = parameters.get('weapon')
     region = parameters.get('region')
+
+    if not weapon:
+        try:
+            if not weapon:
+                if FacebookUser.objects.get(uid=sender_id).rifle:
+                    weapon = 'LG'
+                elif FacebookUser.objects.get(uid=sender_id).pistole:
+                    weapon = 'LP'
+        except:
+            weapon = None
+
+
 
     if club:
         next_event(event,{'next_event':club})
@@ -53,6 +67,9 @@ def dates_api(event, parameters, **kwargs):
                                                                'weapon': 'LP'}
                                                        }
                                      ),
+                         quick_reply('Immer LG/LP', ['subscribe']
+
+                                     ),
                          ]
                                   )
     elif league:
@@ -61,7 +78,7 @@ def dates_api(event, parameters, **kwargs):
         else:
             send_text(sender_id,'Gewehr oder Pistole? Nord? Süd? West? Ost? Südwest?')
     else:
-        send_text(sender_id,'Welcher Verein, oder welche Liga interessiert dich?')
+        send_text(sender_id,'Die nächsten Begegnungen in welcher Liga respektive welches Vereins interessieren dich?')
 
 
 

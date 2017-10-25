@@ -28,7 +28,6 @@ def best_shooter_api(event,parameters,**kwargs):
     if weapon == 'Luftpistole':
         weapon = 'LP'
 
-    results = get_setlist()
     try:
         if not weapon:
             if FacebookUser.objects.get(uid=sender_id).rifle:
@@ -42,7 +41,34 @@ def best_shooter_api(event,parameters,**kwargs):
     if not club and not liga and not weapon and not region:
         send_text(sender_id,'So insgesamt??? Gewehr oder Pistole?')
         return
-    elif not club and not liga and not region:
+
+    info = {
+        'club' : club,
+        'liga' : liga,
+        'weapon': weapon,
+        'region': region,
+        'best': False
+    }
+
+    best_shooter(event,{'best_shooter': info})
+
+
+
+
+
+def best_shooter(event, payload, **kwargs):
+    sender_id = event['sender']['id']
+    info = payload['info']
+    club = info['club']
+    liga = info['liga']
+    weapon = info['weapon']
+    region = info['region']
+    best = info['best']
+
+    results = get_setlist()
+
+
+    if not club and not liga and not region:
         results = results[results['weapon']==weapon]
     elif not club and not region:
         results = results[results['league']== liga]
@@ -58,56 +84,53 @@ def best_shooter_api(event,parameters,**kwargs):
     if results.empty:
         send_text(sender_id, 'Mhmm, hier ist was schief gelaufen. ')
 
-    single = results.sort_values(by=['best'], ascending=False)
     avg = results.sort_values(by=['avg'], ascending=False)
 
+    if best:
+        single = results.sort_values(by=['best'], ascending=False)
 
-
-    reply_single = ''
-    best_result = single['best'].max()
-    single_final = single[single['best'] == best_result]
-    for index,row in single_final.iterrows():
-        reply_single += "{first_name} {last_name} - {team} - {buli}\n".format(
-            first_name=row['first_name'],
-            last_name = row['last_name'],
-            team = row['club_short'],
-            buli=row['buli']
-        )
-
-    reply_avg = ''
-    max_comp = avg['numer_of_comps'].max()
-    #this formula takes into account how many falues are counted
-    fail = sum([1/x for x in range(2,max_comp)])+0.5
-    avg_final = avg[avg['numer_of_comps']>(max_comp-fail)].iloc[0:10]
-    for index,row in avg_final.iterrows():
-        reply_avg += "Ø {avg} ({comp}) - {first_name} {last_name} - {team} - {buli}\n\n".format(
-            first_name=row['first_name'],
-            last_name = row['last_name'],
-            team = row['club_short'],
-            buli=row['buli'],
-            comp = row['numer_of_comps'],
-            avg = row['avg']
-        )
-    send_text(sender_id,
-              'Im {weapon} stehen *{best_result} Ringe* ganz oben auf der Liste. Folgende Schützen waren so frei:\n\n'
-              .format(weapon=weapon,
+        reply_single = ''
+        best_result = single['best'].max()
+        single_final = single[single['best'] == best_result]
+        for index,row in single_final.iterrows():
+            reply_single += "{first_name} {last_name} - {team} - {buli}\n".format(
+                first_name=row['first_name'],
+                last_name = row['last_name'],
+                team = row['club_short'],
+                buli=row['buli']
+            )
+        reply =  'Im {weapon} stehen {best_result} Ringe ganz oben auf der Liste. Folgende Schützen waren so frei:\n\n'.format(
+            weapon=weapon,
                       best_result=best_result,
                       ) + reply_single
+        info['best'] = False
+        quick = quick_reply('Bestes Ø-Ergebnis',{'best_shooter': info})
+
+    else:
+        reply_avg = ''
+        max_comp = avg['numer_of_comps'].max()
+        #this formula takes into account how many falues are counted
+        fail = sum([1/x for x in range(2,max_comp)])+0.5
+        avg_final = avg[avg['numer_of_comps']>(max_comp-fail)].iloc[0:10]
+        for index,row in avg_final.iterrows():
+            reply_avg += "Ø {avg} ({comp}) - {first_name} {last_name} - {team} - {buli}\n\n".format(
+                first_name=row['first_name'],
+                last_name = row['last_name'],
+                team = row['club_short'],
+                buli=row['buli'],
+                comp = row['numer_of_comps'],
+                avg = row['avg']
+            )
+        reply = 'Hier die Top 10 der Schützen {weapon}:\n\n'.format(
+            weapon='im LG' if weapon=='LG' else 'mit der Luftpistole',
+                                ) +reply_avg+'(In Klammern steht die Anzahl absolvierter Wettkämpfe.)'
+        info['best'] = True
+        quick = quick_reply('Bestes Einzelergebnis?', {'best_shooter': info})
+
+    send_text(sender_id,
+              reply,
+              quick_replies = quick
               )
-
-
-    send_text(sender_id, 'Hier die *Top 10* der Schützen {weapon}:\n\n'
-                        .format(weapon='im LG' if weapon=='LG' else 'mit der Luftpistole',
-                                best_result=best_result,
-                                ) +reply_avg+'In Klammern steht die Anzahl der Wettkämpfe'
-              )
-
-
-
-def best_shooter(event,payload,**kwargs):
-    sender_id = event['sender']['id']
-    return
-
 
 
 
