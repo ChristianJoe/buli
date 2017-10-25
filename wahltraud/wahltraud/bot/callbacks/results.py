@@ -1125,6 +1125,7 @@ def buli_live(event,**kwargs):
 
         except:
             send_text(sender_id,'Zur Zeit kein Wettkampf')
+            options.append(quick_reply('Nächste Wettkampf?', ['next_event']))
 
 
     send_text(sender_id,'Aktualisieren. Oder schau dir die Schützen im Detail an.', quick_replies = options)
@@ -1140,8 +1141,7 @@ def buli_live_competition(event,payload,**kwargs):
 
     send_text(sender_id,
                   payload_reply['reply_shooters'],
-                  quick_replies = [quick_reply('Aktualisieren', ['buli_live']),
-                                   quick_reply('Nächste Wettkampf?',['next_event'])
+                  quick_replies = [quick_reply('Aktualisieren', ['buli_live'])
                ]
                   )
 
