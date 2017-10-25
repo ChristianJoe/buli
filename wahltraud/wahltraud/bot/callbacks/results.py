@@ -84,7 +84,6 @@ def best_shooter(event, payload, **kwargs):
     if results.empty:
         send_text(sender_id, 'Mhmm, hier ist was schief gelaufen. ')
 
-    avg = results.sort_values(by=['avg'], ascending=False)
 
     if best:
         single = results.sort_values(by=['best'], ascending=False)
@@ -107,6 +106,7 @@ def best_shooter(event, payload, **kwargs):
         quick = [quick_reply('Bestes Ø-Ergebnis',{'best_shooter': info})]
 
     else:
+        avg = results.sort_values(by=['avg'], ascending=False)
         reply_avg = ''
         max_comp = avg['numer_of_comps'].max()
         #this formula takes into account how many falues are counted
