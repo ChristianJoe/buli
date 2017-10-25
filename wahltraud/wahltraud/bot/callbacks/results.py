@@ -1140,7 +1140,8 @@ def buli_live_competition(event,payload,**kwargs):
 
     send_text(sender_id,
                   payload_reply['reply_shooters'],
-                  quick_replies = [quick_reply('Aktualisieren', ['buli_live'])
+                  quick_replies = [quick_reply('Aktualisieren', ['buli_live']),
+                                   quick_reply('Nächste Wettkampf?',['next_event'])
                ]
                   )
 
