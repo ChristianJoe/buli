@@ -66,7 +66,7 @@ def best_shooter(event, payload, **kwargs):
     best = info['best']
 
     results = get_setlist()
-
+    results = results[results['weapon'] == weapon]
 
     if not club and not league and not region:
         results = results[results['weapon']==weapon]
