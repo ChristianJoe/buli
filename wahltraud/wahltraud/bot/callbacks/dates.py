@@ -83,6 +83,22 @@ def dates_api(event, parameters, **kwargs):
                                      ),
                          ]
                                   )
+    elif league and weapon:
+        quick = []
+        if league in '2.BuLi':
+            regions = ['West','Nord','Ost','Süd','Südwest']
+        else:
+            regions = ['Nord','Süd']
+        for region in regions:
+            quick.append(quick_reply(region, {'next_event_league': {'buli': league,
+                                                        'region': region,
+                                                        'weapon': weapon}
+                                  }))
+
+        send_text(sender_id,
+                  'Choose wisely!',
+                  quick_replies=quick
+                  )
     elif league:
         if league == "1.BuLi":
             send_text(sender_id,'Gewehr oder Pistole? Nord oder Süd? ')
