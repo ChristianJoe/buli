@@ -1003,6 +1003,7 @@ def setlist_payload(event,payload,**kwargs):
         num = len(number)
         king['trend'] = king[100]
         king['trend'] = -99
+        trend = -99 # set, such hat nothing happend earlier
         for index, row in king.iterrows():
             avg_ind = row[100 + num]
             if row[num] != 0:
