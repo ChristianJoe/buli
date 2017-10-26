@@ -154,7 +154,8 @@ def greetings(event, **kwargs):
     reply = event['message']['nlp']['result']['fulfillment']['speech']
 
     if infos:
-        send_text(sender_id, reply, [quick_reply('Neueste Funktion',['infos_backend'])])
+        send_text(sender_id, reply, [quick_reply('Ergebnis-Dienst',['subscribe']),
+                                     quick_reply('Neueste Funktion',['infos_backend'])])
 
     else:
         send_text(sender_id, reply)
@@ -224,7 +225,7 @@ Wenn Du Dich mit mir schreibst, kann ich Dir viele Infos zur Bundesliga Sportsch
 """
         send_buttons(sender_id, reply,
                      buttons=[
-                        button_postback('Anmelden', ['subscribe']),
+                        button_postback('Ergebnis-Dienst', ['subscribe']),
                         #button_postback('Live Ergebniss',
                         #                {'push': last_push.id, 'next_state': 'intro'}),
                         button_postback( 'Start', ['infos_backend']),
