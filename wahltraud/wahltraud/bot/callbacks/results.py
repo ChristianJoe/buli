@@ -1189,6 +1189,7 @@ def push_live_results():
                     status = CompetitionStatus.objects.get(cid=final['cid'])
                     if status.finished and not status.push:
                         send_text(1642888035775604,'receive push about'+final['cid'])
-
+                        event = {'sender':{'id':1642888035775604}}
+                        buli_live(event, payload=final)
                 except:
                     send_text(1642888035775604, 'Error - no list nor database')
