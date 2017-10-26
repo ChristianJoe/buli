@@ -1182,10 +1182,8 @@ def push_live_results():
     live_results = get_live_results()
 
     if isinstance(live_results, list):
-        if live_results[0] =="Zur Zeit kein Wettkampf in der 1. Bundesliga.":
-            send_text(1642888035775604,"Zur Zeit kein Wettkampf in der 1. Bundesliga.")
-        else:
-            for final in live_results:
+        for final in live_results:
+            if isinstance(final, pd.DataFrame):
                 try:
                     status = CompetitionStatus.objects.get(cid=final['cid'])
                     if status.finished and not status.push:
@@ -1194,3 +1192,6 @@ def push_live_results():
                         buli_live(event, payload=final)
                 except:
                     send_text(1642888035775604, 'Error - no list nor database')
+            else:
+                send_text(1642888035775604,final)
+)
