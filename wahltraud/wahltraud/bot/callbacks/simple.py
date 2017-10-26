@@ -295,7 +295,8 @@ def subscribe(event, **kwargs):
         FacebookUser.objects.create(uid=user_id)
         p = FacebookUser.objects.get(uid=user_id)
 
-    reply = "Du bist für folgende Ergebnis-Ticker angemeldet:\n\n"
+    reply = "Sobald ein Wettkampf der 1.Bundesliga beendet ist erhälst du das Ergebnis per Push-Benachrichtigung von mir!\n" \
+            "Du bist für folgende Ergebnis-Ticker angemeldet:\n\n"
     if p.rifle and p.pistole:
         reply += "Luftgewehr und Luftpistole"
         buttons.append(button_postback('Abmelden Gewehr',{'unsubscribe_weapon': 'rifle'}))
