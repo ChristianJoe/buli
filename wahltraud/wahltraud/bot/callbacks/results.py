@@ -1184,13 +1184,14 @@ def push_live_results():
     if isinstance(live_results, list):
         for final in live_results:
             if isinstance(final, pd.DataFrame):
-                try:
-                    status = CompetitionStatus.objects.get(cid=final['cid'])
-                    if status.finished and not status.push:
-                        send_text(1642888035775604,'receive push about'+final['cid'])
-                        event = {'sender':{'id':1642888035775604}}
-                        buli_live(event, payload=final)
-                except:
-                    send_text(1642888035775604, 'Error - no list nor database')
+                #try:
+                print(final['cid'])
+                status = CompetitionStatus.object.get(cid=final['cid'])
+                if status.finished and not status.push:
+                    send_text(1642888035775604,'receive push about'+final['cid'])
+                    event = {'sender':{'id':1642888035775604}}
+                    buli_live(event, payload=final)
+                #except:
+                #    send_text(1642888035775604, 'Error - no list nor database')
             else:
                 send_text(1642888035775604,final)
