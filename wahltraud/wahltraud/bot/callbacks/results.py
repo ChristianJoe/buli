@@ -1194,4 +1194,3 @@ def push_live_results():
                     send_text(1642888035775604, 'Error - no list nor database')
             else:
                 send_text(1642888035775604,final)
-)
