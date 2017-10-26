@@ -1203,4 +1203,5 @@ def push_live_results():
                 elif status.push:
                     send_text(1642888035775604, 'already_send')
             else:
-                send_text(1642888035775604,final)
+                #send_text(1642888035775604,final)
+                return
