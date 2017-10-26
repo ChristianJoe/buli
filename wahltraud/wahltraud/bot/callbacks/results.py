@@ -73,17 +73,23 @@ def best_shooter(event, payload, **kwargs):
         results = results[results['weapon']==weapon]
     elif not club and not region:
         results = results[results['league']== league]
+        send_text(sender_id,'Hier die Besten aus der '+league+':')
     elif not club and not league:
         results = results[results['region']== region]
+        send_text(sender_id,'Hier die Besten aus der Region '+region+':')
     elif not club:
         if region in ['West','Ost','Südwest']:
-            results = results[results['region'] == region]
-        else:
-            results = results[(results['region']==region) & (results['league']==league)]
+            league = '2.BuLi'
+        results = results[(results['region']==region) & (results['league']==league)]
+        send_text(sender_id,'Hier die Besten aus der der {league} {region}:'.format(
+            league = league,
+            region= region
+        ))
+
     elif club:
         results = results[results['club_short']==club]
     if results.empty:
-        send_text(sender_id, 'Mhmm, hier ist was schief gelaufen. ')
+        send_text(sender_id, 'Mhmm, hier ist wohl was schief gelaufen.')
 
 
     if best:
@@ -99,7 +105,7 @@ def best_shooter(event, payload, **kwargs):
                 team = row['club_short'],
                 buli=row['buli']
             )
-        reply =  'Im {weapon} stehen {best_result} Ringe ganz oben auf der Liste. Folgende Schützen waren so frei:\n\n'.format(
+        reply =  'Im {weapon} stehen {best_result} Ringe als Saisonbestleistung in den Büchern. Folgende Schützen haben dieses Ergebnis bereits erziehlt:\n\n'.format(
             weapon=weapon,
                       best_result=best_result,
                       ) + reply_single

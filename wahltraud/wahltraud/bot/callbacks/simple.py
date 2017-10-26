@@ -220,7 +220,7 @@ Wenn Du genauer wissen möchtest, was ich kann, klicke auf \"Erklär mal\". Oder
 
         reply = """
 Hallo, ich bin BotBuLi.
-Wenn Du Dich mit mir unterhältst, kann ich Dir viele Infos zur Bundesliga Sportschießen nennen:
+Wenn Du Dich mit mir schreibst, kann ich Dir viele Infos zur Bundesliga Sportschießen nennen. Klicke einen Button oder schreibe 'Hallo':
 """
         send_buttons(sender_id, reply,
                      buttons=[
