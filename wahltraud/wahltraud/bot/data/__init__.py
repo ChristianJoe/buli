@@ -11,7 +11,7 @@ import datetime
 
 
 
-from backend.models import ShooterResults
+from backend.models import ShooterResults, FacebookUser, CompetitionStatus
 
 
 logger = logging.getLogger(__name__)
@@ -76,8 +76,16 @@ def update_live_global(links):
     else:
         for key, value in links.items():
             site = value
-            live_results.append(get_meyton_results(site))
+            final = get_meyton_results(site)
+            live_results.append(final)
+
     return
+
+
+
+
+
+
 
 def meyton_update():
 
@@ -90,7 +98,7 @@ def meyton_update():
            links =  get_meyton()
     else:
         links = "Zur Zeit kein Wettkampf in der 1. Bundesliga."
-
+    #links = get_meyton()
     update_live_global(links)
     return
 

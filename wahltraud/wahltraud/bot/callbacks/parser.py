@@ -465,14 +465,13 @@ def get_meyton_results(site):
             guest_team = teams[1].strip()
 
         # update database
-        #check if id exists, otherwise create
+        #check if id exists, otherwise create and 'open status
         cid = home_team+guest_team
         if CompetitionStatus.objects.filter(cid=cid).exists():
             status = CompetitionStatus.objects.get(cid=cid)
         else:
             CompetitionStatus.objects.create(cid=cid)
             status = CompetitionStatus.objects.get(cid=cid)
-
         #update status
         if fight == 'Probe':
             status.update(practice=True)
@@ -500,6 +499,7 @@ def get_meyton_results(site):
             if index > 0:
                 if index in [2, 3, 6, 9, 12, 15, 5, 8, 11, 14]:
                     temp = {}
+                    temp['cid'] = cid
                     temp['home_team'] = home_team
                     temp['guest_team'] = guest_team
                     temp['fight'] = fight

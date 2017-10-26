@@ -131,7 +131,6 @@ class CompetitionStatus(models.Model):
     finished = models.BooleanField('finished', null=False, default=False)
     push = models.BooleanField('finished', null=False, default=False)
 
-
     add_date = models.DateTimeField('Hinzugefügt am', default=timezone.now)
 
     def __str__(self):

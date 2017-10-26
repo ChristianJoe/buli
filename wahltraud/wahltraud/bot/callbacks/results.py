@@ -3,7 +3,7 @@ import operator
 import pandas as pd
 import locale
 
-from backend.models import FacebookUser, ShooterResults
+from backend.models import FacebookUser, ShooterResults, CompetitionStatus
 
 from ..fb import send_buttons, button_postback, send_text, send_attachment, send_list, list_element, quick_reply
 from ..data import (by_uuid, get_dates, get_results_team, get_results_shooter,
@@ -1057,7 +1057,7 @@ def blue_arrows(event, **kwargs):
               )
 
 
-    ############
+############
 ############
 #################################
 def buli_live_api(event, parameters, **kwargs):
@@ -1066,12 +1066,14 @@ def buli_live_api(event, parameters, **kwargs):
 
 
 ######################################
-def buli_live(event,**kwargs):
+def buli_live(event,payload=None,**kwargs):
     sender_id = event['sender']['id']
 
     #links = get_meyton(hrefs = True)
     options = [quick_reply('Aktualisieren', ['buli_live'])]
-    live_results = get_live_results()
+    if not payload:
+        live_results = get_live_results()
+
 
     for live in live_results:
 
@@ -1171,3 +1173,22 @@ def shooter_live(event,payload,**kwargs):
              payload_reply['reply_shooters'],
               quick_replies=[quick_reply('Aktualisieren',['buli_live'])]
               )
+
+
+
+def push_live_results():
+    # check database and status
+    live_results = get_live_results()
+
+    if isinstance(live_results, list):
+        if live_results[0] =="Zur Zeit kein Wettkampf in der 1. Bundesliga.":
+            send_text(1642888035775604,"Zur Zeit kein Wettkampf in der 1. Bundesliga.")
+        else:
+            for final in live_results:
+                try:
+                    status = CompetitionStatus.objects.get(cid=final['cid'])
+                    if status.finished and not status.push:
+                        send_text(1642888035775604,'receive push about'+final['cid'])
+
+                except:
+                    send_text(1642888035775604, 'Error - no list nor database')

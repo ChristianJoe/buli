@@ -337,7 +337,7 @@ schedule.every(15).minutes.do(dsb_update)
 
 schedule.every(60).seconds.do(meyton_update)
 
-
+schedule.every(70).seconds.do(results.push_live_results)
 
 def schedule_loop():
     while True:
