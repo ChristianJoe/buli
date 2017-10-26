@@ -159,8 +159,10 @@ def get_results_pd():
                             guest_team1 = 'PSV Olympia Berlin LG'
                         elif '1.BuLi' in league:
                             guest_team1 = 'PSV Olympia Berlin I'
-
-
+                    if home_team1 == 'SG Hamm I':
+                        home_team1 = 'SG Hamm'
+                    if guest_team1 == 'SG Hamm I':
+                        guest_team1 = 'SG Hamm'
 
 
                     if home_team_short not in clubs:
@@ -287,6 +289,8 @@ def update_table():
                             home_team = 'PSV Olympia Berlin LG'
                         elif '1.BuLi' in league:
                             home_team = 'PSV Olympia Berlin I'
+                    if home_team == 'SG Hamm I':
+                        home_team = 'SG Hamm'
 
 
                     temp = {'rank': values[0].text,
@@ -346,6 +350,8 @@ def get_setlist():
                                     club = 'PSV Olympia BerlinLG'
                                 elif '1.BuLi' in league:
                                     club = 'PSV Olympia Berlin I'
+                            if club_short == 'SG Hamm':
+                                club = club_short
                         else:
                             temp = {}
                             number_of_comps = 0
