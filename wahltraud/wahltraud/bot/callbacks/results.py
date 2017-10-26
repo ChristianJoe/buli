@@ -1072,8 +1072,10 @@ def buli_live(event,payload=None,**kwargs):
 
     #links = get_meyton(hrefs = True)
     options = [quick_reply('Aktualisieren', ['buli_live'])]
+    live_update_all = True
     if isinstance(payload,pd.DataFrame):
         live_results = [payload]
+        live_update_all = False
     else:
         live_results = get_live_results()
 
@@ -1120,8 +1122,7 @@ def buli_live(event,payload=None,**kwargs):
 
 
 
-                send_text(sender_id, reply_overview+'\n'+ reply_positions
-                       )
+
 
 
                 reply_shooters = ""
@@ -1143,12 +1144,17 @@ def buli_live(event,payload=None,**kwargs):
                         quick_reply(quickreplyname, {'buli_live_competition': payload_reply})
                     )
 
+                if not live_update_all:
+                    send_buttons(sender_id, reply_overview + '\n' + reply_positions,
+                                 [button_postback('Schützen anzeigen', {'buli_live_competition': payload_reply})])
+                else:
+                    send_text(sender_id,reply_overview + '\n' + reply_positions )
         except:
             send_text(sender_id,'Zur Zeit kein Wettkampf')
             options.append(quick_reply('Nächster Wettkampf?', ['next_event_payload_to_api']))
 
-
-    send_text(sender_id,'Aktualisieren. Oder schau dir die Schützen im Detail an.', quick_replies = options)
+    if live_update_all:
+        send_text(sender_id,'Aktualisieren. Oder schau dir die Schützen im Detail an.', quick_replies = options)
 
 
 
@@ -1190,10 +1196,11 @@ def push_live_results():
                 cid = final['cid'].iloc[0]
                 status = CompetitionStatus.objects.get(cid=cid)
                 if status.finished and not status.push:
-                    send_text(1642888035775604,'receive push about'+cid)
+
                     event = {'sender':{'id':1642888035775604}}
                     buli_live(event, payload=final)
-                #except:
-                #    send_text(1642888035775604, 'Error - no list nor database')
+                    CompetitionStatus.objects.filter(cid=cid).update(push=True)
+                elif status.push:
+                    send_text(1642888035775604, 'already_send')
             else:
                 send_text(1642888035775604,final)
