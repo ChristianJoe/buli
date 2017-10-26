@@ -964,7 +964,7 @@ def setlist_payload(event,payload,**kwargs):
         for index, row in set_club.iterrows():
             first = row['first_name']
             last = row['last_name']
-            shooter_pers = shooter[(shooter['first_name'] == first) & (shooter['last_name'] == last) & (shooter['team_short']==club)]
+            shooter_pers = shooter[(shooter['first_name'] == first) & (shooter['last_name'] == last) & (shooter['team_full']==club)]
             temp = {'first_name': first,
                     'last_name': last
                     }
