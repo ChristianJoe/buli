@@ -115,6 +115,35 @@ class FacebookUser(models.Model):
 
 
 
+
+class CompetitionStatus(models.Model):
+
+    class Meta:
+        verbose_name = 'Competition'
+        verbose_name_plural = 'Competitions'
+
+    cid = models.CharField('Comp ID', max_length=64, null=False, unique=True)
+    state = models.CharField('State', max_length=64, null=True, blank=True)
+    practice = models.BooleanField('practice', null=False, default=False)
+    competition = models.BooleanField('competition', null=False, default=False)
+    shoot_off = models.BooleanField('shoot_off', null=False, default=False)
+    shoot_off_shot = models.BooleanField('shoot_off_shot', null=False, default=False)
+    finished = models.BooleanField('finished', null=False, default=False)
+    push = models.BooleanField('finished', null=False, default=False)
+
+
+    add_date = models.DateTimeField('Hinzugefügt am', default=timezone.now)
+
+    def __str__(self):
+        return str(self.uid)
+
+
+
+
+
+
+
+
 class ShooterResults(models.Model):
 
     class Meta:
@@ -187,6 +216,8 @@ class Setlist(models.Model):
     def __str__(self):
         return str(self.uid)
 '''
+
+
 
 
 

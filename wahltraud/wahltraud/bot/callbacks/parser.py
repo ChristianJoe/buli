@@ -461,6 +461,22 @@ def get_meyton_results(site):
             home_team = teams[0].strip()
             guest_team = teams[1].strip()
 
+        # update database
+        #check if id exists, otherwise create
+        id = home_team+guest_team
+        #update status
+        if fight == 'Probe':
+            practice = True
+        if fight == 'Wettkampf':
+            competiton = True
+        if fight =='Gleichstand bei mindestens einer Paarung':
+            shoot_off = True
+        if fight == 'Stechen um Einzelpunkt':
+            shoot_off_shot = True
+        if fight == 'Wettkampf ist beendet':
+            finished = True
+
+
         file = (home_team + guest_team + '.csv').replace(' ', '')
         path = pathlib.Path(str(DATA_DIR)+'/data/competitions/'+file)
 
@@ -499,6 +515,7 @@ def get_meyton_results(site):
 
         final = pd.DataFrame(temp2)
 
+        # check if file already exists and append data
         if path.is_file():
             open_file = pd.read_csv(path)
 
@@ -506,6 +523,7 @@ def get_meyton_results(site):
             added_final.to_csv(path, index=False)
 
         else:
+            #if not, create file
             final.to_csv(path, index=False)
     else:
         final = 'Zur Zeit kein Wettkampf'
