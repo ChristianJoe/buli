@@ -1072,7 +1072,9 @@ def buli_live(event,payload=None,**kwargs):
 
     #links = get_meyton(hrefs = True)
     options = [quick_reply('Aktualisieren', ['buli_live'])]
-    if not payload:
+    if isinstance(payload,pd.DataFrame):
+        live_results = payload
+    else:
         live_results = get_live_results()
 
 
