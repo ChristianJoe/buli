@@ -13,6 +13,9 @@ from ..data import reopen_data
 from ..fb import send_text
 from pathlib import Path
 logger = logging.getLogger(__name__)
+from backend.models import FacebookUser, CompetitionStatus
+
+
 
 DATA_DIR = Path(__file__).absolute().parent.parent
 
@@ -463,18 +466,25 @@ def get_meyton_results(site):
 
         # update database
         #check if id exists, otherwise create
-        id = home_team+guest_team
+        cid = home_team+guest_team
+        if CompetitionStatus.objects.filter(cid=cid).exists():
+            status = CompetitionStatus.objects.get(cid=cid)
+        else:
+            CompetitionStatus.objects.create(cid=cid)
+            status = CompetitionStatus.objects.get(cid=cid)
+
         #update status
         if fight == 'Probe':
-            practice = True
+            status.update(practice=True)
         if fight == 'Wettkampf':
-            competiton = True
+            status.update(competiton=True)
         if fight =='Gleichstand bei mindestens einer Paarung':
-            shoot_off = True
+            status.update(shoot_off=True)
         if fight == 'Stechen um Einzelpunkt':
-            shoot_off_shot = True
+            status.update(shoot_off_shot=True)
         if fight == 'Wettkampf ist beendet':
-            finished = True
+            status.update(finished=True)
+        status.save()
 
 
         file = (home_team + guest_team + '.csv').replace(' ', '')
