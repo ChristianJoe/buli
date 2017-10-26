@@ -150,7 +150,7 @@ def next_event_league(event,payload,**kwargs):
         )
         elements.append(
             list_element(
-                list_text,
+                title = list_text,
                 subtitle=sbtl,
                 buttons=[button_postback("Ausrichter {club}".format(club=data['host']),
                                          {'next_event': data['host'],
@@ -158,6 +158,7 @@ def next_event_league(event,payload,**kwargs):
                                           }
                                          )
                          ]
+                #
                 # image_url=candidate.get('img') or None
             )
         )
@@ -232,8 +233,8 @@ def next_event(event,payload,**kwargs):
             list_element(
                 list_text,
                 subtitle=sbtl,
-                buttons=[button_postback("Ausrichter {club}".format(club=data['guest_team']),
-                                         {'next_event': data['guest_team'],
+                buttons=[button_postback("Ausrichter {club}".format(club=data['host']),
+                                         {'next_event': data['host'],
                                           'host': True
                                           }
                                          )

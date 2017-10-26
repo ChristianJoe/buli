@@ -90,7 +90,7 @@ def make_event_handler():
         PayloadHandler(club_info,['club_info']),
 
         ApiAiHandler(results.results_api, 'results'),
-        PayloadHandler(results.results_club,'results_club'),
+        PayloadHandler(results.results_club,['results_club']),
 
         ApiAiHandler(results.shooter_results_api,'shooter_who_is'),
         PayloadHandler(results.shooter_results,['shooter_results']),
