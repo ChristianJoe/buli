@@ -480,16 +480,15 @@ def get_meyton_results(site):
             status = CompetitionStatus.objects.get(cid=cid)
         #update status
         if fight == 'Probe':
-            status.update(practice=True)
+            CompetitionStatus.objects.filter(cid=cid).update(practice=True)
         if fight == 'Wettkampf':
-            status.update(competiton=True)
+            CompetitionStatus.objects.filter(cid=cid).update(competiton=True)
         if fight =='Gleichstand bei mindestens einer Paarung':
-            status.update(shoot_off=True)
+            CompetitionStatus.objects.filter(cid=cid).update(shoot_off=True)
         if fight == 'Stechen um Einzelpunkt':
-            status.update(shoot_off_shot=True)
+            CompetitionStatus.objects.filter(cid=cid).update(shoot_off_shot=True)
         if fight == 'Wettkampf ist beendet':
-            status.update(finished=True)
-        status.save()
+            CompetitionStatus.objects.filter(cid=cid).update(finished=True)
 
 
         file = (home_team + guest_team + '.csv').replace(' ', '')
