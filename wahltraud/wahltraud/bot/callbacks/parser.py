@@ -277,6 +277,7 @@ def update_table():
             rows = table.find_all('tr')
             for index, row in enumerate(rows):
                 values = row.find_all('td')
+                link_text = 'nope'
                 for a in row.find_all('a', href=True):
                     if a.get_text(strip=True):
                         link_text = a['href']
