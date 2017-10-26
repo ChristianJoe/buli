@@ -69,8 +69,8 @@ from ..callbacks.parser import get_meyton_results, get_meyton
 
 
 def update_live_global(links):
-    live_results = []
     global live_results
+    live_results = []
     if links == "Zur Zeit kein Wettkampf in der 1. Bundesliga.":
         live_results.append(links)
     else:
@@ -98,7 +98,7 @@ def meyton_update():
            links =  get_meyton()
     else:
         links = "Zur Zeit kein Wettkampf in der 1. Bundesliga."
-    #links = get_meyton()
+    links = get_meyton()
     update_live_global(links)
     return
 
