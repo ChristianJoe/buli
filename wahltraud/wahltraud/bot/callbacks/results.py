@@ -1185,10 +1185,10 @@ def push_live_results():
         for final in live_results:
             if isinstance(final, pd.DataFrame):
                 #try:
-                print(final['cid'])
-                status = CompetitionStatus.object.get(cid=final['cid'])
+                cid = final['cid'].iloc[0]
+                status = CompetitionStatus.objects.get(cid=cid)
                 if status.finished and not status.push:
-                    send_text(1642888035775604,'receive push about'+final['cid'])
+                    send_text(1642888035775604,'receive push about'+cid)
                     event = {'sender':{'id':1642888035775604}}
                     buli_live(event, payload=final)
                 #except:
