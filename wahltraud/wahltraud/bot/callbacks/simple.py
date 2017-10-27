@@ -326,7 +326,7 @@ def subscribe(event,payload = None ,**kwargs):
 def push_to_mobil(event,**kwargs):
     sender_id = event['sender']['id']
     send_text(sender_id,
-              'Lade dir im aus dem Store den Facebook-Messenger aus Handy und log dich ein.'
+              "Lade dir aus dem Store den Facebook-Messenger aufs Handy und log' dich ein."
               'Aktiviere Notifications für BotBuLi und zack feddisch!')
 
 
