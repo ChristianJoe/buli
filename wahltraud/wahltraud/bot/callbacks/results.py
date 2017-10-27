@@ -870,7 +870,7 @@ def setlist_api(event,parameters,**kwargs):
 
     if not club:
         send_text(sender_id, 'Von welchem Verein soll ich dir die Setzliste zeigen?')
-
+        return
     setlist_payload(event,
                     {'setlist_payload': club}
                     )
