@@ -1144,11 +1144,11 @@ def buli_live(event,payload=None,**kwargs):
                         quick_reply(quickreplyname, {'buli_live_competition': payload_reply})
                     )
 
-                if not live_update_all:
-                    send_buttons(sender_id, reply_overview + '\n' + reply_positions,
+                #if not live_update_all:
+                send_buttons(sender_id, reply_overview + '\n' + reply_positions,
                                  [button_postback('Schützen anzeigen', {'buli_live_competition': payload_reply})])
-                else:
-                    send_text(sender_id,reply_overview + '\n' + reply_positions )
+                #else:
+                #    send_text(sender_id,reply_overview + '\n' + reply_positions )
         except:
             send_text(sender_id,'Zur Zeit kein Wettkampf')
             options.append(quick_reply('Nächster Wettkampf?', ['next_event_payload_to_api']))
@@ -1199,9 +1199,11 @@ def push_live_results():
                     user_list = FacebookUser.objects.values_list('uid', flat=True)
                     for uid in user_list:
                         if FacebookUser.objects.get(uid=uid).rifle:
-                            send_text(1642888035775604,'push raus an'+uid)
-                        #event = {'sender':{'id':1642888035775604}}
-                        #buli_live(event, payload=final)
+                            #send_text(1642888035775604,'push raus an'+uid)
+                            #event = {'sender':{'id':uid}}
+                            #buli_live(event, payload=final)
+                            text = 'ja'
+                    send_text(1642888035775604, 'live ergebnis von wettkampf beendet')
                     CompetitionStatus.objects.filter(cid=cid).update(push=True)
                 elif status.push:
                     send_text(1642888035775604, 'already_send')
