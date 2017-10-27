@@ -1081,7 +1081,7 @@ def buli_live(event,payload=None,**kwargs):
         live_update_all = False
     else:
         live_results = get_live_results()
-
+    elements = []
     for live in live_results:
         #live = get_meyton_results(href)
         try:
@@ -1097,6 +1097,7 @@ def buli_live(event,payload=None,**kwargs):
                 fight = live['fight'].iloc[0]
 
                 reply_positions = ""
+                sbtl = ''
                 for index in range(0, 5):
                     res_home = live['result'].iloc[(2 * index)]
                     res_guest = live['result'].iloc[(2 * index + 1)]
@@ -1104,7 +1105,7 @@ def buli_live(event,payload=None,**kwargs):
                     point_home = int(live['points'].iloc[(2* index +1)].split(':')[0].strip())
                     point_guest = int(live['points'].iloc[(2* index +1)].split(':')[1].strip())
 
-                    shoot_off = ' '
+                    shoot_off = ''
                     if fight == 'Wettkampf ist beendet' and res_home == res_guest:
                         shoot_off = '  ' + str(live['shot_value'].iloc[(2 * index)] ) + ' : ' + str(live['shot_value'].iloc[(2 * index+1)] )
                     home_win = '🔸' if (point_home == 1) else '  '
@@ -1124,9 +1125,16 @@ def buli_live(event,payload=None,**kwargs):
                         guest=name_guest
 
                     )  # ,
+                    sbtl += '{home_win}{points_home}:{points_guest}{guest_win}{shoot_off}|'.format(
+                        position=str(index + 1),
+                        points_home=res_home,
+                        points_guest=res_guest,
+                        home_win = home_win,
+                        guest_win = guest_win,
+                        shoot_off = shoot_off
+                    )  # ,
 
-
-                reply_overview = "{status}{fight}\n\n{home_win}{home} : {guest_win}{guest}\n{home_points}:{guest_points}\n\n".format(
+                reply_overview = "{status}{fight}\n\n{home_win}{home} : {guest}{guest_win}\n{home_points}:{guest_points}\n\n".format(
                               status = '⛔' if (fight == 'Wettkampf ist beendet') else ('✅' if (fight == 'Wettkampf') else '⚠'),
                               fight =fight,
                               home = live['home_team'].iloc[0],
@@ -1146,8 +1154,8 @@ def buli_live(event,payload=None,**kwargs):
 
                     )
 
-                payload_reply = {'reply_shooters': reply_shooters,
-                                'reply_positions': reply_positions}
+                payload_reply = {'reply_comp': reply_overview + '\n' + reply_positions,
+                                }
 
                 quickreplyname = live['home_team'].iloc[0] + ':' + live['guest_team'].iloc[0]
 
@@ -1156,16 +1164,49 @@ def buli_live(event,payload=None,**kwargs):
                     )
 
                 if not live_update_all:  # final Ergebnis nach Wettkampf beendet
-                    send_buttons(sender_id, reply_overview + '\n' + reply_positions,
-                                 [button_postback('Schützen anzeigen', {'buli_live_competition': payload_reply})])
-                else:
                     send_text(sender_id,reply_overview + '\n' + reply_positions )
+                else:
+                    #send_buttons(sender_id, reply_overview + '\n' + reply_positions,
+                    #             [button_postback('Schützen anzeigen', {'buli_live_competition': payload_reply})])
+                    title = "{status} - {home_win}{home} {home_points}:{guest_points} {guest}{guest_win}".format(
+                              status = '⛔' if (fight == 'Wettkampf ist beendet') else ('✅' if (fight == 'Wettkampf') else '⚠'),
+                              fight =fight,
+                              home = live['home_team'].iloc[0],
+                              guest = live['guest_team'].iloc[0],
+                              home_points = home_points,
+                              guest_points = guest_points if fight == 'Wettkampf ist beendet' else (str(guest_points) + '  (Hochrechnung)'),
+                              home_win = '🎉' if ((home_points >2) and (fight == 'Wettkampf ist beendet')) else ' ',
+                              guest_win = '🎉' if ((guest_points >2) and (fight == 'Wettkmapf ist beendet')) else ' '
+                        )
+
+
+                    elements.append(
+                        list_element(title = title,
+                                     subtitle = sbtl ,
+                                     buttons = [
+                                         button_postback('Details',
+                                                         {'buli_live_competition': payload_reply})
+                                     ])
+                    )
+
         except:
             send_text(sender_id,'Zur Zeit kein Wettkampf!')
             options.append(quick_reply('Nächster Wettkampf?', ['next_event_payload_to_api']))
+            elements.append(list_element(title = 'Zur Zeit kein Wettkampf',
+                                         subtitle= 'Echt nicht, sorry',
+                                         buttons = [
+                                             button_postback('Aktualisieren',
+                                                             ['buli_live'])
+                                         ]
+            ))
+
 
     if live_update_all:
-        send_text(sender_id,'Aktualisieren?!.', quick_replies = options)
+        send_list(sender_id,
+                  elements=elements,
+                  button=button_postback('Aktualisieren', ['buli_live']))
+
+        #send_text(sender_id,'Aktualisieren?!.', quick_replies = options)
 
 
 
@@ -1177,7 +1218,7 @@ def buli_live_competition(event,payload,**kwargs):
 
 
     send_text(sender_id,
-                  payload_reply['reply_shooters'],
+                  payload_reply['reply_comp'],
                   quick_replies = [quick_reply('Aktualisieren', ['buli_live'])
                ]
                   )
