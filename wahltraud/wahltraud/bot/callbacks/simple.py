@@ -10,7 +10,7 @@ from pathlib import Path
 from backend.models import FacebookUser, Wiki, Push, Info
 from ..fb import (send_buttons, button_postback, send_text, quick_reply, send_generic,
                   generic_element, button_web_url, button_share, send_attachment,
-                  send_attachment_by_id, guess_attachment_type)
+                  send_attachment_by_id, guess_attachment_type, send_list, list_element)
 from .shared import get_pushes, schema, send_push, get_pushes_by_date
 from ..data import by_district_id, get_club_info_weapon_buli_region, get_results_team, take_info
 
@@ -296,30 +296,30 @@ def subscribe(event, **kwargs):
         p = FacebookUser.objects.get(uid=user_id)
 
     reply = "Sobald ein Wettkampf der 1.Bundesliga beendet ist erhälst du das Ergebnis per Push-Benachrichtigung von mir!\n" \
-            "Du bist für folgende Ergebnis-Ticker angemeldet:\n\n"
-    if p.rifle and p.pistole:
-        reply += "Luftgewehr und Luftpistole"
-        buttons.append(button_postback('Abmelden Gewehr',{'unsubscribe_weapon': 'rifle'}))
-        buttons.append(button_postback('Abmelden Pistole',{'unsubscribe_weapon' : 'pistole'}))
-        buttons.append(button_postback('Komplett abmelden',{'unsubscribe_weapon' : 'both'}))
-
-    elif p.pistole:
-        reply += "Luftpistole"
-        buttons.append(button_postback('Anmelden Gewehr',{'subscribe_weapon' : 'rifle'}))
-        buttons.append(button_postback('Abmelden Pistole',{'unsubscribe_weapon' : 'pistole'}))
-    elif p.rifle:
-        reply += "Luftgewehr"
-        buttons.append(button_postback('Abmelden Gewehr',{'unsubscribe_weapon': 'rifle'}))
-        buttons.append(button_postback('Anmelden Pistole',{'subscribe_weapon' : 'pistole'}))
+            #"Du bist für folgende Ergebnis-Ticker angemeldet:\n\n"
+    elements = []
+    if p.rifle:
+        text_rifle = 'Ergebnisse der LG Bundesliga: aktiv'
+        button_rifle = [button_postback('Deaktivieren',{'unsubscribe_weapon': 'rifle'})]
     else:
-        reply += 'Noch gar nicht angemeldet...'
-        buttons.append(button_postback('LG & LP anmelden',{'subscribe_weapon' : 'both'}))
-        buttons.append(button_postback('Anmelden Gewehr',{'subscribe_weapon' : 'rifle'}))
-        buttons.append(button_postback('Anmelden Pistole',{'subscribe_weapon' : 'pistole'}))
+        text_pistole = 'Ergebnisse der LG Bundesliga: deaktiv'
+        button_rifle = [button_postback('Aktivieren', {'subscribe_weapon': 'rifle'})]
+    if p.pistole:
+        text_pistole = 'Ergebnisse der LP Bundesliga: aktiv'
+        button_pistole = [button_postback('Deaktivieren',{'unsubscribe_weapon' : 'pistole'})]
+    else:
+        text_pistole = 'Ergebnisse der LP Bundesliga: nicht aktiv'
+        button_pistole = [button_postback('Aktivieren',{'subscribe_weapon' : 'pistole'})]
 
-    send_buttons(user_id, reply,
-                 buttons=buttons,
-                 )
+
+    send_list(user_id, [ list_element(title = text_rifle,
+                                      buttons = button_rifle
+                                     ),
+                         list_element(title = text_pistole,
+                                      button = button_pistole
+                                      )
+                        ]
+            )
 
 
 
