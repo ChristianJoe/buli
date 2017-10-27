@@ -1190,8 +1190,7 @@ def buli_live(event,payload=None,**kwargs):
                     )
 
         except:
-            #send_text(sender_id,'Zur Zeit kein Wettkampf!')
-            #options.append(quick_reply('Nächster Wettkampf?', ['next_event_payload_to_api']))
+            options.append(quick_reply('Nächster Wettkampf?', ['next_event_payload_to_api']))
             elements.append(list_element(title = 'Zur Zeit kein Wettkampf',
                                          subtitle= 'Echt nicht, sorry',
                                          buttons = [
@@ -1199,14 +1198,20 @@ def buli_live(event,payload=None,**kwargs):
                                                              ['buli_live'])
                                          ]
             ))
-
+            nothing = '123'
 
     if live_update_all:
+        if len(elements)==1:
+            try:
+                send_text(sender_id, reply_overview + '\n' + reply_positions)
+                return
+            except:
+                send_text(sender_id,'Zur Zeit kein Wettkampf: Aktualisieren?!.', quick_replies = options)
+                return
         send_list(sender_id,
-                  elements=elements,
-                  button=button_postback('Aktualisieren', ['buli_live']))
+              elements=elements,
+              button=button_postback('Aktualisieren', ['buli_live']))
 
-        #send_text(sender_id,'Aktualisieren?!.', quick_replies = options)
 
 
 
