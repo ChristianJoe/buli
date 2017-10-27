@@ -1202,14 +1202,15 @@ def push_live_results():
                     user_list = FacebookUser.objects.values_list('uid', flat=True)
                     for uid in user_list:
                         if FacebookUser.objects.get(uid=uid).rifle:
+                            test = 'ja'
                             #send_text(1642888035775604,'push raus an'+uid)
+                        event = {'sender':{'id':1642888035775604}}
                             #event = {'sender':{'id':uid}}
-                            #buli_live(event, payload=final)
-                            text = 'ja'
-                    send_text(1642888035775604, 'live ergebnis von wettkampf beendet')
+                        buli_live(event, payload=final)
+                    #send_text(1642888035775604, 'live ergebnis von wettkampf beendet')
                     CompetitionStatus.objects.filter(cid=cid).update(push=True)
                 elif status.push:
-                    send_text(1642888035775604, 'already_send')
+                    #send_text(1642888035775604, 'already_send')
             else:
                 #send_text(1642888035775604,final)
                 return
