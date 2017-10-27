@@ -1083,7 +1083,7 @@ def buli_live(event,payload=None,**kwargs):
         live_results = get_live_results()
 
     for live in live_results:
-
+        print(live)
         #live = get_meyton_results(href)
         try:
             if not live.empty:
