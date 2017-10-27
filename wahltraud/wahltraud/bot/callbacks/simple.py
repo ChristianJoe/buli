@@ -320,7 +320,7 @@ def subscribe(event,payload = None ,**kwargs):
                                       buttons = button_pistole
                                       )
                         ],
-              button = [button_postback("So funktioniert's", ['push_to_mobil'])]
+              button = button_postback("So funktioniert's", ['push_to_mobil'])
             )
 
 def push_to_mobil(event,**kwargs):

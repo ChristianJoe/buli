@@ -20,7 +20,8 @@ from .callbacks.simple import (get_started, push, subscribe, unsubscribe, wiki, 
                                more_data, sunday_poll, greetings, who_votes,
                                update_api, infos_backend, table_start, competition_start, club_info, club_info_api,
                                letsgo,champions_api,champions_LG, champions_LP, former_champions_LG, former_champions_LP,
-                               club_weapon_buli_region, subscribe_weapon, unsubscribe_weapon, interviews_start, buli_live_start)
+                               club_weapon_buli_region, subscribe_weapon, unsubscribe_weapon, interviews_start, buli_live_start,
+                               push_to_mobil)
 from .callbacks.shared import (get_pushes, get_breaking, send_push, schema)
 from .callbacks import candidate, district, browse_lists, manifesto, party, dates, parser, results
 from .data import by_district_id, reopen_data, meyton_update
@@ -69,7 +70,7 @@ def make_event_handler():
         PayloadHandler(more_data, ['more_data']),
         PayloadHandler(menue_manifesto, ['menue_manifesto']),
         PayloadHandler(about_manifesto, ['about_manifesto']),
-
+        PayloadHandler(push_to_mobil,['push_to_mobil']),
         PayloadHandler(interviews_start,['interviews_start']),
         PayloadHandler(buli_live_start,['buli_live_start']),
 
