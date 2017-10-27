@@ -1083,7 +1083,6 @@ def buli_live(event,payload=None,**kwargs):
         live_results = get_live_results()
 
     for live in live_results:
-        print(live)
         #live = get_meyton_results(href)
         try:
             if not live.empty:
@@ -1101,12 +1100,10 @@ def buli_live(event,payload=None,**kwargs):
                 for index in range(0, 5):
                     res_home = live['result'].iloc[(2 * index)]
                     res_guest = live['result'].iloc[(2 * index + 1)]
-                    try:
-                        point_home = int(live['points'].iloc[(2* index +1)].split(':')[0].strip())
-                        point_guest = int(live['points'].iloc[(2* index +1)].split(':')[1].strip())
-                    except:
-                        point_home = 0
-                        point_guest = 0
+
+                    point_home = int(live['points'].iloc[(2* index +1)].split(':')[0].strip())
+                    point_guest = int(live['points'].iloc[(2* index +1)].split(':')[1].strip())
+                    
                     shoot_off = ' '
                     if fight == 'Wettkampf ist beendet' and res_home == res_guest:
                         shoot_off = '  ' + str(live['shot_value'].iloc[(2 * index)] ) + ' : ' + str(live['shot_value'].iloc[(2 * index+1)] )
