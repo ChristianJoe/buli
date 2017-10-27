@@ -492,7 +492,7 @@ def get_meyton_results(site):
             CompetitionStatus.objects.filter(cid=cid).update(finished=True)
             #test purpose
             #CompetitionStatus.objects.filter(cid=cid).update(finished=False)
-            CompetitionStatus.objects.filter(cid=cid).update(push=False)
+            #CompetitionStatus.objects.filter(cid=cid).update(push=False)
 
 
 
