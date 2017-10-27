@@ -1206,7 +1206,7 @@ def buli_live(event,payload=None,**kwargs):
                 send_text(sender_id, reply_overview + '\n' + reply_positions)
                 return
             except:
-                send_text(sender_id,'Zur Zeit kein Wettkampf: Aktualisieren?!.', quick_replies = options)
+                send_text(sender_id,'Zur Zeit kein Wettkampf!.', quick_replies = options)
                 return
         send_list(sender_id,
               elements=elements,

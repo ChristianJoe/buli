@@ -94,14 +94,16 @@ def meyton_update():
     now = datetime.datetime.now().time()
     if day == 5 and( now >= datetime.time(13, 30) and now <= datetime.time(18, 30)):
            links =  get_meyton()
+           update_live_global(links)
     elif day == 6 and (now >= datetime.time(7, 00) and now <= datetime.time(13, 00)):
            links =  get_meyton()
+           update_live_global(links)
     else:
         links = "Zur Zeit kein Wettkampf in der 1. Bundesliga."
     #   This one is for test purpose
     if not isinstance(live_results[0], pd.DataFrame):
         links = get_meyton()
-    update_live_global(links)
+        update_live_global(links)
     return
 
 
