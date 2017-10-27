@@ -316,7 +316,7 @@ def subscribe(event, **kwargs):
                                       buttons = button_rifle
                                      ),
                          list_element(title = text_pistole,
-                                      button = button_pistole
+                                      buttons = button_pistole
                                       )
                         ]
             )
