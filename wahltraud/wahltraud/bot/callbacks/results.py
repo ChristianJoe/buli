@@ -1196,9 +1196,12 @@ def push_live_results():
                 cid = final['cid'].iloc[0]
                 status = CompetitionStatus.objects.get(cid=cid)
                 if status.finished and not status.push:
-
-                    event = {'sender':{'id':1642888035775604}}
-                    buli_live(event, payload=final)
+                    user_list = FacebookUser.objects.values_list('uid', flat=True)
+                    for uid in user_list:
+                        if FacebookUser.objects.get(uid=uid).rifle:
+                            send_text(1642888035775604,'push raus an'+uid)
+                        #event = {'sender':{'id':1642888035775604}}
+                        #buli_live(event, payload=final)
                     CompetitionStatus.objects.filter(cid=cid).update(push=True)
                 elif status.push:
                     send_text(1642888035775604, 'already_send')
