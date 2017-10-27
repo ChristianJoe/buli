@@ -1082,8 +1082,10 @@ def buli_live(event,payload=None,**kwargs):
     else:
         live_results = get_live_results()
     elements = []
+    counter = -1
     for live in live_results:
         #live = get_meyton_results(href)
+        counter += 1
         try:
             if not live.empty:
                 #calculate points
@@ -1191,7 +1193,8 @@ def buli_live(event,payload=None,**kwargs):
 
         except:
             options.append(quick_reply('Nächster Wettkampf?', ['next_event_payload_to_api']))
-            elements.append(list_element(title = 'Zur Zeit kein Wettkampf',
+            town = ['Wieckenberg', 'Gölzau', 'Petersaurach']
+            elements.append(list_element(title = 'Zur Zeit kein Wettkampf in ' +town[counter] ,
                                          subtitle= 'Echt nicht, sorry',
                                          buttons = [
                                              button_postback('Aktualisieren',
