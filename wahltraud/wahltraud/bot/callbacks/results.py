@@ -1085,7 +1085,7 @@ def buli_live(event,payload=None,**kwargs):
     for live in live_results:
 
         #live = get_meyton_results(href)
-
+        print(live)
         try:
             if not live.empty:
                 #calculate points
@@ -1103,6 +1103,7 @@ def buli_live(event,payload=None,**kwargs):
                     res_home = live['result'].iloc[(2 * index)]
                     res_guest = live['result'].iloc[(2 * index + 1)]
                     try:
+                        print(live['points'].iloc[(2* index +1)].split(' : ')[0].strip())
                         point_home = int(live['points'].iloc[(2* index +1)].split(' : ')[0].strip())
                         point_guest = int(live['points'].iloc[(2* index +1)].split(' : ')[1].strip())
                     except:
