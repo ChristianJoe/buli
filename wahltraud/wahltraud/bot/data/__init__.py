@@ -99,7 +99,7 @@ def meyton_update():
     else:
         links = "Zur Zeit kein Wettkampf in der 1. Bundesliga."
     #   This one is for test purpose
-    if len(live_results) <2:
+    if len(live_results) != 4:
         links = get_meyton()
     update_live_global(links)
     return
