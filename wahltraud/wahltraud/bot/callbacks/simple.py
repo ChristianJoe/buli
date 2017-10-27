@@ -265,7 +265,7 @@ def push(event, parameters, **kwargs):
             find_date = datetime.datetime.strptime(date[0], '%Y-%m-%d').date()
             data = get_pushes_by_date(find_date)
 
-        if len(data) == 0:
+        if len(date) == 0:
             reply = 'Für dieses Datum liegen mir keine Zusammenfassung vor. Wähle ein Datum, wähle ein anderes Wochenende.'
             send_text(sender_id, reply)
         else:
@@ -319,10 +319,15 @@ def subscribe(event,payload = None ,**kwargs):
                          list_element(title = text_pistole,
                                       buttons = button_pistole
                                       )
-                        ]
+                        ],
+              button = [button_postback("So funktioniert's", ['push_to_mobil'])]
             )
 
-
+def push_to_mobil(event,**kwargs):
+    sender_id = event['sender']['id']
+    send_text(sender_id,
+              'Lade dir im aus dem Store den Facebook-Messenger aus Handy und log dich ein.'
+              'Aktiviere Notifications für BotBuLi und zack feddisch!')
 
 
 def subscribe_weapon(event,payload, **kwargs):
