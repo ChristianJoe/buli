@@ -1120,9 +1120,10 @@ def buli_live(event,payload=None,**kwargs):
                         position=str(index + 1),
                         points_home=res_home,
                         points_guest=res_guest,
+                        home_win = home_win,
+                        guest_win = guest_win,
                         shoot_off = shoot_off,
                         home=live['name'].iloc[(2 * index)],
-
                         guest=live['name'].iloc[(2 * index + 1)],
 
                     )  # ,
