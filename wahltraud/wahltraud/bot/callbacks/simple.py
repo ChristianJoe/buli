@@ -295,7 +295,7 @@ def subscribe(event, **kwargs):
         FacebookUser.objects.create(uid=user_id)
         p = FacebookUser.objects.get(uid=user_id)
 
-    send_text(sender_id,
+    send_text(user_id,
               reply = "Sobald ein Wettkampf der 1.Bundesliga beendet ist erhälst du das Ergebnis per Push-Benachrichtigung von mir!")
     elements = []
     if p.rifle:
