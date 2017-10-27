@@ -1198,7 +1198,7 @@ def buli_live(event,payload=None,**kwargs):
             elements.append(list_element(title = 'Zur Zeit kein Wettkampf in ' +town[counter] ,
                                          subtitle= 'Echt nicht, sorry',
                                          buttons = [
-                                             button_postback('Nächste Partie in '+town[counter],
+                                             button_postback('Partien in '+town[counter],
                                                              {'next_event': club[counter], 'host': True})
                                          ]
             ))
