@@ -1190,8 +1190,8 @@ def buli_live(event,payload=None,**kwargs):
                     )
 
         except:
-            send_text(sender_id,'Zur Zeit kein Wettkampf!')
-            options.append(quick_reply('Nächster Wettkampf?', ['next_event_payload_to_api']))
+            #send_text(sender_id,'Zur Zeit kein Wettkampf!')
+            #options.append(quick_reply('Nächster Wettkampf?', ['next_event_payload_to_api']))
             elements.append(list_element(title = 'Zur Zeit kein Wettkampf',
                                          subtitle= 'Echt nicht, sorry',
                                          buttons = [
