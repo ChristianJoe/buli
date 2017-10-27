@@ -285,7 +285,7 @@ def share_bot(event, **kwargs):
     send_generic(sender_id,
                 elements = [message])
 
-def subscribe(event,payload = None **kwargs):
+def subscribe(event,payload = None ,**kwargs):
     user_id = event['sender']['id']
 
     buttons = []
