@@ -1082,7 +1082,7 @@ def buli_live(event,payload=None,**kwargs):
     else:
         live_results = get_live_results()
 
-
+    send_text(sender_id, live_results)
     for live in live_results:
 
         #live = get_meyton_results(href)
