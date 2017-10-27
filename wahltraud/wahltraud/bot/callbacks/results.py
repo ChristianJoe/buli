@@ -1110,15 +1110,18 @@ def buli_live(event,payload=None,**kwargs):
                     home_win = '🔸' if (point_home == 1) else ' '
                     guest_win = '🔸' if (point_guest == 1) else ' '
 
-                    reply_positions += '{home}\n#{position}: {home_win} {points_home}  :  {points_guest} {guest_win} {shoot_off} \n{guest}\n\n'.format(
+                    name_home = live['name'].iloc[(2 * index)].split(', ')[1][1]+'. '+live['name'].iloc[(2 * index)].split(', ')[0]
+                    name_guest = live['name'].iloc[(2 * index+1)].split(', ')[1][1]+'. '+live['name'].iloc[(2 * index+1)].split(', ')[0]
+
+                    reply_positions += '#{position}: {home_win} {points_home}  :  {points_guest} {guest_win} {shoot_off} \n {home} : {guest}\n\n'.format(
                         position=str(index + 1),
                         points_home=res_home,
                         points_guest=res_guest,
                         home_win = home_win,
                         guest_win = guest_win,
                         shoot_off = shoot_off,
-                        home=live['name'].iloc[(2 * index)],
-                        guest=live['name'].iloc[(2 * index + 1)],
+                        home=name_home,
+                        guest=name_guest
 
                     )  # ,
 
