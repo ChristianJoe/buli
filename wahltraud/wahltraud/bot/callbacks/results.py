@@ -868,6 +868,9 @@ def setlist_api(event,parameters,**kwargs):
     sender_id = event['sender']['id']
     club = parameters.get('clubs')
 
+    if not club:
+        send_text(sender_id, 'Von welchem Verein soll ich dir die Setzliste zeigen?')
+
     setlist_payload(event,
                     {'setlist_payload': club}
                     )
@@ -956,7 +959,7 @@ def setlist_payload(event,payload,**kwargs):
                      )
     elif len(clubs) <=0 or len(clubs)>3:
         send_text(sender_id,
-                  'Fuck, da ist was schief gegangen. Sry'
+                  'Mhmm, da ist was schief gegangen...'
                   )
     else:
         final_list = []
@@ -1144,17 +1147,17 @@ def buli_live(event,payload=None,**kwargs):
                         quick_reply(quickreplyname, {'buli_live_competition': payload_reply})
                     )
 
-                #if not live_update_all:
-                send_buttons(sender_id, reply_overview + '\n' + reply_positions,
+                if not live_update_all:  # final Ergebnis nach Wettkampf beendet
+                    send_buttons(sender_id, reply_overview + '\n' + reply_positions,
                                  [button_postback('Schützen anzeigen', {'buli_live_competition': payload_reply})])
-                #else:
-                #    send_text(sender_id,reply_overview + '\n' + reply_positions )
+                else:
+                    send_text(sender_id,reply_overview + '\n' + reply_positions )
         except:
             send_text(sender_id,'Zur Zeit kein Wettkampf')
             options.append(quick_reply('Nächster Wettkampf?', ['next_event_payload_to_api']))
 
     if live_update_all:
-        send_text(sender_id,'Aktualisieren. Oder schau dir die Schützen im Detail an.', quick_replies = options)
+        send_text(sender_id,'Aktualisieren?!.', quick_replies = options)
 
 
 

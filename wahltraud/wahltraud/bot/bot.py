@@ -110,6 +110,8 @@ def make_event_handler():
         PayloadHandler(results.table_payload,['table_payload']),
 
         ApiAiHandler(results.setlist_api, 'setlist'),
+        ApiAiHandler(results.setlist_api, 'setlist_context'),
+
         PayloadHandler(results.setlist_payload, ['setlist_payload']),
 
         PayloadHandler(table_start,['table_start']),
