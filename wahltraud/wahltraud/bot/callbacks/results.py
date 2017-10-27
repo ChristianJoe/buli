@@ -1113,7 +1113,7 @@ def buli_live(event,payload=None,**kwargs):
                     name_home = live['name'].iloc[(2 * index)].split(', ')[1][0]+'. '+live['name'].iloc[(2 * index)].split(', ')[0]
                     name_guest = live['name'].iloc[(2 * index+1)].split(', ')[1][0]+'. '+live['name'].iloc[(2 * index+1)].split(', ')[0]
 
-                    reply_positions += '#{position}: {home_win} {points_home}  :  {points_guest} {guest_win} {shoot_off} \n {home} : {guest}\n\n'.format(
+                    reply_positions += '{home} : {guest}\n       {home_win} {points_home}  :  {points_guest} {guest_win} {shoot_off}\n\n'.format(
                         position=str(index + 1),
                         points_home=res_home,
                         points_guest=res_guest,
@@ -1126,14 +1126,15 @@ def buli_live(event,payload=None,**kwargs):
                     )  # ,
 
 
-                reply_overview = "{fight}\n\n{home_win}{home} \n{home_points}:{guest_points}\n {guest_win}{guest}\n\n".format(
+                reply_overview = "{status}{fight}\n\n{home_win}{home} : {guest_win}{guest}\n{home_points}:{guest_points}\n\n".format(
+                              status = '⛔' if fight == 'Wettkampf ist beendet' else ('✅' if fight == 'Wettkampf' else '⚠'),
                               fight =fight,
                               home = live['home_team'].iloc[0],
                               guest = live['guest_team'].iloc[0],
                               home_points = home_points,
-                              guest_points = guest_points,
-                              home_win = '🎉' if (home_points >2 )else ' ',
-                              guest_win = '🎉' if (guest_points >2) else ' '
+                              guest_points = guest_points if fight == 'Wettkampf ist beendet' else (str(guest_points) + '  (Hochrechnung)'),
+                              home_win = '🎉' if (home_points >2 and fight == 'Wettkampf ist beendet') else ' ',
+                              guest_win = '🎉' if (guest_points >2 and fight == 'Wettkmapf ist beendet') else ' '
                         )
 
                 reply_shooters = ""
