@@ -490,6 +490,8 @@ def get_meyton_results(site):
             CompetitionStatus.objects.filter(cid=cid).update(shoot_off_shot=True)
         if fight == 'Wettkampf ist beendet':
             CompetitionStatus.objects.filter(cid=cid).update(finished=False)
+            CompetitionStatus.objects.filter(cid=cid).update(push=False)
+
 
 
         file = (home_team + guest_team + '.csv').replace(' ', '')
