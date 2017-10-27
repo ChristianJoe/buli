@@ -53,6 +53,7 @@ def make_event_handler():
         PayloadHandler(story, ['push_id', 'next_state']),
         PayloadHandler(get_started, ['wahltraud_start_payload']),
         PayloadHandler(share_bot, ['share_bot']),
+        ApiAiHandler(share_bot,'share_bot'),
         PayloadHandler(subscribe, ['subscribe']),
         PayloadHandler(subscribe_weapon,['subscribe_weapon']),
         PayloadHandler(unsubscribe_weapon, ['unsubscribe_weapon']),
