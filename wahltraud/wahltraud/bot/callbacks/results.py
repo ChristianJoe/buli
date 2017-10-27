@@ -1194,11 +1194,12 @@ def buli_live(event,payload=None,**kwargs):
         except:
             options.append(quick_reply('Nächster Wettkampf?', ['next_event_payload_to_api']))
             town = ['Wieckenberg', 'Gölzau', 'Petersaurach']
+            club = ['SV Wieckenberg', 'SV Gölzau','SV Petersaurach']
             elements.append(list_element(title = 'Zur Zeit kein Wettkampf in ' +town[counter] ,
                                          subtitle= 'Echt nicht, sorry',
                                          buttons = [
-                                             button_postback('Aktualisieren',
-                                                             ['buli_live'])
+                                             button_postback('Nächste Partie in '+town[counter],
+                                                             {'next_event': club[counter], 'host': True})
                                          ]
             ))
             nothing = '123'
