@@ -1082,7 +1082,6 @@ def buli_live(event,payload=None,**kwargs):
     else:
         live_results = get_live_results()
 
-    send_text(sender_id, live_results)
     for live in live_results:
 
         #live = get_meyton_results(href)
@@ -1115,6 +1114,7 @@ def buli_live(event,payload=None,**kwargs):
                     home_win = '🔸' if (point_home == 1) else ' '
                     guest_win = '🔸' if (point_guest == 1) else ' '
 
+                    send_text(sender_id, home_win)
 
                     reply_positions += '{home}\n#{position}: {home_win} {points_home}  :  {points_guest} {guest_win} {shoot_off} \n{guest}\n\n'.format(
                         position=str(index + 1),
@@ -1127,6 +1127,7 @@ def buli_live(event,payload=None,**kwargs):
                         guest=live['name'].iloc[(2 * index + 1)],
 
                     )  # ,
+                    send_text(sender_id,reply_positions)
 
                 reply_overview = "{fight}\n{home} : {guest}\n{home_points}:{guest_points}".format(
                             fight =fight,
@@ -1146,7 +1147,6 @@ def buli_live(event,payload=None,**kwargs):
                     reply_shooters += '#{position}: {home} : {guest}\n'.format(
                         position=str(index + 1),
                         home=live['name'].iloc[(2 * index)],
-
                         guest=live['name'].iloc[(2 * index + 1)],
 
                     )
