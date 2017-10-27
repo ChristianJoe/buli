@@ -1125,12 +1125,14 @@ def buli_live(event,payload=None,**kwargs):
 
                     )  # ,
 
-                reply_overview = "{fight}\n{home} : {guest}\n{home_points}:{guest_points}".format(
+                reply_overview = "{fight}\n\n{home_win}{home} \n{home_points}:{guest_points}\n {guest_win}{guest}\n\n{".format(
                             fight =fight,
                               home = live['home_team'].iloc[0],
                               guest = live['guest_team'].iloc[0],
                               home_points = home_points,
-                              guest_points = guest_points
+                              guest_points = guest_points,
+                              home_win = '🎉' if home_points >=3 else ' ',
+                            guest_win = '🎉' if guest_points >=3 else ' '
                         )
 
 
