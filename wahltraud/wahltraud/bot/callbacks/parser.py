@@ -489,7 +489,7 @@ def get_meyton_results(site):
         if fight == 'Stechen um Einzelpunkt':
             CompetitionStatus.objects.filter(cid=cid).update(shoot_off_shot=True)
         if fight == 'Wettkampf ist beendet':
-            CompetitionStatus.objects.filter(cid=cid).update(finished=True)
+            CompetitionStatus.objects.filter(cid=cid).update(finished=False)
 
 
         file = (home_team + guest_team + '.csv').replace(' ', '')
