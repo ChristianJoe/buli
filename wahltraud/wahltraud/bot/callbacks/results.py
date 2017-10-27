@@ -1108,7 +1108,7 @@ def buli_live(event,payload=None,**kwargs):
                         shoot_off = '  ' + str(live['shot_value'].iloc[(2 * index)] ) + ' : ' + str(live['shot_value'].iloc[(2 * index+1)] )
 
 
-                    reply_positions += '{home}\n#{position}:   {points_home}  :  {points_guest}  {shoot_off} \n{guest}\n'.format(
+                    reply_positions += '{home}\n#{position}:   {points_home}  :  {points_guest}  {shoot_off} \n{guest}\n\n'.format(
                         position=str(index + 1),
                         points_home=res_home,
                         points_guest=res_guest,
