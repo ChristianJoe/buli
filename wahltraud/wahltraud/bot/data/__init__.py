@@ -101,7 +101,7 @@ def meyton_update():
     #   This one is for test purpose
     if not isinstance(live_results[0], pd.DataFrame):
         links = get_meyton()
-    update_live_global(links)
+        update_live_global(links)
     return
 
 
