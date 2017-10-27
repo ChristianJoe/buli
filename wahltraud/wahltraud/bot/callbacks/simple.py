@@ -285,7 +285,7 @@ def share_bot(event, **kwargs):
     send_generic(sender_id,
                 elements = [message])
 
-def subscribe(event, **kwargs):
+def subscribe(event,payload = None **kwargs):
     user_id = event['sender']['id']
 
     buttons = []
@@ -294,21 +294,22 @@ def subscribe(event, **kwargs):
     else:
         FacebookUser.objects.create(uid=user_id)
         p = FacebookUser.objects.get(uid=user_id)
-
-    send_text(user_id,
-              "Sobald ein Wettkampf der 1.Bundesliga beendet ist erhälst du das Ergebnis per Push-Benachrichtigung auf dein Handy!")
-    elements = []
+    if not payload:
+        send_text(user_id,
+                "Sobald ein Wettkampf der 1.Bundesliga beendet ist erhälst du das Ergebnis per Push-Benachrichtigung auf dein Handy!")
+    else:
+        send_text(user_id, 'Folgende Ergebnis-Dienste sind aktiv:')
     if p.rifle:
         text_rifle = 'Ergebnisse der LG Bundesliga: aktiv'
         button_rifle = [button_postback('Deaktivieren',{'unsubscribe_weapon': 'rifle'})]
     else:
-        text_pistole = 'Ergebnisse der LG Bundesliga: deaktiv'
+        text_pistole = 'Ergebnisse der LG Bundesliga: noch nicht aktiv'
         button_rifle = [button_postback('Aktivieren', {'subscribe_weapon': 'rifle'})]
     if p.pistole:
         text_pistole = 'Ergebnisse der LP Bundesliga: aktiv'
         button_pistole = [button_postback('Deaktivieren',{'unsubscribe_weapon' : 'pistole'})]
     else:
-        text_pistole = 'Ergebnisse der LP Bundesliga: nicht aktiv'
+        text_pistole = 'Ergebnisse der LP Bundesliga: noch nicht aktiv'
         button_pistole = [button_postback('Aktivieren',{'subscribe_weapon' : 'pistole'})]
 
 
@@ -346,6 +347,7 @@ def subscribe_weapon(event,payload, **kwargs):
               )
 
 
+
 def unsubscribe_weapon(event, payload, **kwargs):
     user_id = event['sender']['id']
     weapon = payload['unsubscribe_weapon']
@@ -362,13 +364,11 @@ def unsubscribe_weapon(event, payload, **kwargs):
     p = FacebookUser.objects.get(uid=user_id)
     if not p.pistole and not p.rifle:
         p.delete()
-        reply = 'Ja schade...😞. Gibt es einen Grund für dein Abmeldung? PS: Einfach \"anmelden\" schreiben und du bist wieder dabei!'
+        subscribe(event,payload='update')
     else:
-        reply = 'Alles klar. keine {weapon} News mehr. Schreib mir einfach \"anmelden\" und du bist wieder dabei!'.format(
-            weapon = 'LG' if weapon == 'rifle' else 'LP'
-        )
+        subscribe(event,payload='update')
 
-    send_text(user_id, reply)
+
 
 
 
