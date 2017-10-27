@@ -1124,6 +1124,7 @@ def buli_live(event,payload=None,**kwargs):
                         guest=live['name'].iloc[(2 * index + 1)],
 
                     )  # ,
+                    print(reply_positions)
                     send_text(sender_id,reply_positions)
 
                 reply_overview = "{fight}\n{home} : {guest}\n{home_points}:{guest_points}".format(
