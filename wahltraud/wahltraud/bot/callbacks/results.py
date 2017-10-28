@@ -1124,11 +1124,11 @@ def buli_live(event,payload=None,**kwargs):
                         guest_series += ser if (int(ser)>0 and int(ser)!= 100) else ( '💯'  if int(ser)== 100 else '__')
                         guest_series += ','
                     guest_series = guest_series[:-1]
-                    shoot_off_home = ''
-                    shoot_off_guest = ''
+                    shoot_off_home = '     '
+                    shoot_off_guest = '     '
                     if fight == 'Wettkampf ist beendet' and res_home == res_guest:
-                        shoot_off_home = str(live['shot_value'].iloc[(2 * index)] )
-                        shoot_off_guest = str(live['shot_value'].iloc[(2 * index+1)] )
+                        shoot_off_home = '💣 ' + str(live['shot_value'].iloc[(2 * index)] )
+                        shoot_off_guest = '💣 ' + str(live['shot_value'].iloc[(2 * index+1)] )
                     home_win = '🔸' if (point_home == 1) else '  '
                     guest_win = '🔸' if (point_guest == 1) else '  '
                     try:
@@ -1138,7 +1138,7 @@ def buli_live(event,payload=None,**kwargs):
                         name_home = live['name'].iloc[(2 * index)]
                         name_guest = live['name'].iloc[(2 * index+1)]
 
-                    reply_positions += '{points_home}-{home_win}- {home} 🏠\n      {home_series} {shoot_off_home}\n{points_guest}-{guest_win}- {guest}✈\n      {guest_series} {shoot_off_guest}\n\n'.format(
+                    reply_positions += '{points_home}-{home_win}- {home}\n      {home_series} {shoot_off_home}\n{points_guest}-{guest_win}- {guest}\n      {guest_series} {shoot_off_guest}\n\n'.format(
                         position=str(index + 1),
                         points_home=res_home,
                         points_guest=res_guest,
@@ -1162,7 +1162,7 @@ def buli_live(event,payload=None,**kwargs):
                     )  
 
 
-                reply_overview = "{status}  {fight}\n\n{home_points} -{home_win}- {home} 🏠   \n{guest_points} -{guest_win}- {guest} ✈\n\n".format(
+                reply_overview = "{status}  {fight}\n\n{home_points} -{home_win}- {home}\n{guest_points} -{guest_win}- {guest}\n\n".format(
                               status = '⛔' if (fight == 'Wettkampf ist beendet') else ('✅' if (fight == 'Wettkampf') else '⚠'),
                               points = '' if fight == 'Wettkampf ist beendet' else (str(guest_points) + '  (Punkte - Hochrechnung)'),
                               fight =fight,
