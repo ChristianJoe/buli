@@ -444,7 +444,6 @@ def get_meyton(hrefs = False):
 
             get_meyton_results(site)
     """
-    print(links)
     return links
 
 
