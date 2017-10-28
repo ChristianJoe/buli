@@ -1092,9 +1092,13 @@ def buli_live(event,payload=None,**kwargs):
                 data = live['points'].dropna()
                 home_points = 0
                 guest_points = 0
-                for row in data.iteritems():
-                    home_points += int(list(row)[1].split(':')[0].strip())
-                    guest_points += int(list(row)[1].split(':')[1].strip())
+                try:
+                    for row in data.iteritems():
+                        home_points += int(list(row)[1].split(':')[0].strip())
+                        guest_points += int(list(row)[1].split(':')[1].strip())
+                except:
+                    home_points = 0
+                    guest_points = 0
 
                 fight = live['fight'].iloc[0]
 
@@ -1103,10 +1107,13 @@ def buli_live(event,payload=None,**kwargs):
                 for index in range(0, 5):
                     res_home = live['result'].iloc[(2 * index)]
                     res_guest = live['result'].iloc[(2 * index + 1)]
-
-                    point_home = int(live['points'].iloc[(2* index +1)].split(':')[0].strip())
-                    point_guest = int(live['points'].iloc[(2* index +1)].split(':')[1].strip())
-
+                    try:
+                        point_home = int(live['points'].iloc[(2* index +1)].split(':')[0].strip())
+                        point_guest = int(live['points'].iloc[(2* index +1)].split(':')[1].strip())
+                    except:
+                        point_home = 0
+                        point_guest = 0
+                        
                     shoot_off = ''
                     if fight == 'Wettkampf ist beendet' and res_home == res_guest:
                         shoot_off = '  ' + str(live['shot_value'].iloc[(2 * index)] ) + ' : ' + str(live['shot_value'].iloc[(2 * index+1)] )
