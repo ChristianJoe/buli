@@ -1166,7 +1166,7 @@ def buli_live(event,payload=None,**kwargs):
                     )  
 
 
-                reply_overview = "{status}  {fight}\n\n{home_points} -{home_win}- {home}\n{guest_points} -{guest_win}- {guest}\n\n".format(
+                reply_overview = "{home_points} -{home_win}- {home}\nvs.\n{guest_points} -{guest_win}- {guest}\n\n{status}  {fight}\n\n".format(
                               status = '⛔' if (fight == 'Wettkampf ist beendet') else ('✅' if (fight == 'Wettkampf') else '⚠'),
                               points = '' if fight == 'Wettkampf ist beendet' else (str(guest_points) + '  (Punkte - Hochrechnung)'),
                               fight =fight,
