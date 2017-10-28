@@ -1242,7 +1242,7 @@ def buli_live(event,payload=None,**kwargs):
             except:
                 send_text(sender_id,'Zur Zeit kein Wettkampf!.', quick_replies = options)
                 return
-        send_text(sender_id, 'Hier der Live-Überblick:\n❌ - Zur Zeit kein Wettkampf\n⚠ - Probe; 💣 - Stechen\n✅/⛔ Wettkampf läuft/ist beendet')
+        send_text(sender_id, 'Hier der Live-Überblick:\n✅/⛔ Wettkampf läuft/ist beendet\n⚠ - Probe; 💣 - Stechen\n❌ - Zur Zeit kein Wettkampf')
         send_list(sender_id,
               elements=elements,
               button=button_postback('Aktualisieren', ['buli_live']))
