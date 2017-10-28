@@ -496,7 +496,6 @@ def get_meyton_results(site):
             #CompetitionStatus.objects.filter(cid=cid).update(finished=False)
             #CompetitionStatus.objects.filter(cid=cid).update(push=False)
 
-        print(fight, cid)
 
         file = (home_team + guest_team + '.csv').replace(' ', '')
         path = pathlib.Path(str(DATA_DIR)+'/data/competitions/'+file)

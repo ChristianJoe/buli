@@ -1132,7 +1132,6 @@ def buli_live(event,payload=None,**kwargs):
                         shoot_off = shoot_off,
                         home=name_home,
                         guest=name_guest
-
                     )
 
                     sbtl += '{home_win}{points_home}:{points_guest}{guest_win}{shoot_off}|'.format(
