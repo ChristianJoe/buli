@@ -1253,23 +1253,25 @@ def push_live_results():
     if isinstance(live_results, list):
         for final in live_results:
             if isinstance(final, pd.DataFrame):
-                #try:
-                cid = final['cid'].iloc[0]
-                status = CompetitionStatus.objects.get(cid=cid)
-                if status.finished and not status.push:
-                    user_list = FacebookUser.objects.values_list('uid', flat=True)
-                    for uid in user_list:
-                        if FacebookUser.objects.get(uid=uid).rifle:
-                            test = 'ja'
-                            #send_text(1642888035775604,'push raus an'+uid)
-                        event = {'sender':{'id':1642888035775604}}
-                            #event = {'sender':{'id':uid}}
-                        buli_live(event, payload=final)
-                    #send_text(1642888035775604, 'live ergebnis von wettkampf beendet')
-                    CompetitionStatus.objects.filter(cid=cid).update(push=True)
-                elif status.push:
-                    test = 'nein'
-                    #send_text(1642888035775604, 'already_send')
+                try:
+                    cid = final['cid'].iloc[0]
+                    status = CompetitionStatus.objects.get(cid=cid)
+                    if status.finished and not status.push:
+                        user_list = FacebookUser.objects.values_list('uid', flat=True)
+                        for uid in user_list:
+                            if FacebookUser.objects.get(uid=uid).rifle:
+                                test = 'ja'
+                                #send_text(1642888035775604,'push raus an'+uid)
+                            event = {'sender':{'id':1642888035775604}}
+                                #event = {'sender':{'id':uid}}
+                            buli_live(event, payload=final)
+                        #send_text(1642888035775604, 'live ergebnis von wettkampf beendet')
+                        CompetitionStatus.objects.filter(cid=cid).update(push=True)
+                    elif status.push:
+                        test = 'nein'
+                        #send_text(1642888035775604, 'already_send')
+                except:
+                    test = 'fail'
             else:
                 #send_text(1642888035775604,final)
                 return
