@@ -1125,7 +1125,7 @@ def buli_live(event,payload=None,**kwargs):
                     except:
                         name_home = live['name'].iloc[(2 * index)]
                         name_guest = live['name'].iloc[(2 * index+1)]
-                    reply_positions += '{home} : {guest}\n       {home_win} {points_home}  :  {points_guest} {guest_win} {shoot_off}\n\n'.format(
+                    reply_positions += '{home} : {guest}\n{home_series}{home_win} {points_home}  :  {points_guest} {guest_win}{guest_series} {shoot_off}\n\n'.format(
                         position=str(index + 1),
                         points_home=res_home,
                         points_guest=res_guest,
@@ -1133,7 +1133,9 @@ def buli_live(event,payload=None,**kwargs):
                         guest_win = guest_win,
                         shoot_off = shoot_off,
                         home=name_home,
-                        guest=name_guest
+                        guest=name_guest,
+                        home_series = '99,98,95,💯',
+                        guest_series ='99,97,💯,99'
                     )
 
                     sbtl += '{home_win}{points_home}:{points_guest}{guest_win}{shoot_off}|'.format(
