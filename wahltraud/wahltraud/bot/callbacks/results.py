@@ -1210,7 +1210,7 @@ def buli_live(event,payload=None,**kwargs):
                               home_points = home_points,
                               guest_points = guest_points,
                               home_win = '🎉' if ((home_points >2) and (fight == 'Wettkampf ist beendet')) else ' ',
-                              guest_win = '🎉' if ((guest_points >2) and (fight == 'Wettkmapf ist beendet')) else ' '
+                              guest_win = '🎉' if ((guest_points >2) and (fight == 'Wettkampf ist beendet')) else ' '
                         )
 
 
