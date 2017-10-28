@@ -1111,8 +1111,8 @@ def buli_live(event,payload=None,**kwargs):
                         point_home = int(live['points'].iloc[(2* index +1)].split(':')[0].strip())
                         point_guest = int(live['points'].iloc[(2* index +1)].split(':')[1].strip())
                     except:
-                        point_home = 0
-                        point_guest = 0
+                        point_home = '-'
+                        point_guest = '-'
 
                     shoot_off = ''
                     if fight == 'Wettkampf ist beendet' and res_home == res_guest:
@@ -1152,8 +1152,8 @@ def buli_live(event,payload=None,**kwargs):
                               guest = live['guest_team'].iloc[0],
                               home_points = home_points,
                               guest_points = guest_points if fight == 'Wettkampf ist beendet' else (str(guest_points) + '  (Hochrechnung)'),
-                              home_win = '🎉' if ((home_points >2) and (fight == 'Wettkampf ist beendet')) else ' ',
-                              guest_win = '🎉' if ((guest_points >2) and (fight == 'Wettkmapf ist beendet')) else ' '
+                              home_win = '🎉' if ((fight == 'Wettkampf ist beendet') and (home_points >2) ) else ' ',
+                              guest_win = '🎉' if ( (fight == 'Wettkmapf ist beendet') and (guest_points >2)) else ' '
                         )
 
 
