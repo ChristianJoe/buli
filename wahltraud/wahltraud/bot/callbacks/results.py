@@ -1138,7 +1138,7 @@ def buli_live(event,payload=None,**kwargs):
                         name_home = live['name'].iloc[(2 * index)]
                         name_guest = live['name'].iloc[(2 * index+1)]
 
-                    reply_positions += '🏠{home} {home_win}\n{home_series} {points_home} {shoot_off_home}\n {guest_series} {points_guest} {shoot_off_guest}\n ✈{guest} {guest_win}\n\n'.format(
+                    reply_positions += '{home_win} {points_home} - {home} 🏠\n      {home_series} {shoot_off_home}\n{guest_win} {points_guest} - {guest}✈\n      {guest_series} {shoot_off_guest}\n\n'.format(
                         position=str(index + 1),
                         points_home=res_home,
                         points_guest=res_guest,
@@ -1162,13 +1162,14 @@ def buli_live(event,payload=None,**kwargs):
                     )  
 
 
-                reply_overview = "{status}  {fight}\n\n🏠{home} - {home_points}  {home_win} \n ✈{guest} - {guest_points} {guest_win}\n\n".format(
+                reply_overview = "{status}  {fight}\n\n{home_points} -{home_win}- {home} 🏠   \n{guest_points} - {guest_win} - {guest} ✈\n\n".format(
                               status = '⛔' if (fight == 'Wettkampf ist beendet') else ('✅' if (fight == 'Wettkampf') else '⚠'),
+                              points = '' if fight == 'Wettkampf ist beendet' else (str(guest_points) + '  (Punkte - Hochrechnung)'),
                               fight =fight,
                               home = live['home_team'].iloc[0],
                               guest = live['guest_team'].iloc[0],
                               home_points = home_points,
-                              guest_points = guest_points if fight == 'Wettkampf ist beendet' else (str(guest_points) + '  (Hochrechnung)'),
+                              guest_points = guest_points,
                               home_win = '🎉' if ((fight == 'Wettkampf ist beendet') and (home_points >2) ) else ' ',
                               guest_win = '🎉' if ( (fight == 'Wettkmapf ist beendet') and (guest_points >2)) else ' '
                         )
