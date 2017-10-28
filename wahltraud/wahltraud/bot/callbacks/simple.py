@@ -300,16 +300,16 @@ def subscribe(event,payload = None ,**kwargs):
     else:
         send_text(user_id, 'Folgende Ergebnis-Dienste sind aktiv:')
     if p.rifle:
-        text_rifle = 'Ergebnisse der LG Bundesliga: aktiv'
+        text_rifle = 'Ergebnisse der LG Bundesliga: ✅'
         button_rifle = [button_postback('Deaktivieren',{'unsubscribe_weapon': 'rifle'})]
     else:
-        text_rifle = 'Ergebnisse der LG Bundesliga: noch nicht aktiv'
+        text_rifle = 'Ergebnisse der LG Bundesliga: ❌'
         button_rifle = [button_postback('Aktivieren', {'subscribe_weapon': 'rifle'})]
     if p.pistole:
-        text_pistole = 'Ergebnisse der LP Bundesliga: aktiv'
+        text_pistole = 'Ergebnisse der LP Bundesliga: ✅'
         button_pistole = [button_postback('Deaktivieren',{'unsubscribe_weapon' : 'pistole'})]
     else:
-        text_pistole = 'Ergebnisse der LP Bundesliga: noch nicht aktiv'
+        text_pistole = 'Ergebnisse der LP Bundesliga: ❌'
         button_pistole = [button_postback('Aktivieren',{'subscribe_weapon' : 'pistole'})]
 
 
