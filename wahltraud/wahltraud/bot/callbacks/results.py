@@ -1138,7 +1138,7 @@ def buli_live(event,payload=None,**kwargs):
                         name_home = live['name'].iloc[(2 * index)]
                         name_guest = live['name'].iloc[(2 * index+1)]
 
-                    reply_positions += '{points_home}-{home_win}- {home}\n      {home_series} {shoot_off_home}\n{points_guest}-{guest_win}- {guest}\n      {guest_series} {shoot_off_guest}\n\n'.format(
+                    reply_positions += '{points_home}-{home_win}- {home}\n{shoot_off_home}   {home_series} \n{points_guest}-{guest_win}- {guest}\n{shoot_off_guest}   {guest_series}\n\n'.format(
                         position=str(index + 1),
                         points_home=res_home,
                         points_guest=res_guest,
