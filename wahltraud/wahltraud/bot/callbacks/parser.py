@@ -455,8 +455,10 @@ def get_meyton_results(site):
     soup = bs4.BeautifulSoup(html, "lxml")
 
     fight = soup.find(id='match-phase').text
+    path = pathlib.Path(str(DATA_DIR)+'/data/competitions/temp.csv')
 
-    if fight != 'Zur Zeit kein Wettkampf':
+
+    if fight != 'Zur Zeit kein Wettkampf1':
 
         teams = soup.find(id='match-title').text.split(':')
         try:
@@ -535,7 +537,13 @@ def get_meyton_results(site):
 
         final = pd.DataFrame(temp2)
 
+    else:
+        final = 'Zur Zeit kein Wettkampf'
+
+
+    if fight != 'Zur Zeit kein Wettkampf':
         # check if file already exists and append data
+
         if path.is_file():
             open_file = pd.read_csv(path)
 
@@ -545,8 +553,7 @@ def get_meyton_results(site):
         else:
             #if not, create file
             final.to_csv(path, index=False)
-    else:
-        final = 'Zur Zeit kein Wettkampf'
+
 
 
     return final
