@@ -1158,7 +1158,7 @@ def buli_live(event,payload=None,**kwargs):
                         points_guest=res_guest,
                         home_win = home_win,
                         guest_win = guest_win,
-                        shoot_off = shoot_off
+                        shoot_off = shoot_off_home + ':' + shoot_off_guest
                     )  
 
 
