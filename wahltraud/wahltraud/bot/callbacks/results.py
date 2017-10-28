@@ -1198,7 +1198,7 @@ def buli_live(event,payload=None,**kwargs):
                     #send_buttons(sender_id, reply_overview + '\n' + reply_positions,
                     #             [button_postback('Schützen anzeigen', {'buli_live_competition': payload_reply})])
                     title = "{status} - {home_win}{home} {home_points}:{guest_points} {guest}{guest_win}".format(
-                              status = '⛔' if (fight == 'Wettkampf ist beendet') else ('✅' if (fight == 'Wettkampf') else ('❌' if (fight=='Zur Zeit kein Wettkampf')else '⚠')),
+                              status = '⛔' if (fight == 'Wettkampf ist beendet') else ('✅' if (fight == 'Wettkampf') else ('❌' if (fight=='Zur Zeit kein Wettkampf')else ('💣' if ('Stechen' in fight ) else '⚠'))),
                               fight =fight,
                               home = live['home_team'].iloc[0],
                               guest = live['guest_team'].iloc[0],
@@ -1239,7 +1239,7 @@ def buli_live(event,payload=None,**kwargs):
             except:
                 send_text(sender_id,'Zur Zeit kein Wettkampf!.', quick_replies = options)
                 return
-        send_text(sender_id, 'Hier der Live-Überblick:\n❌ - Zur Zeit kein Wettkampf\n⚠ - Probe/Stechen\n✅ Wettkampf läuft\n⛔ - Wettkampf ist beendet')
+        send_text(sender_id, 'Hier der Live-Überblick:\n❌ - Zur Zeit kein Wettkampf\n⚠ - Probe; 💣 - Stechen\n✅/⛔ Wettkampf läuft/ist beendet')
         send_list(sender_id,
               elements=elements,
               button=button_postback('Aktualisieren', ['buli_live']))
