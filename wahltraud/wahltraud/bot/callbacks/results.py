@@ -1120,10 +1120,15 @@ def buli_live(event,payload=None,**kwargs):
                         home_series += ser if (int(ser)>0 and int(ser)!= 100) else ( '💯'  if int(ser)== 100 else '__')
                         home_series += ','
                     home_series = home_series[:-1]
-
-                    shoot_off = ''
+                    for ser in live['series'].iloc[(2* index+1)]:
+                        guest_series += ser if (int(ser)>0 and int(ser)!= 100) else ( '💯'  if int(ser)== 100 else '__')
+                        guest_series += ','
+                    guest_series = guest_series[:-1]
+                    shoot_off_home = ''
+                    shoot_off_guest = ''
                     if fight == 'Wettkampf ist beendet' and res_home == res_guest:
-                        shoot_off = '  ' + str(live['shot_value'].iloc[(2 * index)] ) + ' : ' + str(live['shot_value'].iloc[(2 * index+1)] )
+                        shoot_off_home = str(live['shot_value'].iloc[(2 * index)] )
+                        shoot_off_guest = str(live['shot_value'].iloc[(2 * index+1)] )
                     home_win = '🔸' if (point_home == 1) else '  '
                     guest_win = '🔸' if (point_guest == 1) else '  '
                     try:
@@ -1132,17 +1137,19 @@ def buli_live(event,payload=None,**kwargs):
                     except:
                         name_home = live['name'].iloc[(2 * index)]
                         name_guest = live['name'].iloc[(2 * index+1)]
-                    reply_positions += '{home} : {guest}\n{home_series}{home_win} {points_home}  :  {points_guest} {guest_win}{guest_series} {shoot_off}\n\n'.format(
+
+                    reply_positions += '🏠{home} {home_win}\n{home_series} {points_home} {shoot_off_home}\n {guest_series} {points_guest} {shoot_off_guest}\n ✈{guest} {guest_win}\n\n'.format(
                         position=str(index + 1),
                         points_home=res_home,
                         points_guest=res_guest,
                         home_win = home_win,
                         guest_win = guest_win,
-                        shoot_off = shoot_off,
+                        shoot_off_home = shoot_off_home,
+                        shoot_off_guest = shoot_off_guest,
                         home=name_home,
                         guest=name_guest,
                         home_series = home_series,
-                        guest_series ='99,97,💯,99'
+                        guest_series = guest_series
                     )
 
                     sbtl += '{home_win}{points_home}:{points_guest}{guest_win}{shoot_off}|'.format(
@@ -1155,7 +1162,7 @@ def buli_live(event,payload=None,**kwargs):
                     )  
 
 
-                reply_overview = "{status}{fight}\n\n{home_win}{home} : {guest}{guest_win}\n{home_points}:{guest_points}\n\n".format(
+                reply_overview = "{status}  {fight}\n\n🏠{home} - {home_points}  {home_win} \n ✈{guest} - {guest_points} {guest_win}\n\n".format(
                               status = '⛔' if (fight == 'Wettkampf ist beendet') else ('✅' if (fight == 'Wettkampf') else '⚠'),
                               fight =fight,
                               home = live['home_team'].iloc[0],
