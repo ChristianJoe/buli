@@ -491,7 +491,7 @@ def competition_results(event,payload,**kwargs):
         )
 
         if home['shoot_off'] != guest['shoot_off']:
-            text += "    --> Stechen <--  {home} : {guest}".format(home = home['shoot_off'],guest=guest['shoot_off'])
+            text += "    💣 - {home} : {guest}".format(home = home['shoot_off'],guest=guest['shoot_off'])
 
         elements.append(
             list_element(
@@ -519,13 +519,13 @@ def competition_results(event,payload,**kwargs):
     if offset == 0:
         goal = '🎯🎯🎯🎯🎯'
         total_points_home = results_club[results_club['home'] == True]['point'].sum()
-        text_first = '{fl_home} {home}  {home_points}  :  {guest_points}  {guest} {fl_guest}'.format(
+        text_first = '{home_points}-{fl_home}- {home}\nvs.\n{guest_points}-{fl_guest}- {guest}'.format(
             home = results_club['team_full'].iloc[0],
             guest = results_club['team_full'].iloc[1],
             home_points =total_points_home,      # goal[0:total_points_home],
             guest_points =5 - total_points_home , # goal[0:(5- total_points_home)]
-            fl_home = '🎉' if total_points_home >=3 else '',
-            fl_guest = '🎉' if (5-total_points_home)>=3else ''
+            fl_home = '🎉' if total_points_home >=3 else '  ',
+            fl_guest = '🎉' if (5-total_points_home)>=3else '  '
         )
 
 
@@ -779,7 +779,7 @@ def shooter_results(event,payload,**kwargs):
         sbtle = "Position {position}".format(position = person['position'].iloc[0])
 
         if person['shoot_off'].iloc[0].strip() != '':
-            sbtle += " -- Entscheidung im Stechen: {person}:{oponent}".format(
+            sbtle += " -💣- {person}:{oponent}".format(
                 person = person['shoot_off'].iloc[0],
                 oponent = oponent['shoot_off'].iloc[0]
             )
