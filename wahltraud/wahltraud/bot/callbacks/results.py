@@ -2,6 +2,8 @@ import logging
 import operator
 import pandas as pd
 import locale
+from time import sleep
+
 
 from backend.models import FacebookUser, ShooterResults, CompetitionStatus
 
@@ -1296,6 +1298,7 @@ def push_live_results():
                             #event = {'sender':{'id':1642888035775604}}
                                 event = {'sender':{'id':uid}}
                                 buli_live(event, payload=final)
+                            sleep(1)
                         #send_text(1642888035775604, 'live ergebnis von wettkampf beendet')
                         CompetitionStatus.objects.filter(cid=cid).update(push=True)
                     elif status.push:
