@@ -1126,7 +1126,8 @@ def buli_live(event,payload=None,**kwargs):
                         home=name_home,
                         guest=name_guest
 
-                    )  # ,
+                    )
+                    """
                     sbtl += '{home_win}{points_home}:{points_guest}{guest_win}{shoot_off}|'.format(
                         position=str(index + 1),
                         points_home=res_home,
@@ -1134,7 +1135,8 @@ def buli_live(event,payload=None,**kwargs):
                         home_win = home_win,
                         guest_win = guest_win,
                         shoot_off = shoot_off
-                    )  # ,
+                    )  
+                    """
 
                 reply_overview = "{status}{fight}\n\n{home_win}{home} : {guest}{guest_win}\n{home_points}:{guest_points}\n\n".format(
                               status = '⛔' if (fight == 'Wettkampf ist beendet') else ('✅' if (fight == 'Wettkampf') else '⚠'),
@@ -1146,6 +1148,8 @@ def buli_live(event,payload=None,**kwargs):
                               home_win = '🎉' if ((home_points >2) and (fight == 'Wettkampf ist beendet')) else ' ',
                               guest_win = '🎉' if ((guest_points >2) and (fight == 'Wettkmapf ist beendet')) else ' '
                         )
+
+                send_text(sender_id, reply_overview + '\n' + reply_positions)
 
                 reply_shooters = ""
                 for index in range(0, 5):
@@ -1164,7 +1168,6 @@ def buli_live(event,payload=None,**kwargs):
                 options.append(
                         quick_reply(quickreplyname, {'buli_live_competition': payload_reply})
                     )
-                send_text(sender_id, reply_overview + '\n' + reply_positions)
 
                 if not live_update_all:  # final Ergebnis nach Wettkampf beendet
                     send_text(sender_id,reply_overview + '\n' + reply_positions )
@@ -1241,7 +1244,7 @@ def shooter_live(event,payload,**kwargs):
 
 
     send_text(sender_id,
-             payload_reply['reply_shooters'],
+             payload_reply['reply_comps'],
               quick_replies=[quick_reply('Aktualisieren',['buli_live'])]
               )
 
