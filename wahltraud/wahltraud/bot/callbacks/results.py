@@ -1164,6 +1164,7 @@ def buli_live(event,payload=None,**kwargs):
                 options.append(
                         quick_reply(quickreplyname, {'buli_live_competition': payload_reply})
                     )
+                send_text(sender_id, reply_overview + '\n' + reply_positions)
 
                 if not live_update_all:  # final Ergebnis nach Wettkampf beendet
                     send_text(sender_id,reply_overview + '\n' + reply_positions )

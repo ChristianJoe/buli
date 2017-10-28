@@ -101,9 +101,9 @@ def meyton_update():
     else:
         links = "Zur Zeit kein Wettkampf in der 1. Bundesliga."
     #   This one is for test purpose
-    if not isinstance(live_results[0], pd.DataFrame) and len(live_results)<3:
-        links = get_meyton()
-        update_live_global(links)
+    #if not isinstance(live_results[0], pd.DataFrame) and len(live_results)<3:
+    links = get_meyton()
+    update_live_global(links)
     return
 
 
