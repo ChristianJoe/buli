@@ -72,17 +72,20 @@ class InfoAdmin(admin.ModelAdmin):
     form = InfoModelForm
     search_fields = ['title']
 
+class FacebookUserForm(forms.ModelForm):
+
+    class Meta:
+        model = FacebookUser
+        fields = '__all__'
+
+
 class FacebookUserAdmin(admin.ModelAdmin):
     form = FacebookUserForm
     list_filter = ['rifle', 'pistole']
     list_display = ['uid','rifle','pistole']
     date_hierarchy = 'add_date'
 
-class FacebookUserForm(forms.ModelForm):
 
-    class Meta:
-        model = FacebookUser
-        fields = '__all__'
 
 
 # Register your models here.
