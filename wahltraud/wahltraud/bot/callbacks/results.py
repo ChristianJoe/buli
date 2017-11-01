@@ -130,7 +130,7 @@ def best_shooter(event, payload, **kwargs):
                 comp = row['numer_of_comps'],
                 avg = row['avg']
             )
-        reply = 'Hier die Top 7  Schützen {weapon}:\n\n'.format(
+        reply = 'Hier die Top Schützen {weapon}:\n\n'.format(
             weapon='mit dem LG' if weapon=='LG' else 'mit der Luftpistole',
                                 ) +reply_avg+'(In Klammern steht die Anzahl absolvierter Wettkämpfe.)'
         info['best'] = True
