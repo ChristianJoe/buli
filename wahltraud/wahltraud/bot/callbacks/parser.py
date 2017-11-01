@@ -163,6 +163,16 @@ def get_results_pd():
                         home_team1 = 'SG Hamm'
                     if guest_team1 == 'SG Hamm I':
                         guest_team1 = 'SG Hamm'
+                    if guest_team1 == 'Braunschweiger SG':
+                        guest_team1 = 'Braunschweiger SG LP'
+                    if home_team1 == 'Braunschweiger SG':
+                        home_team1 = 'Braunschweiger SG LP'
+                    if home_team1 == 'Braunschweiger SG 1545':
+                        home_team1 = 'Braunschweiger SG LG'
+                        home_team_short = 'Braunschweiger SG'
+                    if guest_team1 == 'Braunschweiger SG 1545':
+                        guest_team1 = 'Braunschweiger SG LG'
+                        guest_team_short = 'Braunschweiger SG'
 
 
                     if home_team_short not in clubs:
@@ -292,6 +302,10 @@ def update_table():
                             home_team = 'PSV Olympia Berlin I'
                     if home_team == 'SG Hamm I':
                         home_team = 'SG Hamm'
+                    if home_team == 'SG Braunschweig':
+                        home_team = 'SG Braunschweig LP'
+                    if home_team = 'SG Braunschweig 1545':
+                        home_team = 'SG Braunschweig LG'
 
 
                     temp = {'rank': values[0].text,
@@ -353,6 +367,12 @@ def get_setlist():
                                     club = 'PSV Olympia Berlin I'
                             if club_short == 'SG Hamm':
                                 club = club_short
+                            if club == 'SG Braunschweig 1545':
+                                club = 'SG Braunschweig LG'
+                                club_short = 'SG Braunschweig'
+                            if club == 'SG Braunchschweig':
+                                club_short = club
+                                club = 'SG Braunschweig LP'
                         else:
                             temp = {}
                             number_of_comps = 0
