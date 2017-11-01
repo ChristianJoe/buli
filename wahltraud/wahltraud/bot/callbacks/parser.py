@@ -304,7 +304,7 @@ def update_table():
                         home_team = 'SG Hamm'
                     if home_team == 'SG Braunschweig':
                         home_team = 'SG Braunschweig LP'
-                    if home_team = 'SG Braunschweig 1545':
+                    if home_team == 'SG Braunschweig 1545':
                         home_team = 'SG Braunschweig LG'
 
 
