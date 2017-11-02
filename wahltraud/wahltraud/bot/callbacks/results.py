@@ -645,7 +645,7 @@ def club_comparison(event,payload,**kwargs):
             h_avg = c[i],
             g_avg = c1[i]
         )
-    send_text(sender_id,'Ein Vergleich zur Begegnung:)
+    send_text(sender_id,'Ein Vergleich zur Begegnung:')
     send_text(sender_id,reply)
 
     send_text(sender_id,
