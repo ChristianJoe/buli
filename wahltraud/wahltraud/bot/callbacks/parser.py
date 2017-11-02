@@ -173,6 +173,10 @@ def get_results_pd():
                     if guest_team1 == 'Braunschweiger SG 1545':
                         guest_team1 = 'Braunschweiger SG LG'
                         guest_team_short = 'Braunschweiger SG'
+                    if guest_team1 == 'Andreas Hofer Sassanfahr':
+                        guest_team1 = 'Andreas Hofer Sassanfahrt'
+                    if home_team1 == 'Andreas Hofer Sassanfahr':
+                        home_team1 = 'Andreas Hofer Sassanfahrt'
 
 
                     if home_team_short not in clubs:
@@ -302,10 +306,11 @@ def update_table():
                             home_team = 'PSV Olympia Berlin I'
                     if home_team == 'SG Hamm I':
                         home_team = 'SG Hamm'
-                    if home_team == 'SG Braunschweiger SG':
-                        home_team = 'SG Braunschweiger SG LP'
-                    if home_team == 'SG Braunschweiger SG 1545':
-                        home_team = 'SG Braunschweiger SG LG'
+                    if home_team == 'Braunschweiger SG':
+                        home_team = 'Braunschweiger SG LP'
+                    if home_team == 'Braunschweiger SG 1545':
+                        home_team = 'Braunschweiger SG LG'
+
 
 
                     temp = {'rank': values[0].text,
@@ -373,6 +378,9 @@ def get_setlist():
                             if club == 'SG Braunchschweiger SG':
                                 club_short = club
                                 club = 'SG Braunschweiger SG LP'
+                            if club == 'Andreas Hofer Sassanfahr':
+                                club = 'Andreas Hofer Sassanfahrt'
+                                club_short = club
                         else:
                             temp = {}
                             number_of_comps = 0
