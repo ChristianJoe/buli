@@ -589,7 +589,7 @@ def results_api(event, parameters, **kwargs):
                     }
             send_buttons(sender_id,
                          text,
-                         buttons = [button_postback('Mannschafts-Vergleich',
+                         buttons = [button_postback('Team-Vergleich',
                                          {'club_comparison': info
                                           }
                                          )]
@@ -645,7 +645,7 @@ def club_comparison(event,payload,**kwargs):
             h_avg = c[i],
             g_avg = c1[i]
         )
-    send_text(sender_id,'Ein Vergleich zur Begegnung:')
+    send_text(sender_id,'Ein Vergleich zur Begegnung:)
     send_text(sender_id,reply)
 
     send_text(sender_id,

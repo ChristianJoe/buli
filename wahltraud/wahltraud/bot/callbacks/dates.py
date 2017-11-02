@@ -158,7 +158,7 @@ def next_event_league(event,payload,**kwargs):
                 #                          }
                 #                         )
                 #         ]
-                buttons = [button_postback('Mein Tip!',
+                buttons = [button_postback('Team-Vergleich',
                                            {'club_comparison': {'club': data['home_team'],
                                                                'club1': data['guest_team']}
                                             }
@@ -239,7 +239,7 @@ def next_event(event,payload,**kwargs):
             list_element(
                 list_text,
                 subtitle=sbtl,
-                buttons=[button_postback('Wer gewinnt?',
+                buttons=[button_postback('Team-Vergleich',
                                            {'club_comparison': {'club': data['home_team'],
                                                                'club1': data['guest_team']}
                                             }
