@@ -1120,11 +1120,11 @@ def buli_live(event,payload=None,**kwargs):
                     guest_series = ''
                     for ser in live['series'].iloc[(2* index)]:
                         home_series += ser if (int(ser)>0 and int(ser)!= 100) else ( '💯'  if int(ser)== 100 else '__')
-                        home_series += ','
+                        home_series += ' '
                     home_series = home_series[:-1]
                     for ser in live['series'].iloc[(2* index+1)]:
                         guest_series += ser if (int(ser)>0 and int(ser)!= 100) else ( '💯'  if int(ser)== 100 else '__')
-                        guest_series += ','
+                        guest_series += ' '
                     guest_series = guest_series[:-1]
                     shoot_off_home = '     '
                     shoot_off_guest = '     '
@@ -1133,8 +1133,8 @@ def buli_live(event,payload=None,**kwargs):
                         shoot_off_home = '💣 ' + str(live['shot_value'].iloc[(2 * index)] )
                         shoot_off_guest = '💣 ' + str(live['shot_value'].iloc[(2 * index+1)] )
                         shoot_off_sbtl = '('+str(live['shot_value'].iloc[(2 * index)] ) + ':' + str(live['shot_value'].iloc[(2 * index+1)])+')'
-                    home_win = '🔸' if (point_home == 1) else '  '
-                    guest_win = '🔸' if (point_guest == 1) else '  '
+                    home_win = '🔸' if (point_home == 1) else '   '
+                    guest_win = '🔸' if (point_guest == 1) else '   '
                     try:
                         name_home = live['name'].iloc[(2 * index)].split(', ')[1][0]+'. '+live['name'].iloc[(2 * index)].split(', ')[0]
                         name_guest = live['name'].iloc[(2 * index+1)].split(', ')[1][0]+'. '+live['name'].iloc[(2 * index+1)].split(', ')[0]
@@ -1174,8 +1174,8 @@ def buli_live(event,payload=None,**kwargs):
                               guest = live['guest_team'].iloc[0],
                               home_points = home_points,
                               guest_points = guest_points,
-                              home_win = '🎉' if ((fight == 'Wettkampf ist beendet') and (home_points >2) ) else '  ',
-                              guest_win = '🎉' if ( (fight == 'Wettkampf ist beendet') and (guest_points >2)) else '  '
+                              home_win = '🎉' if ((fight == 'Wettkampf ist beendet') and (home_points >2) ) else '   ',
+                              guest_win = '🎉' if ( (fight == 'Wettkampf ist beendet') and (guest_points >2)) else '   '
                         )
 
 
