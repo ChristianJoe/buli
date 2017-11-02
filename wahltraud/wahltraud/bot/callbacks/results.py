@@ -618,7 +618,7 @@ def club_comparison(event,payload,**kwargs):
     reply = '{club}\nvs.{club1}\n'.format(club = club,
                                           club1 = club1)
 
-
+    send_text(sender_id,reply)
 
 
 
