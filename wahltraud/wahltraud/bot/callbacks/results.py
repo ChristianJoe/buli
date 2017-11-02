@@ -1142,7 +1142,7 @@ def buli_live(event,payload=None,**kwargs):
                         name_home = live['name'].iloc[(2 * index)]
                         name_guest = live['name'].iloc[(2 * index+1)]
 
-                    reply_positions += '{points_home}-{home_win}- {home}\n{shoot_off_home}   {home_series} \n{points_guest}-{guest_win}- {guest}\n{shoot_off_guest}   {guest_series}\n\n'.format(
+                    reply_positions += '{home_win}-{points_home}- {home}\n{shoot_off_home}   {home_series} \n{guest_win}-{points_guest}- {guest}\n{shoot_off_guest}   {guest_series}\n\n'.format(
                         position=str(index + 1),
                         points_home=res_home,
                         points_guest=res_guest,
@@ -1166,7 +1166,7 @@ def buli_live(event,payload=None,**kwargs):
                     )  
 
 
-                reply_overview = "{home_points} -{home_win}- {home}\nvs.\n{guest_points} -{guest_win}- {guest}\n\n{status}  {fight}\n\n".format(
+                reply_overview = "{home_win}-{home_points} - {home}\nvs.\n{guest_win}-{guest_points} - {guest}\n\n{status}  {fight}\n\n".format(
                               status = '⛔' if (fight == 'Wettkampf ist beendet') else ('✅' if (fight == 'Wettkampf') else '⚠'),
                               points = '' if fight == 'Wettkampf ist beendet' else (str(guest_points) + '  (Punkte - Hochrechnung)'),
                               fight =fight,
@@ -1292,13 +1292,13 @@ def push_live_results():
                     if status.finished and not status.push:
                         user_list = FacebookUser.objects.values_list('uid', flat=True)
                         for uid in user_list:
-                            if FacebookUser.objects.get(uid=uid).rifle:
+                            if FacebookUser.objects.get(uid=uid).pistole:
                                 test = 'ja'
                                 #send_text(1642888035775604,'push raus an'+uid)
                                 #event = {'sender':{'id':1642888035775604}}
                                 event = {'sender':{'id':uid}}
                                 buli_live(event, payload=final)
-                            sleep(2)
+                                #sleep(1)
                             #send_text(1642888035775604, 'live ergebnis von wettkampf beendet')
                         CompetitionStatus.objects.filter(cid=cid).update(push=True)
                     elif status.push:
