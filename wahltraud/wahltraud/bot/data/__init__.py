@@ -277,6 +277,9 @@ def make_team_avg():
 team_avg = make_team_avg()
 
 
+def get_team_avg():
+    return team_avg
+
 
 
 
