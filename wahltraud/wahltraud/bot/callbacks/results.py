@@ -635,7 +635,7 @@ def club_comparison(event,payload,**kwargs):
             guest +=1
         else:
             shoot_off.append(i)
-            if c1['avg_result']>c['avg_results']:
+            if c1['avg_result']>c['avg_result']:
                 guest +=1
             else:
                 home +=1
