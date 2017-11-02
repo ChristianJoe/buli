@@ -573,12 +573,13 @@ def results_api(event, parameters, **kwargs):
                                  buttons = buttons)
                     return
         if data['guest_result'] == 0:
-            text = """Der Wettkampf zwischen {club} und {club1} hat nocht nicht stattgefunden.
+            text = """Der Wettkampf zwischen {club} und {club1} in der {league} hat nocht nicht stattgefunden.
                 
                    Termin: {date}, {time} 
                    Ausrichter: {host}""".format(
-                club = club,
-                club1 = club1,
+                club = data['home_team'],
+                club1 = data['guest_team'],
+                league = data['league'],
                 date = data['date'].strftime("%d.%m.%Y"),
                 time = data['time'],
                 host = data['host']
@@ -618,14 +619,29 @@ def club_comparison(event,payload,**kwargs):
 
     reply = '{club}\n    vs.\n           {club1}\n\n'.format(club = club,
                                           club1 = club1)
-    reply +='{h_rank}. Platzierung {g_rank}.\n{h_result}  Ø-Total {g_result}'.format(
-        h_rank = c['rank'],
-        g_rank = c1['rank'],
+    reply +='{h_rank}. Platzierung {g_rank}.\n{h_result}  Ø-Total {g_result}\n\nØ-Total Ringe\n'.format(
+        h_rank = int(c['rank']),
+        g_rank = int(c1['rank']),
         h_result = c['avg_result'],
         g_result = c1['avg_result']
     )
+    home = 0
+    guest = 0
+    shoot_off = []
+    for i in range(1,6):
+        if c[i]> c1[i]:
+            home +=1
+        elif c1[i] > c1[i]:
+            guest +=1
+        else:
+            shoot_off.append(i)
+        reply += '#{i} - {h_avg} :  {g_avg}\n'.format(
+            i = i,
+            h_avg = c[i],
+            g_avg = c1[i]
+        )
 
-
+    
     send_text(sender_id,reply)
 
 
