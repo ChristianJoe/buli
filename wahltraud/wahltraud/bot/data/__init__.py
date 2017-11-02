@@ -39,6 +39,7 @@ results_shooter = results_shooter.replace('Andreas Hofer Sassanfahr', 'Andreas H
 results_team = results_team.replace('Andreas Hofer Sassanfahr', 'Andreas Hofer Sassanfahrt')
 setlist = setlist.replace('Andreas Hofer Sassanfahr', 'Andreas Hofer Sassanfahrt')
 
+
 live_results = ["Zur Zeit kein Wettkampf in der 1. Bundesliga."]
 
 
@@ -61,6 +62,8 @@ def reopen_data():
     global setlist
     setlist = pd.read_csv(DATA_DIR/'buli17_setlist.csv')
     setlist = setlist.replace('Andreas Hofer Sassanfahr', 'Andreas Hofer Sassanfahrt')
+    global team_avg
+    team_avg = make_team_avg()
 
     update_shooter_database()
 
@@ -203,7 +206,75 @@ def make_best_shooter():
     return
 
 
+def make_team_avg():
+    team = results_team
+    shooter = results_shooter
+    table = tables
 
+    short_clubs = list(set(list(shooter['team_full'])))
+
+    avg = []
+    for club in short_clubs:
+        temp = {}
+        temp['club'] = club
+        guest_club = team[team['guest_team'] == club]
+        home_club = team[team['home_team'] == club]
+        total = 0
+        result = 0
+        points = 0
+        win = 0
+        pos = {1: 0,
+               2: 0,
+               3: 0,
+               4: 0,
+               5: 0
+               }
+        for index, fight in guest_club.iterrows():
+            if fight['guest_result'] != 0 or fight['home_result'] != 0:
+                total += 1
+                result += fight['guest_result']
+                points += fight['guest_points']
+                if fight['guest_points'] >= 3:
+                    win += 1
+                idguest = fight['comp_id']
+                for i in range(1, 6):
+                    pos[i] += int(shooter[(shooter['comp_id'] == idguest) & (shooter['team_full'] == club)].loc[
+                                      shooter['position'] == i]['result'].iloc[0])
+        for index, fight in home_club.iterrows():
+            if fight['home_result'] != 0 or fight['guest_result'] != 0:
+                total += 1
+                result += fight['home_result']
+                points += fight['home_points']
+                if fight['home_points'] >= 3:
+                    win += 1
+                idhome = fight['comp_id']
+                for i in range(1, 6):
+                    pos[i] += int(shooter[(shooter['comp_id'] == idhome) & (shooter['team_full'] == club)].loc[
+                                      shooter['position'] == i]['result'].iloc[0])
+        temp['avg_result'] = result / total
+        temp['avg_points'] = points / total
+        temp['avg_win'] = win / total
+        for key, value in pos.items():
+            temp[key] = value / total
+        try:
+            tc = table[table['club'] == club].iloc[0]
+            temp['rank'] = tc['rank']
+            temp['buli'] = tc['id'].split(' ')[0][2:]
+            temp['region'] = tc['id'].split(' ')[1]
+            temp['weapon'] = tc['id'][0:2]
+            temp['team_won'] = tc['team_won']
+            temp['team_lost'] = tc['team_lost']
+            temp['single_won'] = tc['single_won']
+            temp['single_lost'] = tc['single_lost']
+        except:
+            x = 0
+
+        avg.append(temp)
+    team_avg = pd.DataFrame(avg)
+
+    return team_avg
+
+team_avg = make_team_avg()
 
 
 
