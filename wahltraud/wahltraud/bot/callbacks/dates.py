@@ -158,7 +158,7 @@ def next_event_league(event,payload,**kwargs):
                 #                          }
                 #                         )
                 #         ]
-                buttons = [button_postback('Prognose',
+                buttons = [button_postback('Mein Tip!',
                                            {'club_comparison': {'club': data['home_team'],
                                                                'club1': data['guest_team']}
                                             }
@@ -239,11 +239,11 @@ def next_event(event,payload,**kwargs):
             list_element(
                 list_text,
                 subtitle=sbtl,
-                buttons=[button_postback("Ausrichter {club}".format(club=data['host']),
-                                         {'next_event': data['host'],
-                                          'host': True
-                                          }
-                                         )
+                buttons=[button_postback('Wer gewinnt?',
+                                           {'club_comparison': {'club': data['home_team'],
+                                                               'club1': data['guest_team']}
+                                            }
+                                            )
                          ]
                 # image_url=candidate.get('img') or None
             )

@@ -617,7 +617,7 @@ def club_comparison(event,payload,**kwargs):
     c = avg[avg['club'] == club].iloc[0]
     c1 = avg[avg['club'] == club1].iloc[0]
 
-    reply = '{club}\n       vs.\n             {club1}\n\n'.format(club = club,
+    reply = 'Ein Vergleich zur Begegnung:\n{club}\n       vs.\n             {club1}\n\n'.format(club = club,
                                           club1 = club1)
     reply +='Tabelle: {h_rank}. vs. {g_rank}.\nØ-Total: {h_result} vs. {g_result}\n\nØ-Ringe an Position:\n'.format(
         h_rank = int(c['rank']),
@@ -648,7 +648,7 @@ def club_comparison(event,payload,**kwargs):
     send_text(sender_id,reply)
 
     send_text(sender_id,
-              'Mein Tip ist: {club} {verb} mit {points} gegen {club1}'.format(
+              'Mein Tip: {club} {verb} mit {points} gegen {club1}'.format(
                   club = club,
                   club1 = club1,
                   verb = 'gewinnt' if (home >= 3) else 'verliert',
