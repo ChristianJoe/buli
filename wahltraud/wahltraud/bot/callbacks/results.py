@@ -583,12 +583,13 @@ def results_api(event, parameters, **kwargs):
                 time = data['time'],
                 host = data['host']
             )
-
+            info = {'club':data['home_team_short'],
+                     'club1': data['guest_team_short']
+                    }
             send_buttons(sender_id,
                          text,
                          buttons = [button_postback('Mannschafts-Vergleich',
-                                         {'club_comparison': {'club': club,
-                                                              'club1': club1}
+                                         {'club_comparison': info
                                           }
                                          )]
                          )
@@ -613,8 +614,8 @@ def club_comparison(event,payload,**kwargs):
 
     avg = get_team_avg()
 
-    c = avg[avg['club'] == club]
-    c1 = avg[avg['club'] == club1]
+    c = avg[avg['club'] == club].iloc[0]
+    c1 = avg[avg['club'] == club1].iloc[0]
 
     reply = '{club}\n    vs.\n           {club1}\n\n'.format(club = club,
                                           club1 = club1)
