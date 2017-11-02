@@ -1133,8 +1133,8 @@ def buli_live(event,payload=None,**kwargs):
                         shoot_off_home = '💣 ' + str(live['shot_value'].iloc[(2 * index)] )
                         shoot_off_guest = '💣 ' + str(live['shot_value'].iloc[(2 * index+1)] )
                         shoot_off_sbtl = '('+str(live['shot_value'].iloc[(2 * index)] ) + ':' + str(live['shot_value'].iloc[(2 * index+1)])+')'
-                    home_win = '🔸' if (point_home == 1) else '   '
-                    guest_win = '🔸' if (point_guest == 1) else '   '
+                    home_win = '🔸' if (point_home == 1) else '{  }'
+                    guest_win = '🔸' if (point_guest == 1) else '{  }'
                     try:
                         name_home = live['name'].iloc[(2 * index)].split(', ')[1][0]+'. '+live['name'].iloc[(2 * index)].split(', ')[0]
                         name_guest = live['name'].iloc[(2 * index+1)].split(', ')[1][0]+'. '+live['name'].iloc[(2 * index+1)].split(', ')[0]
