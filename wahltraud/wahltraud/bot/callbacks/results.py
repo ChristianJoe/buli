@@ -613,6 +613,7 @@ def club_comparison(event,payload,**kwargs):
     club1 = payload['club_comparison']['club1']
 
     avg = get_team_avg()
+    print(avg.head())
 
     c = avg[avg['club'] == club].iloc[0]
     c1 = avg[avg['club'] == club1].iloc[0]
@@ -623,7 +624,7 @@ def club_comparison(event,payload,**kwargs):
         h_rank = c['rank'],
         g_rank = c1['rank'],
         h_result = c['avg_result'],
-        g_result = c1['avg_result']
+        g_result = c1['avg_result]
     )
 
 
