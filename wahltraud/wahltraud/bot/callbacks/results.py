@@ -619,7 +619,7 @@ def club_comparison(event,payload,**kwargs):
 
     reply = '{club}\n       vs.\n             {club1}\n\n'.format(club = club,
                                           club1 = club1)
-    reply +=' Platzierung: {h_rank}. vs. {g_rank}.\nØ-Total: {h_result} vs. {g_result}\n\nØ-Ringe an Position:\n'.format(
+    reply +='Tabelle: {h_rank}. vs. {g_rank}.\nØ-Total: {h_result} vs. {g_result}\n\nØ-Ringe an Position:\n'.format(
         h_rank = int(c['rank']),
         g_rank = int(c1['rank']),
         h_result = c['avg_result'],
@@ -640,7 +640,7 @@ def club_comparison(event,payload,**kwargs):
             else:
                 home +=1
 
-        reply += '#{i} - {h_avg} :  {g_avg}\n'.format(
+        reply += '#{i} - {h_avg} : {g_avg}\n'.format(
             i = i,
             h_avg = c[i],
             g_avg = c1[i]

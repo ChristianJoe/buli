@@ -152,12 +152,18 @@ def next_event_league(event,payload,**kwargs):
             list_element(
                 title = list_text,
                 subtitle=sbtl,
-                buttons=[button_postback("Ausrichter {club}".format(club=data['host']),
-                                         {'next_event': data['host'],
-                                          'host': True
-                                          }
-                                         )
-                         ]
+                #buttons=[button_postback("Ausrichter {club}".format(club=data['host']),
+                #                         {'next_event': data['host'],
+                #                          'host': True
+                #                          }
+                #                         )
+                #         ]
+                buttons = [button_postback('Prognose',
+                                           {'club_comparison': {'club': data['home_team'],
+                                                               'club1': data['guest_team']}
+                                            }
+                                            )
+                        ]
                 #
                 # image_url=candidate.get('img') or None
             )
