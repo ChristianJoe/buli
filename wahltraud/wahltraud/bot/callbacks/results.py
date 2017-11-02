@@ -631,7 +631,7 @@ def club_comparison(event,payload,**kwargs):
     for i in range(1,6):
         if c[i]> c1[i]:
             home +=1
-        elif c1[i] > c1[i]:
+        elif c1[i] > c[i]:
             guest +=1
         else:
             shoot_off.append(i)
