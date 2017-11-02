@@ -104,10 +104,12 @@ def make_event_handler():
         PayloadHandler(results.blue_arrows,['blue_arrows']),
         ApiAiHandler(results.table_api,'table'),
 
+
         PayloadHandler(results.table_second_league, ['table_second_league']),
         PayloadHandler(results.table_league, ['table_league']),
         PayloadHandler(results.club_list_competitions, ['club_list_competitions']),
         PayloadHandler(results.competition_results, ['competition_results']),
+        PayloadHandler(results.club_comparison,['club_comparison']),
         PayloadHandler(results.table_payload,['table_payload']),
 
         ApiAiHandler(results.setlist_api, 'setlist'),

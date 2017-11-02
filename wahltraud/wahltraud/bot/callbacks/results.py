@@ -9,7 +9,7 @@ from backend.models import FacebookUser, ShooterResults, CompetitionStatus
 
 from ..fb import send_buttons, button_postback, send_text, send_attachment, send_list, list_element, quick_reply
 from ..data import (by_uuid, get_dates, get_results_team, get_results_shooter,
-                    get_tables, get_club_info_weapon_buli_region,get_setlist, get_live_results)
+                    get_tables, get_club_info_weapon_buli_region,get_setlist, get_live_results, get_team_avg)
 from .parser import get_meyton, get_meyton_results
 from .simple import club_info
 import datetime
@@ -583,7 +583,14 @@ def results_api(event, parameters, **kwargs):
                 time = data['time'],
                 host = data['host']
             )
-            send_text(sender_id,text)
+            send_buttons(sender_id,
+                         text,
+                         button_postback('Mannschafts-Vergleich',
+                                         {'club_comparison': {'club': club,
+                                                              'club1': club1}
+                                          }
+                                         )
+                         )
             return
         else:
             comp_id = data['comp_id']
@@ -593,6 +600,28 @@ def results_api(event, parameters, **kwargs):
 
     else:
         results_club(event, {'results_club': club})
+
+
+
+
+
+def club_comparison(event,payload,**kwargs):
+    sender_id = event['sender']['id']
+    club = payload['club_comparison']['club']
+    club1 = payload['club_comparison']['club1']
+
+    avg = get_team_avg()
+
+    c_avg = avg[avg['club'] == club]
+    c1_avg = avg[avg['club'] == club1]
+
+    reply = '{club}\nvs.{club1}\n'.format(club = club,
+                                          club1 = club1)
+
+
+
+
+
 
 
 
