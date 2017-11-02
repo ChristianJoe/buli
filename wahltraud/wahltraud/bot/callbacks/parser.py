@@ -302,10 +302,10 @@ def update_table():
                             home_team = 'PSV Olympia Berlin I'
                     if home_team == 'SG Hamm I':
                         home_team = 'SG Hamm'
-                    if home_team == 'SG Braunschweig':
-                        home_team = 'SG Braunschweig LP'
-                    if home_team == 'SG Braunschweig 1545':
-                        home_team = 'SG Braunschweig LG'
+                    if home_team == 'SG Braunschweiger SG':
+                        home_team = 'SG Braunschweiger SG LP'
+                    if home_team == 'SG Braunschweiger SG 1545':
+                        home_team = 'SG Braunschweiger SG LG'
 
 
                     temp = {'rank': values[0].text,
@@ -367,12 +367,12 @@ def get_setlist():
                                     club = 'PSV Olympia Berlin I'
                             if club_short == 'SG Hamm':
                                 club = club_short
-                            if club == 'SG Braunschweig 1545':
-                                club = 'SG Braunschweig LG'
-                                club_short = 'SG Braunschweig'
-                            if club == 'SG Braunchschweig':
+                            if club == 'SG Braunschweiger SG 1545':
+                                club = 'SG Braunschweiger SG LG'
+                                club_short = 'SG Braunschweiger SG'
+                            if club == 'SG Braunchschweiger SG':
                                 club_short = club
-                                club = 'SG Braunschweig LP'
+                                club = 'SG Braunschweiger SG LP'
                         else:
                             temp = {}
                             number_of_comps = 0
