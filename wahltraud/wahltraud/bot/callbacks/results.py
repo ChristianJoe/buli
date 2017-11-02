@@ -583,13 +583,14 @@ def results_api(event, parameters, **kwargs):
                 time = data['time'],
                 host = data['host']
             )
+
             send_buttons(sender_id,
                          text,
-                         button_postback('Mannschafts-Vergleich',
+                         buttons = [button_postback('Mannschafts-Vergleich',
                                          {'club_comparison': {'club': club,
                                                               'club1': club1}
                                           }
-                                         )
+                                         )]
                          )
             return
         else:
