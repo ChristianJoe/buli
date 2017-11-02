@@ -613,11 +613,18 @@ def club_comparison(event,payload,**kwargs):
 
     avg = get_team_avg()
 
-    c_avg = avg[avg['club'] == club]
-    c1_avg = avg[avg['club'] == club1]
+    c = avg[avg['club'] == club]
+    c1 = avg[avg['club'] == club1]
 
-    reply = '{club}\nvs.{club1}\n'.format(club = club,
+    reply = '{club}\n    vs.\n           {club1}\n\n'.format(club = club,
                                           club1 = club1)
+    reply +='{h_rank}. Platzierung {g_rank}.\n{h_result}  Ø-Total {g_result}'.format(
+        h_rank = c['rank'],
+        g_rank = c1['rank'],
+        h_result = c['avg_result'],
+        g_result = c1['avg_result']
+    )
+
 
     send_text(sender_id,reply)
 
