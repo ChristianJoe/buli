@@ -1198,8 +1198,8 @@ def buli_live(event,payload=None,**kwargs):
                         shoot_off_home = '💣 ' + str(live['shot_value'].iloc[(2 * index)] )
                         shoot_off_guest = '💣 ' + str(live['shot_value'].iloc[(2 * index+1)] )
                         shoot_off_sbtl = '('+str(live['shot_value'].iloc[(2 * index)] ) + ':' + str(live['shot_value'].iloc[(2 * index+1)])+')'
-                    home_win = '🔸' if (point_home == 1) else '{  }'
-                    guest_win = '🔸' if (point_guest == 1) else '{  }'
+                    home_win = '🔸' if (point_home == 1) else '    '
+                    guest_win = '🔸' if (point_guest == 1) else '    '
                     try:
                         name_home = live['name'].iloc[(2 * index)].split(', ')[1][0]+'. '+live['name'].iloc[(2 * index)].split(', ')[0]
                         name_guest = live['name'].iloc[(2 * index+1)].split(', ')[1][0]+'. '+live['name'].iloc[(2 * index+1)].split(', ')[0]
@@ -1263,7 +1263,11 @@ def buli_live(event,payload=None,**kwargs):
                     )
 
                 if not live_update_all:  # final Ergebnis nach Wettkampf beendet
-                    send_text(sender_id,reply_overview + '\n' + reply_positions )
+                    send_buttons(sender_id,
+                                 reply_overview,
+                                 buttons = [button_postback('Einzelergebnisse',
+                                                            {'buli_live_competition': payload_reply})
+                                     ])
                 else:
                     #send_buttons(sender_id, reply_overview + '\n' + reply_positions,
                     #             [button_postback('Schützen anzeigen', {'buli_live_competition': payload_reply})])
@@ -1354,7 +1358,41 @@ def push_live_results():
                 try:
                     cid = final['cid'].iloc[0]
                     status = CompetitionStatus.objects.get(cid=cid)
-                    if status.finished and not status.push:
+                    if status.shoot_off and not status.shoot_off_shot:
+                        reply = ''
+                        rep = ''
+                        pos = ''
+                        point_home = 0
+                        point_guest = 0
+                        for index in range(0, 5):
+                            res_home = final['result'].iloc[(2 * index)]
+                            res_guest = final['result'].iloc[(2 * index + 1)]
+                            point_home += int(final['points'].iloc[(2 * index + 1)].split(':')[0].strip())
+                            point_guest += int(final['points'].iloc[(2 * index + 1)].split(':')[1].strip())
+                            if res_home == res_guest:
+                                pos += str(index+1) + rep
+                                rep = ' und '
+                        if point_home <=2 and point_guest <=2:
+                            reply += '+++ STECHEN UM DEN SIEG +++\nIn der Paarung {home} gegen {guest} steht es derzeit {standing}. Der Sieg wird an Position {pos} im Stechen entschieden'.format(
+                            home=final['home_team'].iloc[0],
+                            guest=final['guest_team'].iloc[0],
+                            standing = str(point_home) + ':' + str(point_guest),
+                            pos = pos
+                                )
+                        else:
+                            reply += 'In der Paarung {home} gegen {guest} steht es derzeit {standing}.Ein Stechen erfolgt an Position {pos}.'.format(
+                                home=final['home_team'].iloc[0],
+                                guest=final['guest_team'].iloc[0],
+                                standing=str(point_home) + ':' + str(point_guest),
+                                pos=pos
+                            )
+                        user_list = FacebookUser.objects.values_list('uid', flat=True)
+                        for uid in user_list:
+                            if FacebookUser.objects.get(uid=uid).pistole:
+                                sender_id = uid
+                                send_text(sender_id,reply,quick_reply('Live-Ergebnis', ['buli_live']) )
+                        CompetitionStatus.objects.filter(cid=cid).update(shoot_off_shot=True)
+                    elif status.finished and not status.push:
                         user_list = FacebookUser.objects.values_list('uid', flat=True)
                         for uid in user_list:
                             if FacebookUser.objects.get(uid=uid).pistole:
@@ -1363,7 +1401,7 @@ def push_live_results():
                                 #event = {'sender':{'id':1642888035775604}}
                                 event = {'sender':{'id':uid}}
                                 buli_live(event, payload=final)
-                                #sleep(1)
+                                #sleep(0.5)
                             #send_text(1642888035775604, 'live ergebnis von wettkampf beendet')
                         CompetitionStatus.objects.filter(cid=cid).update(push=True)
                     elif status.push:
