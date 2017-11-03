@@ -523,9 +523,9 @@ def get_meyton_results(site):
             #test purpose
             #CompetitionStatus.objects.filter(cid=cid).update(finished=False)
             #CompetitionStatus.objects.filter(cid=cid).update(push=False)
-            CompetitionStatus.objects.filter(cid=cid).update(shoot_off_shot=False)
-            CompetitionStatus.objects.filter(cid=cid).update(shoot_off=True)
-            CompetitionStatus.objects.filter(cid=cid).update(push=False)
+        CompetitionStatus.objects.filter(cid=cid).update(shoot_off_shot=False)
+        CompetitionStatus.objects.filter(cid=cid).update(shoot_off=True)
+        CompetitionStatus.objects.filter(cid=cid).update(push=False)
 
 
         file = (home_team + guest_team + '.csv').replace(' ', '')
