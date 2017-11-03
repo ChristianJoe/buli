@@ -1390,7 +1390,7 @@ def push_live_results():
                         for uid in user_list:
                             if FacebookUser.objects.get(uid=uid).pistole:
                                 sender_id = uid
-                                sender_id = 1642888035775604
+                                #sender_id = 1642888035775604
                                 send_text(sender_id,
                                           reply)#,
                                           #quick_replies = [quick_reply('Einzelergebnisse', {'buli_live' : final} )])
@@ -1406,7 +1406,7 @@ def push_live_results():
                                 test = 'ja'
                                 #send_text(1642888035775604,'push raus an'+uid)
                                 #event = {'sender':{'id':1642888035775604}}
-                                uid = 1642888035775604
+                                #uid = 1642888035775604
                                 event = {'sender':{'id':uid}}
                                 buli_live(event, payload=final)
                                 sleep(0.5)
