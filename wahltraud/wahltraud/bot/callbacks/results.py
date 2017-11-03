@@ -1395,6 +1395,8 @@ def push_live_results():
                                 send_text(sender_id,
                                           reply,
                                           quick_replies = [quick_reply('Einzelergebnisse', {'buli_live' : final} )])
+                                sleep(0.5)
+
                                           #                                 quick_reply('Live-Ergebnis', ['buli_live'])] )
                                 #send_text(sender_id,uid)
                         CompetitionStatus.objects.filter(cid=cid).update(shoot_off_shot=True)
@@ -1408,7 +1410,7 @@ def push_live_results():
                                 uid = 1642888035775604
                                 event = {'sender':{'id':uid}}
                                 buli_live(event, payload=final)
-                                #sleep(0.5)
+                                sleep(0.5)
                             #send_text(1642888035775604, 'live ergebnis von wettkampf beendet')
                         CompetitionStatus.objects.filter(cid=cid).update(push=True)
                     elif status.push:
