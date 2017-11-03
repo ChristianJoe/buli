@@ -517,9 +517,9 @@ def get_meyton_results(site):
         if fight =='Gleichstand bei mindestens einer Paarung':
             CompetitionStatus.objects.filter(cid=cid).update(shoot_off=True)
         if fight == 'Stechen um Einzelpunkt':
-            CompetitionStatus.objects.filter(cid=cid).update(shoot_off_shot=True)
+            CompetitionStatus.objects.filter(cid=cid).update(shoot_off_shot=False)
         if fight == 'Wettkampf ist beendet':
-            CompetitionStatus.objects.filter(cid=cid).update(finished=True)
+            CompetitionStatus.objects.filter(cid=cid).update(finished=False)
             #test purpose
             #CompetitionStatus.objects.filter(cid=cid).update(finished=False)
             #CompetitionStatus.objects.filter(cid=cid).update(push=False)
