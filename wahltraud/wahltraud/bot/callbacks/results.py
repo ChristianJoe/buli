@@ -1393,8 +1393,8 @@ def push_live_results():
                                 sender_id = 1642888035775604
                                 print(uid)
                                 send_text(sender_id,
-                                          reply)#,
-                                          #quick_replies = [quick_reply('Einzelergebnisse', {'buli_live' : final} ),
+                                          reply,
+                                          quick_replies = [quick_reply('Einzelergebnisse', {'buli_live' : final} )])
                                           #                                 quick_reply('Live-Ergebnis', ['buli_live'])] )
                                 #send_text(sender_id,uid)
                         CompetitionStatus.objects.filter(cid=cid).update(shoot_off_shot=True)
