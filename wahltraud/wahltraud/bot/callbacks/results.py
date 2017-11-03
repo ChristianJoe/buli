@@ -1390,8 +1390,9 @@ def push_live_results():
                         for uid in user_list:
                             if FacebookUser.objects.get(uid=uid).pistole:
                                 sender_id = uid
-                                sender_id = 1642888035775604
-                                #send_text(sender_id,reply,quick_reply('Live-Ergebnis', ['buli_live']) )
+                                sender_id = "1642888035775604"
+                                send_text(sender_id,reply,quick_replies = [quick_reply('Einzelergebnisse', {'buli_live' : final} ),
+                                                                           quick_reply('Live-Ergebnis', ['buli_live'])] )
                                 send_text(sender_id,uid)
                         CompetitionStatus.objects.filter(cid=cid).update(shoot_off_shot=True)
                     elif status.finished and not status.push:
