@@ -1391,10 +1391,14 @@ def push_live_results():
                             if FacebookUser.objects.get(uid=uid).pistole:
                                 sender_id = uid
                                 #sender_id = 1642888035775604
-                                send_text(sender_id,
-                                          reply)#,
+                                try:
+                                    send_text(sender_id,
+                                                reply)
+                                    sleep(0.5)
+                                    #,
                                           #quick_replies = [quick_reply('Einzelergebnisse', {'buli_live' : final} )])
-                                sleep(0.5)
+                                except:
+                                    send_text(1642888035775604,'fail of shoot off'+ uid)
 
                                           #                                 quick_reply('Live-Ergebnis', ['buli_live'])] )
                                 #send_text(sender_id,uid)
@@ -1408,8 +1412,11 @@ def push_live_results():
                                 #event = {'sender':{'id':1642888035775604}}
                                 #uid = 1642888035775604
                                 event = {'sender':{'id':uid}}
-                                buli_live(event, payload=final)
-                                sleep(0.5)
+                                try:
+                                    buli_live(event, payload=final)
+                                    sleep(0.5)
+                                except:
+                                    send_text(1642888035775604,'fail of '+ uid)
                             #send_text(1642888035775604, 'live ergebnis von wettkampf beendet')
                         CompetitionStatus.objects.filter(cid=cid).update(push=True)
                     elif status.push:
