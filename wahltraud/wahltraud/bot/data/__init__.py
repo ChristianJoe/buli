@@ -95,10 +95,10 @@ def meyton_update():
     #check for saturday (5) or sunday(6)
     day = datetime.datetime.today().weekday()
     now = datetime.datetime.now().time()
-    if day == 5 and( now >= datetime.time(13, 30) and now <= datetime.time(18, 30)):
+    if day == 5 and( now >= datetime.time(13, 30) and now <= datetime.time(19, 00)):
            links =  get_meyton()
            update_live_global(links)
-    elif day == 6 and (now >= datetime.time(7, 00) and now <= datetime.time(13, 00)):
+    elif day == 6 and (now >= datetime.time(7, 00) and now <= datetime.time(14, 00)):
            links =  get_meyton()
            update_live_global(links)
     else:
