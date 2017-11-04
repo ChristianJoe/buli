@@ -9,11 +9,11 @@ browser = webdriver.PhantomJS()
 import os
 import pathlib
 
-#from ..data import reopen_data
-#from ..fb import send_text
+from ..data import reopen_data
+from ..fb import send_text
 from pathlib import Path
 logger = logging.getLogger(__name__)
-#from backend.models import FacebookUser, CompetitionStatus
+from backend.models import FacebookUser, CompetitionStatus
 
 
 
