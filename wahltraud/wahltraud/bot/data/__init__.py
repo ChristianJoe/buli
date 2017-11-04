@@ -206,7 +206,7 @@ def make_best_shooter():
 
     return
 
-
+'''
 def make_team_avg():
     team = results_team
     shooter = results_shooter
@@ -281,7 +281,7 @@ def make_team_avg():
 def get_team_avg():
     return team_avg
 
-
+'''
 
 
 by_first_name = defaultdict(set)
