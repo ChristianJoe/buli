@@ -5,6 +5,7 @@ import datetime
 from fuzzywuzzy import fuzz, process
 from django.conf import settings
 from django.utils import timezone
+from time import sleep
 
 from pathlib import Path
 from backend.models import FacebookUser, Wiki, Push, Info
@@ -218,10 +219,10 @@ Wenn Du genauer wissen möchtest, was ich kann, klicke auf \"Erklär mal\". Oder
         else:
             last_push = Push.objects.filter(
                 published=True).exclude(pub_date__date__gt=date).latest('pub_date')
-
+        send_text(sender_id, 'Hallo und Herzlich Willkommen beim neuen Info-Chat der Bundesliga Sportschießen.')
+        sleep(5)
         reply = """
-Hallo, ich bin BotBuLi.
-Wenn Du Dich mit mir schreibst, kann ich Dir viele Infos zur Bundesliga Sportschießen nennen. Klicke einen Button oder schreibe 'Hallo':
+Ich heiße BotBuLi und funktioniere wie folgt. Du kannst mir mir schreiben oder Button 👇 drücken. Probier es aus!:
 """
         send_buttons(sender_id, reply,
                      buttons=[
@@ -235,14 +236,13 @@ Wenn Du Dich mit mir schreibst, kann ich Dir viele Infos zur Bundesliga Sportsch
 def about(event, **kwargs):
     sender_id = event['sender']['id']
     reply = '''
-Ich bin ein freundlicher Bot der dich über die Bundesliga Sportschießen informiert.
-Die Idee ist, dass du mir Fragen stellst die dich interessieren. Ich versuche diese zu beantworten. Ich bin ein lernendes Computerprogramm und 
-durch deine Fragen können die Programmiere sehen, sehen was coole neue Funktionen sind. Also frag einfach drauf los. 
+Sehr gut, das mit den Button hast du verstanden. Spannender finde ich es aber, wenn du mir direkt eine Frage stellst. 
+Ich versuche diese dann zu beantworten. Sei aber nicht böse mit mir, denn ich bin ein lernendes Computerprogramm Je mehr du mit mir sprichst, desto besser werde ich.
             '''
     send_buttons(sender_id, reply,
                 buttons = [
                     button_postback("Was kann ich fragen?", ['infos_backend']),
-                    button_postback("Tabellen", ['table_start']),
+                    button_postback("Ergebnis-Dienst", ['subscribe']),
                     button_postback("Daten-Quellen", ['menue_data'])
                 ])
 
