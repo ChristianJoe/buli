@@ -63,7 +63,7 @@ def reopen_data():
     setlist = pd.read_csv(DATA_DIR/'buli17_setlist.csv')
     setlist = setlist.replace('Andreas Hofer Sassanfahr', 'Andreas Hofer Sassanfahrt')
     global team_avg
-    #team_avg = make_team_avg()
+    team_avg = make_team_avg()
 
     update_shooter_database()
 
@@ -206,7 +206,7 @@ def make_best_shooter():
 
     return
 
-'''
+
 def make_team_avg():
     team = results_team
     shooter = results_shooter
@@ -281,7 +281,7 @@ def make_team_avg():
 def get_team_avg():
     return team_avg
 
-'''
+
 
 
 by_first_name = defaultdict(set)
