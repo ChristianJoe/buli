@@ -250,8 +250,12 @@ def make_team_avg():
                     win += 1
                 idhome = fight['comp_id']
                 for i in range(1, 6):
-                    pos[i] += int(shooter[(shooter['comp_id'] == idhome) & (shooter['team_full'] == club)].loc[
+                    try:
+                        pos[i] += int(shooter[(shooter['comp_id'] == idhome) & (shooter['team_full'] == club)].loc[
                                       shooter['position'] == i]['result'].iloc[0])
+                    except:
+                        print(idhome)
+                        pos[i] = 0
         temp['avg_result'] = result / total
         temp['avg_points'] = points / total
         temp['avg_win'] = win / total

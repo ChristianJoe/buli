@@ -1373,7 +1373,7 @@ def push_live_results():
                                 pos += str(index+1) + rep
                                 rep = ' und '
                         if point_home <=2 and point_guest <=2:
-                            reply += '+++ STECHEN UM DEN SIEG +++\nIn der Paarung {home} gegen {guest} steht es derzeit {standing}. Der Sieg wird an Position {pos} im Stechen entschieden'.format(
+                            reply += '+++ STECHEN UM DEN SIEG +++\nIn der Paarung {home} gegen {guest} steht es derzeit {standing}. Der Sieger der Paarung wird an Position {pos} im Stechen entschieden'.format(
                             home=final['home_team'].iloc[0],
                             guest=final['guest_team'].iloc[0],
                             standing = str(point_home) + ':' + str(point_guest),
