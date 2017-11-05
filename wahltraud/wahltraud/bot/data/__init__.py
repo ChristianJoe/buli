@@ -239,8 +239,12 @@ def make_team_avg():
                     win += 1
                 idguest = fight['comp_id']
                 for i in range(1, 6):
-                    pos[i] += int(shooter[(shooter['comp_id'] == idguest) & (shooter['team_full'] == club)].loc[
+                    try:
+                        pos[i] += int(shooter[(shooter['comp_id'] == idguest) & (shooter['team_full'] == club)].loc[
                                       shooter['position'] == i]['result'].iloc[0])
+                    except:
+                        print(idhome)
+                        pos[i] = 0
         for index, fight in home_club.iterrows():
             if fight['home_result'] != 0 or fight['guest_result'] != 0:
                 total += 1
