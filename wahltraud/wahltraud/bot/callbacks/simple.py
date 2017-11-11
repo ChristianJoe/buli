@@ -144,18 +144,18 @@ def humba(event,parameters,**kwargs):
     humba = parameters.get('humba')
 
     humba_dict = {'H': 'H',
-                  'U': 'Uhhh',
-                  'M': 'EEMMMMMM',
-                  'B': 'Beehh',
-                  'A': 'AAAA',
-                  'Ausrufezeichen': 'A U S R U F E Z E I C H E N',
-                  'singen': 'H-U-M-B-A  HUMBA HUMBA Täterä!'
+                  'U': '📣 Uhhh',
+                  'M': '📣 MMMMMM',
+                  'B': '📣 Beehh',
+                  'A': '📣 🅰🅰🅰🅰🅰',
+                  'Ausrufezeichen': '❗A U S R U F E Z E I C H E N🚨',
+                  'singen': '📣H-U-M-B-A  HUMBA HUMBA Täterä!'
                   }
 
     send_text(sender_id, humba_dict[humba])
     if humba == 'singen':
         sleep(2)
-        send_text(sender_id,'Täterä!')
+        send_text(sender_id,'📣Täterä!📣')
         sleep(2)
         send_text(sender_id,'🎉 Täterä! 🎉')
 
