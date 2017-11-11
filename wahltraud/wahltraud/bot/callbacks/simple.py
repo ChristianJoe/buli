@@ -139,6 +139,20 @@ def club_weapon_buli_region(event,payload,**kwargs):
         return None
 
 
+def humba(event,parameters,**kwargs):
+    sender_id = event['sender']['id']
+    humba = parameters.get('humba')
+
+    humba_dict = {'H': 'H',
+                  'U': 'Uhhh',
+                  'M': 'EEMMMMMM',
+                  'B': 'Beehh',
+                  'A': 'AAAA',
+                  'Ausrufezeichen': 'A U S R U F E Z E I C H E N'
+                  }
+
+    send_text(sender_id, humba_dict[humba])
+
 
 
 
