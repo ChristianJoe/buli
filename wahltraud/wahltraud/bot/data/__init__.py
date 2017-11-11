@@ -283,7 +283,10 @@ def make_team_avg():
 
     return team_avg
 
-#team_avg = make_team_avg()
+try:
+    team_avg = make_team_avg()
+except:
+    fail = True
 
 
 def get_team_avg():
