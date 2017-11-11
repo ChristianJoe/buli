@@ -1388,7 +1388,7 @@ def push_live_results():
                             )
                         user_list = FacebookUser.objects.values_list('uid', flat=True)
                         for uid in user_list:
-                            if FacebookUser.objects.get(uid=uid).pistole:
+                            if FacebookUser.objects.get(uid=uid).rifle:
                                 sender_id = uid
                                 #sender_id = 1642888035775604
                                 try:
@@ -1406,7 +1406,7 @@ def push_live_results():
                     elif status.finished and not status.push:
                         user_list = FacebookUser.objects.values_list('uid', flat=True)
                         for uid in user_list:
-                            if FacebookUser.objects.get(uid=uid).pistole:
+                            if FacebookUser.objects.get(uid=uid).rifle:
                                 test = 'ja'
                                 #send_text(1642888035775604,'push raus an'+uid)
                                 #event = {'sender':{'id':1642888035775604}}
