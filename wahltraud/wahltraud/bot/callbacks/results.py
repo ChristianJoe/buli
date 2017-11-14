@@ -622,8 +622,8 @@ def club_comparison(event,payload,**kwargs):
     reply +='Tabelle: {h_rank}. vs. {g_rank}.\nØ-Total: {h_result} vs. {g_result}\n\nØ-Ringe an Position:\n'.format(
         h_rank = int(c['rank']),
         g_rank = int(c1['rank']),
-        h_result = c['avg_result'],
-        g_result = c1['avg_result']
+        h_result = locale.format('%.1f', c['avg_result']),
+        g_result = locale.format('%.1f',c1['avg_result'])
     )
     home = 0
     guest = 0
@@ -642,8 +642,8 @@ def club_comparison(event,payload,**kwargs):
 
         reply += '#{i} - {h_avg} : {g_avg}\n'.format(
             i = i,
-            h_avg = c[i],
-            g_avg = c1[i]
+            h_avg = locale.format('%.1f',c[i]),
+            g_avg = locale.format('%.1f',c1[i])
         )
     send_text(sender_id,'Ein Vergleich zur Begegnung:')
     send_text(sender_id,reply)
